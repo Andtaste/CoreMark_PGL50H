@@ -1,0 +1,32 @@
+# FPGA vendor build outputs
+/hardware/pds/synthesize/*
+/hardware/pds/compile/*
+/hardware/pds/device_map/*
+/hardware/pds/place_route/*
+/hardware/pds/report_timing/*
+/hardware/pds/generate_bitstream/*
+/hardware/pds/logbackup/*
+/hardware/pds/constraint_backup/*
+/hardware/pds/constraint_check/*
+/hardware/pds/log/*
+/hardware/pds/*.log
+
+# Software build outputs
+*.o
+*.ko
+*.obj
+*.elf
+*.bin
+*.dump
+
+# Simulation and debug artifacts
+/simulation/waves/*
+/logs/**
+/output/bringup/**
+/output/release/**
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

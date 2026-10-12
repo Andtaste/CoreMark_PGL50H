@@ -1,0 +1,599 @@
+Archive member included to satisfy reference by file (symbol)
+
+D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                              C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o (__divdf3)
+D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+                              C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o (__fixunsdfsi)
+D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                              C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o (__floatunsidf)
+D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                              D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o) (__clzsi2)
+D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                              D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o) (__clz_tab)
+D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc.a(libc_a-memset.o)
+                              C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o (memset)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .text.copy_info
+                0x00000000       0x14 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .text.core_list_insert_new
+                0x00000000       0x60 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .text.core_list_remove
+                0x00000000       0x28 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .text.core_list_undo_remove
+                0x00000000       0x20 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .text.core_list_find
+                0x00000000       0x4c C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .text.core_list_reverse
+                0x00000000       0x24 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .rodata.str1.4
+                0x00000000       0x16 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .data.mem_name
+                0x00000000        0xc C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .text.matrix_sum
+                0x00000000       0x80 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .text.matrix_mul_const
+                0x00000000       0x4c C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .text.matrix_add_const
+                0x00000000       0x38 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .text.crcu8    0x00000000      0x130 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccGMIZf4.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccGMIZf4.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccGMIZf4.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3wbIop.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3wbIop.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3wbIop.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+ .text.busy_wait
+                0x00000000       0x34 C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .text.xputc    0x00000000       0x30 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .text.xputs    0x00000000       0x78 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .text          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+ .data          0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+ .bss           0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+ .text.uart_getc
+                0x00000000       0x30 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+ .text          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .data          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .bss           0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .text          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .data          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .bss           0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .text          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .data          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .bss           0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .text          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .data          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .bss           0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .text          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+ .data          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+ .bss           0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+ .data          0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc.a(libc_a-memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00000000         0x00010000         axw!rl
+ram              0x10000000         0x00008000         axw!rl
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccGMIZf4.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\cc3wbIop.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+LOAD C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+LOAD D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a
+START GROUP
+LOAD D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc.a
+LOAD D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libgloss.a
+END GROUP
+LOAD D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a
+                0x00002000                        __stack_size = DEFINED (__stack_size)?__stack_size:0x2000
+
+.init           0x00000000       0x6c
+ *(SORT_NONE(.init))
+ .init          0x00000000       0x6c C:\Users\Lenovo\AppData\Local\Temp\ccGMIZf4.o
+                0x00000000                _start
+
+.text           0x0000006c     0x3760
+ *(.text.unlikely .text.unlikely.*)
+ *(.text.startup .text.startup.*)
+ .text.startup.main
+                0x0000006c      0x5a0 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+                0x0000006c                main
+ *(.text .text.*)
+ .text.cmp_idx  0x0000060c       0x54 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                0x0000060c                cmp_idx
+ .text.calc_func
+                0x00000660      0x134 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                0x00000660                calc_func
+ .text.cmp_complex
+                0x00000794       0x48 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                0x00000794                cmp_complex
+ .text.core_list_mergesort
+                0x000007dc      0x1b0 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                0x000007dc                core_list_mergesort
+ .text.core_bench_list
+                0x0000098c      0x2f4 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                0x0000098c                core_bench_list
+ .text.core_list_init
+                0x00000c80      0x15c C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                0x00000c80                core_list_init
+ .text.iterate  0x00000ddc       0x88 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+                0x00000ddc                iterate
+ .text.core_init_matrix
+                0x00000e64      0x11c C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+                0x00000e64                core_init_matrix
+ .text.matrix_mul_vect
+                0x00000f80       0x58 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+                0x00000f80                matrix_mul_vect
+ .text.matrix_mul_matrix
+                0x00000fd8       0xa0 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+                0x00000fd8                matrix_mul_matrix
+ .text.matrix_mul_matrix_bitextract
+                0x00001078       0xb4 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+                0x00001078                matrix_mul_matrix_bitextract
+ .text.matrix_test
+                0x0000112c      0x3e8 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+                0x0000112c                matrix_test
+ .text.core_bench_matrix
+                0x00001514       0x3c C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+                0x00001514                core_bench_matrix
+ .text.core_init_state
+                0x00001550      0x194 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+                0x00001550                core_init_state
+ .text.core_state_transition
+                0x000016e4      0x2e8 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+                0x000016e4                core_state_transition
+ .text.core_bench_state
+                0x000019cc      0x1b4 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+                0x000019cc                core_bench_state
+ .text.get_seed_32
+                0x00001b80       0x58 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+                0x00001b80                get_seed_32
+ .text.crcu16   0x00001bd8      0x228 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+                0x00001bd8                crcu16
+ .text.crcu32   0x00001e00      0x420 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+                0x00001e00                crcu32
+ .text.crc16    0x00002220      0x22c C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+                0x00002220                crc16
+ .text.check_data_types
+                0x0000244c        0x8 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+                0x0000244c                check_data_types
+ .text.start_time
+                0x00002454       0x20 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x00002454                start_time
+ .text.stop_time
+                0x00002474       0x20 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x00002474                stop_time
+ .text.get_time
+                0x00002494       0x24 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x00002494                get_time
+ .text.time_in_secs
+                0x000024b8       0x34 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x000024b8                time_in_secs
+ .text.portable_init
+                0x000024ec        0x4 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x000024ec                portable_init
+ .text.entry    0x000024f0      0x128 C:\Users\Lenovo\AppData\Local\Temp\cc3wbIop.o
+                0x000024f0                trap_entry
+ .text._init    0x00002618       0x1c C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+                0x00002618                _init
+ .text.trap_handler
+                0x00002634        0x8 C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+                0x00002634                trap_handler
+ .text.get_cycle_value
+                0x0000263c        0xc C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+                0x0000263c                get_cycle_value
+ .text.xprintf  0x00002648      0x5dc C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+                0x00002648                xprintf
+ .text.uart_putc
+                0x00002c24       0x20 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+                0x00002c24                uart_putc
+ .text.uart_init
+                0x00002c44       0x1c C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+                0x00002c44                uart_init
+ .text.__divdf3
+                0x00002c60      0x8f8 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                0x00002c60                __divdf3
+ .text.__fixunsdfsi
+                0x00003558       0x70 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+                0x00003558                __fixunsdfsi
+ .text.__floatunsidf
+                0x000035c8       0xa0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                0x000035c8                __floatunsidf
+ .text.__clzsi2
+                0x00003668       0x88 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                0x00003668                __clzsi2
+ .text          0x000036f0       0xdc D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc.a(libc_a-memset.o)
+                0x000036f0                memset
+ *(.gnu.linkonce.t.*)
+
+.rela.dyn       0x000037cc        0x0
+ .rela.init     0x000037cc        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                0x000037cc                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.preinit_array  0x000037cc        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x000037cc        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x000037cc        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.lalign         0x000037cc        0x0
+                0x000037cc                        . = ALIGN (0x4)
+                0x000037cc                        PROVIDE (_data_lma = .)
+
+.dalign         0x10000000        0x0 load address 0x000037cc
+                0x10000000                        . = ALIGN (0x4)
+                0x10000000                        PROVIDE (_data = .)
+
+.data           0x10000000      0x940 load address 0x000037cc
+ *(.rdata)
+ *(.rodata .rodata.*)
+ .rodata.main.str1.4
+                0x10000000      0x511 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+                                0x461 (size before relaxing)
+ *fill*         0x10000511        0x3 
+ .rodata.state_known_crc
+                0x10000514        0xa C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ *fill*         0x1000051e        0x2 
+ .rodata.matrix_known_crc
+                0x10000520        0xa C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ *fill*         0x1000052a        0x2 
+ .rodata.list_known_crc
+                0x1000052c        0xa C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .rodata.str1.4
+                0x10000536        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+                                 0xad (size before relaxing)
+ *fill*         0x10000536        0x2 
+ .rodata.errpat
+                0x10000538       0x10 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .rodata.scipat
+                0x10000548       0x10 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .rodata.floatpat
+                0x10000558       0x10 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .rodata.intpat
+                0x10000568       0x10 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .rodata.get_seed_32
+                0x10000578       0x18 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .rodata        0x10000590      0x200 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .rodata.xprintf
+                0x10000790       0x5c C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .rodata.__divdf3
+                0x100007ec       0x40 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .rodata.__clz_tab
+                0x1000082c      0x100 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                0x1000082c                __clz_tab
+ *(.gnu.linkonce.r.*)
+ *(.data .data.*)
+ *(.gnu.linkonce.d.*)
+                0x10000930                        . = ALIGN (0x8)
+ *fill*         0x1000092c        0x4 
+                0x10001130                        PROVIDE (__global_pointer$ = (. + 0x800))
+ *(.sdata .sdata.*)
+ .sdata.seed4_volatile
+                0x10000930        0x4 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x10000930                seed4_volatile
+ .sdata.seed3_volatile
+                0x10000934        0x4 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x10000934                seed3_volatile
+ *(.gnu.linkonce.s.*)
+                0x10000938                        . = ALIGN (0x8)
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ .srodata.cst8  0x10000938        0x8 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+                0x10000940                        . = ALIGN (0x4)
+                0x10000940                        PROVIDE (_edata = .)
+                [!provide]                        PROVIDE (edata = .)
+                [!provide]                        PROVIDE (_fbss = .)
+                0x10000940                        PROVIDE (__bss_start = .)
+
+.bss            0x10000940      0x7f4
+ *(.sbss*)
+ .sbss.t1       0x10000940        0x8 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ .sbss.t0       0x10000948        0x8 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ .sbss.seed5_volatile
+                0x10000950        0x4 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x10000950                seed5_volatile
+ .sbss.seed2_volatile
+                0x10000954        0x4 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x10000954                seed2_volatile
+ .sbss.seed1_volatile
+                0x10000958        0x4 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                0x10000958                seed1_volatile
+ .sbss.outptr   0x1000095c        0x4 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .sbss.xfunc_out
+                0x10000960        0x4 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+                0x10000960                xfunc_out
+ *(.gnu.linkonce.sb.*)
+ *(.bss .bss.*)
+ .bss.static_memblk
+                0x10000964      0x7d0 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+                0x10000964                static_memblk
+ *(.gnu.linkonce.b.*)
+ *(COMMON)
+                0x10001134                        . = ALIGN (0x4)
+                0x10001138                        . = ALIGN (0x8)
+                0x10001138                        PROVIDE (_end = .)
+                [!provide]                        PROVIDE (end = .)
+
+.stack          0x10006000     0x2000 load address 0x10001134
+                [!provide]                        PROVIDE (_heap_end = .)
+                0x00002000                        . = __stack_size
+ *fill*         0x10006000     0x2000 
+                0x10008000                        PROVIDE (_sp = .)
+                0x10008000                        __freertos_irq_stack_top = .
+OUTPUT(coremark.elf elf32-littleriscv)
+
+.comment        0x00000000       0x33
+ .comment       0x00000000       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                                 0x34 (size before relaxing)
+ .comment       0x00000033        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                                 0x34 (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+ .note.GNU-stack
+                0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.riscv.attributes
+                0x00000000       0x37
+ .riscv.attributes
+                0x00000000       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccyEoY5m.o
+ .riscv.attributes
+                0x00000033       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccogl2Af.o
+ .riscv.attributes
+                0x00000066       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccQBJPZk.o
+ .riscv.attributes
+                0x00000099       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccL1E04k.o
+ .riscv.attributes
+                0x000000cc       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccy3VTIv.o
+ .riscv.attributes
+                0x000000ff       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccP6Hu7J.o
+ .riscv.attributes
+                0x00000132       0x31 C:\Users\Lenovo\AppData\Local\Temp\ccGMIZf4.o
+ .riscv.attributes
+                0x00000163       0x35 C:\Users\Lenovo\AppData\Local\Temp\cc3wbIop.o
+ .riscv.attributes
+                0x00000198       0x37 C:\Users\Lenovo\AppData\Local\Temp\ccmP8grP.o
+ .riscv.attributes
+                0x000001cf       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccVFPO6j.o
+ .riscv.attributes
+                0x00000202       0x37 C:\Users\Lenovo\AppData\Local\Temp\cckJn1vT.o
+ .riscv.attributes
+                0x00000239       0x33 C:\Users\Lenovo\AppData\Local\Temp\cc3q1aaA.o
+ .riscv.attributes
+                0x0000026c       0x33 C:\Users\Lenovo\AppData\Local\Temp\ccKpGaBl.o
+ .riscv.attributes
+                0x0000029f       0x2a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .riscv.attributes
+                0x000002c9       0x2a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .riscv.attributes
+                0x000002f3       0x2a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .riscv.attributes
+                0x0000031d       0x2a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .riscv.attributes
+                0x00000347       0x2a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+ .riscv.attributes
+                0x00000371       0x28 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc.a(libc_a-memset.o)
+
+.debug_info     0x00000000      0xe3c
+ .debug_info    0x00000000      0x79a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_info    0x0000079a      0x1ca D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_info    0x00000964      0x27e D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_info    0x00000be2      0x168 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_info    0x00000d4a       0xf2 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_abbrev   0x00000000      0x5b4
+ .debug_abbrev  0x00000000      0x182 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_abbrev  0x00000182      0x171 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_abbrev  0x000002f3      0x172 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_abbrev  0x00000465       0xd9 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_abbrev  0x0000053e       0x76 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_loclists
+                0x00000000     0x1cb8
+ .debug_loclists
+                0x00000000     0x199d D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_loclists
+                0x0000199d       0xc6 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_loclists
+                0x00001a63      0x172 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_loclists
+                0x00001bd5       0xe3 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+
+.debug_aranges  0x00000000       0x98
+ .debug_aranges
+                0x00000000       0x20 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_aranges
+                0x00000020       0x20 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_aranges
+                0x00000040       0x20 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_aranges
+                0x00000060       0x20 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_aranges
+                0x00000080       0x18 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_rnglists
+                0x00000000      0x26c
+ .debug_rnglists
+                0x00000000      0x1b1 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_rnglists
+                0x000001b1       0x1f D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_rnglists
+                0x000001d0       0x72 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_rnglists
+                0x00000242       0x2a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+
+.debug_line     0x00000000     0x207f
+ .debug_line    0x00000000     0x19eb D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_line    0x000019eb      0x1e1 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_line    0x00001bcc      0x30b D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_line    0x00001ed7      0x15f D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_line    0x00002036       0x49 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_str      0x00000000      0x49a
+ .debug_str     0x00000000      0x49a D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                                0x385 (size before relaxing)
+ .debug_str     0x0000049a        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+                                0x1cc (size before relaxing)
+ .debug_str     0x0000049a        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                                0x268 (size before relaxing)
+ .debug_str     0x0000049a        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                                0x1f3 (size before relaxing)
+ .debug_str     0x0000049a        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                                0x1d6 (size before relaxing)
+
+.debug_line_str
+                0x00000000      0x4eb
+ .debug_line_str
+                0x00000000      0x4eb D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                                0x249 (size before relaxing)
+ .debug_line_str
+                0x000004eb        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+                                0x251 (size before relaxing)
+ .debug_line_str
+                0x000004eb        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                                0x253 (size before relaxing)
+ .debug_line_str
+                0x000004eb        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                                0x232 (size before relaxing)
+ .debug_line_str
+                0x000004eb        0x0 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                                0x232 (size before relaxing)
+
+.debug_frame    0x00000000      0x108
+ .debug_frame   0x00000000       0x90 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_frame   0x00000090       0x20 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_frame   0x000000b0       0x38 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_frame   0x000000e8       0x20 D:/Program Files/riscv/xpack-riscv-none-elf-gcc-15.2.0-1-win32-x64/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)

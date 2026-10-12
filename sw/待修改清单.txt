@@ -1,0 +1,52 @@
+﻿需要你按目标板修改/确认的项目
+============================
+
+一、sw\link.lds（必须确认）
+原参数：flash ORIGIN=0x00000000 LENGTH=16K；
+        ram ORIGIN=0x10000000 LENGTH=16K；默认栈大小8K。
+请根据最终 SoC 的程序区和数据区实际容量/地址修改 MEMORY。
+参考 README 提示程序镜像接近30KB，当前16KB程序区不够按原预期运行CoreMark。
+不要仅改 LENGTH 假装扩容；PDS 中实际存储器容量必须同时满足。
+检查 .data、.bss、CoreMark静态工作区和8KB栈不重叠。
+程序入口 _start、下载 BIN 地址、CPU 复位取指映射必须一致。
+
+二、sw\include\utils.h（必须确认）
+CPU_FREQ_HZ 原值50000000，CPU_FREQ_MHZ 原值50。
+请填写分频/PLL之后 CPU 真正的时钟；两项保持一致。
+这个参数决定 cycle 换算时间，不会自动设置硬件频率。
+
+三、sw\include\uart.h 与 sw\lib\uart.c（必须确认）
+参考 UART 基地址0x30000000；CTRL/STATUS/BAUD/TXDATA/RXDATA
+偏移分别0x00/0x04/0x08/0x0c/0x10。
+uart.c 发送等待 STATUS bit0，接收使用 bit1；确认与最终 RTL 语义一致。
+原 uart_init() 仅开启TX/RX并绑定xprintf，没有主动写 UART0_BAUD。
+因此还要检查硬件 UART 的复位默认分频、实际输入时钟和终端波特率；
+必要时按目标 RTL 的分频公式补充 UART0_BAUD 写入，不能猜分频值。
+TX/RX 引脚在硬件约束里设置，不在 C 文件里设置。
+
+四、sw\init.c 与 sw\trap_handler.c（上板前确认）
+原 _init() 设置 mtvec，并用 mstatus=0x1888 开启全局中断。
+原 trap_handler() 直接调用弱符号 timer0_irq_handler；
+本目录的 CoreMark 和 UART示例均未定义该回调，异常/中断时不能依赖它。
+只跑裸机 CoreMark 时，请结合硬件中断源决定保持关闭中断，
+或实现正确的异常分发和回调（不能把所有异常都当定时器中断）。
+这些参考源暂未被自动改写。
+
+五、sw\coremark\core_portme.h（调通后修改）
+已设置默认 ITERATIONS=10 和 PERFORMANCE_RUN=1，用于启动检查。
+正式测试时把迭代数改为合适值（原仓库10000），保证至少10秒并校验通过。
+FLAGS_STR 要与实际编译选项一致；BAT 当前是 O2、rv32im_zicsr、ilp32。
+执行少量迭代可能报告不足10秒，不是正式有效成绩。
+
+六、sw\lib\utils.c（长时间计数时检查）
+参考 get_cycle_value() 先读低32位cycle，再读高32位cycleh；
+跨越低32位回绕边界时可能读到不一致值。
+可靠实现应高位-低位-高位读取，并在两次高位不同的时候重试。
+同时确认目标CPU确实实现 cycle/cycleh CSR。
+
+需要另行提供的材料
+1. 开发板完整器件型号/封装，及最终CPU时钟。
+2. 最终 SoC 的 ROM/RAM 基地址、真实容量、CPU复位入口。
+3. UART RTL的寄存器与波特率设置（或对应工程文件）。
+4. 板卡引脚表/FDC以及调试器/OpenOCD cfg（属于hardware/tools目录）。
+有这些后可以继续把软件参数改成适合你板子的值。
