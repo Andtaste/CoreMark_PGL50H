@@ -51,6 +51,7 @@ module tinyriscv_core(
     wire[31:0] ifetch_inst_o;
     wire[31:0] ifetch_pc_o;
     wire ifetch_inst_valid_o;
+    wire stat_if_bubble;
 
     // ifu_idu模块输出信号
 	wire[31:0] if_inst_o;
@@ -128,6 +129,21 @@ module tinyriscv_core(
     wire[31:0] clint_int_addr_o;
     wire clint_int_assert_o;
 
+    wire stat_bjp = (ie_dec_info_bus_o[`DECINFO_GRP_BUS] == `DECINFO_GRP_BJP);
+    wire stat_mem = (ie_dec_info_bus_o[`DECINFO_GRP_BUS] == `DECINFO_GRP_MEM);
+    wire stat_muldiv = (ie_dec_info_bus_o[`DECINFO_GRP_BUS] == `DECINFO_GRP_MULDIV);
+    // Bit order matches CSR 0x7c1..0x7c7. These are event counters, not
+    // mutually exclusive bins or a retired-instruction counter.
+    wire[6:0] stat_events = {
+        stat_bjp & (~ex_hold_flag_o) & (~clint_stall_flag_o),
+        stat_bjp & ex_jump_flag_o & (~clint_int_assert_o) & (~clint_stall_flag_o),
+        stat_muldiv & ex_hold_flag_o & (~clint_stall_flag_o),
+        stat_mem & ex_hold_flag_o & (~clint_stall_flag_o),
+        stat_if_bubble,
+        ibus_req_valid_o & (~ibus_req_ready_i),
+        1'b1
+    };
+
     assign dbus_addr_o = ex_mem_addr_o;
     assign dbus_data_o = ex_mem_wdata_o;
     assign dbus_we_o = ex_mem_we_o;
@@ -146,6 +162,7 @@ module tinyriscv_core(
         .inst_o(ifetch_inst_o),
         .pc_o(ifetch_pc_o),
         .inst_valid_o(ifetch_inst_valid_o),
+        .stat_bubble_o(stat_if_bubble),
         .ibus_addr_o(ibus_addr_o),
         .ibus_data_i(ibus_data_i),
         .ibus_data_o(ibus_data_o),
@@ -186,6 +203,7 @@ module tinyriscv_core(
     csr_reg u_csr_reg(
         .clk(clk),
         .rst_n(rst_n),
+        .stat_events_i(stat_events),
         .exu_we_i(ex_csr_we_o),
         .exu_raddr_i(ex_csr_raddr_o),
         .exu_waddr_i(ex_csr_waddr_o),
