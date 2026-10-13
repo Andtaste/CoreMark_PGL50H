@@ -1,0 +1,10 @@
+# Keep generated outputs local; retain directory placeholders.
+/firmware/generated/*
+!/firmware/generated/.gitkeep
+/results/**
+!/results/**/
+!/results/**/.gitkeep
+/waves/*
+!/waves/.gitkeep
+*.vvp
+__pycache__/
