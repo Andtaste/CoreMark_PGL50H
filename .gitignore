@@ -21,6 +21,7 @@
 
 # Simulation and debug artifacts
 /simulation/waves/*
+!/simulation/waves/.gitkeep
 /logs/**
 /output/bringup/**
 /output/release/**

@@ -98,3 +98,9 @@ F/A/C 扩展、S 模式、MMU、Linux 不作为当前核已声明支持的必过
 每个用例记录 PASS/FAIL/TIMEOUT/UNSUPPORTED，附失败编号、日志及必要波形。
 
 推荐顺序：环境冒烟 → RV32I/M 基本回归 → 依赖/冲刷/连续访存 → CSR/异常/等待激励 → CoreMark CRC → 随机与差分。
+
+## 5. 当前工程测试目录
+
+使用项目原有 [simulation/](../simulation/)，结构说明见 [README](../simulation/README.md)。
+40 个测试编号与目录的对应关系见 [test_plan.json](../simulation/configs/test_plan.json)。
+当前只建立目录和计划，状态均为 planned；新增测试代码与运行结果尚待完成。
