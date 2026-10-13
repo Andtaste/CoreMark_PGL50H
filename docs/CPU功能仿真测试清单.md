@@ -1,6 +1,6 @@
 # CPU 功能仿真测试清单
 
-整理依据：当前 CoreMark_PGL50H RTL，以及 C:/Users/Lenovo/Desktop/progject/tinyriscv-master 的测试文件。
+整理依据：当前 CoreMark_PGL50H RTL，以及仓库内 references/tinyriscv 的测试文件。
 本清单不包括此次新增周期统计功能。未执行测试，所有完成项暂为空。
 
 优先级：P0 为架构优化前的基本回归；P1 为扩展正确性和系统交互；P2 为后续提高覆盖率。
@@ -30,12 +30,12 @@
 | [ ] | ISA-18 | P1 | FENCE.I | 修改指令存储器后同步取指；需要将 Zifencei 作为单独扩展评估 | R1: rv32ui/fence_i.S；R2: rv32Zifencei/src/I-FENCE.I-01.S |
 | [ ] | ISA-19 | P1 | 无延迟槽语义 | taken 分支后顺序指令不得执行 | R2: rv32i/src/I-DELAY_SLOTS-01.S |
 
-R1: [tests/isa](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tests/isa)
+R1: [tests/isa](../references/tinyriscv/tests/isa)
 
-R2: [riscv-test-suite](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tests/riscv-compliance/riscv-test-suite)
+R2: [riscv-test-suite](../references/tinyriscv/tests/riscv-compliance/riscv-test-suite)
 
 R2 下每个扩展的 references 目录有同名 `.reference_output`。
-例如 [I-ADD-01.reference_output](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tests/riscv-compliance/riscv-test-suite/rv32i/references/I-ADD-01.reference_output)。
+例如 [I-ADD-01.reference_output](../references/tinyriscv/tests/riscv-compliance/riscv-test-suite/rv32i/references/I-ADD-01.reference_output)。
 已有 ELF/BIN 分别位于 `tests/isa/generated` 和 `tests/riscv-compliance/build_generated`。
 R1 下虽存在 ld.S/lwu.S/sd.S 等文件，当前 RV32 CPU 不应把这些 RV64 指令列为通过目标。
 CSR/异常测试的启动和参考环境需核对；文件存在不意味着当前核已支持完整特权规范。
@@ -59,11 +59,11 @@ CSR/异常测试的启动和参考环境需核对；文件存在不意味着当�
 | [ ] | SYS-03 | P1 | 非法指令/CSR 访问 | 根据声明的 ISA/特权能力检查异常行为，发现未实现功能须标记 | 当前 idu.v/csr_reg.v；新增程序 |
 | [ ] | SYS-04 | P1 | 架构 cycle 计数器 | 单调递增、cycle/cycleh 边界、CSR 读取语义；不包含本次自定义统计 CSR | 当前 csr_reg.v；新增 TB/程序 |
 
-R1 示例：[add.S](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tests/isa/rv32ui/add.S)、
-[lw.S](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tests/isa/rv32ui/lw.S)、
-[test_macros.h](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tests/isa/test_macros.h)。
+R1 示例：[add.S](../references/tinyriscv/tests/isa/rv32ui/add.S)、
+[lw.S](../references/tinyriscv/tests/isa/rv32ui/lw.S)、
+[test_macros.h](../references/tinyriscv/tests/isa/test_macros.h)。
 
-R3: [tests/example](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tests/example)。
+R3: [tests/example](../references/tinyriscv/tests/example)。
 
 ## 3. 程序、外设与进阶验证
 
@@ -84,13 +84,13 @@ F/A/C 扩展、S 模式、MMU、Linux 不作为当前核已声明支持的必过
 
 | 参考文件 | 用途 | 必须适配的点 |
 |---|---|---|
-| [普通 testbench](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tb/tinyriscv_soc_tb.v) | 时钟、复位、装载、PASS/FAIL、失败编号、波形 | 当前 rst_n、模块层次、RAM 模型；固定结束超时 |
-| [签名 testbench](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tb/compliance_test/tinyriscv_soc_tb.v) | 读取结束标记、导出 signature | 原 TB 从 ROM 数组读签名；必须核对测试签名的真实地址和存储区域 |
-| [compile_rtl.py](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/sim/compile_rtl.py) | Icarus 编译 | 原文件列表属于旧 CPU；换成当前 RTL；明确 top；检查退出码 |
-| [sim_new_nowave.py](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/sim/sim_new_nowave.py) | BIN 转换和单项运行 | 编译失败立即停止；超时终止子进程；不使用残留 out.vvp |
-| [test_all_isa.py](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/sim/test_all_isa.py) | 批量 ISA 回归 | 0 测试不得报通过；逐项日志/退出码；汇总失败与跳过项 |
-| [compliance_test.py](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/sim/compliance_test/compliance_test.py) | reference_output 比对 | 稳健的超时/错误处理、隔离输出文件；规范化文本而不是只按文件字节大小比较 |
-| [BinToMem_CLI.py](C:/Users/Lenovo/Desktop/progject/tinyriscv-master/tools/BinToMem_CLI.py) | 小端 BIN 转字级 HEX | 原工具忽略末尾不足 4 字节的数据；应补零并校验容量 |
+| [普通 testbench](../references/tinyriscv/tb/tinyriscv_soc_tb.v) | 时钟、复位、装载、PASS/FAIL、失败编号、波形 | 当前 rst_n、模块层次、RAM 模型；固定结束超时 |
+| [签名 testbench](../references/tinyriscv/tb/compliance_test/tinyriscv_soc_tb.v) | 读取结束标记、导出 signature | 原 TB 从 ROM 数组读签名；必须核对测试签名的真实地址和存储区域 |
+| [compile_rtl.py](../references/tinyriscv/sim/compile_rtl.py) | Icarus 编译 | 原文件列表属于旧 CPU；换成当前 RTL；明确 top；检查退出码 |
+| [sim_new_nowave.py](../references/tinyriscv/sim/sim_new_nowave.py) | BIN 转换和单项运行 | 编译失败立即停止；超时终止子进程；不使用残留 out.vvp |
+| [test_all_isa.py](../references/tinyriscv/sim/test_all_isa.py) | 批量 ISA 回归 | 0 测试不得报通过；逐项日志/退出码；汇总失败与跳过项 |
+| [compliance_test.py](../references/tinyriscv/sim/compliance_test/compliance_test.py) | reference_output 比对 | 稳健的超时/错误处理、隔离输出文件；规范化文本而不是只按文件字节大小比较 |
+| [BinToMem_CLI.py](../references/tinyriscv/tools/BinToMem_CLI.py) | 小端 BIN 转字级 HEX | 原工具忽略末尾不足 4 字节的数据；应补零并校验容量 |
 
 所有测试必须在当前 CPU RTL 上执行。仅在参考目录旧 CPU 上跑过，不算当前 CPU 的验证。
 仿真 RAM 要保持同步读延迟、字节写使能、读写冲突语义。旧组合读 ROM 不能直接代表当前 PDS RAM。
