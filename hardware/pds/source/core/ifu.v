@@ -30,6 +30,7 @@ module ifu(
     output wire[31:0] inst_o,
     output wire[31:0] pc_o,
     output wire inst_valid_o,
+    output wire stat_bubble_o,
 
     output wire[31:0] ibus_addr_o,
     input wire[31:0] ibus_data_i,
@@ -116,6 +117,9 @@ module ifu(
     assign ibus_addr_o = pc;
     assign pc_o = pc_r;
     wire inst_valid = ifu_rsp_hsked & (~flush_i) & (~bus_switched);
+    // A bubble admitted to IF/ID, excluding deliberate pipeline holds/flushes.
+    assign stat_bubble_o = rst_n & (~stall_i[`STALL_ID]) &
+                           (~flush_i) & (~jtag_halt_i) & (~inst_valid);
     assign inst_o = inst_valid? ibus_data_i: `INST_NOP;
 
     assign ibus_sel_o = 4'b1111;

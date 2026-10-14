@@ -21,6 +21,7 @@ module csr_reg(
 
     input wire clk,
     input wire rst_n,
+    input wire[6:0] stat_events_i,
 
     // exu
     input wire exu_we_i,                    // exu模块写寄存器标志
@@ -65,6 +66,37 @@ module csr_reg(
     wire[31:0] waddr = exu_we_i? exu_waddr_i: clint_waddr_i;
     wire[31:0] wdata = exu_we_i? exu_wdata_i: clint_wdata_i;
 
+    // Custom profiling CSRs: 7c0 control, 7c1..7c7 counters,
+    // 7c8 sticky saturation bits, 7cf interface signature/version.
+    reg stat_enable;
+    reg[31:0] stat_count[0:6];
+    reg[6:0] stat_overflow;
+    integer stat_idx;
+    always @ (posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            stat_enable <= 1'b0;
+            stat_overflow <= 7'b0;
+            for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1)
+                stat_count[stat_idx] <= 32'b0;
+        end else if (exu_we_i && (exu_waddr_i[11:0] == 12'h7c0)) begin
+            stat_enable <= exu_wdata_i[0];
+            if (exu_wdata_i[1]) begin
+                stat_overflow <= 7'b0;
+                for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1)
+                    stat_count[stat_idx] <= 32'b0;
+            end
+        end else if (stat_enable) begin
+            for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1) begin
+                if (stat_events_i[stat_idx]) begin
+                    if (&stat_count[stat_idx])
+                        stat_overflow[stat_idx] <= 1'b1;
+                    else
+                        stat_count[stat_idx] <= stat_count[stat_idx] + 1'b1;
+                end
+            end
+        end
+    end
+
     // 写寄存器
     always @ (posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -105,6 +137,16 @@ module csr_reg(
     // exu模块读CSR寄存器
     always @ (*) begin
         case (exu_raddr_i[11:0])
+            12'h7c0: exu_rdata = {31'b0, stat_enable};
+            12'h7c1: exu_rdata = stat_count[0];
+            12'h7c2: exu_rdata = stat_count[1];
+            12'h7c3: exu_rdata = stat_count[2];
+            12'h7c4: exu_rdata = stat_count[3];
+            12'h7c5: exu_rdata = stat_count[4];
+            12'h7c6: exu_rdata = stat_count[5];
+            12'h7c7: exu_rdata = stat_count[6];
+            12'h7c8: exu_rdata = {25'b0, stat_overflow};
+            12'h7cf: exu_rdata = 32'h53544101;
             `CSR_CYCLE: begin
                 exu_rdata = cycle[31:0];
             end

@@ -6,12 +6,13 @@
 
 uint64_t get_cycle_value()
 {
-    uint64_t cycle;
-
-    cycle = read_csr(cycle);
-    cycle += (uint64_t)(read_csr(cycleh)) << 32;
-
-    return cycle;
+    uint32_t hi, lo, hi_again;
+    do {
+        hi = read_csr(cycleh);
+        lo = read_csr(cycle);
+        hi_again = read_csr(cycleh);
+    } while (hi != hi_again);
+    return ((uint64_t)hi << 32) | lo;
 }
 
 void busy_wait(uint32_t us)
