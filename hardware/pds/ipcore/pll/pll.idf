@@ -52,7 +52,7 @@
         </param>
         <param>
             <name>CLKOUT0_REQ_FREQ_basicPage</name>
-            <value>65.0000</value>
+            <value>77.0000</value>
             <decimal>4</decimal>
         </param>
         <param>
@@ -99,7 +99,7 @@
         </param>
         <param>
             <name>STATIC_DUTYF_basicPage</name>
-            <value>26</value>
+            <value>77</value>
         </param>
         <param>
             <name>CLKIN_SEL_EN_ENABLE_advancedPage</name>
@@ -288,7 +288,7 @@
         </param>
         <param>
             <name>STATIC_RATIOF_basicPage</name>
-            <value>26</value>
+            <value>77</value>
         </param>
         <param>
             <name>STATIC_PHASE4_advancedPage</name>
@@ -316,7 +316,7 @@
         </param>
         <param>
             <name>STATIC_RATIOI_basicPage</name>
-            <value>2</value>
+            <value>5</value>
         </param>
         <param>
             <name>DEVICE_PGL22</name>

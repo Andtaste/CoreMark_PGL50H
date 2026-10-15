@@ -42,3 +42,16 @@ synthesize -ads -selected_syn_tool_opt 2
 dev_map 
 pnr 
 report_timing 
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr 
+report_timing 
+report_power 
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr 
+report_timing 

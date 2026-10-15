@@ -1,0 +1,219 @@
+{
+  "date": "2026-10-15",
+  "baseline_commit": "ff7ead2 plus phase-one snapshot",
+  "scope": "Launch all LSU requests from existing MEM registers; disable EX local admission and idle EX payload",
+  "changed_rtl_vs_baseline": [
+    "core\\tinyriscv_core.v",
+    "top\\tinyriscv_soc_top.v"
+  ],
+  "before": {
+    "all_reported_constraints_met": true,
+    "lut": 4850,
+    "ff": 3709,
+    "distributed_ram": 34,
+    "apm": 4,
+    "drm": 48,
+    "requested_frequency_mhz": 65.003,
+    "estimated_fmax_mhz": 78.691,
+    "setup_slow": {
+      "worst_slack_ns": 2.676,
+      "failing_endpoints": 0
+    },
+    "hold_slow": {
+      "worst_slack_ns": 0.176,
+      "failing_endpoints": 0
+    },
+    "setup_fast": {
+      "worst_slack_ns": 6.367,
+      "failing_endpoints": 0
+    },
+    "hold_fast": {
+      "worst_slack_ns": 0.127,
+      "failing_endpoints": 0
+    },
+    "worst_system_setup_path": "Startpoint  : l1/u_tinyriscv_core/ex_rs1[4]/opit_0_L5Q_perm/CLK\nEndpoint    : l1/u_ram/ram222/U_ipml_spram_ram2/ADDR_LOOP[2].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm/CSB[0]\nPath Group  : sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred\nPath Type   : max (slow corner)\nPath Class  : sequential timing path\nClock Skew  :    -0.010  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)\n  Capture Clock Delay     :  4.661\n  Launch Clock Delay      :  4.961\n  Clock Pessimism Removal :  0.290\n\n Location                          Delay Type             Incr        Path         Logical Resource \n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                         0.000       0.000 r                        \n P20                                                     0.000       0.000 r       clk (port)       \n                                   net (fanout=1)        0.074       0.074         clk              \n IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.787       2.191         _N10             \n PLL_158_55/CLK_OUT0               td                    0.107       2.298 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.078       3.376         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000       3.376 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.585       4.961         ntclkbufg_0      \n CLMS_162_133/CLK                                                          r       l1/u_tinyriscv_core/ex_rs1[4]/opit_0_L5Q_perm/CLK\n\n CLMS_162_133/Q0                   tco                   0.289       5.250 r       l1/u_tinyriscv_core/ex_rs1[4]/opit_0_L5Q_perm/Q\n                                   net (fanout=1)        0.488       5.738         l1/u_tinyriscv_core/ex_rs1 [4]\n CLMA_154_133/Y2                   td                    0.487       6.225 r       l1/u_tinyriscv_core/N1267_5/gateop_perm/Z\n                                   net (fanout=32)       0.772       6.997         l1/u_tinyriscv_core/N1267_inv\n CLMA_166_124/Y0                   td                    0.320       7.317 r       l1/u_tinyriscv_core/N296_10[9]/gateop/F\n                                   net (fanout=20)       0.567       7.884         l1/u_tinyriscv_core/src1 [9]\n                                   td                    0.326       8.210 f       l1/u_tinyriscv_core/mem_addr[9]/opit_0_A2Q21/Cout\n                                   net (fanout=1)        0.000       8.210         l1/u_tinyriscv_core/_N850\n CLMS_170_133/COUT                 td                    0.058       8.268 r       l1/u_tinyriscv_core/mem_addr[11]/opit_0_A2Q21/Cout\n                                   net (fanout=1)        0.000       8.268         l1/u_tinyriscv_core/_N852\n                                   td                    0.058       8.326 r       l1/u_tinyriscv_core/mem_addr[13]/opit_0_A2Q21/Cout\n                                   net (fanout=1)        0.000       8.326         l1/u_tinyriscv_core/_N854\n CLMS_170_137/COUT                 td                    0.058       8.384 r       l1/u_tinyriscv_core/mem_addr[15]/opit_0_A2Q21/Cout\n                                   net (fanout=1)        0.000       8.384         l1/u_tinyriscv_core/_N856\n                                   td                    0.058       8.442 r       l1/u_tinyriscv_core/N411_17/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.442         l1/u_tinyriscv_core/_N858\n CLMS_170_141/COUT                 td                    0.058       8.500 r       l1/u_tinyriscv_core/N411_19/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.500         l1/u_tinyriscv_core/_N860\n                                   td                    0.058       8.558 r       l1/u_tinyriscv_core/N411_21/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.558         l1/u_tinyriscv_core/_N862\n CLMS_170_145/COUT                 td                    0.058       8.616 r       l1/u_tinyriscv_core/N411_23/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.616         l1/u_tinyriscv_core/_N864\n                                   td                    0.058       8.674 r       l1/u_tinyriscv_core/N411_25/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.674         l1/u_tinyriscv_core/_N866\n CLMS_170_149/COUT                 td                    0.058       8.732 r       l1/u_tinyriscv_core/N411_27/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.732         l1/u_tinyriscv_core/_N868\n                                   td                    0.058       8.790 r       l1/u_tinyriscv_core/mem_addr[29]/opit_0_A2Q21/Cout\n                                   net (fanout=1)        0.000       8.790         l1/u_tinyriscv_core/_N870\n CLMS_170_153/Y3                   td                    0.501       9.291 r       l1/u_tinyriscv_core/mem_addr[31]/opit_0_A2Q21/Y1\n                                   net (fanout=6)        0.412       9.703         l1/u_tinyriscv_core/ex_address [31]\n CLMA_170_156/Y2                   td                    0.210       9.913 r       l1/u_tinyriscv_core/N392_mux3/gateop/Z\n                                   net (fanout=5)        0.466      10.379         l1/u_tinyriscv_core/N392\n CLMS_170_169/Y0                   td                    0.210      10.589 r       l1/u_tinyriscv_core/mem_load/opit_0_L5Q_perm/Z\n                                   net (fanout=3)        0.124      10.713         l1/u_tinyriscv_core/ex_load\n CLMA_170_168/Y6CD                 td                    0.452      11.165 r       l1/u_tinyriscv_core/N213_3_muxf6_perm/Z\n                                   net (fanout=6)        0.601      11.766         l1/m1_req_vld_i  \n CLMA_170_180/Y2                   td                    0.341      12.107 f       l1/local_memory.u_local_ram_bus/N396/gateop/F\n                                   net (fanout=23)       0.789      12.896         l1/local_memory.u_local_ram_bus/ram_port[1].candidate [1]\n CLMA_182_165/Y0                   td                    0.302      13.198 f       l1/u_ram/held_addr[12]/opit_0_MUX4TO1Q/F\n                                   net (fanout=1)        1.180      14.378         l1/s1_addr_o [12]\n CLMA_166_224/Y0                   td                    0.196      14.574 f       l1/u_ram/ram222/U_ipml_spram_ram2/addr_bus_rd_ce[0]/opit_0_L5Q_perm/Z\n                                   net (fanout=32)       2.833      17.407         l1/u_ram/active_addr [12]\n DRM_82_44/CSB[0]                                                          f       l1/u_ram/ram222/U_ipml_spram_ram2/ADDR_LOOP[2].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm/CSB[0]\n\n Data arrival time                                                  17.407         Logic Levels: 14 \n                                                                                   Logic: 4.214ns(33.858%), Route: 8.232ns(66.142%)\n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                        15.384      15.384 r                        \n P20                                                     0.000      15.384 r       clk (port)       \n                                   net (fanout=1)        0.074      15.458         clk              \n IOBS_LR_328_209/DIN               td                    1.047      16.505 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000      16.505         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.048      16.553 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.758      17.311         _N10             \n PLL_158_55/CLK_OUT0               td                    0.100      17.411 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.059      18.470         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000      18.470 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.575      20.045         ntclkbufg_0      \n DRM_82_44/CLKB[0]                                                         r       l1/u_ram/ram222/U_ipml_spram_ram2/ADDR_LOOP[2].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm/CLKB[0]\n clock pessimism                                         0.290      20.335                          \n clock uncertainty                                      -0.150      20.185                          \n\n Setup time                                             -0.102      20.083                          \n\n Data required time                                                 20.083                          \n----------------------------------------------------------------------------------------------------\n Data required time                                                 20.083                          \n Data arrival time                                                  17.407                          \n----------------------------------------------------------------------------------------------------\n Slack (MET)                                                         2.676"
+  },
+  "after": {
+    "all_reported_constraints_met": true,
+    "lut": 4809,
+    "ff": 3709,
+    "distributed_ram": 34,
+    "apm": 4,
+    "drm": 48,
+    "requested_frequency_mhz": 65.003,
+    "estimated_fmax_mhz": 83.507,
+    "setup_slow": {
+      "worst_slack_ns": 3.409,
+      "failing_endpoints": 0
+    },
+    "hold_slow": {
+      "worst_slack_ns": 0.243,
+      "failing_endpoints": 0
+    },
+    "setup_fast": {
+      "worst_slack_ns": 6.861,
+      "failing_endpoints": 0
+    },
+    "hold_fast": {
+      "worst_slack_ns": 0.172,
+      "failing_endpoints": 0
+    },
+    "worst_system_setup_path": "Startpoint  : l1/u_tinyriscv_core/ex_rs2[0]/opit_0_L5Q_perm/CLK\nEndpoint    : l1/u_tinyriscv_core/ex_inst[2]/opit_0/CE\nPath Group  : sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred\nPath Type   : max (slow corner)\nPath Class  : sequential timing path\nClock Skew  :    -0.036  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)\n  Capture Clock Delay     :  4.617\n  Launch Clock Delay      :  4.961\n  Clock Pessimism Removal :  0.308\n\n Location                          Delay Type             Incr        Path         Logical Resource \n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                         0.000       0.000 r                        \n P20                                                     0.000       0.000 r       clk (port)       \n                                   net (fanout=1)        0.074       0.074         clk              \n IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.787       2.191         _N10             \n PLL_158_55/CLK_OUT0               td                    0.107       2.298 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.078       3.376         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000       3.376 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.585       4.961         ntclkbufg_0      \n CLMA_154_132/CLK                                                          r       l1/u_tinyriscv_core/ex_rs2[0]/opit_0_L5Q_perm/CLK\n\n CLMA_154_132/Q3                   tco                   0.288       5.249 r       l1/u_tinyriscv_core/ex_rs2[0]/opit_0_L5Q_perm/Q\n                                   net (fanout=1)        0.454       5.703         l1/u_tinyriscv_core/ex_rs2 [0]\n CLMA_154_141/Y3                   td                    0.465       6.168 f       l1/u_tinyriscv_core/N1264_5/gateop_perm/Z\n                                   net (fanout=32)       0.949       7.117         l1/u_tinyriscv_core/N1264_inv\n CLMA_134_116/Y0                   td                    0.320       7.437 r       l1/u_tinyriscv_core/mem_store_data[2]/opit_0_MUX4TO1Q/F\n                                   net (fanout=7)        0.741       8.178         l1/u_tinyriscv_core/src2 [2]\n                                   td                    0.288       8.466 f       l1/u_tinyriscv_core/N433.slt_0/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.466         l1/u_tinyriscv_core/N433.co [2]\n CLMA_146_128/COUT                 td                    0.058       8.524 r       l1/u_tinyriscv_core/N433.slt_2/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.524         l1/u_tinyriscv_core/N433.co [6]\n                                   td                    0.058       8.582 r       l1/u_tinyriscv_core/N433.slt_4/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.582         l1/u_tinyriscv_core/N433.co [10]\n CLMA_146_132/COUT                 td                    0.058       8.640 r       l1/u_tinyriscv_core/N433.slt_6/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.640         l1/u_tinyriscv_core/N433.co [14]\n                                   td                    0.058       8.698 r       l1/u_tinyriscv_core/N433.slt_8/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.698         l1/u_tinyriscv_core/N433.co [18]\n CLMA_146_136/COUT                 td                    0.058       8.756 r       l1/u_tinyriscv_core/N433.slt_10/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.756         l1/u_tinyriscv_core/N433.co [22]\n                                   td                    0.058       8.814 r       l1/u_tinyriscv_core/N433.slt_12/gateop_A2/Cout\n                                   net (fanout=1)        0.000       8.814         l1/u_tinyriscv_core/N433.co [26]\n CLMA_146_140/Y3                   td                    0.151       8.965 r       l1/u_tinyriscv_core/N433.slt_14/gateop_A2/Y1\n                                   net (fanout=1)        0.603       9.568         _N5              \n CLMA_130_144/Y3                   td                    0.210       9.778 r       l1/u_tinyriscv_core/N450_5/gateop_perm/Z\n                                   net (fanout=3)        0.278      10.056         l1/u_tinyriscv_core/N450\n CLMS_130_141/Y3                   td                    0.288      10.344 f       l1/u_tinyriscv_core/ex_next_pc_9_2/gateop/F\n                                   net (fanout=33)       0.789      11.133         l1/u_tinyriscv_core/_N23071\n CLMA_146_152/Y1                   td                    0.212      11.345 r       l1/u_tinyriscv_core/mem_next_pc[1]/opit_0_L5Q_perm/Z\n                                   net (fanout=2)        0.311      11.656         l1/u_tinyriscv_core/ex_next_pc [1]\n CLMA_154_153/Y3                   td                    0.303      11.959 r       l1/u_tinyriscv_core/N585/gateop/F\n                                   net (fanout=5)        0.551      12.510         l1/u_tinyriscv_core/N585\n CLMA_146_156/Y1                   td                    0.212      12.722 r       l1/u_tinyriscv_core/N659_1/gateop_perm/Z\n                                   net (fanout=2)        0.462      13.184         l1/u_tinyriscv_core/N659\n CLMA_158_152/Y2                   td                    0.286      13.470 r       l1/u_tinyriscv_core/N679_24/gateop_perm/Z\n                                   net (fanout=1)        0.122      13.592         l1/u_tinyriscv_core/_N27412\n CLMA_158_152/Y3                   td                    0.287      13.879 r       l1/u_tinyriscv_core/N679_32/gateop_perm/Z\n                                   net (fanout=4)        0.596      14.475         l1/u_tinyriscv_core/_N27413\n CLMA_166_148/Y2                   td                    0.286      14.761 r       l1/u_tinyriscv_core/N679_26/gateop_perm/Z\n                                   net (fanout=160)      0.892      15.653         l1/u_tinyriscv_core/id_fire\n CLMA_138_136/CECO                 td                    0.184      15.837 r       l1/u_tinyriscv_core/ex_imm[27]/opit_0_L5Q_perm/CEOUT\n                                   net (fanout=4)        0.000      15.837         ntR663           \n CLMA_138_140/CECO                 td                    0.184      16.021 r       l1/u_tinyriscv_core/ex_inst[31]/opit_0/CEOUT\n                                   net (fanout=4)        0.000      16.021         ntR662           \n CLMA_138_144/CECI                                                         r       l1/u_tinyriscv_core/ex_inst[2]/opit_0/CE\n\n Data arrival time                                                  16.021         Logic Levels: 16 \n                                                                                   Logic: 4.312ns(38.987%), Route: 6.748ns(61.013%)\n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                        15.384      15.384 r                        \n P20                                                     0.000      15.384 r       clk (port)       \n                                   net (fanout=1)        0.074      15.458         clk              \n IOBS_LR_328_209/DIN               td                    1.047      16.505 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000      16.505         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.048      16.553 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.758      17.311         _N10             \n PLL_158_55/CLK_OUT0               td                    0.100      17.411 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.059      18.470         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000      18.470 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.531      20.001         ntclkbufg_0      \n CLMA_138_144/CLK                                                          r       l1/u_tinyriscv_core/ex_inst[2]/opit_0/CLK\n clock pessimism                                         0.308      20.309                          \n clock uncertainty                                      -0.150      20.159                          \n\n Setup time                                             -0.729      19.430                          \n\n Data required time                                                 19.430                          \n----------------------------------------------------------------------------------------------------\n Data required time                                                 19.430                          \n Data arrival time                                                  16.021                          \n----------------------------------------------------------------------------------------------------\n Slack (MET)                                                         3.409"
+  },
+  "functional_checks": {
+    "pipeline": {
+      "suite": "pipeline",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "statistics_event_pipeline",
+          "status": "PASS"
+        },
+        {
+          "name": "ifu_fifo_protocol",
+          "status": "PASS"
+        },
+        {
+          "name": "five_stage_hazards",
+          "cycles": 832,
+          "status": "PASS",
+          "parallel_grants": 8
+        },
+        {
+          "name": "five_stage_variable_latency",
+          "status": "PASS",
+          "cycles": 1410
+        }
+      ]
+    },
+    "unit": {
+      "suite": "unit",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "local_ram_owner",
+          "status": "PASS",
+          "cases": 10
+        }
+      ]
+    },
+    "data": {
+      "suite": "data",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "ram2_parallel",
+          "cycles": 1374,
+          "status": "PASS",
+          "parallel_grants": 109
+        }
+      ]
+    }
+  },
+  "constraint_sha256": "bb4970715b4dedfd55bb1a43cedcabcdd6b9865115bdbe54bcc1e151b9d4aa3e",
+  "constraint_matches_previous_external_file": true,
+  "rtl_sha256": {
+    "core\\csr_reg.v": "27880c2d25a9d85dfbd7e0da1606e0dac481dccd40fca5c73bbc3a88addf7560",
+    "core\\defines.v": "84ab773ac284d4bfcbacf0ecb7d507ff98db8ac73f36fd263aebfe54d1c186e7",
+    "core\\divider.v": "a0748e6b93df741ad72547bb2192befb1a89606ffacdec2083e9c951a9916906",
+    "core\\exu_muldiv.v": "cc3203af1949e438da13b9ded847513234db6133f1968733855d4333a06490d7",
+    "core\\gpr_reg.v": "5cf4f9e81a14f7ff22cf03e69654885aca5c452ed072226f19b6542ebd290a98",
+    "core\\idu.v": "36e2505a7dfd8304c99e9a05e2d7dc7cef6a9be5d3ed276439d78de9c600a0dd",
+    "core\\ifu.v": "4c251a6e4258e0abfa1e8b1f0a489b0a375b466a83b1704b8eaaf5c4534e7080",
+    "core\\rst_ctrl.v": "8ed3a6533d222f1e972ccd5134ccb0085df87318492c68e6a3b8742933222331",
+    "core\\tinyriscv_core.v": "1815ae660d64ef704ff5734335105e6329499e793e9b96db0cf210cb59fe0d0c",
+    "debug\\jtag_dm.v": "cd9ed46643f7d436c99d8afc46c5ca3d800230613c20f2d964c71c8c4b01be4b",
+    "debug\\jtag_driver.v": "a10272fe6568e9359a191fc50b50b425a4ec1489ba264f2be5f809009b89398e",
+    "debug\\jtag_top.v": "e79c59d9a767e9c3a6bd39f1943855d2ef6db3d0ec589b3159add0d1afbc5741",
+    "perips\\gpio.v": "af1195012121d630b3b198b7c7bacf1b450770ab0b993d54999bb100b88bd1aa",
+    "perips\\ram.v": "92d2ce0b7bd99f0ffb957a66e0820bad8217b2c8337f4c07a933386f3274733c",
+    "perips\\rom.v": "a3122ba6f3ab50a469e4071f3093c68351ff314a96f5a71b1c70f8bcfce92703",
+    "perips\\timer.v": "f1b2ae17f219f496fb9185adcd5244fb473b8d8c646bbaf0de7f856834e37da7",
+    "perips\\uart.v": "1016dd9887975a2419c0a11c57956d5f3e9a49e134c496aea3083cc2534ee79b",
+    "source\\top.v": "703f7b607fdd09f58261373a2d92f28dec8d3f6510397f77415eed0d9d9b1b0e",
+    "sys_bus\\local_ram_bus.v": "5d111b3897c73ed191c5a7ea4ee67951221e57cdf0319a1c9c42fd54218003a0",
+    "top\\tinyriscv_soc_top.v": "81890980cb67364902ac6ca6f2348633b7a57c2efbae50fec19787e832663019",
+    "utils\\full_handshake_rx.v": "c5716da0d8f2c696bac3e0926775211a6e9fb58763728bf2cb7007117d47460c",
+    "utils\\full_handshake_tx.v": "824b60787e0e7c418a148945c1a493b7cde47ad1cedc217b4efe5839775de3ab",
+    "utils\\gen_buf.v": "185d5aa5df83c124bc3e76c82f445bfc6520aa7c12c41924390094ad781789ef",
+    "utils\\gen_dff.v": "bdacbffdee766b45821de109e06c940659464764c0bf72050e0f750e34fcaa8d",
+    "utils\\gen_ram.v": "2c1b738c07e348adae6545f84988f13371dd72b2beeaef7ada5bc9b5d75c7b20",
+    "utils\\vld_rdy.v": "09f7b469037d27f65d624139a0501dfc7f4869260715c4623059c20d05efcbb9"
+  },
+  "raw_report_sha256": {
+    "before/report_timing/top.rtr": "ceea771bf97401e5930816f7919c4af5364520204447948159c6fc035c37a13e",
+    "before/place_route/top.prr": "89b0e11a225e54f96773875828f74a2cbe76742c49856f919c3a117cef36c8a8",
+    "before/synthesize/top.snr": "83e8aefdc7db9009db712f8425ff1fa3f534d0017b61a7da6bb4ea95a3d8857d",
+    "after/report_timing/top.rtr": "9577f78ad2058dc9e77b937832656185f676d410ae1ed9cb9f88f2d4fdefda97",
+    "after/place_route/top.prr": "243d03c0c6d870201e3fb088b677a5a65c51c713c7b6e165975bbc4033e5b48a",
+    "after/synthesize/top.snr": "2151c763cdc4792bf4269a058f22b602de86d65679c0d978b4af5cc7e71a7812"
+  },
+  "functional_log_sha256": {
+    "compile_ifu_fifo.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_latency.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_soc.log": "2b7d613e39f3cd1181631d571da485224e23d1dcd1cc60830ee53298733d8162",
+    "compile_stat_pipeline.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "five_stage_hazards.log": "d3af8e3620a19aeeec4bfb0dc2f0052676d75bcfa8c05f72c0a59cf3deeb7d71",
+    "five_stage_hazards_build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "five_stage_hazards_objcopy.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ifu_fifo.log": "4f4349f2e49dbcc8b5339d66dfe297a1a69f4d5e01ca77143670d44295dbfae6",
+    "latency.log": "197f0a16a208d50c0c826501a974ad144cdc587ecca707b00ab3643855a69224",
+    "owner.log": "dde21e02df6f9c8bd5e038bfa36c1dfb82b1981145108bf715d5f05a92c24199",
+    "ram2_parallel.log": "29411feed72483d1375e7f3e206857a0e232ad8eb3ff593497db40e6dda8d95d",
+    "ram2_parallel_build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ram2_parallel_objcopy.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stat_pipeline.log": "0cf0a209c43d33b269af05f70a4f25a528862f8a112a5830c6739af3f769aabd"
+  },
+  "limits": [
+    "Existing pipeline, RAM owner and parallel data checks; no full ISA or formal CoreMark benchmark.",
+    "Timing uses existing 65 MHz PLL and constraints, not an 80 MHz build or board measurement.",
+    "IO constraints remain partial; no full IO/CDC signoff claim.",
+    "No bitstream generation/download or commit."
+  ],
+  "coremark_smoke": {
+    "before": {
+      "suite": "coremark",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "coremark_smoke",
+          "cycles": 612638,
+          "status": "PASS",
+          "parallel_grants": 71982,
+          "benchmark_cycles": 505560
+        }
+      ]
+    },
+    "after": {
+      "suite": "coremark",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "coremark_smoke",
+          "cycles": 692010,
+          "status": "PASS",
+          "parallel_grants": 62329,
+          "benchmark_cycles": 573189
+        }
+      ]
+    }
+  },
+  "coremark_firmware_sha256": {
+    "before": "ca29d6155abbe6a6bafb108042e22aae18e97dd1e4d9685efbc0591f572fabb7",
+    "after": "ca29d6155abbe6a6bafb108042e22aae18e97dd1e4d9685efbc0591f572fabb7"
+  },
+  "test_config_change": "cpu_latency_tb EARLY_LOCAL_REQUEST default changed to 0 to match SoC",
+  "coremark_log_sha256": {
+    "before": "20b4bb218cd3876e6734604b94842621f42229f9a0a253177e370987cb891b43",
+    "after": "b7f4064ceda23a69324f8fd8710c6dcdc6adacea2c2a6d25b67e8368ed0efb65"
+  },
+  "smoke_tradeoff": {
+    "cycle_increase_percent": 13.377047234749595,
+    "same_clock_throughput_change_percent": -11.798726074645538,
+    "throughput_change_at_estimated_fmax_percent": -6.400683919576878,
+    "hypothetical_80_vs_65_mhz_throughput_change_percent": 8.55541406197473,
+    "break_even_mhz_against_65_mhz_baseline": 73.69508070258723,
+    "scope": "One-iteration simulation sample, not a valid CoreMark score or measured board throughput."
+  }
+}

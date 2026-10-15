@@ -1,8 +1,8 @@
 #ifndef _UTILS_H_
 #define _UTILS_H_
 
-#define CPU_FREQ_HZ   (65000000)  // 65MHz
-#define CPU_FREQ_MHZ  (65)        // 65MHz
+#define CPU_FREQ_HZ   (77000000)  // 77MHz
+#define CPU_FREQ_MHZ  (77)        // 77MHz
 
 
 #define read_csr(reg) ({ unsigned long __tmp; \

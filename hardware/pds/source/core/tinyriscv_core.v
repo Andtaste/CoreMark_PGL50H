@@ -205,10 +205,15 @@ module tinyriscv_core #(
     wire id_match_ex2=ex_valid && ex_rd_we && !ex_exception && ex_rd!=0 && ex_rd==id_rs2;
     wire id_match_mem1=mem_complete && mem_rd_we && !mem_exception && mem_rd!=0 && mem_rd==id_rs1;
     wire id_match_mem2=mem_complete && mem_rd_we && !mem_exception && mem_rd!=0 && mem_rd==id_rs2;
+    // ID's EX/MEM load interlocks prevent admission behind an unresolved
+    // load producer. A valid MEM forwarding match therefore selects an ALU/M
+    // result; it needs no live mem_load qualification on the operand mux.
+    // Keep ex_load_dependency below as an advance guard. Future load bypass
+    // must revisit this invariant and forward the completed load value.
     wire[31:0] src1=ex_rs1==0 ? 32'b0 :
-        (ex_fwd_mem1 && !mem_load) ? mem_result : ex_fwd_wb1 ? wb_result : ex_src1;
+        ex_fwd_mem1 ? mem_result : ex_fwd_wb1 ? wb_result : ex_src1;
     wire[31:0] src2=ex_rs2==0 ? 32'b0 :
-        (ex_fwd_mem2 && !mem_load) ? mem_result : ex_fwd_wb2 ? wb_result : ex_src2;
+        ex_fwd_mem2 ? mem_result : ex_fwd_wb2 ? wb_result : ex_src2;
     wire ex_load_dependency=mem_load && (ex_fwd_mem1 || ex_fwd_mem2);
     wire[6:0] opcode=ex_inst[6:0];
     wire[2:0] funct3=ex_inst[14:12];
