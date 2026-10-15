@@ -1,11 +1,10 @@
 `timescale 1ns/1ps
 module cpu_bus_soc_tb;
-    parameter PARALLEL_ACCESS = 1;
     reg clk=0;
     always #10 clk=~clk;
     reg rst_n=0;
     wire[1:0] gpio;
-    tinyriscv_soc_top #(.PARALLEL_ACCESS(PARALLEL_ACCESS)) dut(
+    tinyriscv_soc_top dut(
         .clk(clk), .rst_ext_i(rst_n), .halted_ind(),
         .uart_tx_pin(), .uart_rx_pin(1'b1), .gpio(gpio),
         .jtag_TCK(1'b0), .jtag_TMS(1'b1), .jtag_TDI(1'b0), .jtag_TDO()
@@ -67,7 +66,7 @@ module cpu_bus_soc_tb;
         #100;
         if (!coremark && dut.u_tinyriscv_core.u_gpr_reg.regs[27]!==32'd1)
             $fatal(1, "TEST_FAIL testnum=%0d", dut.u_tinyriscv_core.u_gpr_reg.regs[3]);
-        $display("\nTEST_PASS cycles=%0d mode=%0d parallel_grants=%0d", cycles, PARALLEL_ACCESS, parallel_grants);
+        $display("\nTEST_PASS cycles=%0d parallel_grants=%0d", cycles, parallel_grants);
         $finish;
     end
 endmodule

@@ -19,35 +19,11 @@
         )
         (_widget wgt_my_design_src
             (_input
-                (_file "source/core/clint.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
                 (_file "source/core/csr_reg.v"
                     (_format verilog)
                     (_timespec "2023-09-01T16:33:55")
                 )
                 (_file "source/core/divider.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
-                (_file "source/core/exu.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
-                (_file "source/core/exu_alu_datapath.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
-                (_file "source/core/exu_commit.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
-                (_file "source/core/exu_dispatch.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
-                (_file "source/core/exu_mem.v"
                     (_format verilog)
                     (_timespec "2023-09-01T16:33:55")
                 )
@@ -63,19 +39,7 @@
                     (_format verilog)
                     (_timespec "2023-09-01T16:33:55")
                 )
-                (_file "source/core/idu_exu.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
                 (_file "source/core/ifu.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
-                (_file "source/core/ifu_idu.v"
-                    (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
-                )
-                (_file "source/core/pipe_ctrl.v"
                     (_format verilog)
                     (_timespec "2023-09-01T16:33:55")
                 )
@@ -119,9 +83,8 @@
                     (_format verilog)
                     (_timespec "2023-09-01T16:33:55")
                 )
-                (_file "source/sys_bus/rib.v"
+                (_file "source/sys_bus/local_ram_bus.v"
                     (_format verilog)
-                    (_timespec "2023-09-01T16:33:55")
                 )
                 (_file "source/source/top.v" + "top"
                     (_format verilog)

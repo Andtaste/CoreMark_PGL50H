@@ -23,7 +23,12 @@
 // payload/valid feedback. Keep the explicitly coded control bits here; this
 // attribute changes synthesis inference only, not pipeline behavior.
 (* syn_state_machine = 0 *)
-module tinyriscv_core(
+module tinyriscv_core #(
+    // Local synchronous RAM may accept EX's checked request at the EX/MEM
+    // edge, so MEM receives its reply next cycle. MMIO stays non-speculative
+    // in MEM. Future adapters may disable this to launch all requests in MEM.
+    parameter EARLY_LOCAL_REQUEST = 1
+)(
     input wire clk, rst_n,
     output wire[31:0] dbus_addr_o,
     input wire[31:0] dbus_data_i,
@@ -64,13 +69,12 @@ module tinyriscv_core(
     wire[4:0] id_rs1,id_rs2,id_rd;
     wire id_rd_we;
     wire[31:0] id_src1,id_src2,id_imm;
-    wire[`DECINFO_WIDTH-1:0] id_info;
     idu u_idu(
         .clk(clk),.rst_n(rst_n),.inst_i(id_inst),.inst_addr_i(id_pc),
         .rs1_rdata_i(id_src1),.rs2_rdata_i(id_src2),
         .rs1_raddr_o(id_rs1),.rs2_raddr_o(id_rs2),
         .rd_waddr_o(id_rd),.rd_we_o(id_rd_we),
-        .dec_imm_o(id_imm),.dec_info_bus_o(id_info),
+        .dec_imm_o(id_imm),.dec_info_bus_o(),
         .inst_o(),.dec_pc_o(),.rs1_rdata_o(),.rs2_rdata_o(),.stall_o()
     );
 
@@ -79,7 +83,6 @@ module tinyriscv_core(
     reg[4:0] ex_rs1,ex_rs2,ex_rd;
     reg ex_rd_we;
     reg[1:0] ex_fetch_fault;
-    reg[`DECINFO_WIDTH-1:0] ex_info;
     reg ex_md_done;
     reg[31:0] ex_md_saved;
 
@@ -160,18 +163,29 @@ module tinyriscv_core(
         end
     end
 
-    // MEM issues once, then holds metadata until the tagged response arrives.
-    // This conservative first implementation does not speculate MMIO reads
-    // or acknowledge stores before their actual device acceptance.
+    // MEM holds metadata until the accepted response arrives. Local RAM may
+    // have been requested at EX/MEM; MMIO is issued once here. MMIO reads
+    // are not speculated, and stores wait for actual device acceptance.
     wire mem_access=mem_load || mem_store;
     wire mem_complete=mem_valid && (!mem_access || (mem_sent && dbus_rsp_valid_i));
     wire mem_ready=!mem_valid || mem_complete;
-    assign dbus_addr_o=mem_addr;
-    assign dbus_data_o=mem_store_data << {mem_addr[1:0],3'b000};
-    assign dbus_sel_o=mem_funct3==0 ? (4'b0001 << mem_addr[1:0]) :
-        mem_funct3==1 ? (4'b0011 << mem_addr[1:0]) : 4'b1111;
-    assign dbus_req_valid_o=mem_valid && mem_access && !mem_sent && !hard_flush;
-    assign dbus_we_o=mem_store && dbus_req_valid_o;
+    wire mem_request=mem_valid && mem_access && !mem_sent && !hard_flush;
+    wire ex_can_advance;
+    wire ex_local_request=EARLY_LOCAL_REQUEST && ex_can_advance &&
+        (ex_load || ex_store) && ex_address[31:28]<2;
+    // An unaccepted old MEM request always takes priority. ex_can_advance
+    // implies MEM is empty or returning its old response, so these cannot
+    // both be valid. The reply belongs to the newly latched MEM payload.
+    wire use_ex_request=ex_local_request && !mem_request;
+    wire[31:0] request_addr=use_ex_request ? ex_address : mem_addr;
+    wire[31:0] request_data=use_ex_request ? src2 : mem_store_data;
+    wire[2:0] request_funct3=use_ex_request ? funct3 : mem_funct3;
+    assign dbus_addr_o=request_addr;
+    assign dbus_data_o=request_data << {request_addr[1:0],3'b000};
+    assign dbus_sel_o=request_funct3==0 ? (4'b0001 << request_addr[1:0]) :
+        request_funct3==1 ? (4'b0011 << request_addr[1:0]) : 4'b1111;
+    assign dbus_req_valid_o=mem_request || ex_local_request;
+    assign dbus_we_o=dbus_req_valid_o && (use_ex_request ? ex_store : mem_store);
     assign dbus_rsp_ready_o=1'b1;
     wire[31:0] load_shifted=dbus_data_i >> {mem_addr[1:0],3'b000};
     wire[31:0] load_value=mem_funct3==0 ? {{24{load_shifted[7]}},load_shifted[7:0]} :
@@ -341,7 +355,10 @@ module tinyriscv_core(
     end
 
     wire ex_finished=!ex_is_md || ex_md_done || md_ready || ex_exception;
-    wire ex_fire=ex_valid && mem_ready && ex_finished && !ex_load_dependency && !hard_flush;
+    assign ex_can_advance=ex_valid && mem_ready && ex_finished && !ex_load_dependency && !hard_flush;
+    // An early local transaction and its EX payload advance atomically.
+    // A lost arbitration holds EX; no write is sent again after acceptance.
+    wire ex_fire=ex_can_advance && (!ex_local_request || dbus_req_ready_i);
     wire ex_ready=!ex_valid || ex_fire;
     wire id_dep_ex_load=ex_valid && ex_load && ex_rd_we && ex_rd!=0 &&
         (ex_rd==id_rs1 || ex_rd==id_rs2);
@@ -363,14 +380,14 @@ module tinyriscv_core(
         if (!rst_n) begin
             ex_valid<=0; ex_inst<=0; ex_pc<=0; ex_imm<=0;
             ex_src1<=0; ex_src2<=0; ex_rs1<=0; ex_rs2<=0; ex_rd<=0;
-            ex_rd_we<=0; ex_fetch_fault<=0; ex_info<=0;
+            ex_rd_we<=0; ex_fetch_fault<=0;
             ex_md_done<=0; ex_md_saved<=0;
         end else if (hard_flush) begin ex_valid<=0; ex_md_done<=0; end
         else if (id_fire) begin
             ex_valid<=1; ex_inst<=id_inst; ex_pc<=id_pc; ex_imm<=id_imm;
             ex_src1<=id_src1; ex_src2<=id_src2; ex_rs1<=id_rs1; ex_rs2<=id_rs2;
             ex_rd<=id_rd; ex_rd_we<=id_rd_we; ex_fetch_fault<=id_fetch_fault;
-            ex_info<=id_info; ex_md_done<=0;
+            ex_md_done<=0;
         end else begin
             if (ex_fire) begin ex_valid<=0; ex_md_done<=0; end
             else if (ex_valid) begin
@@ -392,7 +409,8 @@ module tinyriscv_core(
             mem_cause<=0; mem_csr_data<=0; mem_csr_addr<=0;
         end else if (hard_flush) begin mem_valid<=0; mem_sent<=0; end
         else if (ex_fire) begin
-            mem_valid<=1; mem_sent<=0; mem_load<=ex_load; mem_store<=ex_store;
+            mem_valid<=1; mem_sent<=ex_local_request && dbus_req_ready_i;
+            mem_load<=ex_load; mem_store<=ex_store;
             mem_rd_we<=ex_rd_we && !ex_exception; mem_rd<=ex_rd;
             mem_funct3<=funct3; mem_pc<=ex_pc; mem_next_pc<=ex_next_pc;
             mem_result<=ex_result; mem_addr<=ex_address; mem_store_data<=src2;

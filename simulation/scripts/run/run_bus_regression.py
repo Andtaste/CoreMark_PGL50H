@@ -1,4 +1,4 @@
-"""Check per-slave arbitration and run RV32IM programs on the current SoC RTL.
+"""Run the existing functional checks on the current local-RAM SoC RTL.
 
 Requires Python 3, Icarus Verilog (iverilog/vvp), and GCC for --suite coremark.
 Generated firmware, logs and reports stay in ignored simulation directories.
@@ -15,9 +15,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[3]
 SIM = ROOT/'simulation'
 SRC = ROOT/'hardware/pds/source'
-BUILD = SIM/'firmware/generated/bus_regression'
-LOGS = SIM/'results/logs/bus_regression'
-REPORT = SIM/'results/reports/bus_regression.json'
+BUILD = SIM/'firmware/generated/local_ram'
+LOGS = SIM/'results/logs/local_ram'
+REPORT = SIM/'results/reports/local_ram_regression.json'
 
 def executable(name):
     result = shutil.which(name)
@@ -53,15 +53,14 @@ def image(binary, filename):
     filename.write_text(''.join(f'{int.from_bytes(data[i:i+4], "little"):08x}\n'
                               for i in range(0,65536,4)), encoding='ascii')
 
-def compile_soc(iverilog, mode):
-    output = BUILD/f'soc_{mode}.vvp'
+def compile_soc(iverilog):
+    output = BUILD/'soc.vvp'
     files = sorted(p for directory in ('core','sys_bus','perips','debug','utils')
                    for p in (SRC/directory).glob('*.v') if p.name != 'defines.v')
     files += [SRC/'top/tinyriscv_soc_top.v', SIM/'models/memory/pds_ram_models.v',
               SIM/'tb/soc/cpu_bus_soc_tb.v']
     command([iverilog,'-g2012','-s','cpu_bus_soc_tb',
-             '-P',f'cpu_bus_soc_tb.PARALLEL_ACCESS={mode}',
-             '-I',SRC/'core','-o',output,*files], LOGS/f'compile_soc_{mode}.log')
+             '-I',SRC/'core','-o',output,*files], LOGS/'compile_soc.log')
     return output
 
 def coremark_binary(gcc):
@@ -104,7 +103,7 @@ def main():
     parser.add_argument('--iverilog', default='iverilog')
     parser.add_argument('--vvp', default='vvp')
     parser.add_argument('--gcc', default='riscv-none-elf-gcc')
-    parser.add_argument('--suite', choices=['unit','isa','data','pipeline','coremark','all'], default='all')
+    parser.add_argument('--suite', choices=['unit','isa','data','pipeline','coremark','all'], default='pipeline')
     parser.add_argument('--coremark-timeout', type=int, default=1800,
                         help='Host timeout in seconds for each CoreMark functional smoke run')
     args = parser.parse_args()
@@ -113,28 +112,14 @@ def main():
     LOGS.mkdir(parents=True,exist_ok=True)
     results = []
     if args.suite in ('unit','all'):
-        old = ROOT/'references/pgl22g/source/sys_bus/rib.v'
-        baseline = BUILD/'rib_baseline.v'
-        baseline_text = old.read_text('utf-8').replace('module rib #(', 'module rib_baseline #(',1)
-        # The archived RTL shares integer j between two combinational blocks.
-        # Split only these simulation loop indices; the mux equations are unchanged.
-        baseline_text = baseline_text.replace('begin: m_out', 'begin: m_out\n        integer j;')
-        baseline_text = baseline_text.replace('begin: s_out', 'begin: s_out\n        integer j;')
-        baseline.write_text(baseline_text, encoding='utf-8')
-        unit = BUILD/'rib_unit.vvp'
-        command([iv,'-g2012','-s','rib_arb_tb','-o',unit,SRC/'sys_bus/rib.v',
-                 baseline,SIM/'tb/unit/bus/rib_arb_tb.v'],LOGS/'compile_unit.log')
-        output = command([vvp,unit],LOGS/'unit.log')
-        if 'TEST_PASS RIB' not in output: raise RuntimeError('No unit PASS marker')
-        print(output.strip(),flush=True)
-        results.append({'name':'rib_unit','status':'PASS','cases':1003})
-        owner = BUILD/'rib_owner.vvp'
-        command([iv,'-g2012','-s','rib_owner_tb','-o',owner,SRC/'sys_bus/rib.v',
-                 SIM/'tb/unit/bus/rib_owner_tb.v'],LOGS/'compile_owner.log')
+        owner = BUILD/'ram_owner.vvp'
+        command([iv,'-g2012','-s','rib_owner_tb','-o',owner,
+                 SRC/'sys_bus/local_ram_bus.v',SIM/'tb/unit/bus/rib_owner_tb.v'],
+                LOGS/'compile_owner.log')
         output = command([vvp,owner],LOGS/'owner.log')
         if 'TEST_PASS RIB_OWNER' not in output: raise RuntimeError('No owner PASS marker')
         print(output.strip(),flush=True)
-        results.append({'name':'rib_owner','status':'PASS','cases':6})
+        results.append({'name':'local_ram_owner','status':'PASS','cases':6})
     if args.suite in ('isa','data','pipeline','coremark','all'):
         fixtures = sorted((ROOT/'references/tinyriscv/tests/isa/generated').glob('*.bin')) if args.suite in ('isa','all') else []
         fixtures = [p for p in fixtures if p.name.startswith(('rv32ui-','rv32um-'))]
@@ -145,39 +130,32 @@ def main():
             fixtures.append(ram2_binary(args.gcc))
         if args.suite in ('pipeline','all'):
             fixtures.append(ram2_binary(args.gcc,SIM/'tests/pipeline/five_stage_hazards.S'))
-        programs = {mode:compile_soc(iv,mode) for mode in (0,1)}
+        program = compile_soc(iv)
         for binary in fixtures:
             hexfile = BUILD/(binary.stem+'.hex')
             image(binary,hexfile)
             is_coremark = binary.name=='coremark_smoke.bin'
-            final_crc = None
-            for mode in (0,1):
-                extra = ['+finish_pc='+(BUILD/'coremark_finish_pc.txt').read_text('ascii')] if is_coremark else []
-                output = command([vvp,programs[mode],f'+image={hexfile}',
-                                  '+limit='+('3000000' if is_coremark else '250000'),
-                                  f'+coremark={int(is_coremark)}',*extra],LOGS/f'{binary.stem}_{mode}.log',
-                                 timeout=args.coremark_timeout if is_coremark else 120)
-                if 'TEST_PASS' not in output: raise RuntimeError(f'No PASS: {binary.name} mode={mode}')
-                if is_coremark:
-                    for label,value in [('seedcrc','e9f5'),('crclist','e714'),('crcmatrix','1fd7'),('crcstate','8e3a')]:
-                        if not re.search(label+r'\s*:\s*0x'+value,output):
-                            raise RuntimeError(f'CoreMark {label} mismatch mode={mode}')
-                    current_crc = re.search(r'crcfinal\s*:\s*0x([0-9a-fA-F]+)',output)
-                    if not current_crc: raise RuntimeError('Missing CoreMark final CRC')
-                    if final_crc is not None and current_crc[1] != final_crc:
-                        raise RuntimeError('CoreMark final CRC differs between modes')
-                    final_crc = current_crc[1]
-                cycles = int(re.search(r'TEST_PASS cycles=(\d+)', output)[1])
-                item = {'name':binary.stem,'mode':mode,'cycles':cycles,'status':'PASS'}
-                grants = re.search(r'parallel_grants=(\d+)',output)
-                if grants:
-                    item['parallel_grants'] = int(grants[1])
-                if binary.name=='ram2_parallel.bin' and mode==1 and not item.get('parallel_grants'):
-                    raise RuntimeError('No simultaneous fetch/data requests observed')
-                if is_coremark:
-                    item['benchmark_cycles'] = int(re.search(r'Benchmark cycles64\s*:\s*(\d+)',output)[1])
-                results.append(item)
-                print(item,flush=True)
+            extra = ['+finish_pc='+(BUILD/'coremark_finish_pc.txt').read_text('ascii')] if is_coremark else []
+            output = command([vvp,program,f'+image={hexfile}',
+                              '+limit='+('3000000' if is_coremark else '250000'),
+                              f'+coremark={int(is_coremark)}',*extra],LOGS/f'{binary.stem}.log',
+                             timeout=args.coremark_timeout if is_coremark else 120)
+            if 'TEST_PASS' not in output: raise RuntimeError(f'No PASS: {binary.name}')
+            if is_coremark:
+                for label,value in [('seedcrc','e9f5'),('crclist','e714'),('crcmatrix','1fd7'),('crcstate','8e3a'),('crcfinal','e714')]:
+                    if not re.search(label+r'\s*:\s*0x'+value,output):
+                        raise RuntimeError(f'CoreMark {label} mismatch')
+            cycles = int(re.search(r'TEST_PASS cycles=(\d+)', output)[1])
+            item = {'name':binary.stem,'cycles':cycles,'status':'PASS'}
+            grants = re.search(r'parallel_grants=(\d+)',output)
+            if grants:
+                item['parallel_grants'] = int(grants[1])
+            if binary.name=='ram2_parallel.bin' and not item.get('parallel_grants'):
+                raise RuntimeError('No simultaneous fetch/data requests observed')
+            if is_coremark:
+                item['benchmark_cycles'] = int(re.search(r'Benchmark cycles64\s*:\s*(\d+)',output)[1])
+            results.append(item)
+            print(item,flush=True)
         if args.suite in ('pipeline','all'):
             latency = BUILD/'cpu_latency.vvp'
             files = sorted(p for p in (SRC/'core').glob('*.v') if p.name!='defines.v')
@@ -190,7 +168,7 @@ def main():
                             'cycles':int(re.search(r'LATENCY cycles=(\d+)',output)[1])})
             print(output.strip(),flush=True)
     REPORT.parent.mkdir(parents=True,exist_ok=True)
-    report = REPORT.with_name('bus_regression_'+args.suite+'.json')
+    report = REPORT.with_name('local_ram_regression_'+args.suite+'.json')
     report.write_text(json.dumps({'suite':args.suite,'scope':'Functional synchronous RAM models; no FPGA timing verification',
                                   'results':results},indent=2)+'\n',encoding='utf-8')
     print(f'PASS: {len(results)} runs; report: {report}',flush=True)

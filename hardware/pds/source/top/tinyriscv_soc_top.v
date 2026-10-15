@@ -17,10 +17,7 @@
 `include "../core/defines.v"
 
 // tinyriscv soc顶层模块
-module tinyriscv_soc_top #(
-    // 0: original global arbitration; 1: independent slave arbitration.
-    parameter PARALLEL_ACCESS = 1
-)(
+module tinyriscv_soc_top(
 
     input wire clk,
     input wire rst_ext_i,
@@ -71,17 +68,6 @@ module tinyriscv_soc_top #(
     wire m2_req_rdy_o;
     wire m2_rsp_vld_o;
     wire[31:0] m2_data_o;
-
-    // master 3 interface
-    wire[31:0] m3_addr_i;
-    wire[31:0] m3_data_i;
-    wire[3:0] m3_sel_i;
-    wire m3_req_vld_i;
-    wire m3_rsp_rdy_i;
-    wire m3_we_i;
-    wire m3_req_rdy_o;
-    wire m3_rsp_vld_o;
-    wire[31:0] m3_data_o;
 
     // slave 0 interface
     wire[31:0] s0_data_i;
@@ -177,7 +163,9 @@ module tinyriscv_soc_top #(
     assign halted_ind = ~jtag_halt_req_o;
 
     // tinyriscv处理器核模块例化
-    tinyriscv_core u_tinyriscv_core(
+    tinyriscv_core #(
+        .EARLY_LOCAL_REQUEST(1)
+    ) u_tinyriscv_core(
         .clk(clk),
         .rst_n(rst_n),
 
@@ -328,13 +316,8 @@ module tinyriscv_soc_top #(
         .reset_req_o(jtag_reset_req_o)
     );
 
-    // rib总线模块例化
-    rib #(
-        .MASTER_NUM(3),
-        .SLAVE_NUM(5),
-        .PARALLEL_ACCESS(PARALLEL_ACCESS),
-        .REGISTERED_RESPONSE(1)
-    ) u_rib(
+    generate begin: local_memory
+        local_ram_bus u_local_ram_bus(
         .clk(clk),
         .rst_n(rst_n),
 
@@ -370,17 +353,6 @@ module tinyriscv_soc_top #(
         .m2_req_rdy_o(m2_req_rdy_o),
         .m2_rsp_vld_o(m2_rsp_vld_o),
         .m2_data_o(m2_data_o),
-
-        // master 3 interface
-        .m3_addr_i(m3_addr_i),
-        .m3_data_i(m3_data_i),
-        .m3_sel_i(m3_sel_i),
-        .m3_req_vld_i(m3_req_vld_i),
-        .m3_rsp_rdy_i(m3_rsp_rdy_i),
-        .m3_we_i(m3_we_i),
-        .m3_req_rdy_o(m3_req_rdy_o),
-        .m3_rsp_vld_o(m3_rsp_vld_o),
-        .m3_data_o(m3_data_o),
 
         // slave 0 interface
         .s0_data_i(s0_data_i),
@@ -436,6 +408,7 @@ module tinyriscv_soc_top #(
         .s4_req_vld_o(s4_req_vld_o),
         .s4_rsp_rdy_o(s4_rsp_rdy_o),
         .s4_we_o(s4_we_o)
-    );
+        );
+    end endgenerate
 
 endmodule

@@ -12,7 +12,7 @@ module rib_owner_tb;
     integer writes=0;
     wire sg0=!sv0 || sr0;
     wire sg1=!sv1 || sr1;
-    rib #(.MASTER_NUM(2),.SLAVE_NUM(2),.PARALLEL_ACCESS(1),.REGISTERED_RESPONSE(1)) dut(
+        local_ram_bus dut(
         .clk(clk),.rst_n(rst_n),
         .m0_addr_i(a0),.m0_data_i(32'b0),.m0_sel_i(4'hf),.m0_we_i(1'b0),
         .m0_req_vld_i(q0),.m0_rsp_rdy_i(r0),.m0_req_rdy_o(g0),.m0_rsp_vld_o(v0),.m0_data_o(d0),
@@ -20,8 +20,6 @@ module rib_owner_tb;
         .m1_req_vld_i(q1),.m1_rsp_rdy_i(r1),.m1_req_rdy_o(g1),.m1_rsp_vld_o(v1),.m1_data_o(d1),
         .m2_addr_i(32'b0),.m2_data_i(32'b0),.m2_sel_i(4'b0),.m2_we_i(1'b0),
         .m2_req_vld_i(1'b0),.m2_rsp_rdy_i(1'b1),
-        .m3_addr_i(32'b0),.m3_data_i(32'b0),.m3_sel_i(4'b0),.m3_we_i(1'b0),
-        .m3_req_vld_i(1'b0),.m3_rsp_rdy_i(1'b1),
         .s0_addr_o(sa0),.s0_req_vld_o(sq0),.s0_rsp_rdy_o(sr0),.s0_we_o(sw0),
         .s0_data_i(sd0),.s0_req_rdy_i(sg0),.s0_rsp_vld_i(sv0),
         .s1_addr_o(sa1),.s1_req_vld_o(sq1),.s1_rsp_rdy_o(sr1),.s1_we_o(sw1),
@@ -29,7 +27,7 @@ module rib_owner_tb;
         .s2_data_i(32'b0),.s2_req_rdy_i(1'b0),.s2_rsp_vld_i(1'b0),
         .s3_data_i(32'b0),.s3_req_rdy_i(1'b0),.s3_rsp_vld_i(1'b0),
         .s4_data_i(32'b0),.s4_req_rdy_i(1'b0),.s4_rsp_vld_i(1'b0)
-    );
+        );
     always @(posedge clk) begin
         if (!rst_n) begin sv0<=0; sv1<=0; writes<=0; end
         else begin

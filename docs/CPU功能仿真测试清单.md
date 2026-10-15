@@ -56,8 +56,8 @@ CSR/异常测试的启动和参考环境需核对；文件存在不意味着当�
 | [ ] | PIPE-05 | P0 | 乘除法停顿与结果使用 | mul/div→ALU/store/branch；连续两条乘法/除法；不得重复提交结果 | R1 rv32um 用例；补组合程序 |
 | [ ] | PIPE-06 | P0 | 冲刷副作用 | taken branch/JAL 后安排寄存器写、store、CSR 写；检查错误路径没有生效 | R2 I-DELAY_SLOTS-01.S；补 store/CSR 检查 |
 | [ ] | BUS-01 | P0 | 连续数据访存 | store→load 同地址、不同地址、字节交叉写；load/store 交替 | R1 lw.S/sw.S/sb.S/sh.S；补连续压力 |
-| [ ] | BUS-02 | P0 | 指令和数据访问程序 RAM | load 程序区常量、写可写程序区、访问后恢复取指；PC 不重复/漏指令 | 当前 ifu.v、rib.v；补测试 |
-| [ ] | BUS-03 | P1 | 请求背压 | 在实际握手约束内延迟 ready；请求字段稳定、只接受一次 | 当前 ifu.v、exu_mem.v、rib.v；新增 memory/bus 模型 |
+| [ ] | BUS-02 | P0 | 指令和数据访问程序 RAM | load 程序区常量、写可写程序区、访问后恢复取指；PC 不重复/漏指令 | 当前 ifu.v、local_ram_bus.v；补测试 |
+| [ ] | BUS-03 | P1 | 请求背压 | 在实际握手约束内延迟 ready；请求字段稳定、只接受一次 | 当前 ifu.v、tinyriscv_core.v、local_ram_bus.v；memory/bus 模型 |
 | [ ] | BUS-04 | P1 | 响应延迟 | 请求接受后延迟响应，测试固定延迟与可重复随机延迟；无误写回/死锁 | 同上；新增模型。若设计只支持固定延迟，应明确记录限制 |
 | [ ] | SYS-01 | P1 | 复位 | 正常执行、访存等待、除法过程中复位；重新从复位地址启动 | 当前 rst_ctrl.v、ifu.v、divider.v；新增 TB 激励 |
 | [ ] | SYS-02 | P1 | timer 中断与 MRET | 中断使能/关闭、mepc 保存、mstatus 恢复、返回继续执行 | R3 timer_int/main.c；当前 clint.v；补自检查 |

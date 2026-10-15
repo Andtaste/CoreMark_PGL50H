@@ -3,6 +3,7 @@
 // acceptance from response, exercising the frontend skid queue/redirect drain
 // and EX operand preservation while MEM blocks the pipeline.
 module cpu_latency_tb;
+    parameter EARLY_LOCAL_REQUEST = 1;
     reg clk=0,rst_n=0;
     always #10 clk=~clk;
     wire[31:0] ia,da,dw;
@@ -17,7 +18,7 @@ module cpu_latency_tb;
     reg[2047:0] image;
     assign ir=icount==0 && !iv && cycles%3!=0;
     assign dr=dcount==0 && !dv && cycles%4!=0;
-    tinyriscv_core dut(
+    tinyriscv_core #(.EARLY_LOCAL_REQUEST(EARLY_LOCAL_REQUEST)) dut(
         .clk(clk),.rst_n(rst_n),
         .ibus_addr_o(ia),.ibus_data_i(idata),.ibus_data_o(),.ibus_sel_o(),.ibus_we_o(),
         .ibus_req_valid_o(iq),.ibus_req_ready_i(ir),.ibus_rsp_valid_i(iv),.ibus_rsp_ready_o(iv_ready),

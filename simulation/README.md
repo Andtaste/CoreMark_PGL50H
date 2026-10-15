@@ -1,17 +1,18 @@
 # 当前 CPU 仿真目录
 
 在项目已有 simulation/、tb/、scripts/、firmware/、waves/ 基础上完善结构。
-已加入总线仲裁回归环境：仲裁单元检查、当前 SoC 的 RV32I/M 夹具回归、
+已加入本地 RAM 响应归属检查、当前 SoC 的 RV32I/M 夹具回归、
 ram2 连续访问和少量迭代 CoreMark CRC 仿真。其他目录仍有待实现的测试。
 不包含专门的自定义周期统计功能单元测试。
 
 运行入口为 [run_bus_regression.py](scripts/run/run_bus_regression.py)，
-所需工具、协议范围及对比方法见 [总线仲裁优化说明](../docs/总线仲裁优化说明.md)。
+所需工具、协议范围和当前记录见 [微架构变更记录](../docs/微架构变更记录.md)。
 
-`codex/five-stage-pipeline` 分支使用五级内核，协议、资源和验证记录见
-[五级流水线改造说明](../docs/五级流水线改造说明.md)。新增 `--suite pipeline`
+当前为五级内核、本地 RAM 快速通路及共享外设总线。五级初版历史记录见
+[五级流水线改造说明](../docs/五级流水线改造说明.md)。`--suite pipeline`
 覆盖转发、CSR/异常、中断与可变延迟访存；`--suite unit` 还包含响应 owner 背压检查。
-本分支的 PARALLEL_ACCESS=0 只切换请求仲裁，仍使用新响应归属协议。
+入口只运行当前拓扑，已删除旧仲裁对照和重复模式循环。按本次改动选择必要的 suite，
+无需每次运行 all；默认仅运行 pipeline。生成固件在 firmware/generated/local_ram/，日志在 results/logs/local_ram/。
 
 ```text
 simulation/
