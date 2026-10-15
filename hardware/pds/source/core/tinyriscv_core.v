@@ -17,7 +17,7 @@
 `include "defines.v"
 
 // Five-stage, in-order, single-issue RV32IM/Zicsr implementation.
-// IF uses synchronous RAM and a skid queue. ID reads the register file.
+// IF uses synchronous RAM plus a registered instruction FIFO before ID.
 // EX computes/forwards, MEM owns exactly one data transaction, WB commits.
 // PDS 2022.2 can recurse incorrectly while inferring an FSM through pipeline
 // payload/valid feedback. Keep the explicitly coded control bits here; this
@@ -369,6 +369,8 @@ module tinyriscv_core #(
     wire fault_inflight=(ex_valid && ex_exception) ||
         (mem_valid && mem_exception) || (wb_valid && wb_exception);
     wire ex_flush=ex_fire && (ex_redirect || ex_exception);
+    // Kill younger instructions immediately. IF captures redirect targets at
+    // the edge, independently of this same-cycle architectural admission gate.
     assign id_fire=id_valid && ex_ready && !id_dep_ex_load && !id_dep_mem_load &&
         !serial_wait && !irq_pending && !hard_flush && !ex_flush && !fault_inflight;
     assign frontend_stop=jtag_halt_i || irq_pending || trap_state!=0 || fault_inflight;

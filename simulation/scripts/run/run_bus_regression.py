@@ -111,6 +111,15 @@ def main():
     BUILD.mkdir(parents=True,exist_ok=True)
     LOGS.mkdir(parents=True,exist_ok=True)
     results = []
+    if args.suite in ('pipeline','all'):
+        frontend = BUILD/'ifu_fifo.vvp'
+        command([iv,'-g2012','-s','ifu_fifo_tb','-I',SRC/'core',
+                 '-o',frontend,SRC/'core/ifu.v',SIM/'tb/unit/ifu_fifo_tb.v'],
+                LOGS/'compile_ifu_fifo.log')
+        output = command([vvp,frontend],LOGS/'ifu_fifo.log')
+        if 'TEST_PASS IFU_FIFO' not in output: raise RuntimeError('No frontend PASS marker')
+        print(output.strip(),flush=True)
+        results.append({'name':'ifu_fifo_protocol','status':'PASS'})
     if args.suite in ('unit','all'):
         owner = BUILD/'ram_owner.vvp'
         command([iv,'-g2012','-s','rib_owner_tb','-o',owner,

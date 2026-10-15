@@ -10,7 +10,9 @@ ram2 连续访问和少量迭代 CoreMark CRC 仿真。其他目录仍有待实�
 
 当前为五级内核、本地 RAM 快速通路及共享外设总线。五级初版历史记录见
 [五级流水线改造说明](../docs/五级流水线改造说明.md)。`--suite pipeline`
-覆盖转发、CSR/异常、中断与可变延迟访存；`--suite unit` 还包含响应 owner 背压检查。
+覆盖前端 FIFO 协议、转发、CSR/异常、中断与可变延迟访存；`--suite unit` 还包含响应 owner 背压检查。
+前端定向 TB 为 [ifu_fifo_tb.v](tb/unit/ifu_fifo_tb.v)，检查容量预留、满队列、
+背压下请求保持、连续重定向、旧响应丢弃、响应与新请求同拍交接及取指异常 PC。
 入口只运行当前拓扑，已删除旧仲裁对照和重复模式循环。按本次改动选择必要的 suite，
 无需每次运行 all；默认仅运行 pipeline。生成固件在 firmware/generated/local_ram/，日志在 results/logs/local_ram/。
 
