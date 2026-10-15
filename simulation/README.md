@@ -1,12 +1,16 @@
 # 当前 CPU 仿真目录
 
 在项目已有 simulation/、tb/、scripts/、firmware/、waves/ 基础上完善结构。
-本次仅建立目录与测试计划，尚无可运行的新 testbench、用例或测试脚本。
-不包含自定义周期统计功能的测试。
+已加入总线仲裁回归环境：仲裁单元检查、当前 SoC 的 RV32I/M 夹具回归、
+ram2 连续访问和少量迭代 CoreMark CRC 仿真。其他目录仍有待实现的测试。
+不包含专门的自定义周期统计功能单元测试。
+
+运行入口为 [run_bus_regression.py](scripts/run/run_bus_regression.py)，
+所需工具、协议范围及对比方法见 [总线仲裁优化说明](../docs/总线仲裁优化说明.md)。
 
 ```text
 simulation/
-├─ tb/                 core、soc、unit/{alu,muldiv,regfile,csr}
+├─ tb/                 core、soc、unit/{alu,muldiv,regfile,csr,bus}
 ├─ models/             memory、peripherals
 ├─ env/                startup、linker、macros
 ├─ tests/

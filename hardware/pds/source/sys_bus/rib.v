@@ -18,7 +18,8 @@
 // RIB总线模块
 module rib #(
     parameter MASTER_NUM = 3,
-    parameter SLAVE_NUM = 2)(
+    parameter SLAVE_NUM = 2,
+    parameter PARALLEL_ACCESS = 0)(
 
     input wire clk,
     input wire rst_n,
@@ -124,250 +125,176 @@ module rib #(
 
     );
 
-    /////////////////////////////// mux master //////////////////////////////
 
-    wire[MASTER_NUM-1:0] master_req;
-    wire[31:0] master_addr[MASTER_NUM-1:0];
-    wire[31:0] master_data[MASTER_NUM-1:0];
-    wire[3:0] master_sel[MASTER_NUM-1:0];
-    wire[MASTER_NUM-1:0] master_rsp_rdy;
-    wire[MASTER_NUM-1:0] master_we;
+    // Keep the legacy fixed-latency response contract used by IFU/EXU.
+    // Arbitration is combinational. This is NOT an outstanding-transaction
+    // crossbar: variable-latency/slave-switch responses require owner tags
+    // and corresponding master adapters before they can be supported.
+    // Priority is unchanged: m2 (JTAG) > m1 (data) > m0 (fetch), m3 if enabled
+    // has the highest priority, matching the original reversed packing.
+    wire[31:0] m_addr[0:3];
+    wire[31:0] m_wdata[0:3];
+    wire[3:0] m_sel[0:3];
+    wire[3:0] m_req;
+    wire[3:0] m_we;
+    wire[3:0] m_rsp_ready;
+    wire[31:0] m_rdata[0:3];
+    wire[3:0] m_ready;
+    wire[3:0] m_rsp_valid;
+    assign m_addr[0] = m0_addr_i;
+    assign m_addr[1] = m1_addr_i;
+    assign m_addr[2] = m2_addr_i;
+    assign m_addr[3] = m3_addr_i;
+    assign m_wdata[0] = m0_data_i;
+    assign m_wdata[1] = m1_data_i;
+    assign m_wdata[2] = m2_data_i;
+    assign m_wdata[3] = m3_data_i;
+    assign m_sel[0] = m0_sel_i;
+    assign m_sel[1] = m1_sel_i;
+    assign m_sel[2] = m2_sel_i;
+    assign m_sel[3] = m3_sel_i;
+    assign m_req = {m3_req_vld_i, m2_req_vld_i, m1_req_vld_i, m0_req_vld_i};
+    assign m_we = {m3_we_i, m2_we_i, m1_we_i, m0_we_i};
+    assign m_rsp_ready = {m3_rsp_rdy_i, m2_rsp_rdy_i, m1_rsp_rdy_i, m0_rsp_rdy_i};
 
-    genvar i;
+    wire[31:0] s_rdata[0:4];
+    wire[4:0] s_ready;
+    wire[4:0] s_rsp_valid;
+    wire[31:0] s_addr[0:4];
+    wire[31:0] s_wdata[0:4];
+    wire[3:0] s_sel[0:4];
+    wire[4:0] s_req;
+    wire[4:0] s_we;
+    wire[4:0] s_rsp_ready;
+    assign s_rdata[0] = s0_data_i;
+    assign s_rdata[1] = s1_data_i;
+    assign s_rdata[2] = s2_data_i;
+    assign s_rdata[3] = s3_data_i;
+    assign s_rdata[4] = s4_data_i;
+    assign s_ready = {s4_req_rdy_i, s3_req_rdy_i, s2_req_rdy_i, s1_req_rdy_i, s0_req_rdy_i};
+    assign s_rsp_valid = {s4_rsp_vld_i, s3_rsp_vld_i, s2_rsp_vld_i, s1_rsp_vld_i, s0_rsp_vld_i};
+
+    wire[MASTER_NUM-1:0] candidates[0:SLAVE_NUM-1];
+    wire[MASTER_NUM-1:0] grant[0:SLAVE_NUM-1];
+    genvar s, m;
     generate
-
-    if (MASTER_NUM == 2) begin: if_m_num_2
-        assign master_req = {m0_req_vld_i, m1_req_vld_i};
-        assign master_rsp_rdy = {m0_rsp_rdy_i, m1_rsp_rdy_i};
-        assign master_we = {m0_we_i, m1_we_i};
-        wire[32*MASTER_NUM-1:0] m_addr = {m0_addr_i, m1_addr_i};
-        wire[32*MASTER_NUM-1:0] m_data = {m0_data_i, m1_data_i};
-        wire[4*MASTER_NUM-1:0] m_sel = {m0_sel_i, m1_sel_i};
-        for (i = 0; i < MASTER_NUM; i = i + 1) begin: for_m_num_2
-            assign master_addr[i] = m_addr[(i+1)*32-1:32*i];
-            assign master_data[i] = m_data[(i+1)*32-1:32*i];
-            assign master_sel[i] = m_sel[(i+1)*4-1:4*i];
+        for (s = 0; s < 5; s = s + 1) begin: slave_port
+            if (s < SLAVE_NUM) begin: active
+                for (m = 0; m < MASTER_NUM; m = m + 1) begin: arbitration
+                    wire target_match = (m_addr[m][31:28] == s);
+                    // Legacy mode considers all requesting masters before
+                    // decoding; parallel mode arbitrates only this slave.
+                    assign candidates[s][m] = m_req[m] &
+                        ((PARALLEL_ACCESS == 0) | target_match);
+                    if (m == MASTER_NUM - 1) begin: highest
+                        assign grant[s][m] = candidates[s][m] & target_match;
+                    end else begin: lower
+                        assign grant[s][m] = candidates[s][m] & target_match &
+                            (~(|candidates[s][MASTER_NUM-1:m+1]));
+                    end
+                end
+                integer k;
+                reg[31:0] sum_addr, sum_data;
+                reg[3:0] sum_sel;
+                reg sum_req, sum_we, sum_ready;
+                always @ (*) begin
+                    sum_addr = 32'h0;
+                    sum_data = 32'h0;
+                    sum_sel = 4'h0;
+                    sum_req = 1'b0;
+                    sum_we = 1'b0;
+                    sum_ready = 1'b0;
+                    for (k = 0; k < MASTER_NUM; k = k + 1) begin
+                        sum_addr = sum_addr | ({32{grant[s][k]}} & {4'h0, m_addr[k][27:0]});
+                        sum_data = sum_data | ({32{grant[s][k]}} & m_wdata[k]);
+                        sum_sel = sum_sel | ({4{grant[s][k]}} & m_sel[k]);
+                        sum_req = sum_req | grant[s][k];
+                        sum_we = sum_we | (grant[s][k] & m_we[k]);
+                        sum_ready = sum_ready | (grant[s][k] & m_rsp_ready[k]);
+                    end
+                end
+                assign s_addr[s] = sum_addr;
+                assign s_wdata[s] = sum_data;
+                assign s_sel[s] = sum_sel;
+                assign s_req[s] = sum_req;
+                assign s_we[s] = sum_we;
+                assign s_rsp_ready[s] = sum_ready;
+            end else begin: inactive
+                assign s_addr[s] = 32'h0;
+                assign s_wdata[s] = 32'h0;
+                assign s_sel[s] = 4'h0;
+                assign s_req[s] = 1'b0;
+                assign s_we[s] = 1'b0;
+                assign s_rsp_ready[s] = 1'b0;
+            end
         end
-    end
-
-    if (MASTER_NUM == 3) begin: if_m_num_3
-        assign master_req = {m0_req_vld_i, m1_req_vld_i, m2_req_vld_i};
-        assign master_rsp_rdy = {m0_rsp_rdy_i, m1_rsp_rdy_i, m2_rsp_rdy_i};
-        assign master_we = {m0_we_i, m1_we_i, m2_we_i};
-        wire[32*MASTER_NUM-1:0] m_addr = {m0_addr_i, m1_addr_i, m2_addr_i};
-        wire[32*MASTER_NUM-1:0] m_data = {m0_data_i, m1_data_i, m2_data_i};
-        wire[4*MASTER_NUM-1:0] m_sel = {m0_sel_i, m1_sel_i, m2_sel_i};
-        for (i = 0; i < MASTER_NUM; i = i + 1) begin: for_m_num_3
-            assign master_addr[i] = m_addr[(i+1)*32-1:32*i];
-            assign master_data[i] = m_data[(i+1)*32-1:32*i];
-            assign master_sel[i] = m_sel[(i+1)*4-1:4*i];
+        for (m = 0; m < 4; m = m + 1) begin: master_port
+            if (m < MASTER_NUM) begin: active
+                reg[31:0] data;
+                reg ready, valid;
+                integer k;
+                always @ (*) begin
+                    data = 32'h0;
+                    ready = 1'b0;
+                    valid = 1'b0;
+                    for (k = 0; k < SLAVE_NUM; k = k + 1) begin
+                        data = data | ({32{grant[k][m]}} & s_rdata[k]);
+                        ready = ready | (grant[k][m] & s_ready[k]);
+                        valid = valid | (grant[k][m] & s_rsp_valid[k]);
+                    end
+                end
+                assign m_rdata[m] = data;
+                assign m_ready[m] = ready;
+                assign m_rsp_valid[m] = valid;
+            end else begin: inactive
+                assign m_rdata[m] = 32'h0;
+                assign m_ready[m] = 1'b0;
+                assign m_rsp_valid[m] = 1'b0;
+            end
         end
-    end
-
-    if (MASTER_NUM == 4) begin: if_m_num_4
-        assign master_req = {m0_req_vld_i, m1_req_vld_i, m2_req_vld_i, m3_req_vld_i};
-        assign master_rsp_rdy = {m0_rsp_rdy_i, m1_rsp_rdy_i, m2_rsp_rdy_i, m3_rsp_rdy_i};
-        assign master_we = {m0_we_i, m1_we_i, m2_we_i, m3_we_i};
-        wire[32*MASTER_NUM-1:0] m_addr = {m0_addr_i, m1_addr_i, m2_addr_i, m3_addr_i};
-        wire[32*MASTER_NUM-1:0] m_data = {m0_data_i, m1_data_i, m2_data_i, m3_data_i};
-        wire[4*MASTER_NUM-1:0] m_sel = {m0_sel_i, m1_sel_i, m2_sel_i, m3_sel_i};
-        for (i = 0; i < MASTER_NUM; i = i + 1) begin: for_m_num_4
-            assign master_addr[i] = m_addr[(i+1)*32-1:32*i];
-            assign master_data[i] = m_data[(i+1)*32-1:32*i];
-            assign master_sel[i] = m_sel[(i+1)*4-1:4*i];
-        end
-    end
-
-    wire[MASTER_NUM-1:0] master_req_vec;
-    wire[MASTER_NUM-1:0] master_sel_vec;
-
-    // 优先级仲裁机制，LSB优先级最高，MSB优先级最低
-    for (i = 0; i < MASTER_NUM; i = i + 1) begin: m_arb
-        if (i == 0) begin: m_is_0
-            assign master_req_vec[i] = 1'b1;
-        end else begin: m_is_not_0
-            assign master_req_vec[i] = ~(|master_req[i-1:0]);
-        end
-        assign master_sel_vec[i] = master_req_vec[i] & master_req[i];
-    end
-
-    reg[31:0] mux_m_addr;
-    reg[31:0] mux_m_data;
-    reg[3:0] mux_m_sel;
-    reg mux_m_req_vld;
-    reg mux_m_rsp_rdy;
-    reg mux_m_we;
-
-    integer j;
-
-    always @ (*) begin: m_out
-        mux_m_addr = 32'h0;
-        mux_m_data = 32'h0;
-        mux_m_sel = 4'h0;
-        mux_m_req_vld = 1'b0;
-        mux_m_rsp_rdy = 1'b0;
-        mux_m_we = 1'b0;
-        for (j = 0; j < MASTER_NUM; j = j + 1) begin: m_sig_out
-            mux_m_addr    = mux_m_addr    | ({32{master_sel_vec[j]}} & master_addr[j]);
-            mux_m_data    = mux_m_data    | ({32{master_sel_vec[j]}} & master_data[j]);
-            mux_m_sel     = mux_m_sel     | ({4 {master_sel_vec[j]}} & master_sel[j]);
-            mux_m_req_vld = mux_m_req_vld | ({1 {master_sel_vec[j]}} & master_req[j]);
-            mux_m_rsp_rdy = mux_m_rsp_rdy | ({1 {master_sel_vec[j]}} & master_rsp_rdy[j]);
-            mux_m_we      = mux_m_we      | ({1 {master_sel_vec[j]}} & master_we[j]);
-        end
-    end
-
-    /////////////////////////////// mux slave /////////////////////////////////
-
-    wire[SLAVE_NUM-1:0] slave_sel;
-
-    // 访问地址的最高4位决定要访问的是哪一个从设备
-    // 因此最多支持16个从设备
-    for (i = 0; i < SLAVE_NUM; i = i + 1) begin: s_sel
-        assign slave_sel[i] = (mux_m_addr[31:28] == i);
-    end
-
-    wire[SLAVE_NUM-1:0] slave_req_rdy;
-    wire[SLAVE_NUM-1:0] slave_rsp_vld;
-    wire[31:0] slave_data[SLAVE_NUM-1:0];
-
-    if (SLAVE_NUM == 2) begin: if_s_num_2
-        assign slave_req_rdy = {s1_req_rdy_i, s0_req_rdy_i};
-        assign slave_rsp_vld = {s1_rsp_vld_i, s0_rsp_vld_i};
-        wire[32*SLAVE_NUM-1:0] s_data = {s1_data_i, s0_data_i};
-        for (i = 0; i < SLAVE_NUM; i = i + 1) begin: for_s_num_2
-            assign slave_data[i] = s_data[(i+1)*32-1:32*i];
-        end
-    end
-
-    if (SLAVE_NUM == 3) begin: if_s_num_3
-        assign slave_req_rdy = {s2_req_rdy_i, s1_req_rdy_i, s0_req_rdy_i};
-        assign slave_rsp_vld = {s2_rsp_vld_i, s1_rsp_vld_i, s0_rsp_vld_i};
-        wire[32*SLAVE_NUM-1:0] s_data = {s2_data_i, s1_data_i, s0_data_i};
-        for (i = 0; i < SLAVE_NUM; i = i + 1) begin: for_s_num_3
-            assign slave_data[i] = s_data[(i+1)*32-1:32*i];
-        end
-    end
-
-    if (SLAVE_NUM == 4) begin: if_s_num_4
-        assign slave_req_rdy = {s3_req_rdy_i, s2_req_rdy_i, s1_req_rdy_i, s0_req_rdy_i};
-        assign slave_rsp_vld = {s3_rsp_vld_i, s2_rsp_vld_i, s1_rsp_vld_i, s0_rsp_vld_i};
-        wire[32*SLAVE_NUM-1:0] s_data = {s3_data_i, s2_data_i, s1_data_i, s0_data_i};
-        for (i = 0; i < SLAVE_NUM; i = i + 1) begin: for_s_num_4
-            assign slave_data[i] = s_data[(i+1)*32-1:32*i];
-        end
-    end
-
-    if (SLAVE_NUM == 5) begin: if_s_num_5
-        assign slave_req_rdy = {s4_req_rdy_i, s3_req_rdy_i, s2_req_rdy_i, s1_req_rdy_i, s0_req_rdy_i};
-        assign slave_rsp_vld = {s4_rsp_vld_i, s3_rsp_vld_i, s2_rsp_vld_i, s1_rsp_vld_i, s0_rsp_vld_i};
-        wire[32*SLAVE_NUM-1:0] s_data = {s4_data_i, s3_data_i, s2_data_i, s1_data_i, s0_data_i};
-        for (i = 0; i < SLAVE_NUM; i = i + 1) begin: for_s_num_5
-            assign slave_data[i] = s_data[(i+1)*32-1:32*i];
-        end
-    end
-
-    reg[31:0] mux_s_data;
-    reg mux_s_req_rdy;
-    reg mux_s_rsp_vld;
-
-    always @ (*) begin: s_out
-        mux_s_data = 32'h0;
-        mux_s_req_rdy = 1'b0;
-        mux_s_rsp_vld = 1'b0;
-        for (j = 0; j < SLAVE_NUM; j = j + 1) begin: s_sig_out
-            mux_s_data    = mux_s_data    | ({32{slave_sel[j]}} & slave_data[j]);
-            mux_s_req_rdy = mux_s_req_rdy | ({1 {slave_sel[j]}} & slave_req_rdy[j]);
-            mux_s_rsp_vld = mux_s_rsp_vld | ({1 {slave_sel[j]}} & slave_rsp_vld[j]);
-        end
-    end
-
-    /////////////////////////////// demux master //////////////////////////////
-
-    wire[MASTER_NUM-1:0] demux_m_req_rdy;
-    wire[MASTER_NUM-1:0] demux_m_rsp_vld;
-    wire[32*MASTER_NUM-1:0] demux_m_data;
-
-    for (i = 0; i < MASTER_NUM; i = i + 1) begin: demux_m_sig
-        assign demux_m_req_rdy[i]            = {1 {master_sel_vec[i]}} & mux_s_req_rdy;
-        assign demux_m_rsp_vld[i]            = {1 {master_sel_vec[i]}} & mux_s_rsp_vld;
-        assign demux_m_data[(i+1)*32-1:32*i] = {32{master_sel_vec[i]}} & mux_s_data;
-    end
-
-    if (MASTER_NUM == 2) begin: demux_m_sig_2
-        assign {m0_req_rdy_o, m1_req_rdy_o} = demux_m_req_rdy;
-        assign {m0_rsp_vld_o, m1_rsp_vld_o} = demux_m_rsp_vld;
-        assign {m0_data_o, m1_data_o} = demux_m_data;
-    end
-
-    if (MASTER_NUM == 3) begin: demux_m_sig_3
-        assign {m0_req_rdy_o, m1_req_rdy_o, m2_req_rdy_o} = demux_m_req_rdy;
-        assign {m0_rsp_vld_o, m1_rsp_vld_o, m2_rsp_vld_o} = demux_m_rsp_vld;
-        assign {m0_data_o, m1_data_o, m2_data_o} = demux_m_data;
-    end
-
-    if (MASTER_NUM == 4) begin: demux_m_sig_4
-        assign {m0_req_rdy_o, m1_req_rdy_o, m2_req_rdy_o, m3_req_rdy_o} = demux_m_req_rdy;
-        assign {m0_rsp_vld_o, m1_rsp_vld_o, m2_rsp_vld_o, m3_rsp_vld_o} = demux_m_rsp_vld;
-        assign {m0_data_o, m1_data_o, m2_data_o, m3_data_o} = demux_m_data;
-    end
-
-    /////////////////////////////// demux slave //////////////////////////////
-
-    wire[32*SLAVE_NUM-1:0] demux_s_addr;
-    wire[32*SLAVE_NUM-1:0] demux_s_data;
-    wire[4*SLAVE_NUM-1:0] demux_s_sel;
-    wire[SLAVE_NUM-1:0] demux_s_req_vld;
-    wire[SLAVE_NUM-1:0] demux_s_rsp_rdy;
-    wire[SLAVE_NUM-1:0] demux_s_we;
-
-    for (i = 0; i < SLAVE_NUM; i = i + 1) begin: demux_s_sig
-        // 去掉外设基地址，只保留offset
-        assign demux_s_addr[(i+1)*32-1:32*i] = {32{slave_sel[i]}} & {4'h0, mux_m_addr[27:0]};
-        assign demux_s_data[(i+1)*32-1:32*i] = {32{slave_sel[i]}} & mux_m_data;
-        assign demux_s_sel[(i+1)*4-1:4*i]    = {4 {slave_sel[i]}} & mux_m_sel;
-        assign demux_s_req_vld[i]            = {1 {slave_sel[i]}} & mux_m_req_vld;
-        assign demux_s_rsp_rdy[i]            = {1 {slave_sel[i]}} & mux_m_rsp_rdy;
-        assign demux_s_we[i]                 = {1 {slave_sel[i]}} & mux_m_we;
-    end
-
-    if (SLAVE_NUM == 2) begin: demux_s_sig_2
-        assign {s1_addr_o, s0_addr_o} = demux_s_addr;
-        assign {s1_data_o, s0_data_o} = demux_s_data;
-        assign {s1_sel_o, s0_sel_o} = demux_s_sel;
-        assign {s1_req_vld_o, s0_req_vld_o} = demux_s_req_vld;
-        assign {s1_rsp_rdy_o, s0_rsp_rdy_o} = demux_s_rsp_rdy;
-        assign {s1_we_o, s0_we_o} = demux_s_we;
-    end
-
-    if (SLAVE_NUM == 3) begin: demux_s_sig_3
-        assign {s2_addr_o, s1_addr_o, s0_addr_o} = demux_s_addr;
-        assign {s2_data_o, s1_data_o, s0_data_o} = demux_s_data;
-        assign {s2_sel_o, s1_sel_o, s0_sel_o} = demux_s_sel;
-        assign {s2_req_vld_o, s1_req_vld_o, s0_req_vld_o} = demux_s_req_vld;
-        assign {s2_rsp_rdy_o, s1_rsp_rdy_o, s0_rsp_rdy_o} = demux_s_rsp_rdy;
-        assign {s2_we_o, s1_we_o, s0_we_o} = demux_s_we;
-    end
-
-    if (SLAVE_NUM == 4) begin: demux_s_sig_4
-        assign {s3_addr_o, s2_addr_o, s1_addr_o, s0_addr_o} = demux_s_addr;
-        assign {s3_data_o, s2_data_o, s1_data_o, s0_data_o} = demux_s_data;
-        assign {s3_sel_o, s2_sel_o, s1_sel_o, s0_sel_o} = demux_s_sel;
-        assign {s3_req_vld_o, s2_req_vld_o, s1_req_vld_o, s0_req_vld_o} = demux_s_req_vld;
-        assign {s3_rsp_rdy_o, s2_rsp_rdy_o, s1_rsp_rdy_o, s0_rsp_rdy_o} = demux_s_rsp_rdy;
-        assign {s3_we_o, s2_we_o, s1_we_o, s0_we_o} = demux_s_we;
-    end
-
-    if (SLAVE_NUM == 5) begin: demux_s_sig_5
-        assign {s4_addr_o, s3_addr_o, s2_addr_o, s1_addr_o, s0_addr_o} = demux_s_addr;
-        assign {s4_data_o, s3_data_o, s2_data_o, s1_data_o, s0_data_o} = demux_s_data;
-        assign {s4_sel_o, s3_sel_o, s2_sel_o, s1_sel_o, s0_sel_o} = demux_s_sel;
-        assign {s4_req_vld_o, s3_req_vld_o, s2_req_vld_o, s1_req_vld_o, s0_req_vld_o} = demux_s_req_vld;
-        assign {s4_rsp_rdy_o, s3_rsp_rdy_o, s2_rsp_rdy_o, s1_rsp_rdy_o, s0_rsp_rdy_o} = demux_s_rsp_rdy;
-        assign {s4_we_o, s3_we_o, s2_we_o, s1_we_o, s0_we_o} = demux_s_we;
-    end
-
     endgenerate
 
+    assign m0_data_o = m_rdata[0];
+    assign m0_req_rdy_o = m_ready[0];
+    assign m0_rsp_vld_o = m_rsp_valid[0];
+    assign m1_data_o = m_rdata[1];
+    assign m1_req_rdy_o = m_ready[1];
+    assign m1_rsp_vld_o = m_rsp_valid[1];
+    assign m2_data_o = m_rdata[2];
+    assign m2_req_rdy_o = m_ready[2];
+    assign m2_rsp_vld_o = m_rsp_valid[2];
+    assign m3_data_o = m_rdata[3];
+    assign m3_req_rdy_o = m_ready[3];
+    assign m3_rsp_vld_o = m_rsp_valid[3];
+    assign s0_addr_o = s_addr[0];
+    assign s0_data_o = s_wdata[0];
+    assign s0_sel_o = s_sel[0];
+    assign s0_req_vld_o = s_req[0];
+    assign s0_we_o = s_we[0];
+    assign s0_rsp_rdy_o = s_rsp_ready[0];
+    assign s1_addr_o = s_addr[1];
+    assign s1_data_o = s_wdata[1];
+    assign s1_sel_o = s_sel[1];
+    assign s1_req_vld_o = s_req[1];
+    assign s1_we_o = s_we[1];
+    assign s1_rsp_rdy_o = s_rsp_ready[1];
+    assign s2_addr_o = s_addr[2];
+    assign s2_data_o = s_wdata[2];
+    assign s2_sel_o = s_sel[2];
+    assign s2_req_vld_o = s_req[2];
+    assign s2_we_o = s_we[2];
+    assign s2_rsp_rdy_o = s_rsp_ready[2];
+    assign s3_addr_o = s_addr[3];
+    assign s3_data_o = s_wdata[3];
+    assign s3_sel_o = s_sel[3];
+    assign s3_req_vld_o = s_req[3];
+    assign s3_we_o = s_we[3];
+    assign s3_rsp_rdy_o = s_rsp_ready[3];
+    assign s4_addr_o = s_addr[4];
+    assign s4_data_o = s_wdata[4];
+    assign s4_sel_o = s_sel[4];
+    assign s4_req_vld_o = s_req[4];
+    assign s4_we_o = s_we[4];
+    assign s4_rsp_rdy_o = s_rsp_ready[4];
 
 endmodule

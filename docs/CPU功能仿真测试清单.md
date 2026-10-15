@@ -1,7 +1,9 @@
 # CPU 功能仿真测试清单
 
 整理依据：当前 CoreMark_PGL50H RTL，以及仓库内 references/tinyriscv 的测试文件。
-本清单不包括此次新增周期统计功能。未执行测试，所有完成项暂为空。
+本清单不包括自定义周期统计功能。各大类仍需逐项验收，完成勾选暂为空。
+当前已加入总线实验的旧 RV32I/M 夹具回归和 ram2 连续访问测试，
+范围及结果见 [总线仲裁优化说明](总线仲裁优化说明.md)。通过夹具不代表整项覆盖全部完成。
 
 优先级：P0 为架构优化前的基本回归；P1 为扩展正确性和系统交互；P2 为后续提高覆盖率。
 “现有”表示已有参考测试文件，仍须适配当前 CPU；“补充”表示需要新增测试用例或激励。
@@ -103,4 +105,5 @@ F/A/C 扩展、S 模式、MMU、Linux 不作为当前核已声明支持的必过
 
 使用项目原有 [simulation/](../simulation/)，结构说明见 [README](../simulation/README.md)。
 40 个测试编号与目录的对应关系见 [test_plan.json](../simulation/configs/test_plan.json)。
-当前只建立目录和计划，状态均为 planned；新增测试代码与运行结果尚待完成。
+部分回归环境已实现，入口为 [run_bus_regression.py](../simulation/scripts/run/run_bus_regression.py)。
+JSON 记录大类计划，具体覆盖情况以总线优化说明和运行报告为准。

@@ -17,7 +17,10 @@
 `include "../core/defines.v"
 
 // tinyriscv soc顶层模块
-module tinyriscv_soc_top(
+module tinyriscv_soc_top #(
+    // 0: original global arbitration; 1: independent slave arbitration.
+    parameter PARALLEL_ACCESS = 1
+)(
 
     input wire clk,
     input wire rst_ext_i,
@@ -328,7 +331,8 @@ module tinyriscv_soc_top(
     // rib总线模块例化
     rib #(
         .MASTER_NUM(3),
-        .SLAVE_NUM(5)
+        .SLAVE_NUM(5),
+        .PARALLEL_ACCESS(PARALLEL_ACCESS)
     ) u_rib(
         .clk(clk),
         .rst_n(rst_n),
