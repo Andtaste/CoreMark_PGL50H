@@ -63,6 +63,21 @@ module exu_muldiv(
     gen_en_dff #(32) mul_op1_ff(clk, rst_n, op_mul, muldiv_op1_i, muldiv_op1_r);
     wire[31:0] muldiv_op2_r;
     gen_en_dff #(32) mul_op2_ff(clk, rst_n, op_mul, muldiv_op2_i, muldiv_op2_r);
+    // Keep mode and operands in the same timing domain. Live operation inputs
+    // include EX valid/interrupt kill; they must not drive the DSP input muxes
+    // after the operands have already crossed their register boundary.
+    reg[1:0] mul_kind_r;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) mul_kind_r<=0;
+        else if (op_mul) begin
+            case (1'b1)
+                muldiv_op_mul_i:    mul_kind_r<=0;
+                muldiv_op_mulh_i:   mul_kind_r<=1;
+                muldiv_op_mulhsu_i: mul_kind_r<=2;
+                muldiv_op_mulhu_i:  mul_kind_r<=3;
+            endcase
+        end
+    end
 
     wire mul_ready_r;
     wire mul_ready = (~mul_ready_r) & op_mul;
@@ -75,10 +90,8 @@ module exu_muldiv(
     wire[31:0] op1_complcode = op1_is_signed? (-muldiv_op1_r): muldiv_op1_r;
     wire[31:0] op2_complcode = op2_is_signed? (-muldiv_op2_r): muldiv_op2_r;
 
-    wire[31:0] op1_mul = ({32{(muldiv_op_mul_i | muldiv_op_mulhu_i)}} & muldiv_op1_r) |
-                         ({32{(muldiv_op_mulh_i | muldiv_op_mulhsu_i)}} & op1_complcode);
-    wire[31:0] op2_mul = ({32{(muldiv_op_mul_i | muldiv_op_mulhu_i | muldiv_op_mulhsu_i)}} & muldiv_op2_r) |
-                         ({32{(muldiv_op_mulh_i)}} & op2_complcode);
+    wire[31:0] op1_mul = (mul_kind_r==1 || mul_kind_r==2) ? op1_complcode : muldiv_op1_r;
+    wire[31:0] op2_mul = mul_kind_r==1 ? op2_complcode : muldiv_op2_r;
     wire[63:0] mul_res_tmp = op1_mul * op2_mul;
     wire[63:0] mul_res_tmp_complcode = -mul_res_tmp;
     wire[31:0] mul_res = mul_res_tmp[31:0];
@@ -90,16 +103,18 @@ module exu_muldiv(
 
     always @ (*) begin
         mul_op_res = 32'h0;
-        case (1'b1)
-            muldiv_op_mul_i:    mul_op_res = mul_res;
-            muldiv_op_mulhu_i:  mul_op_res = mulhu_res;
-            muldiv_op_mulh_i:   mul_op_res = mulh_res;
-            muldiv_op_mulhsu_i: mul_op_res = mulhsu_res;
+        case (mul_kind_r)
+            0: mul_op_res = mul_res;
+            1: mul_op_res = mulh_res;
+            2: mul_op_res = mulhsu_res;
+            3: mul_op_res = mulhu_res;
         endcase
     end
 
     // 运算结果
-    assign muldiv_reg_wdata_o = div_result | mul_op_res;
+    // Registered multiply mode persists while division runs. Select the valid
+    // divider result explicitly rather than OR-ing it with stale multiply data.
+    assign muldiv_reg_wdata_o = div_ready ? div_result : mul_op_res;
     assign muldiv_reg_we_o = div_ready | mul_ready_r;
     assign muldiv_stall_o = div_start | mul_start;
 

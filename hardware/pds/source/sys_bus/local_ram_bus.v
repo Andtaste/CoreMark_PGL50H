@@ -140,11 +140,19 @@ module local_ram_bus(
         wire [2:0] selected_rsp;
         wire [2:0] request_ready;
         for(p=0;p<3;p=p+1) begin: route
+            // Readiness is for this master's target, before address arbitration.
+            // Using p_ready[2] here would let chosen/p_addr feed the master's
+            // own valid indirectly back into ready, despite eligible being
+            // independent of that valid. The winner still uses p_ready below
+            // for the actual physical-port acceptance and response ownership.
+            wire target_ready=(p==0) ? s0_req_rdy_i : (p==1) ? s1_req_rdy_i :
+                addr[m][31:28]==2 ? s2_req_rdy_i :
+                addr[m][31:28]==3 ? s3_req_rdy_i : s4_req_rdy_i;
             assign blocked[p]=pending[p] && owner[p]==m &&
                 !(p_valid[p] && rsp_ready[m]);
             assign selected_rsp[p]=pending[p] && owner[p]==m;
             assign request_ready[p]=ram_port[p].eligible[m] &&
-                ram_port[p].available && p_ready[p] &&
+                ram_port[p].available && target_ready &&
                 (m==2 ? 1'b1 : m==1 ? !ram_port[p].candidate[2] :
                  !(ram_port[p].candidate[2] || ram_port[p].candidate[1]));
         end

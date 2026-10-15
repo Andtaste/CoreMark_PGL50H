@@ -3,6 +3,9 @@ module rib_owner_tb;
     reg clk=0,rst_n=0;
     always #5 clk=~clk;
     reg[31:0] a0=0,a1=0;
+    reg[31:0] a2=0;
+    reg q2=0;
+    wire g2,sq2,sq3;
     reg q0=0,q1=0,r0=0,r1=1,we1=0;
     wire g0,g1,v0,v1;
     wire[31:0] d0,d1,sa0,sa1;
@@ -18,14 +21,14 @@ module rib_owner_tb;
         .m0_req_vld_i(q0),.m0_rsp_rdy_i(r0),.m0_req_rdy_o(g0),.m0_rsp_vld_o(v0),.m0_data_o(d0),
         .m1_addr_i(a1),.m1_data_i(32'h12345678),.m1_sel_i(4'hf),.m1_we_i(we1),
         .m1_req_vld_i(q1),.m1_rsp_rdy_i(r1),.m1_req_rdy_o(g1),.m1_rsp_vld_o(v1),.m1_data_o(d1),
-        .m2_addr_i(32'b0),.m2_data_i(32'b0),.m2_sel_i(4'b0),.m2_we_i(1'b0),
-        .m2_req_vld_i(1'b0),.m2_rsp_rdy_i(1'b1),
+        .m2_addr_i(a2),.m2_data_i(32'b0),.m2_sel_i(4'b0),.m2_we_i(1'b0),
+        .m2_req_vld_i(q2),.m2_rsp_rdy_i(1'b1),.m2_req_rdy_o(g2),
         .s0_addr_o(sa0),.s0_req_vld_o(sq0),.s0_rsp_rdy_o(sr0),.s0_we_o(sw0),
         .s0_data_i(sd0),.s0_req_rdy_i(sg0),.s0_rsp_vld_i(sv0),
         .s1_addr_o(sa1),.s1_req_vld_o(sq1),.s1_rsp_rdy_o(sr1),.s1_we_o(sw1),
         .s1_data_i(sd1),.s1_req_rdy_i(sg1),.s1_rsp_vld_i(sv1),
-        .s2_data_i(32'b0),.s2_req_rdy_i(1'b0),.s2_rsp_vld_i(1'b0),
-        .s3_data_i(32'b0),.s3_req_rdy_i(1'b0),.s3_rsp_vld_i(1'b0),
+        .s2_data_i(32'b0),.s2_req_rdy_i(1'b0),.s2_rsp_vld_i(1'b0),.s2_req_vld_o(sq2),
+        .s3_data_i(32'b0),.s3_req_rdy_i(1'b1),.s3_rsp_vld_i(1'b0),.s3_req_vld_o(sq3),
         .s4_data_i(32'b0),.s4_req_rdy_i(1'b0),.s4_rsp_vld_i(1'b0)
         );
     always @(posedge clk) begin
@@ -44,7 +47,20 @@ module rib_owner_tb;
     end
     initial begin
         repeat(2) @(negedge clk);
-        rst_n=1; q0=1; a0=4;
+        rst_n=1;
+        // Combinational target-ready checks between edges; no MMIO transfer
+        // occurs. Device 2 blocks while device 3 accepts, exposing dependence
+        // on another master's idle address or on one's own request valid.
+        a1=32'h20000000; a2=32'h30000000;
+        #1; if(g1 || !g2) $fatal(1,"ready uses another master's target");
+        q2=1;
+        #1; if(g1 || !g2 || !sq3 || sq2) $fatal(1,"JTAG MMIO selection");
+        q2=0; a1=32'h30000000; a2=32'h20000000;
+        #1; if(!g1 || g2) $fatal(1,"idle target readiness");
+        q1=1; q2=1;
+        #1; if(g1 || g2 || !sq2 || sq3) $fatal(1,"blocked priority target");
+        q1=0; q2=0; a1=0; a2=0;
+        @(negedge clk); q0=1; a0=4;
         @(posedge clk); #1;
         if(!v0 || d0!==32'haa000004) $fatal(1,"initial owner");
         @(negedge clk); q0=0; a0=32'h1000000c; q1=1; a1=32'h10000008;
@@ -65,7 +81,7 @@ module rib_owner_tb;
         @(negedge clk); q1=0;
         repeat(2) @(negedge clk);
         if(v1 || writes!=1) $fatal(1,"duplicate store");
-        $display("TEST_PASS RIB_OWNER cases=6");
+        $display("TEST_PASS RIB_OWNER cases=10");
         $finish;
     end
     initial begin #10000; $fatal(1,"owner test timeout"); end

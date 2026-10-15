@@ -103,7 +103,7 @@ def main():
     parser.add_argument('--iverilog', default='iverilog')
     parser.add_argument('--vvp', default='vvp')
     parser.add_argument('--gcc', default='riscv-none-elf-gcc')
-    parser.add_argument('--suite', choices=['unit','isa','data','pipeline','coremark','all'], default='pipeline')
+    parser.add_argument('--suite', choices=['unit','isa','muldiv','data','pipeline','coremark','all'], default='pipeline')
     parser.add_argument('--coremark-timeout', type=int, default=1800,
                         help='Host timeout in seconds for each CoreMark functional smoke run')
     args = parser.parse_args()
@@ -136,11 +136,13 @@ def main():
         output = command([vvp,owner],LOGS/'owner.log')
         if 'TEST_PASS RIB_OWNER' not in output: raise RuntimeError('No owner PASS marker')
         print(output.strip(),flush=True)
-        results.append({'name':'local_ram_owner','status':'PASS','cases':6})
-    if args.suite in ('isa','data','pipeline','coremark','all'):
-        fixtures = sorted((ROOT/'references/tinyriscv/tests/isa/generated').glob('*.bin')) if args.suite in ('isa','all') else []
-        fixtures = [p for p in fixtures if p.name.startswith(('rv32ui-','rv32um-'))]
-        if args.suite in ('isa','all') and not fixtures: raise RuntimeError('No ISA fixtures found')
+        results.append({'name':'local_ram_owner','status':'PASS',
+                        'cases':int(re.search(r'cases=(\d+)',output)[1])})
+    if args.suite in ('isa','muldiv','data','pipeline','coremark','all'):
+        fixtures = sorted((ROOT/'references/tinyriscv/tests/isa/generated').glob('*.bin')) if args.suite in ('isa','muldiv','all') else []
+        prefixes = ('rv32um-',) if args.suite=='muldiv' else ('rv32ui-','rv32um-')
+        fixtures = [p for p in fixtures if p.name.startswith(prefixes)]
+        if args.suite in ('isa','muldiv','all') and not fixtures: raise RuntimeError('No ISA fixtures found')
         if args.suite in ('coremark','all'):
             fixtures.append(coremark_binary(args.gcc))
         if args.suite in ('data','all'):

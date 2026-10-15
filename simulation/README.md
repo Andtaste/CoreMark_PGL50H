@@ -15,6 +15,9 @@ ram2 连续访问和少量迭代 CoreMark CRC 仿真。其他目录仍有待实�
 背压下请求保持、连续重定向、旧响应丢弃、响应与新请求同拍交接及取指异常 PC。
 统计事件寄存检查为 [stat_pipeline_tb.v](tb/unit/csr/stat_pipeline_tb.v)，
 检查启停／清零窗口、最后事件排空及饱和；可变延迟 TB 还抽查静态指令合法性译码。
+SoC／可变延迟 TB 核对提前寄存的转发选择与实时生产者匹配，owner TB 另含
+四项外设 ready 不同及优先级场景（总计 10 项）。
+`--suite muldiv` 仅运行 references 中已有的 8 个 RV32M 程序，供乘除法局部修改时使用。
 入口只运行当前拓扑，已删除旧仲裁对照和重复模式循环。按本次改动选择必要的 suite，
 无需每次运行 all；默认仅运行 pipeline。生成固件在 firmware/generated/local_ram/，日志在 results/logs/local_ram/。
 

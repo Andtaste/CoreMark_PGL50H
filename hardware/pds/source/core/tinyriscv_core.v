@@ -81,6 +81,7 @@ module tinyriscv_core #(
     reg ex_valid;
     reg[31:0] ex_inst,ex_pc,ex_imm,ex_src1,ex_src2;
     reg[4:0] ex_rs1,ex_rs2,ex_rd;
+    reg ex_fwd_mem1,ex_fwd_mem2,ex_fwd_wb1,ex_fwd_wb2;
     reg ex_rd_we;
     reg ex_illegal, ex_is_md, ex_serial, ex_mem_load, ex_mem_store;
     reg[1:0] ex_fetch_fault;
@@ -177,7 +178,10 @@ module tinyriscv_core #(
     // An unaccepted old MEM request always takes priority. ex_can_advance
     // implies MEM is empty or returning its old response, so these cannot
     // both be valid. The reply belongs to the newly latched MEM payload.
-    wire use_ex_request=ex_local_request && !mem_request;
+    // Select the source by ownership, not by EX request validity. When no
+    // request is active the payload is don't-care; presenting EX's address
+    // early removes validity/fault -> address mux -> ready feedback.
+    wire use_ex_request=!mem_request;
     wire[31:0] request_addr=use_ex_request ? ex_address : mem_addr;
     wire[31:0] request_data=use_ex_request ? src2 : mem_store_data;
     wire[2:0] request_funct3=use_ex_request ? funct3 : mem_funct3;
@@ -195,17 +199,17 @@ module tinyriscv_core #(
         mem_funct3==5 ? {16'b0,load_shifted[15:0]} : dbus_data_i;
     wire[31:0] mem_value=mem_load ? load_value : mem_result;
 
-    // Closest older producer wins. Loads are forwarded from WB, keeping the
-    // RAM output -> ALU path out of the EX critical path in this baseline.
-    wire mem_match1=mem_valid && mem_rd_we && mem_rd!=0 && mem_rd==ex_rs1;
-    wire mem_match2=mem_valid && mem_rd_we && mem_rd!=0 && mem_rd==ex_rs2;
-    wire wb_match1=wb_gpr_we && wb_rd==ex_rs1;
-    wire wb_match2=wb_gpr_we && wb_rd==ex_rs2;
+    // Compare in ID against the producers that will occupy MEM/WB next cycle.
+    // No current MEM/WB destination comparison drives the EX operand mux.
+    wire id_match_ex1=ex_valid && ex_rd_we && !ex_exception && ex_rd!=0 && ex_rd==id_rs1;
+    wire id_match_ex2=ex_valid && ex_rd_we && !ex_exception && ex_rd!=0 && ex_rd==id_rs2;
+    wire id_match_mem1=mem_complete && mem_rd_we && !mem_exception && mem_rd!=0 && mem_rd==id_rs1;
+    wire id_match_mem2=mem_complete && mem_rd_we && !mem_exception && mem_rd!=0 && mem_rd==id_rs2;
     wire[31:0] src1=ex_rs1==0 ? 32'b0 :
-        (mem_match1 && !mem_load) ? mem_result : wb_match1 ? wb_result : ex_src1;
+        (ex_fwd_mem1 && !mem_load) ? mem_result : ex_fwd_wb1 ? wb_result : ex_src1;
     wire[31:0] src2=ex_rs2==0 ? 32'b0 :
-        (mem_match2 && !mem_load) ? mem_result : wb_match2 ? wb_result : ex_src2;
-    wire ex_load_dependency=mem_load && (mem_match1 || mem_match2);
+        (ex_fwd_mem2 && !mem_load) ? mem_result : ex_fwd_wb2 ? wb_result : ex_src2;
+    wire ex_load_dependency=mem_load && (ex_fwd_mem1 || ex_fwd_mem2);
     wire[6:0] opcode=ex_inst[6:0];
     wire[2:0] funct3=ex_inst[14:12];
     wire[6:0] funct7=ex_inst[31:25];
@@ -412,13 +416,42 @@ module tinyriscv_core #(
     assign frontend_target=return_from_trap ? {csr_mepc[31:2],2'b0} :
         trap_finish ? trap_target : trap_start ? {csr_mtvec[31:2],2'b0} : ex_next_pc;
 
+    // A newly admitted instruction follows old EX into MEM and old MEM into
+    // WB. A held instruction instead follows its existing producer: a retained
+    // MEM match stays in MEM, or migrates once into WB when MEM completes.
+    // ex_src1/2 below save the current forwarded value before WB disappears.
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            ex_fwd_mem1<=0; ex_fwd_mem2<=0; ex_fwd_wb1<=0; ex_fwd_wb2<=0;
+        end else if (hard_flush) begin
+            ex_fwd_mem1<=0; ex_fwd_mem2<=0; ex_fwd_wb1<=0; ex_fwd_wb2<=0;
+        end else if (id_fire) begin
+            ex_fwd_mem1<=id_match_ex1; ex_fwd_mem2<=id_match_ex2;
+            ex_fwd_wb1<=id_match_mem1; ex_fwd_wb2<=id_match_mem2;
+        end else if (ex_fire || !ex_valid) begin
+            ex_fwd_mem1<=0; ex_fwd_mem2<=0; ex_fwd_wb1<=0; ex_fwd_wb2<=0;
+        end else begin
+            ex_fwd_mem1<=ex_fwd_mem1 && !mem_complete;
+            ex_fwd_mem2<=ex_fwd_mem2 && !mem_complete;
+            ex_fwd_wb1<=ex_fwd_mem1 && mem_complete && !mem_exception;
+            ex_fwd_wb2<=ex_fwd_mem2 && mem_complete && !mem_exception;
+        end
+    end
+    // Result capture belongs to the M unit, not to the global ID admission
+    // priority chain. Capturing on a normal completion edge is harmless; only
+    // ex_md_done authorizes later consumption of the saved value.
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) ex_md_saved<=0;
+        else if (ex_valid && ex_is_md && md_ready && !ex_md_done && !hard_flush)
+            ex_md_saved<=md_value;
+    end
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             ex_valid<=0; ex_inst<=0; ex_pc<=0; ex_imm<=0;
             ex_src1<=0; ex_src2<=0; ex_rs1<=0; ex_rs2<=0; ex_rd<=0;
             ex_rd_we<=0; ex_fetch_fault<=0;
             ex_illegal<=0; ex_is_md<=0; ex_serial<=0; ex_mem_load<=0; ex_mem_store<=0;
-            ex_md_done<=0; ex_md_saved<=0;
+            ex_md_done<=0;
         end else if (hard_flush) begin ex_valid<=0; ex_md_done<=0; end
         else if (id_fire) begin
             ex_valid<=1; ex_inst<=id_inst; ex_pc<=id_pc; ex_imm<=id_imm;
@@ -437,7 +470,7 @@ module tinyriscv_core #(
                 // Save its forwarded values before its WB valid disappears.
                 ex_src1<=src1; ex_src2<=src2;
                 if (ex_is_md && md_ready && !ex_md_done) begin
-                    ex_md_done<=1; ex_md_saved<=md_value;
+                    ex_md_done<=1;
                 end
             end
         end

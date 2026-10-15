@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-15",
+  "baseline_commit": "8c72733",
+  "baseline_saved_on": "test",
+  "branch": "codex/forwarding-ready",
+  "scope": "Look-ahead registered forwarding selection and combinational request/ready simplification. No new memory latency stage.",
+  "static_compile": {
+    "status": "PASS",
+    "tool": "Icarus Verilog -g2012 -tnull",
+    "top": "cpu_bus_soc_tb",
+    "log_sha256": "2b7d613e39f3cd1181631d571da485224e23d1dcd1cc60830ee53298733d8162",
+    "scope": "Initial forwarding/ready implementation before registered multiply-mode correction; final RTL compiled by functional suites."
+  },
+  "functional_simulation": {
+    "status": "PASS",
+    "scope": "Necessary pipeline, owner and eight existing M-extension checks only",
+    "results": [
+      {
+        "name": "statistics_event_pipeline",
+        "status": "PASS"
+      },
+      {
+        "name": "ifu_fifo_protocol",
+        "status": "PASS"
+      },
+      {
+        "name": "five_stage_hazards",
+        "cycles": 824,
+        "status": "PASS",
+        "parallel_grants": 10
+      },
+      {
+        "name": "five_stage_variable_latency",
+        "status": "PASS",
+        "cycles": 1410
+      },
+      {
+        "name": "local_ram_owner",
+        "status": "PASS",
+        "cases": 10
+      },
+      {
+        "name": "rv32um-p-div",
+        "cycles": 288,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-divu",
+        "cycles": 289,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mul",
+        "cycles": 546,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulh",
+        "cycles": 544,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulhsu",
+        "cycles": 544,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulhu",
+        "cycles": 544,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-rem",
+        "cycles": 288,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-remu",
+        "cycles": 288,
+        "status": "PASS",
+        "parallel_grants": 0
+      }
+    ],
+    "report_sha256": {
+      "pipeline": "74f6b22360809a2be6adcc054267bc786a9f6c6e683de459098bbd6320bb38ba",
+      "unit": "8e512725970dcc2dafe4fd05d90a6ed386a6e39b5ec8fd7113d8e91ca5edf35a",
+      "muldiv": "6b46e1e245fad2388a820c037aac7b5c1cd53ac82505045eaeb784b27911f1c7"
+    }
+  },
+  "pds": {
+    "status": "PASS",
+    "tool": "2022.2-SP1-Lite build 132640",
+    "lut_hierarchy_top": 4940,
+    "ff": 3611,
+    "distributed_ram": 66,
+    "apm": 4,
+    "drm": 48,
+    "estimated_fmax_mhz": 65.342,
+    "estimated_period_ns": 15.304,
+    "setup_wns_ns": 4.696,
+    "hold_slow_whs_ns": 0.152,
+    "hold_fast_whs_ns": 0.109,
+    "latches": 0,
+    "critical_path": {
+      "start": "u_exu_muldiv/mul_kind_r[0]",
+      "end": "mem_result[23]",
+      "via": ["registered multiply mode", "operand sign preprocessing", "four cascaded APMs", "high-product sign correction", "result selection"],
+      "logic_levels": 16,
+      "logic_delay_ns": 11.105,
+      "route_delay_ns": 3.900
+    },
+    "constraints": "Original PLL and 20 ns constraints; external IO delays partially unconstrained."
+  },
+  "new_register_bits": 6,
+  "rtl_sha256": {
+    "hardware/pds/source/core/csr_reg.v": "dc91ce58312dea57e84184c78c65c305cfd6018ab3e9a982a188b35ea3779428",
+    "hardware/pds/source/core/defines.v": "acbfa93f2cc80d5cbb3d486f725f7579d99093abbbba6c551d828cff1ff68d15",
+    "hardware/pds/source/core/divider.v": "a0748e6b93df741ad72547bb2192befb1a89606ffacdec2083e9c951a9916906",
+    "hardware/pds/source/core/exu_muldiv.v": "23f38a4de3965fd290f7f7733dbdb9e5772c0dd0991d95540cb6ac1796bb6004",
+    "hardware/pds/source/core/gpr_reg.v": "5cf4f9e81a14f7ff22cf03e69654885aca5c452ed072226f19b6542ebd290a98",
+    "hardware/pds/source/core/idu.v": "36e2505a7dfd8304c99e9a05e2d7dc7cef6a9be5d3ed276439d78de9c600a0dd",
+    "hardware/pds/source/core/ifu.v": "d55b855ad5d9ee19b4ced25fb2a5c8e1d197f583150a667feeb3b702eb536626",
+    "hardware/pds/source/core/rst_ctrl.v": "8ed3a6533d222f1e972ccd5134ccb0085df87318492c68e6a3b8742933222331",
+    "hardware/pds/source/core/tinyriscv_core.v": "f58a44441a5f9fe70a921cb8fa8e5efc10da2bf31e8be98d23da5ab83ed4cf3b",
+    "hardware/pds/source/debug/jtag_dm.v": "cd9ed46643f7d436c99d8afc46c5ca3d800230613c20f2d964c71c8c4b01be4b",
+    "hardware/pds/source/debug/jtag_driver.v": "a10272fe6568e9359a191fc50b50b425a4ec1489ba264f2be5f809009b89398e",
+    "hardware/pds/source/debug/jtag_top.v": "e79c59d9a767e9c3a6bd39f1943855d2ef6db3d0ec589b3159add0d1afbc5741",
+    "hardware/pds/source/perips/gpio.v": "af1195012121d630b3b198b7c7bacf1b450770ab0b993d54999bb100b88bd1aa",
+    "hardware/pds/source/perips/ram.v": "92d2ce0b7bd99f0ffb957a66e0820bad8217b2c8337f4c07a933386f3274733c",
+    "hardware/pds/source/perips/rom.v": "a3122ba6f3ab50a469e4071f3093c68351ff314a96f5a71b1c70f8bcfce92703",
+    "hardware/pds/source/perips/timer.v": "f1b2ae17f219f496fb9185adcd5244fb473b8d8c646bbaf0de7f856834e37da7",
+    "hardware/pds/source/perips/uart.v": "1016dd9887975a2419c0a11c57956d5f3e9a49e134c496aea3083cc2534ee79b",
+    "hardware/pds/source/source/top.v": "703f7b607fdd09f58261373a2d92f28dec8d3f6510397f77415eed0d9d9b1b0e",
+    "hardware/pds/source/sys_bus/local_ram_bus.v": "5d111b3897c73ed191c5a7ea4ee67951221e57cdf0319a1c9c42fd54218003a0",
+    "hardware/pds/source/top/tinyriscv_soc_top.v": "aa74eb951de22db3e80be60ad6e2dfb168a72b97c07c2cbcfee18c531c8f0d99",
+    "hardware/pds/source/utils/full_handshake_rx.v": "c5716da0d8f2c696bac3e0926775211a6e9fb58763728bf2cb7007117d47460c",
+    "hardware/pds/source/utils/full_handshake_tx.v": "824b60787e0e7c418a148945c1a493b7cde47ad1cedc217b4efe5839775de3ab",
+    "hardware/pds/source/utils/gen_buf.v": "185d5aa5df83c124bc3e76c82f445bfc6520aa7c12c41924390094ad781789ef",
+    "hardware/pds/source/utils/gen_dff.v": "bdacbffdee766b45821de109e06c940659464764c0bf72050e0f750e34fcaa8d",
+    "hardware/pds/source/utils/gen_ram.v": "2c1b738c07e348adae6545f84988f13371dd72b2beeaef7ada5bc9b5d75c7b20",
+    "hardware/pds/source/utils/vld_rdy.v": "09f7b469037d27f65d624139a0501dfc7f4869260715c4623059c20d05efcbb9"
+  },
+  "limits": [
+    "Functional validation covers only listed programs/scenarios, not full ISA or formal proof.",
+    "Ready remains combinational with target address, occupancy and higher-priority contenders.",
+    "No fully registered ready cut, extra request FIFO, BRAM port change, BTB or Cache.",
+    "No CoreMark run or board download; Fmax is a tool estimate at original constraints, not a measured board frequency."
+  ],
+  "functional_log_sha256": {
+    "stat_pipeline.log": "0cf0a209c43d33b269af05f70a4f25a528862f8a112a5830c6739af3f769aabd",
+    "ifu_fifo.log": "4f4349f2e49dbcc8b5339d66dfe297a1a69f4d5e01ca77143670d44295dbfae6",
+    "five_stage_hazards.log": "78cb9828c4ca169ae982bd6c7563a5f6fdd533b2bd5a6f48a4accb308e11218a",
+    "latency.log": "197f0a16a208d50c0c826501a974ad144cdc587ecca707b00ab3643855a69224",
+    "owner.log": "dde21e02df6f9c8bd5e038bfa36c1dfb82b1981145108bf715d5f05a92c24199"
+  },
+  "firmware_sha256": {
+    "five_stage_hazards.bin": "039b9dd78c04b66f7e84e9da41e31cc87cbe705f291c23c13a0179cd440148b8",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-div.bin": "86c14e4c03330bd3cfd14fb5117c9ced0bb2938961dfc0a1d5d6169d21f4167e",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-divu.bin": "3eaa1c040b0b77884b94261b7882e750d752f39bf416537ff6338791f54bbf6a",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-mul.bin": "71b549639e90d1506aed2188b26466704feb6d85affa824cac0b019e1ab446c6",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-mulh.bin": "d6e436b28c4b67c95cdbbc76af727abe0f292e3cbe2b4a66c86f45a3dcd7ba39",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-mulhsu.bin": "3973d3009fe906ff7294b423a3cd3c37fb8625f189c4aa1aee1d92f6cd20e94c",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-mulhu.bin": "bbbe003ce522a9676625fef4671a0a9e63c433437d603a0541a5661e094acd45",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-rem.bin": "225e6d7265ec7c818e6eaeaca82d6dcbb0314244c62d2768a3749672ced7577a",
+    "references/tinyriscv/tests/isa/generated/rv32um-p-remu.bin": "fb3c5fcc4402afb1381518c4943d53eda3cedbc03e79f2310f8cf93cc4dac9e8"
+  },
+  "intermediate_implementation": {
+    "estimated_fmax_mhz": 56.221,
+    "setup_wns_ns": 2.213,
+    "lut_hierarchy_top": 5029,
+    "ff": 3609,
+    "scope": "Forwarding/ready changes before multiply-mode register correction",
+    "timing_report_sha256": "52d72843dffac6ff938705d153cf88ca02e3961babde53964e9bee53fd2b6c03"
+  },
+  "forwarding_observed_cycles": {
+    "mem": 46,
+    "wb": 16,
+    "held": 1
+  },
+  "raw_report_sha256": {
+    "run.tcl": "76a5829a2adc7a6108f165d59dd7e9b15af5af00b38e6957231b7d9e97108c99",
+    "console.log": "add1cf6db272dfd6de35553cf4f28fabb107f0e0ed68d5b6fbbda7e3cc0ba01c",
+    "synthesize/top.snr": "042fbc9ee29bee534ec434281e464397a80c1e3a9c086c2de278c395c44684be",
+    "device_map/top.dmr": "6223955d48d03c07f0a9d956370d9f25b01790974db140ca77231e22767e6072",
+    "place_route/top.prr": "590a502d1b40f4384bd638193a381065917ff35d2eb61821916ba0f70782db84",
+    "report_timing/top.rtr": "a468b6d59defe0b4009f3bd16780fe40bb5bde45b5f8d6dd25019d2aebd197a4"
+  },
+  "pds_snapshot_matches_current_rtl": true,
+  "test_sha256": {
+    "simulation/tb/soc/cpu_bus_soc_tb.v": "8f43349ee9c89f8d3f0bd75e53d077459634b28b8022b7a05b1e56f4bb5b60ad",
+    "simulation/tb/soc/cpu_latency_tb.v": "e4342b7ea2dc01e3ebf57e8394c63f2074fb6b2f81929fab990e105710bdfcdb",
+    "simulation/tb/unit/bus/rib_owner_tb.v": "6335f53084d74d49e428bde458e7e03c46c7866008955b0e454dd9a0563f25d9",
+    "simulation/scripts/run/run_bus_regression.py": "4bd60e42feacbe4be231e410436b31b87f684d4fd1cc2dbe1adf9b677c6cc6e9"
+  }
+}

@@ -16,6 +16,11 @@ module cpu_latency_tb;
     reg timer_irq=0;
     integer icount=0,dcount=0,cycles=0,n,sentinel_writes=0;
     reg[2047:0] image;
+    wire[3:0] expected_fwd={
+        dut.mem_valid && dut.mem_rd_we && dut.mem_rd!=0 && dut.mem_rd==dut.ex_rs1,
+        dut.mem_valid && dut.mem_rd_we && dut.mem_rd!=0 && dut.mem_rd==dut.ex_rs2,
+        dut.wb_gpr_we && dut.wb_rd==dut.ex_rs1,
+        dut.wb_gpr_we && dut.wb_rd==dut.ex_rs2};
     assign ir=icount==0 && !iv && cycles%3!=0;
     assign dr=dcount==0 && !dv && cycles%4!=0;
     tinyriscv_core #(.EARLY_LOCAL_REQUEST(EARLY_LOCAL_REQUEST)) dut(
@@ -56,6 +61,9 @@ module cpu_latency_tb;
     end
     always @(posedge clk) begin
         if(rst_n) begin
+            if(dut.ex_valid && !dut.hard_flush &&
+               {dut.ex_fwd_mem1,dut.ex_fwd_mem2,dut.ex_fwd_wb1,dut.ex_fwd_wb2} !== expected_fwd)
+                $fatal(1,"registered forwarding differs from live producer tags pc=%h",dut.ex_pc);
             if(dut.ex_flush !== (dut.ex_fire && (dut.ex_redirect || dut.ex_exception)))
                 $fatal(1,"redirect admission differs from EX transfer");
             cycles<=cycles+1;

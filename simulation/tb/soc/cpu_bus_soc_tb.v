@@ -12,6 +12,14 @@ module cpu_bus_soc_tb;
     reg[2047:0] image;
     reg[31:0] finish_pc;
     integer i, cycles=0, parallel_grants=0, limit=250000, coremark=0, progress=100000, trace=0;
+    integer fwd_mem_cycles=0,fwd_wb_cycles=0,fwd_hold_cycles=0;
+    wire[3:0] selected_fwd={dut.u_tinyriscv_core.ex_fwd_mem1,dut.u_tinyriscv_core.ex_fwd_mem2,
+        dut.u_tinyriscv_core.ex_fwd_wb1,dut.u_tinyriscv_core.ex_fwd_wb2};
+    wire[3:0] expected_fwd={
+        dut.u_tinyriscv_core.mem_valid && dut.u_tinyriscv_core.mem_rd_we && dut.u_tinyriscv_core.mem_rd!=0 && dut.u_tinyriscv_core.mem_rd==dut.u_tinyriscv_core.ex_rs1,
+        dut.u_tinyriscv_core.mem_valid && dut.u_tinyriscv_core.mem_rd_we && dut.u_tinyriscv_core.mem_rd!=0 && dut.u_tinyriscv_core.mem_rd==dut.u_tinyriscv_core.ex_rs2,
+        dut.u_tinyriscv_core.wb_gpr_we && dut.u_tinyriscv_core.wb_rd==dut.u_tinyriscv_core.ex_rs1,
+        dut.u_tinyriscv_core.wb_gpr_we && dut.u_tinyriscv_core.wb_rd==dut.u_tinyriscv_core.ex_rs2};
     initial begin
         if (!$value$plusargs("image=%s", image)) $fatal(1, "Missing image");
         i=$value$plusargs("limit=%d", limit);
@@ -30,6 +38,13 @@ module cpu_bus_soc_tb;
     end
     always @(posedge clk) begin
         if (dut.rst_n) begin
+            if(dut.u_tinyriscv_core.ex_valid && !dut.u_tinyriscv_core.hard_flush) begin
+                if(selected_fwd !== expected_fwd)
+                    $fatal(1,"registered forwarding differs from live tags pc=%h",dut.u_tinyriscv_core.ex_pc);
+                if(|selected_fwd[3:2]) fwd_mem_cycles=fwd_mem_cycles+1;
+                if(|selected_fwd[1:0]) fwd_wb_cycles=fwd_wb_cycles+1;
+                if(|selected_fwd && !dut.u_tinyriscv_core.ex_fire) fwd_hold_cycles=fwd_hold_cycles+1;
+            end
             cycles=cycles+1;
             if (trace && cycles<2000) begin
                 $display("TRACE cycle=%0d ex=%08x mem=%b wb=%b trap=%d irq=%b",cycles,
@@ -66,7 +81,8 @@ module cpu_bus_soc_tb;
         #100;
         if (!coremark && dut.u_tinyriscv_core.u_gpr_reg.regs[27]!==32'd1)
             $fatal(1, "TEST_FAIL testnum=%0d", dut.u_tinyriscv_core.u_gpr_reg.regs[3]);
-        $display("\nTEST_PASS cycles=%0d parallel_grants=%0d", cycles, parallel_grants);
+        $display("\nTEST_PASS cycles=%0d parallel_grants=%0d fwd_mem=%0d fwd_wb=%0d fwd_hold=%0d",
+            cycles,parallel_grants,fwd_mem_cycles,fwd_wb_cycles,fwd_hold_cycles);
         $finish;
     end
 endmodule
