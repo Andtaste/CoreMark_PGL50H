@@ -64,8 +64,8 @@ module tinyriscv_core #(
         .rsp_valid_i(ibus_rsp_valid_i),.rsp_ready_o(ibus_rsp_ready_o)
     );
 
-    // Decode reuses the existing immediate/register-use decoder. Execution
-    // independently validates the opcode so invalid encodings cannot write.
+    // ID computes static legality and unit selection before the EX boundary.
+    // EX retains operand-dependent checks (address alignment and branch target).
     wire[4:0] id_rs1,id_rs2,id_rd;
     wire id_rd_we;
     wire[31:0] id_src1,id_src2,id_imm;
@@ -82,6 +82,7 @@ module tinyriscv_core #(
     reg[31:0] ex_inst,ex_pc,ex_imm,ex_src1,ex_src2;
     reg[4:0] ex_rs1,ex_rs2,ex_rd;
     reg ex_rd_we;
+    reg ex_illegal, ex_is_md, ex_serial, ex_mem_load, ex_mem_store;
     reg[1:0] ex_fetch_fault;
     reg ex_md_done;
     reg[31:0] ex_md_saved;
@@ -208,8 +209,6 @@ module tinyriscv_core #(
     wire[6:0] opcode=ex_inst[6:0];
     wire[2:0] funct3=ex_inst[14:12];
     wire[6:0] funct7=ex_inst[31:25];
-    wire ex_is_md=opcode==7'b0110011 && funct7==1;
-    wire ex_serial=opcode==7'b1110011 || opcode==7'b0001111 || ex_fetch_fault!=0;
     wire id_serial=id_inst[6:0]==7'b1110011 || id_inst[6:0]==7'b0001111 || id_fetch_fault!=0;
     wire[31:0] md_value;
     wire md_ready,md_stall;
@@ -250,8 +249,49 @@ module tinyriscv_core #(
         end
     endfunction
 
+    function bad_encoding;
+        input[31:0] inst;
+        reg[2:0] f3;
+        reg[6:0] f7;
+        reg csr_write;
+        begin
+            f3=inst[14:12]; f7=inst[31:25];
+            csr_write=f3[1:0]==1 || inst[19:15]!=0;
+            bad_encoding=0;
+            case(inst[6:0])
+                7'b0110111,7'b0010111,7'b1101111: ;
+                7'b1100111: bad_encoding=f3!=0;
+                7'b1100011: bad_encoding=f3==2 || f3==3;
+                7'b0010011: begin
+                    if(f3==1) bad_encoding=f7!=0;
+                    else if(f3==5) bad_encoding=f7!=0 && f7!=7'h20;
+                end
+                7'b0110011: bad_encoding=f7!=0 && f7!=1 &&
+                    !(f7==7'h20 && (f3==0 || f3==5));
+                7'b0000011: bad_encoding=!(f3==0 || f3==1 || f3==2 || f3==4 || f3==5);
+                7'b0100011: bad_encoding=f3>2;
+                7'b0001111: bad_encoding=f3!=0 && f3!=1;
+                7'b1110011: begin
+                    if(f3==0) bad_encoding=inst!=32'h00000073 && inst!=32'h00100073 &&
+                        inst!=32'h30200073 && inst!=32'h10500073;
+                    else bad_encoding=f3==4 || !csr_known(inst[31:20]) ||
+                        (csr_write && !csr_writable(inst[31:20]));
+                end
+                default: bad_encoding=1;
+            endcase
+        end
+    endfunction
+
     reg[31:0] ex_result,ex_address,ex_next_pc,ex_cause,ex_csr_data;
-    reg ex_load,ex_store,ex_redirect,ex_exception,ex_csr_we,ex_mret,ex_illegal;
+    reg ex_redirect,ex_exception,ex_csr_we,ex_mret;
+    // Memory admission depends only on its registered class/legality and
+    // effective address, not on the full branch/CSR exception result mux.
+    wire ex_mem_misaligned=(funct3==2 && |ex_address[1:0]) ||
+        ((funct3==1 || funct3==5) && ex_address[0]);
+    wire ex_mem_fault=ex_illegal || ex_fetch_fault!=0 ||
+        ex_mem_misaligned || ex_address[31:28]>4;
+    wire ex_load=ex_mem_load && !ex_mem_fault;
+    wire ex_store=ex_mem_store && !ex_mem_fault;
     reg branch_condition;
     wire[31:0] rhs=opcode==7'b0010011 ? ex_imm : src2;
     wire lt_u=src1<rhs;
@@ -263,9 +303,9 @@ module tinyriscv_core #(
     wire[31:0] csr_operand=funct3[2] ? {27'b0,ex_inst[19:15]} : src1;
     always @(*) begin
         ex_result=0; ex_address=src1+ex_imm; ex_next_pc=ex_pc+32'd4;
-        ex_load=0; ex_store=0; ex_redirect=0; ex_exception=0;
+        ex_redirect=0; ex_exception=0;
         ex_cause=0; ex_csr_we=0; ex_csr_data=0; ex_mret=0;
-        ex_illegal=0; branch_condition=0;
+        branch_condition=0;
         case(opcode)
             7'b0110111: ex_result={ex_inst[31:12],12'b0};
             7'b0010111: ex_result=ex_pc+ex_imm;
@@ -274,7 +314,7 @@ module tinyriscv_core #(
             end
             7'b1100111: begin
                 ex_result=ex_pc+32'd4; ex_next_pc=(src1+ex_imm)&32'hfffffffe;
-                ex_redirect=1; ex_illegal=funct3!=0;
+                ex_redirect=1;
             end
             7'b1100011: begin
                 case(funct3)
@@ -284,7 +324,7 @@ module tinyriscv_core #(
                     5: branch_condition=$signed(src1)>=$signed(src2);
                     6: branch_condition=src1<src2;
                     7: branch_condition=src1>=src2;
-                    default: ex_illegal=1;
+                    default: ;
                 endcase
                 if (branch_condition) begin ex_redirect=1; ex_next_pc=ex_pc+ex_imm; end
             end
@@ -301,25 +341,16 @@ module tinyriscv_core #(
                         6: ex_result=src1|rhs;
                         7: ex_result=src1&rhs;
                     endcase
-                    if (opcode==7'b0110011)
-                        ex_illegal=funct7!=0 && !(funct7==7'h20 && (funct3==0 || funct3==5));
-                    else if (funct3==1) ex_illegal=funct7!=0;
-                    else if (funct3==5) ex_illegal=funct7!=0 && funct7!=7'h20;
                 end
             end
             7'b0000011,7'b0100011: begin
-                ex_load=opcode==7'b0000011; ex_store=opcode==7'b0100011;
-                ex_illegal=ex_store ? funct3>2 :
-                    !(funct3==0 || funct3==1 || funct3==2 || funct3==4 || funct3==5);
-                if ((funct3==2 && |ex_address[1:0]) ||
-                    ((funct3==1 || funct3==5) && ex_address[0])) begin
-                    ex_exception=1; ex_cause=ex_store ? 32'd6 : 32'd4;
+                if (ex_mem_misaligned) begin
+                    ex_exception=1; ex_cause=ex_mem_store ? 32'd6 : 32'd4;
                 end else if (ex_address[31:28]>4) begin
-                    ex_exception=1; ex_cause=ex_store ? 32'd7 : 32'd5;
+                    ex_exception=1; ex_cause=ex_mem_store ? 32'd7 : 32'd5;
                 end
             end
             7'b0001111: begin
-                ex_illegal=funct3!=0 && funct3!=1;
                 ex_redirect=1;
             end
             7'b1110011: begin
@@ -329,11 +360,10 @@ module tinyriscv_core #(
                         32'h00100073: begin ex_exception=1; ex_cause=3; end
                         32'h30200073: ex_mret=1;
                         32'h10500073: ; // WFI may legally act as a NOP.
-                        default: ex_illegal=1;
+                        default: ;
                     endcase
                 end else begin
                     ex_result=csr_read;
-                    ex_illegal=funct3==4 || !csr_known(ex_inst[31:20]);
                     ex_csr_we=funct3[1:0]==1 || ex_inst[19:15]!=0;
                     case(funct3[1:0])
                         1: ex_csr_data=csr_operand;
@@ -341,20 +371,21 @@ module tinyriscv_core #(
                         3: ex_csr_data=csr_read&~csr_operand;
                         default: ex_csr_data=csr_read;
                     endcase
-                    if (ex_csr_we && !csr_writable(ex_inst[31:20])) ex_illegal=1;
                 end
             end
-            default: ex_illegal=1;
+            default: ;
         endcase
         if (ex_redirect && |ex_next_pc[1:0]) begin ex_exception=1; ex_cause=0; end
         if (ex_illegal) begin ex_exception=1; ex_cause=2; end
         if (ex_fetch_fault!=0) begin
             ex_exception=1; ex_cause=ex_fetch_fault==1 ? 32'd0 : 32'd1;
         end
-        if (ex_exception) begin ex_load=0; ex_store=0; ex_csr_we=0; ex_mret=0; ex_redirect=0; end
+        if (ex_exception) begin ex_csr_we=0; ex_mret=0; ex_redirect=0; end
     end
 
-    wire ex_finished=!ex_is_md || ex_md_done || md_ready || ex_exception;
+    // Legal M operations have no dynamic address/branch exception. A fetch
+    // fault may still accompany an M-shaped payload and must complete as a trap.
+    wire ex_finished=!ex_is_md || ex_md_done || md_ready || ex_fetch_fault!=0;
     assign ex_can_advance=ex_valid && mem_ready && ex_finished && !ex_load_dependency && !hard_flush;
     // An early local transaction and its EX payload advance atomically.
     // A lost arbitration holds EX; no write is sent again after acceptance.
@@ -368,7 +399,10 @@ module tinyriscv_core #(
         (ex_valid && ex_serial) || (mem_valid && mem_serial) || (wb_valid && wb_serial);
     wire fault_inflight=(ex_valid && ex_exception) ||
         (mem_valid && mem_exception) || (wb_valid && wb_exception);
-    wire ex_flush=ex_fire && (ex_redirect || ex_exception);
+    // Redirects are non-memory operations; faults suppress ex_load/ex_store.
+    // Both therefore have ex_local_request==0 and advance without bus ready.
+    // Express that invariant directly to avoid LSU arbitration -> flush timing.
+    wire ex_flush=ex_can_advance && (ex_redirect || ex_exception);
     // Kill younger instructions immediately. IF captures redirect targets at
     // the edge, independently of this same-cycle architectural admission gate.
     assign id_fire=id_valid && ex_ready && !id_dep_ex_load && !id_dep_mem_load &&
@@ -383,12 +417,18 @@ module tinyriscv_core #(
             ex_valid<=0; ex_inst<=0; ex_pc<=0; ex_imm<=0;
             ex_src1<=0; ex_src2<=0; ex_rs1<=0; ex_rs2<=0; ex_rd<=0;
             ex_rd_we<=0; ex_fetch_fault<=0;
+            ex_illegal<=0; ex_is_md<=0; ex_serial<=0; ex_mem_load<=0; ex_mem_store<=0;
             ex_md_done<=0; ex_md_saved<=0;
         end else if (hard_flush) begin ex_valid<=0; ex_md_done<=0; end
         else if (id_fire) begin
             ex_valid<=1; ex_inst<=id_inst; ex_pc<=id_pc; ex_imm<=id_imm;
             ex_src1<=id_src1; ex_src2<=id_src2; ex_rs1<=id_rs1; ex_rs2<=id_rs2;
             ex_rd<=id_rd; ex_rd_we<=id_rd_we; ex_fetch_fault<=id_fetch_fault;
+            ex_illegal<=bad_encoding(id_inst);
+            ex_is_md<=id_inst[6:0]==7'b0110011 && id_inst[31:25]==1;
+            ex_serial<=id_serial;
+            ex_mem_load<=id_inst[6:0]==7'b0000011;
+            ex_mem_store<=id_inst[6:0]==7'b0100011;
             ex_md_done<=0;
         end else begin
             if (ex_fire) begin ex_valid<=0; ex_md_done<=0; end

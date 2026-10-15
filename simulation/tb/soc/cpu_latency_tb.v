@@ -27,6 +27,19 @@ module cpu_latency_tb;
         .jtag_halt_i(1'b0),.int_i({7'b0,timer_irq})
     );
     initial begin
+        // Static decode moved across ID/EX: sample reserved encodings and the
+        // CSR write rules in addition to the executed hazards/traps program.
+        #1;
+        for(n=0;n<8;n=n+1) begin
+            if(dut.bad_encoding(32'h02000033 | (n<<12))) $fatal(1,"M decode %0d",n);
+            if(dut.bad_encoding(32'h02001013 | (n<<7))!==1'b1) $fatal(1,"reserved SLLI");
+        end
+        if(!dut.bad_encoding(32'h00003003) || !dut.bad_encoding(32'h00003023) ||
+           !dut.bad_encoding(32'h00002063) || !dut.bad_encoding(32'h00001067) ||
+           !dut.bad_encoding(32'hc0001073) || !dut.bad_encoding(32'h12302073) ||
+           dut.bad_encoding(32'hc0002073) || dut.bad_encoding(32'h40005013) ||
+           !dut.bad_encoding(32'h40001013) || dut.bad_encoding(32'h30200073))
+            $fatal(1,"static instruction legality");
         if(!$value$plusargs("image=%s",image)) $fatal(1,"missing image");
         for(n=0;n<16384;n=n+1) imem[n]=0;
         for(n=0;n<8192;n=n+1) dmem[n]=0;
@@ -43,6 +56,8 @@ module cpu_latency_tb;
     end
     always @(posedge clk) begin
         if(rst_n) begin
+            if(dut.ex_flush !== (dut.ex_fire && (dut.ex_redirect || dut.ex_exception)))
+                $fatal(1,"redirect admission differs from EX transfer");
             cycles<=cycles+1;
             if(cycles>20000) $fatal(1,"latency timeout pc=%h",dut.ie_dec_pc_o);
             if(iv && iv_ready) iv<=0;

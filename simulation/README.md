@@ -13,6 +13,8 @@ ram2 连续访问和少量迭代 CoreMark CRC 仿真。其他目录仍有待实�
 覆盖前端 FIFO 协议、转发、CSR/异常、中断与可变延迟访存；`--suite unit` 还包含响应 owner 背压检查。
 前端定向 TB 为 [ifu_fifo_tb.v](tb/unit/ifu_fifo_tb.v)，检查容量预留、满队列、
 背压下请求保持、连续重定向、旧响应丢弃、响应与新请求同拍交接及取指异常 PC。
+统计事件寄存检查为 [stat_pipeline_tb.v](tb/unit/csr/stat_pipeline_tb.v)，
+检查启停／清零窗口、最后事件排空及饱和；可变延迟 TB 还抽查静态指令合法性译码。
 入口只运行当前拓扑，已删除旧仲裁对照和重复模式循环。按本次改动选择必要的 suite，
 无需每次运行 all；默认仅运行 pipeline。生成固件在 firmware/generated/local_ram/，日志在 results/logs/local_ram/。
 

@@ -71,30 +71,38 @@ module csr_reg(
     // Custom profiling CSRs: 7c0 control, 7c1..7c7 counters,
     // 7c8 sticky saturation bits, 7cf interface signature/version.
     reg stat_enable;
+    reg[6:0] stat_pending;
     reg[31:0] stat_count[0:6];
     reg[6:0] stat_overflow;
+    wire stat_control_write=exu_we_i && exu_waddr_i[11:0]==12'h7c0;
+    wire stat_clear=stat_control_write && exu_wdata_i[1];
     integer stat_idx;
+    // Capture qualified events before the saturating counter enable chain.
+    // Control-write cycles never belong to the measurement window. Stop drains
+    // the previous event on its own edge; clear cancels both count and pending.
     always @ (posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             stat_enable <= 1'b0;
+            stat_pending <= 7'b0;
             stat_overflow <= 7'b0;
             for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1)
                 stat_count[stat_idx] <= 32'b0;
-        end else if (exu_we_i && (exu_waddr_i[11:0] == 12'h7c0)) begin
-            stat_enable <= exu_wdata_i[0];
-            if (exu_wdata_i[1]) begin
+        end else begin
+            stat_pending <= stat_events_i & {7{stat_enable && !stat_control_write}};
+            if (stat_control_write) stat_enable <= exu_wdata_i[0];
+            if (stat_clear) begin
                 stat_overflow <= 7'b0;
                 for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1)
                     stat_count[stat_idx] <= 32'b0;
-            end
-        end else if (stat_enable) begin
+            end else begin
             for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1) begin
-                if (stat_events_i[stat_idx]) begin
+                if (stat_pending[stat_idx]) begin
                     if (&stat_count[stat_idx])
                         stat_overflow[stat_idx] <= 1'b1;
                     else
                         stat_count[stat_idx] <= stat_count[stat_idx] + 1'b1;
                 end
+            end
             end
         end
     end

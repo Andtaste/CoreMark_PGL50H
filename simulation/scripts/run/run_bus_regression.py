@@ -112,6 +112,14 @@ def main():
     LOGS.mkdir(parents=True,exist_ok=True)
     results = []
     if args.suite in ('pipeline','all'):
+        stats = BUILD/'stat_pipeline.vvp'
+        command([iv,'-g2012','-s','stat_pipeline_tb','-I',SRC/'core',
+                 '-o',stats,SRC/'core/csr_reg.v',SIM/'tb/unit/csr/stat_pipeline_tb.v'],
+                LOGS/'compile_stat_pipeline.log')
+        output = command([vvp,stats],LOGS/'stat_pipeline.log')
+        if 'TEST_PASS STAT_PIPELINE' not in output: raise RuntimeError('No statistics PASS marker')
+        print(output.strip(),flush=True)
+        results.append({'name':'statistics_event_pipeline','status':'PASS'})
         frontend = BUILD/'ifu_fifo.vvp'
         command([iv,'-g2012','-s','ifu_fifo_tb','-I',SRC/'core',
                  '-o',frontend,SRC/'core/ifu.v',SIM/'tb/unit/ifu_fifo_tb.v'],
