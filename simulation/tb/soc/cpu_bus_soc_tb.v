@@ -12,12 +12,13 @@ module cpu_bus_soc_tb;
     );
     reg[2047:0] image;
     reg[31:0] finish_pc;
-    integer i, cycles=0, parallel_grants=0, limit=250000, coremark=0, progress=100000;
+    integer i, cycles=0, parallel_grants=0, limit=250000, coremark=0, progress=100000, trace=0;
     initial begin
         if (!$value$plusargs("image=%s", image)) $fatal(1, "Missing image");
         i=$value$plusargs("limit=%d", limit);
         i=$value$plusargs("coremark=%d", coremark);
         i=$value$plusargs("progress=%d", progress);
+        i=$value$plusargs("trace=%d", trace);
         if (coremark && !$value$plusargs("finish_pc=%h", finish_pc))
             $fatal(1, "CoreMark requires its linked exit-loop address");
         for (i=0;i<16384;i=i+1) dut.u_rom.rom111.memory[i]=0;
@@ -31,6 +32,13 @@ module cpu_bus_soc_tb;
     always @(posedge clk) begin
         if (dut.rst_n) begin
             cycles=cycles+1;
+            if (trace && cycles<2000) begin
+                $display("TRACE cycle=%0d ex=%08x mem=%b wb=%b trap=%d irq=%b",cycles,
+                    dut.u_tinyriscv_core.ie_dec_pc_o,
+                    dut.u_tinyriscv_core.mem_valid,dut.u_tinyriscv_core.wb_valid,
+                    dut.u_tinyriscv_core.trap_state,dut.u_tinyriscv_core.irq_pending);
+                $fflush();
+            end
             if (coremark && progress>0 && cycles%progress==0) begin
                 $display("\nSIM_PROGRESS cycles=%0d pc=%08x",cycles,dut.u_tinyriscv_core.u_ifu.pc);
                 $fflush();

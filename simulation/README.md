@@ -8,6 +8,11 @@ ram2 连续访问和少量迭代 CoreMark CRC 仿真。其他目录仍有待实�
 运行入口为 [run_bus_regression.py](scripts/run/run_bus_regression.py)，
 所需工具、协议范围及对比方法见 [总线仲裁优化说明](../docs/总线仲裁优化说明.md)。
 
+`codex/five-stage-pipeline` 分支使用五级内核，协议、资源和验证记录见
+[五级流水线改造说明](../docs/五级流水线改造说明.md)。新增 `--suite pipeline`
+覆盖转发、CSR/异常、中断与可变延迟访存；`--suite unit` 还包含响应 owner 背压检查。
+本分支的 PARALLEL_ACCESS=0 只切换请求仲裁，仍使用新响应归属协议。
+
 ```text
 simulation/
 ├─ tb/                 core、soc、unit/{alu,muldiv,regfile,csr,bus}

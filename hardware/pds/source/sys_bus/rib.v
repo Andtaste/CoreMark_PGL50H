@@ -19,7 +19,8 @@
 module rib #(
     parameter MASTER_NUM = 3,
     parameter SLAVE_NUM = 2,
-    parameter PARALLEL_ACCESS = 0)(
+    parameter PARALLEL_ACCESS = 0,
+    parameter REGISTERED_RESPONSE = 0)(
 
     input wire clk,
     input wire rst_n,
@@ -126,10 +127,11 @@ module rib #(
     );
 
 
-    // Keep the legacy fixed-latency response contract used by IFU/EXU.
-    // Arbitration is combinational. This is NOT an outstanding-transaction
-    // crossbar: variable-latency/slave-switch responses require owner tags
-    // and corresponding master adapters before they can be supported.
+    // REGISTERED_RESPONSE=0 retains the old current-grant routing for unit
+    // comparison only. The five-stage SoC selects 1: request arbitration is
+    // combinational and response owners are registered until completion.
+    // Capacity is one outstanding command per master and per slave, with
+    // same-cycle response completion / next request acceptance supported.
     // Priority is unchanged: m2 (JTAG) > m1 (data) > m0 (fetch), m3 if enabled
     // has the highest priority, matching the original reversed packing.
     wire[31:0] m_addr[0:3];
@@ -174,6 +176,22 @@ module rib #(
     assign s_ready = {s4_req_rdy_i, s3_req_rdy_i, s2_req_rdy_i, s1_req_rdy_i, s0_req_rdy_i};
     assign s_rsp_valid = {s4_rsp_vld_i, s3_rsp_vld_i, s2_rsp_vld_i, s1_rsp_vld_i, s0_rsp_vld_i};
 
+    // Five-stage protocol: one outstanding transaction per master. A slave
+    // remembers the accepted owner until the response handshakes. Completion
+    // and the next acceptance may occur together, preserving 1/cycle fetch.
+    wire[4:0] rsp_pending;
+    wire[1:0] rsp_owner[0:4];
+    wire[3:0] master_available;
+    genvar a, b;
+    generate for (a=0; a<4; a=a+1) begin: outstanding_master
+        wire[SLAVE_NUM-1:0] blocked;
+        for (b=0; b<SLAVE_NUM; b=b+1) begin: outstanding_slave
+            assign blocked[b] = rsp_pending[b] && (rsp_owner[b] == a) &&
+                !(s_rsp_valid[b] && m_rsp_ready[a]);
+        end
+        assign master_available[a] = !REGISTERED_RESPONSE || !(|blocked);
+    end endgenerate
+
     wire[MASTER_NUM-1:0] candidates[0:SLAVE_NUM-1];
     wire[MASTER_NUM-1:0] grant[0:SLAVE_NUM-1];
     genvar s, m;
@@ -184,7 +202,7 @@ module rib #(
                     wire target_match = (m_addr[m][31:28] == s);
                     // Legacy mode considers all requesting masters before
                     // decoding; parallel mode arbitrates only this slave.
-                    assign candidates[s][m] = m_req[m] &
+                    assign candidates[s][m] = m_req[m] & master_available[m] &
                         ((PARALLEL_ACCESS == 0) | target_match);
                     if (m == MASTER_NUM - 1) begin: highest
                         assign grant[s][m] = candidates[s][m] & target_match;
@@ -218,11 +236,32 @@ module rib #(
                 assign s_sel[s] = sum_sel;
                 assign s_req[s] = sum_req;
                 assign s_we[s] = sum_we;
-                assign s_rsp_ready[s] = sum_ready;
+                assign s_rsp_ready[s] = REGISTERED_RESPONSE ?
+                    (rsp_pending[s] ? m_rsp_ready[rsp_owner[s]] : 1'b1) : sum_ready;
+                if (REGISTERED_RESPONSE) begin: response_owner
+                    reg pending;
+                    reg[1:0] owner /* synthesis syn_state_machine = 0 */;
+                    integer r;
+                    always @(posedge clk or negedge rst_n) begin
+                        if (!rst_n) begin pending<=0; owner<=0; end
+                        else if (s_req[s] && s_ready[s]) begin
+                            pending<=1;
+                            for (r=0;r<MASTER_NUM;r=r+1)
+                                if (grant[s][r]) owner<=r;
+                        end else if (s_rsp_valid[s] && s_rsp_ready[s]) pending<=0;
+                    end
+                    assign rsp_pending[s]=pending;
+                    assign rsp_owner[s]=owner;
+                end else begin: legacy_owner
+                    assign rsp_pending[s]=0;
+                    assign rsp_owner[s]=0;
+                end
             end else begin: inactive
                 assign s_addr[s] = 32'h0;
                 assign s_wdata[s] = 32'h0;
                 assign s_sel[s] = 4'h0;
+                assign rsp_pending[s] = 1'b0;
+                assign rsp_owner[s] = 2'b0;
                 assign s_req[s] = 1'b0;
                 assign s_we[s] = 1'b0;
                 assign s_rsp_ready[s] = 1'b0;
@@ -238,9 +277,9 @@ module rib #(
                     ready = 1'b0;
                     valid = 1'b0;
                     for (k = 0; k < SLAVE_NUM; k = k + 1) begin
-                        data = data | ({32{grant[k][m]}} & s_rdata[k]);
+                        data = data | ({32{REGISTERED_RESPONSE ? (rsp_pending[k] && rsp_owner[k]==m) : grant[k][m]}} & s_rdata[k]);
                         ready = ready | (grant[k][m] & s_ready[k]);
-                        valid = valid | (grant[k][m] & s_rsp_valid[k]);
+                        valid = valid | ((REGISTERED_RESPONSE ? (rsp_pending[k] && rsp_owner[k]==m) : grant[k][m]) & s_rsp_valid[k]);
                     end
                 end
                 assign m_rdata[m] = data;

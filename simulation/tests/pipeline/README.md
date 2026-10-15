@@ -1,6 +1,11 @@
 # 流水线测试目录
 
-以下目录对应清单编号；当前仅建立结构，测试实现和执行仍待完成。
+以下目录对应清单编号。五级改造已增加跨类别定向程序
+[five_stage_hazards.S](five_stage_hazards.S)，覆盖转发、load-use、乘除法、CSR、
+异常冲刷、MRET 与定时器中断；各类别更完整的覆盖仍待补充。
+
+运行 `python simulation/scripts/run/run_bus_regression.py --suite pipeline`，
+分别在两种 SoC 仲裁模式和独立可变延迟存储模型下执行。
 
 | 目录 | 用途 |
 |---|---|

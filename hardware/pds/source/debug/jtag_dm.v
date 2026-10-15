@@ -147,7 +147,11 @@ module jtag_dm #(
     wire[DMI_DATA_BITS-1:0] data = rx_data_r[DMI_DATA_BITS+DMI_OP_BITS-1:DMI_OP_BITS];
     wire[DMI_ADDR_BITS-1:0] address = rx_data_r[DTM_REQ_BITS-1:DMI_DATA_BITS+DMI_OP_BITS];
 
-    wire req_sys_bus = ~(address == DMSTATUS);
+    // Only actual SBA operations use the system bus. In particular a CPU
+    // reset command must complete without waiting on that CPU's reset bus.
+    wire req_sys_bus = ((op == `DTM_OP_WRITE) &&
+        ((address == SBDATA0) || ((address == SBADDRESS0) && sbcs[20]))) ||
+        ((op == `DTM_OP_READ) && (address == SBDATA0) && sbcs[15]);
 
     always @ (posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -177,6 +181,7 @@ module jtag_dm #(
         end else begin
             case (state)
                 STATE_IDLE: begin
+                    need_resp <= 1'b0;
                     // 接收到driver的请求
                     if (rx_valid) begin
                         rx_data_r <= rx_data;
@@ -185,7 +190,7 @@ module jtag_dm #(
                 end
                 STATE_EXE: begin
                     state <= STATE_END;
-                    need_resp <= 1'b1;
+                    need_resp <= 1'b0;
                     case (op)
                         `DTM_OP_READ: begin
                             case (address)
@@ -321,12 +326,17 @@ module jtag_dm #(
                     endcase
                 end
                 STATE_END: begin
-                    state <= STATE_IDLE;
-                    dm_mem_rdata <= dm_mem_rdata_i;
-                    need_resp <= 1'b0;
-                    dm_mem_we <= 1'b0;
-                    dm_reg_we <= 1'b0;
-                    dm_reset_req <= 1'b0;
+                    // A command is stable before being issued, and is issued
+                    // exactly once. Wait for its tagged response before DMI
+                    // completion; bus arbitration may delay this state.
+                    if (!req_sys_bus || jtag_rsp_hsked) begin
+                        state <= STATE_IDLE;
+                        dm_mem_rdata <= dm_mem_rdata_i;
+                        need_resp <= 1'b1;
+                        dm_mem_we <= 1'b0;
+                        dm_reg_we <= 1'b0;
+                        dm_reset_req <= 1'b0;
+                    end
                 end
             endcase
         end
@@ -346,7 +356,13 @@ module jtag_dm #(
     assign dm_mem_addr_o = dm_mem_addr;
     assign dm_mem_wdata_o = dm_mem_wdata;
 
-    assign req_valid_o = (state != STATE_IDLE) & req_sys_bus;
+    reg bus_sent;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) bus_sent<=0;
+        else if (state==STATE_IDLE) bus_sent<=0;
+        else if (jtag_req_hsked) bus_sent<=1;
+    end
+    assign req_valid_o = (state == STATE_END) & req_sys_bus & !bus_sent;
     assign dm_halt_req_o = dm_halt_req;
     assign dm_reset_req_o = dm_reset_req;
 

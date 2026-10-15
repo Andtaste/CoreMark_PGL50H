@@ -53,8 +53,8 @@ module timer(
     // 定时器溢出值寄存器，当定时器计数值达到该值时产生pending，可读可写
     reg[31:0] timer_value;
 
-    wire wen = we_i & req_valid_i;
-    wire ren = (~we_i) & req_valid_i;
+    wire wen = we_i & req_valid_i & req_ready_o;
+    wire ren = (~we_i) & req_valid_i & req_ready_o;
     wire timer_en = (timer_ctrl[0] == 1'b1);
     wire timer_int_en = (timer_ctrl[1] == 1'b1);
     wire timer_expired = (timer_count >= timer_value);
@@ -146,7 +146,7 @@ module timer(
                     REG_COUNT: data_r <= timer_count;
                     default:   data_r <= 32'h0;
                 endcase
-            end else begin
+            end else if (req_ready_o) begin
                 data_r <= 32'h0;
             end
         end

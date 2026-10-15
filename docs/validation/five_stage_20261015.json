@@ -1,0 +1,758 @@
+{
+  "date": "2026-10-15",
+  "branch": "codex/five-stage-pipeline",
+  "baseline_commit": "7e77549",
+  "tools": {
+    "iverilog": "10.2",
+    "gcc": "15.2.0",
+    "pds": "2022.2-SP1-Lite build 132640"
+  },
+  "scope": "Functional simulation and PDS implementation; no board download; CoreMark iterations=1 is CRC smoke only, below the 10-second rule",
+  "results": {
+    "unit": [
+      {
+        "name": "rib_unit",
+        "status": "PASS",
+        "cases": 1003
+      },
+      {
+        "name": "rib_owner",
+        "status": "PASS",
+        "cases": 6
+      }
+    ],
+    "isa": [
+      {
+        "name": "rv32ui-p-add",
+        "mode": 0,
+        "cycles": 467,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-add",
+        "mode": 1,
+        "cycles": 467,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-addi",
+        "mode": 0,
+        "cycles": 226,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-addi",
+        "mode": 1,
+        "cycles": 226,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-and",
+        "mode": 0,
+        "cycles": 487,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-and",
+        "mode": 1,
+        "cycles": 487,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-andi",
+        "mode": 0,
+        "cycles": 182,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-andi",
+        "mode": 1,
+        "cycles": 182,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-auipc",
+        "mode": 0,
+        "cycles": 34,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-auipc",
+        "mode": 1,
+        "cycles": 34,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-beq",
+        "mode": 0,
+        "cycles": 315,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-beq",
+        "mode": 1,
+        "cycles": 315,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bge",
+        "mode": 0,
+        "cycles": 351,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bge",
+        "mode": 1,
+        "cycles": 351,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bgeu",
+        "mode": 0,
+        "cycles": 376,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bgeu",
+        "mode": 1,
+        "cycles": 376,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-blt",
+        "mode": 0,
+        "cycles": 315,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-blt",
+        "mode": 1,
+        "cycles": 315,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bltu",
+        "mode": 0,
+        "cycles": 340,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bltu",
+        "mode": 1,
+        "cycles": 340,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bne",
+        "mode": 0,
+        "cycles": 319,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-bne",
+        "mode": 1,
+        "cycles": 319,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-fence_i",
+        "mode": 0,
+        "cycles": 479,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-fence_i",
+        "mode": 1,
+        "cycles": 479,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-jal",
+        "mode": 0,
+        "cycles": 31,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-jal",
+        "mode": 1,
+        "cycles": 31,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-jalr",
+        "mode": 0,
+        "cycles": 102,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-jalr",
+        "mode": 1,
+        "cycles": 102,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lb",
+        "mode": 0,
+        "cycles": 265,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lb",
+        "mode": 1,
+        "cycles": 265,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lbu",
+        "mode": 0,
+        "cycles": 265,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lbu",
+        "mode": 1,
+        "cycles": 265,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lh",
+        "mode": 0,
+        "cycles": 273,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lh",
+        "mode": 1,
+        "cycles": 273,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lhu",
+        "mode": 0,
+        "cycles": 278,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lhu",
+        "mode": 1,
+        "cycles": 278,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lui",
+        "mode": 0,
+        "cycles": 37,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lui",
+        "mode": 1,
+        "cycles": 37,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lw",
+        "mode": 0,
+        "cycles": 281,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-lw",
+        "mode": 1,
+        "cycles": 281,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-or",
+        "mode": 0,
+        "cycles": 490,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-or",
+        "mode": 1,
+        "cycles": 490,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-ori",
+        "mode": 0,
+        "cycles": 189,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-ori",
+        "mode": 1,
+        "cycles": 189,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sb",
+        "mode": 0,
+        "cycles": 519,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sb",
+        "mode": 1,
+        "cycles": 519,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sh",
+        "mode": 0,
+        "cycles": 552,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sh",
+        "mode": 1,
+        "cycles": 552,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-simple",
+        "mode": 0,
+        "cycles": 11,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-simple",
+        "mode": 1,
+        "cycles": 11,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sll",
+        "mode": 0,
+        "cycles": 495,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sll",
+        "mode": 1,
+        "cycles": 495,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-slli",
+        "mode": 0,
+        "cycles": 225,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-slli",
+        "mode": 1,
+        "cycles": 225,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-slt",
+        "mode": 0,
+        "cycles": 461,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-slt",
+        "mode": 1,
+        "cycles": 461,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-slti",
+        "mode": 0,
+        "cycles": 221,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-slti",
+        "mode": 1,
+        "cycles": 221,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sltiu",
+        "mode": 0,
+        "cycles": 221,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sltiu",
+        "mode": 1,
+        "cycles": 221,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sltu",
+        "mode": 0,
+        "cycles": 461,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sltu",
+        "mode": 1,
+        "cycles": 461,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sra",
+        "mode": 0,
+        "cycles": 514,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sra",
+        "mode": 1,
+        "cycles": 514,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-srai",
+        "mode": 0,
+        "cycles": 240,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-srai",
+        "mode": 1,
+        "cycles": 240,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-srl",
+        "mode": 0,
+        "cycles": 508,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-srl",
+        "mode": 1,
+        "cycles": 508,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-srli",
+        "mode": 0,
+        "cycles": 234,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-srli",
+        "mode": 1,
+        "cycles": 234,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sub",
+        "mode": 0,
+        "cycles": 459,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sub",
+        "mode": 1,
+        "cycles": 459,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sw",
+        "mode": 0,
+        "cycles": 554,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-sw",
+        "mode": 1,
+        "cycles": 554,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-xor",
+        "mode": 0,
+        "cycles": 489,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-xor",
+        "mode": 1,
+        "cycles": 489,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-xori",
+        "mode": 0,
+        "cycles": 191,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32ui-p-xori",
+        "mode": 1,
+        "cycles": 191,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-div",
+        "mode": 0,
+        "cycles": 284,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-div",
+        "mode": 1,
+        "cycles": 284,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-divu",
+        "mode": 0,
+        "cycles": 285,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-divu",
+        "mode": 1,
+        "cycles": 285,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mul",
+        "mode": 0,
+        "cycles": 512,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mul",
+        "mode": 1,
+        "cycles": 512,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulh",
+        "mode": 0,
+        "cycles": 510,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulh",
+        "mode": 1,
+        "cycles": 510,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulhsu",
+        "mode": 0,
+        "cycles": 510,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulhsu",
+        "mode": 1,
+        "cycles": 510,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulhu",
+        "mode": 0,
+        "cycles": 510,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-mulhu",
+        "mode": 1,
+        "cycles": 510,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-rem",
+        "mode": 0,
+        "cycles": 284,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-rem",
+        "mode": 1,
+        "cycles": 284,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-remu",
+        "mode": 0,
+        "cycles": 284,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "rv32um-p-remu",
+        "mode": 1,
+        "cycles": 284,
+        "status": "PASS",
+        "parallel_grants": 0
+      }
+    ],
+    "data": [
+      {
+        "name": "ram2_parallel",
+        "mode": 0,
+        "cycles": 1172,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "ram2_parallel",
+        "mode": 1,
+        "cycles": 1172,
+        "status": "PASS",
+        "parallel_grants": 100
+      }
+    ],
+    "pipeline": [
+      {
+        "name": "five_stage_hazards",
+        "mode": 0,
+        "cycles": 795,
+        "status": "PASS",
+        "parallel_grants": 0
+      },
+      {
+        "name": "five_stage_hazards",
+        "mode": 1,
+        "cycles": 795,
+        "status": "PASS",
+        "parallel_grants": 2
+      },
+      {
+        "name": "five_stage_variable_latency",
+        "status": "PASS",
+        "cycles": 1349
+      }
+    ],
+    "coremark": [
+      {
+        "name": "coremark_smoke",
+        "mode": 0,
+        "cycles": 578946,
+        "status": "PASS",
+        "parallel_grants": 0,
+        "benchmark_cycles": 489594
+      },
+      {
+        "name": "coremark_smoke",
+        "mode": 1,
+        "cycles": 578378,
+        "status": "PASS",
+        "parallel_grants": 29036,
+        "benchmark_cycles": 489594
+      }
+    ]
+  },
+  "pds": {
+    "part": "PGL50H-6 FBG484",
+    "clock_ns": 20.0,
+    "lut": 5082,
+    "ff": 3690,
+    "drm": 48,
+    "apm": 4,
+    "setup_wns_ns": 0.549,
+    "hold_slow_whs_ns": 0.252,
+    "hold_fast_whs_ns": 0.195,
+    "estimated_fmax_mhz": 51.411,
+    "timing": "All existing constraints met; external IO delays partially unconstrained"
+  },
+  "raw_report_sha256": {
+    "top.dmr": "ec17fb1e23cde4efee756433061a5cd6eca677fc07646a7a34718b930410961c",
+    "top.prr": "60d4e3ba7c8df17b16b656159f1cc36752754aa15f2376108ed51e3aa2e42621",
+    "top.rtr": "306d1b71f00595b4a08d851eb73e57581a0de37a6d1c02404f7d2fc8f60b909e"
+  }
+}

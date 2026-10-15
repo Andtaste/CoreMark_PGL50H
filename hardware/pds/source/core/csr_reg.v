@@ -36,6 +36,7 @@ module csr_reg(
     input wire[31:0] clint_wdata_i,         // clint模块写寄存器数据
     output wire[31:0] mtvec_o,              // mtvec寄存器值
     output wire[31:0] mepc_o,               // mepc寄存器值
+    output wire[31:0] mie_o,
     output wire[31:0] mstatus_o             // mstatus寄存器值
 
     );
@@ -48,6 +49,7 @@ module csr_reg(
     reg[31:0] mstatus;
     reg[31:0] mscratch;
 
+    assign mie_o = mie;
     assign mtvec_o = mtvec;
     assign mepc_o = mepc;
     assign mstatus_o = mstatus;

@@ -87,15 +87,16 @@ def coremark_binary(gcc):
     (BUILD/'coremark_finish_pc.txt').write_text(match[1],encoding='ascii')
     return binary
 
-def ram2_binary(gcc):
+def ram2_binary(gcc, source=None):
     gcc = executable(gcc)
-    elf = BUILD/'ram2_parallel.elf'
+    source = source or SIM/'tests/bus/memory/ram2_parallel.S'
+    elf = BUILD/(source.stem+'.elf')
     command([gcc,'-march=rv32im_zicsr','-mabi=ilp32','-nostdlib',
              '-Wl,-Ttext=0','-Wl,--build-id=none',
-             SIM/'tests/bus/memory/ram2_parallel.S','-o',elf],LOGS/'ram2_build.log')
+             source,'-o',elf],LOGS/(source.stem+'_build.log'))
     objcopy = str(Path(gcc).with_name(Path(gcc).name.replace('gcc','objcopy')))
-    binary = BUILD/'ram2_parallel.bin'
-    command([objcopy,'-O','binary',elf,binary],LOGS/'ram2_objcopy.log')
+    binary = BUILD/(source.stem+'.bin')
+    command([objcopy,'-O','binary',elf,binary],LOGS/(source.stem+'_objcopy.log'))
     return binary
 
 def main():
@@ -103,7 +104,9 @@ def main():
     parser.add_argument('--iverilog', default='iverilog')
     parser.add_argument('--vvp', default='vvp')
     parser.add_argument('--gcc', default='riscv-none-elf-gcc')
-    parser.add_argument('--suite', choices=['unit','isa','data','coremark','all'], default='all')
+    parser.add_argument('--suite', choices=['unit','isa','data','pipeline','coremark','all'], default='all')
+    parser.add_argument('--coremark-timeout', type=int, default=1800,
+                        help='Host timeout in seconds for each CoreMark functional smoke run')
     args = parser.parse_args()
     iv, vvp = executable(args.iverilog), executable(args.vvp)
     BUILD.mkdir(parents=True,exist_ok=True)
@@ -125,7 +128,14 @@ def main():
         if 'TEST_PASS RIB' not in output: raise RuntimeError('No unit PASS marker')
         print(output.strip(),flush=True)
         results.append({'name':'rib_unit','status':'PASS','cases':1003})
-    if args.suite in ('isa','data','coremark','all'):
+        owner = BUILD/'rib_owner.vvp'
+        command([iv,'-g2012','-s','rib_owner_tb','-o',owner,SRC/'sys_bus/rib.v',
+                 SIM/'tb/unit/bus/rib_owner_tb.v'],LOGS/'compile_owner.log')
+        output = command([vvp,owner],LOGS/'owner.log')
+        if 'TEST_PASS RIB_OWNER' not in output: raise RuntimeError('No owner PASS marker')
+        print(output.strip(),flush=True)
+        results.append({'name':'rib_owner','status':'PASS','cases':6})
+    if args.suite in ('isa','data','pipeline','coremark','all'):
         fixtures = sorted((ROOT/'references/tinyriscv/tests/isa/generated').glob('*.bin')) if args.suite in ('isa','all') else []
         fixtures = [p for p in fixtures if p.name.startswith(('rv32ui-','rv32um-'))]
         if args.suite in ('isa','all') and not fixtures: raise RuntimeError('No ISA fixtures found')
@@ -133,6 +143,8 @@ def main():
             fixtures.append(coremark_binary(args.gcc))
         if args.suite in ('data','all'):
             fixtures.append(ram2_binary(args.gcc))
+        if args.suite in ('pipeline','all'):
+            fixtures.append(ram2_binary(args.gcc,SIM/'tests/pipeline/five_stage_hazards.S'))
         programs = {mode:compile_soc(iv,mode) for mode in (0,1)}
         for binary in fixtures:
             hexfile = BUILD/(binary.stem+'.hex')
@@ -144,7 +156,7 @@ def main():
                 output = command([vvp,programs[mode],f'+image={hexfile}',
                                   '+limit='+('3000000' if is_coremark else '250000'),
                                   f'+coremark={int(is_coremark)}',*extra],LOGS/f'{binary.stem}_{mode}.log',
-                                 timeout=600 if is_coremark else 120)
+                                 timeout=args.coremark_timeout if is_coremark else 120)
                 if 'TEST_PASS' not in output: raise RuntimeError(f'No PASS: {binary.name} mode={mode}')
                 if is_coremark:
                     for label,value in [('seedcrc','e9f5'),('crclist','e714'),('crcmatrix','1fd7'),('crcstate','8e3a')]:
@@ -166,6 +178,17 @@ def main():
                     item['benchmark_cycles'] = int(re.search(r'Benchmark cycles64\s*:\s*(\d+)',output)[1])
                 results.append(item)
                 print(item,flush=True)
+        if args.suite in ('pipeline','all'):
+            latency = BUILD/'cpu_latency.vvp'
+            files = sorted(p for p in (SRC/'core').glob('*.v') if p.name!='defines.v')
+            files += sorted((SRC/'utils').glob('*.v'))
+            command([iv,'-g2012','-s','cpu_latency_tb','-I',SRC/'core',
+                     '-o',latency,*files,SIM/'tb/soc/cpu_latency_tb.v'],LOGS/'compile_latency.log')
+            output = command([vvp,latency,'+image='+str(BUILD/'five_stage_hazards.hex')],LOGS/'latency.log')
+            if 'TEST_PASS LATENCY' not in output: raise RuntimeError('No latency PASS marker')
+            results.append({'name':'five_stage_variable_latency','status':'PASS',
+                            'cycles':int(re.search(r'LATENCY cycles=(\d+)',output)[1])})
+            print(output.strip(),flush=True)
     REPORT.parent.mkdir(parents=True,exist_ok=True)
     report = REPORT.with_name('bus_regression_'+args.suite+'.json')
     report.write_text(json.dumps({'suite':args.suite,'scope':'Functional synchronous RAM models; no FPGA timing verification',
@@ -175,6 +198,6 @@ def main():
 if __name__=='__main__':
     try:
         main()
-    except (RuntimeError,subprocess.TimeoutExpired) as exc:
+    except (RuntimeError,OSError,subprocess.TimeoutExpired) as exc:
         print(f'FAIL: {exc}',file=sys.stderr)
         sys.exit(1)

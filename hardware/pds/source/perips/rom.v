@@ -33,7 +33,14 @@ module rom #(
     output wire rsp_valid_o,
     input wire rsp_ready_i
     );
-wire[31:0] addr = addr_i[31:2];
+wire accept = req_valid_i && req_ready_o;
+reg[31:0] held_addr;
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) held_addr <= 0;
+    else if (accept) held_addr <= addr_i;
+end
+wire[31:0] active_addr = accept ? addr_i : held_addr;
+wire[31:0] addr = active_addr[31:2];
 //
 //    gen_ram #(
 //        .DP(DP),
@@ -53,7 +60,7 @@ assign addr1 = addr[13:0] ;
 ram1 rom111 (
   .wr_data(data_i),    // input [31:0]
   .addr(addr1),          // input [13:0]
-  .wr_en(we_i),        // input
+  .wr_en(we_i && accept),        // input
   .clk(clk),            // input
   .rst(~rst_n),            // input
   .rd_data(data_o),     // output [31:0]

@@ -332,7 +332,8 @@ module tinyriscv_soc_top #(
     rib #(
         .MASTER_NUM(3),
         .SLAVE_NUM(5),
-        .PARALLEL_ACCESS(PARALLEL_ACCESS)
+        .PARALLEL_ACCESS(PARALLEL_ACCESS),
+        .REGISTERED_RESPONSE(1)
     ) u_rib(
         .clk(clk),
         .rst_n(rst_n),

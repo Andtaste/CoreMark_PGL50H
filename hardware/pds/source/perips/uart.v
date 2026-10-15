@@ -90,8 +90,8 @@ module uart(
     // UART接收数据寄存器，只读
     reg[31:0] uart_rx;
 
-    wire wen = we_i & req_valid_i;
-    wire ren = (~we_i) & req_valid_i;
+    wire wen = we_i & req_valid_i & req_ready_o;
+    wire ren = (~we_i) & req_valid_i & req_ready_o;
     wire write_reg_ctrl_en = wen & (addr_i[7:0] == UART_CTRL);
     wire write_reg_status_en = wen & (addr_i[7:0] == UART_STATUS);
     wire write_reg_baud_en = wen & (addr_i[7:0] == UART_BAUD);
@@ -192,7 +192,7 @@ module uart(
                     UART_RXDATA: data_r <= uart_rx;
                     default:     data_r <= 32'h0;
                 endcase
-            end else begin
+            end else if (req_ready_o) begin
                 data_r <= 32'h0;
             end
         end
