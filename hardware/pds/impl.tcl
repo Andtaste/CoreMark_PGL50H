@@ -25,3 +25,20 @@ dev_map
 pnr
 report_timing
 report_power
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr 
+report_timing 
+gen_bit_stream 
+add_constraint "C:/Users/Lenovo/Desktop/FPGA/CoreMark_PGL50H/hardware/pds/constraints/tinydram.fdc"
+remove_constraint  -logic -fdc "C:/Users/Lenovo/Desktop/FPGA/CoreMark_PGL50H/hardware/pds/constraints/tinydram.fdc"
+remove_constraint  -logic -fdc "C:/Users/Lenovo/Desktop/progject/FPGA_Competition-RISC-V_Processor-in-PGL22G-main/tinydram.fdc"
+add_constraint "C:/Users/Lenovo/Desktop/FPGA/CoreMark_PGL50H/hardware/pds/constraints/tinydram.fdc"
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr 
+report_timing 

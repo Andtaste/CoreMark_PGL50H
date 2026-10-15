@@ -57,65 +57,56 @@ module exu_muldiv(
         .ready_o(div_ready)
     );
 
-    // 乘法操作
+    // Blocking multiply: capture operands, register four parallel partial
+    // products, then combine into the existing EX/MEM result boundary.
+    // No abs/negate chain surrounds the multiplier. Signed high halfwords
+    // implement MULH/MULHSU directly; unsigned low halfwords serve all modes.
     wire op_mul = muldiv_op_mul_i | muldiv_op_mulh_i | muldiv_op_mulhsu_i | muldiv_op_mulhu_i;
-    wire[31:0] muldiv_op1_r;
-    gen_en_dff #(32) mul_op1_ff(clk, rst_n, op_mul, muldiv_op1_i, muldiv_op1_r);
-    wire[31:0] muldiv_op2_r;
-    gen_en_dff #(32) mul_op2_ff(clk, rst_n, op_mul, muldiv_op2_i, muldiv_op2_r);
-    // Keep mode and operands in the same timing domain. Live operation inputs
-    // include EX valid/interrupt kill; they must not drive the DSP input muxes
-    // after the operands have already crossed their register boundary.
-    reg[1:0] mul_kind_r;
+    reg[1:0] mul_valid;
+    wire mul_start = op_mul && !(|mul_valid);
+    wire mul_ready = op_mul && mul_valid[1];
+    reg mul_high;
+    reg signed[16:0] a_low,a_high,b_low,b_high;
     always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) mul_kind_r<=0;
-        else if (op_mul) begin
-            case (1'b1)
-                muldiv_op_mul_i:    mul_kind_r<=0;
-                muldiv_op_mulh_i:   mul_kind_r<=1;
-                muldiv_op_mulhsu_i: mul_kind_r<=2;
-                muldiv_op_mulhu_i:  mul_kind_r<=3;
-            endcase
+        if (!rst_n) mul_valid<=0;
+        else if (!op_mul) mul_valid<=0; // EX flush/cancel or saved completion
+        else mul_valid<={mul_valid[0],mul_start};
+    end
+    // Data need not reset: only mul_valid authorizes consumption. This simple
+    // clock/enable structure permits ADS to pack data FFs into APM registers.
+    always @(posedge clk) begin
+        if (mul_start) begin
+            a_low<=$signed({1'b0,muldiv_op1_i[15:0]});
+            b_low<=$signed({1'b0,muldiv_op2_i[15:0]});
+            a_high<=$signed({(muldiv_op_mulh_i || muldiv_op_mulhsu_i) && muldiv_op1_i[31],muldiv_op1_i[31:16]});
+            b_high<=$signed({muldiv_op_mulh_i && muldiv_op2_i[31],muldiv_op2_i[31:16]});
+            mul_high<=!muldiv_op_mul_i;
         end
     end
-
-    wire mul_ready_r;
-    wire mul_ready = (~mul_ready_r) & op_mul;
-    gen_rst_0_dff #(1) mul_ready_ff(clk, rst_n, mul_ready, mul_ready_r);
-
-    wire mul_start = (~mul_ready_r) & op_mul;
-
-    wire op1_is_signed = muldiv_op1_r[31];
-    wire op2_is_signed = muldiv_op2_r[31];
-    wire[31:0] op1_complcode = op1_is_signed? (-muldiv_op1_r): muldiv_op1_r;
-    wire[31:0] op2_complcode = op2_is_signed? (-muldiv_op2_r): muldiv_op2_r;
-
-    wire[31:0] op1_mul = (mul_kind_r==1 || mul_kind_r==2) ? op1_complcode : muldiv_op1_r;
-    wire[31:0] op2_mul = mul_kind_r==1 ? op2_complcode : muldiv_op2_r;
-    wire[63:0] mul_res_tmp = op1_mul * op2_mul;
-    wire[63:0] mul_res_tmp_complcode = -mul_res_tmp;
-    wire[31:0] mul_res = mul_res_tmp[31:0];
-    wire[31:0] mulhu_res = mul_res_tmp[63:32];
-    wire[31:0] mulh_res = (op1_is_signed ^ op2_is_signed)? mul_res_tmp_complcode[63:32]: mul_res_tmp[63:32];
-    wire[31:0] mulhsu_res = (op1_is_signed)? mul_res_tmp_complcode[63:32]: mul_res_tmp[63:32];
-
-    reg[31:0] mul_op_res;
-
-    always @ (*) begin
-        mul_op_res = 32'h0;
-        case (mul_kind_r)
-            0: mul_op_res = mul_res;
-            1: mul_op_res = mulh_res;
-            2: mul_op_res = mulhsu_res;
-            3: mul_op_res = mulhu_res;
-        endcase
+    wire signed[33:0] ll /* synthesis syn_dspstyle = "block_mult" */;
+    wire signed[33:0] lh /* synthesis syn_dspstyle = "block_mult" */;
+    wire signed[33:0] hl /* synthesis syn_dspstyle = "block_mult" */;
+    wire signed[33:0] hh /* synthesis syn_dspstyle = "block_mult" */;
+    assign ll=a_low*b_low;
+    assign lh=a_low*b_high;
+    assign hl=a_high*b_low;
+    assign hh=a_high*b_high;
+    reg signed[33:0] ll_q,lh_q,hl_q,hh_q;
+    always @(posedge clk) begin
+        ll_q<=ll; lh_q<=lh; hl_q<=hl; hh_q<=hh;
     end
+    // A*B = ll + ((lh+hl)<<16) + (hh<<32), modulo 2^64.
+    // Sign extension keeps cross-term carries correct for negative operands.
+    wire signed[34:0] middle=$signed({lh_q[33],lh_q}) +
+        $signed({hl_q[33],hl_q}) + $signed({19'b0,ll_q[31:16]});
+    wire[31:0] low_product={middle[15:0],ll_q[15:0]};
+    wire[31:0] high_product=hh_q[31:0]+{{13{middle[34]}},middle[34:16]};
+    wire[31:0] mul_op_res=mul_high ? high_product : low_product;
 
     // 运算结果
-    // Registered multiply mode persists while division runs. Select the valid
-    // divider result explicitly rather than OR-ing it with stale multiply data.
+    // Select the divider explicitly; stale multiplication data are invalid.
     assign muldiv_reg_wdata_o = div_ready ? div_result : mul_op_res;
-    assign muldiv_reg_we_o = div_ready | mul_ready_r;
-    assign muldiv_stall_o = div_start | mul_start;
+    assign muldiv_reg_we_o = div_ready | mul_ready;
+    assign muldiv_stall_o = div_start | (op_mul && !mul_ready);
 
 endmodule

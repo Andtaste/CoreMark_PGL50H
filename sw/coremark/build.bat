@@ -30,9 +30,13 @@ riscv-none-elf-objdump --disassemble-all coremark.elf > coremark.dump
 if errorlevel 1 goto :fail
 riscv-none-elf-size coremark.elf
 if errorlevel 1 goto :fail
-echo BUILD_OK: coremark.elf coremark.bin coremark.dump coremark.map
+rem Use Windows PowerShell so generating ram1 data does not require Python.
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "..\..\tools\bin_to_ram.ps1" -BinaryPath "coremark.bin" -OutputPath "coremark_init.dat"
+if errorlevel 1 goto :fail
+echo BUILD_OK: coremark.elf coremark.bin coremark.dump coremark.map coremark_init.dat
+echo Next: regenerate ram1 in PDS, rebuild the FPGA bitstream, then download it.
 echo Confirm board memory, UART and clock settings before downloading.
 exit /b 0
 :fail
-echo BUILD_FAILED. Do not download an old BIN from a previous build.
+echo BUILD_FAILED. Do not use old BIN, DAT or FPGA images from a previous build.
 exit /b 1

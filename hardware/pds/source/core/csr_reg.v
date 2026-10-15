@@ -21,7 +21,7 @@ module csr_reg(
 
     input wire clk,
     input wire rst_n,
-    input wire[6:0] stat_events_i,
+    input wire[7:0] stat_events_i,
 
     // exu
     input wire exu_we_i,                    // exu模块写寄存器标志
@@ -69,11 +69,11 @@ module csr_reg(
     wire[31:0] wdata = exu_we_i? exu_wdata_i: clint_wdata_i;
 
     // Custom profiling CSRs: 7c0 control, 7c1..7c7 counters,
-    // 7c8 sticky saturation bits, 7cf interface signature/version.
+    // 7c8 sticky saturation bits, 7c9 retired instructions, 7cf version.
     reg stat_enable;
-    reg[6:0] stat_pending;
-    reg[31:0] stat_count[0:6];
-    reg[6:0] stat_overflow;
+    reg[7:0] stat_pending;
+    reg[31:0] stat_count[0:7];
+    reg[7:0] stat_overflow;
     wire stat_control_write=exu_we_i && exu_waddr_i[11:0]==12'h7c0;
     wire stat_clear=stat_control_write && exu_wdata_i[1];
     integer stat_idx;
@@ -83,19 +83,19 @@ module csr_reg(
     always @ (posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             stat_enable <= 1'b0;
-            stat_pending <= 7'b0;
-            stat_overflow <= 7'b0;
-            for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1)
+            stat_pending <= 8'b0;
+            stat_overflow <= 8'b0;
+            for (stat_idx = 0; stat_idx < 8; stat_idx = stat_idx + 1)
                 stat_count[stat_idx] <= 32'b0;
         end else begin
-            stat_pending <= stat_events_i & {7{stat_enable && !stat_control_write}};
+            stat_pending <= stat_events_i & {8{stat_enable && !stat_control_write}};
             if (stat_control_write) stat_enable <= exu_wdata_i[0];
             if (stat_clear) begin
-                stat_overflow <= 7'b0;
-                for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1)
+                stat_overflow <= 8'b0;
+                for (stat_idx = 0; stat_idx < 8; stat_idx = stat_idx + 1)
                     stat_count[stat_idx] <= 32'b0;
             end else begin
-            for (stat_idx = 0; stat_idx < 7; stat_idx = stat_idx + 1) begin
+            for (stat_idx = 0; stat_idx < 8; stat_idx = stat_idx + 1) begin
                 if (stat_pending[stat_idx]) begin
                     if (&stat_count[stat_idx])
                         stat_overflow[stat_idx] <= 1'b1;
@@ -155,8 +155,9 @@ module csr_reg(
             12'h7c5: exu_rdata = stat_count[4];
             12'h7c6: exu_rdata = stat_count[5];
             12'h7c7: exu_rdata = stat_count[6];
-            12'h7c8: exu_rdata = {25'b0, stat_overflow};
-            12'h7cf: exu_rdata = 32'h53544101;
+            12'h7c8: exu_rdata = {24'b0, stat_overflow};
+            12'h7c9: exu_rdata = stat_count[7];
+            12'h7cf: exu_rdata = 32'h53544102;
             `CSR_CYCLE: begin
                 exu_rdata = cycle[31:0];
             end

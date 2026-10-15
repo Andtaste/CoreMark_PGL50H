@@ -128,7 +128,7 @@ module tinyriscv_core #(
         32'h00001880 | (csr_mstatus[7] ? 32'h8 : 32'h0);
     wire[31:0] trap_csr_data=return_from_trap ? mret_status :
         trap_state==1 ? trap_epc : trap_state==2 ? trap_cause : trap_status;
-    wire[6:0] stat_events;
+    wire[7:0] stat_events;
     csr_reg u_csr_reg(
         .clk(clk),.rst_n(rst_n),.stat_events_i(stat_events),
         .exu_we_i(wb_commit && wb_csr_we),
@@ -237,7 +237,7 @@ module tinyriscv_core #(
                 `CSR_CYCLE,`CSR_CYCLEH,`CSR_MTVEC,`CSR_MCAUSE,`CSR_MEPC,
                 `CSR_MIE,`CSR_MSTATUS,`CSR_MSCRATCH,
                 12'h7c0,12'h7c1,12'h7c2,12'h7c3,12'h7c4,12'h7c5,
-                12'h7c6,12'h7c7,12'h7c8,12'h7cf: csr_known=1;
+                12'h7c6,12'h7c7,12'h7c8,12'h7c9,12'h7cf: csr_known=1;
                 default: csr_known=0;
             endcase
         end
@@ -514,9 +514,10 @@ module tinyriscv_core #(
             end
         end
     end
-    // Preserve the v1 CSR layout. Wait events now refer to their owning stage.
+    // Preserve v1 counters; v2 adds successful WB retirement as event bit 7.
+    // Stores, branches and rd=x0 count; faults and flushed payloads do not.
     wire ex_bjp=opcode==7'b1100011 || opcode==7'b1101111 || opcode==7'b1100111;
-    assign stat_events={ex_fire && ex_bjp && !ex_exception,
+    assign stat_events={wb_commit,ex_fire && ex_bjp && !ex_exception,
         ex_fire && ex_bjp && ex_redirect && !ex_exception,
         ex_valid && ex_is_md && !ex_finished,
         mem_valid && mem_access && !mem_complete,

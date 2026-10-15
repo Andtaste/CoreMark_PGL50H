@@ -44,7 +44,8 @@ module ifu_p5 #(
     reg cmd_valid, cmd_discard;
     reg pending, discard;
     reg[1:0] pending_fault;
-    reg[31:0] fifo_inst[0:FIFO_DEPTH-1], fifo_pc[0:FIFO_DEPTH-1];
+    reg[31:0] fifo_inst[0:FIFO_DEPTH-1];
+    reg[31:0] fifo_pc[0:FIFO_DEPTH-1];
     reg[1:0] fifo_fault[0:FIFO_DEPTH-1];
     reg[PTR_WIDTH-1:0] rd_ptr, wr_ptr;
     reg[COUNT_WIDTH-1:0] count;
@@ -72,6 +73,18 @@ module ifu_p5 #(
         reserved < FIFO_DEPTH;
     assign addr_o = cmd_pc_q;
     assign rsp_ready_o = 1'b1;
+    // The shallow PC queue uses FFs: the LUTRAM WD hold requirement caused
+    // a pending_pc -> fifo_pc violation at 65 MHz. Per-entry async reset
+    // prevents RAM inference without adding a fetch stage or data latency.
+    // Instruction/fault storage retains its existing RAM inference.
+    genvar pc_slot;
+    generate for (pc_slot=0; pc_slot<FIFO_DEPTH; pc_slot=pc_slot+1) begin: g_pc_slot
+        always @(posedge clk or negedge rst_n) begin
+            if (!rst_n) fifo_pc[pc_slot]<=0;
+            else if (!flush_i && push && wr_ptr==pc_slot)
+                fifo_pc[pc_slot]<=pending_pc;
+        end
+    end endgenerate
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             next_pc_q<=`CPU_RESET_ADDR; cmd_pc_q<=0; pending_pc<=0;
@@ -100,7 +113,6 @@ module ifu_p5 #(
                 endcase
                 if (push) begin
                     fifo_inst[wr_ptr]<=rdata_i;
-                    fifo_pc[wr_ptr]<=pending_pc;
                     fifo_fault[wr_ptr]<=pending_fault;
                     wr_ptr<=wr_ptr==FIFO_DEPTH-1 ? 0 : wr_ptr+1'b1;
                 end
