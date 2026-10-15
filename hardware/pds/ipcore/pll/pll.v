@@ -29,13 +29,13 @@ module pll (
     localparam integer STATIC_RATIO2    = 16;
     localparam integer STATIC_RATIO3    = 16;
     localparam integer STATIC_RATIO4    = 16;
-    localparam integer STATIC_RATIOF    = 77;
+    localparam integer STATIC_RATIOF    = 89;
     localparam integer STATIC_DUTY0     = 10;
     localparam integer STATIC_DUTY1     = 16;
     localparam integer STATIC_DUTY2     = 16;
     localparam integer STATIC_DUTY3     = 16;
     localparam integer STATIC_DUTY4     = 16;
-    localparam integer STATIC_DUTYF     = 77;
+    localparam integer STATIC_DUTYF     = 89;
     localparam integer STATIC_PHASE0    = 16;
     localparam integer STATIC_PHASE1    = 16;
     localparam integer STATIC_PHASE2    = 16;
@@ -54,7 +54,7 @@ module pll (
     localparam CLKOUT4_GATE_EN          = "FALSE";
     localparam FBMODE                   = "FALSE";
     localparam integer FBDIV_SEL        = 0;
-    localparam BANDWIDTH                = "OPTIMIZED";
+    localparam BANDWIDTH                = "LOW";
     localparam PFDEN_EN                 = "FALSE";
     localparam VCOCLK_DIV2              = 1'b0;
     localparam DYNAMIC_RATIOI_EN        = "FALSE";

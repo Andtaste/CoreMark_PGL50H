@@ -55,3 +55,32 @@ synthesize -ads -selected_syn_tool_opt 2
 dev_map 
 pnr 
 report_timing 
+report_power 
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr 
+report_timing 
+report_power 
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr 
+report_timing 
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr -gplace_times 3 
+pnr -gplace_times 3 
+report_timing 
+pnr -gplace_times 10 
+pnr -gplace_times 10 
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+compile -top_module top
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+pnr -gplace_seed 4 
+report_timing 

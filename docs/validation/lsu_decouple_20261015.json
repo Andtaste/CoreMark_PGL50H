@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-15",
+  "status": "WITHDRAWN at user request: core and local_ram_bus restored to 2fcf0ad; user 85 MHz configuration retained. Results below describe the withdrawn experiment only.",
+  "baseline": "test 2fcf0ad plus user 85 MHz PLL/software/IP changes",
+  "architecture": "Reuse MEM payload registers as a single unsent-request buffer; retain early local RAM launch; separate RAM/peripheral admission and use one-hot port payload selection.",
+  "changed_rtl": [
+    "core/tinyriscv_core.v",
+    "sys_bus/local_ram_bus.v"
+  ],
+  "pds": {
+    "before": {
+      "lut": 4899,
+      "ff": 3709,
+      "distributed_ram": 34,
+      "apm": 4,
+      "drm": 48,
+      "all_reported_constraints_met": true,
+      "requested_frequency_mhz": 85.005,
+      "estimated_fmax_mhz": 88.826,
+      "setup_slow": {
+        "worst_slack_ns": 0.506,
+        "failing_endpoints": 0
+      },
+      "hold_slow": {
+        "worst_slack_ns": 0.166,
+        "failing_endpoints": 0
+      },
+      "setup_fast": {
+        "worst_slack_ns": 3.466,
+        "failing_endpoints": 0
+      },
+      "hold_fast": {
+        "worst_slack_ns": 0.113,
+        "failing_endpoints": 0
+      },
+      "worst_system_setup_path": "Startpoint  : l1/u_tinyriscv_core/u_exu_muldiv/N37/gopapm/CLK\nEndpoint    : l1/u_tinyriscv_core/mem_result[23]/opit_0_L5Q_perm/L3\nPath Group  : sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred\nPath Type   : max (slow corner)\nPath Class  : sequential timing path\nClock Skew  :    -0.054  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)\n  Capture Clock Delay     :  4.617\n  Launch Clock Delay      :  4.961\n  Clock Pessimism Removal :  0.290\n\n Location                          Delay Type             Incr        Path         Logical Resource \n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                         0.000       0.000 r                        \n P20                                                     0.000       0.000 r       clk (port)       \n                                   net (fanout=1)        0.074       0.074         clk              \n IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.787       2.191         _N10             \n PLL_158_55/CLK_OUT0               td                    0.107       2.298 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.078       3.376         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000       3.376 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.585       4.961         ntclkbufg_0      \n APM_106_104/CLK                                                           r       l1/u_tinyriscv_core/u_exu_muldiv/N37/gopapm/CLK\n\n APM_106_104/P[17]                 tco                   1.048       6.009 r       l1/u_tinyriscv_core/u_exu_muldiv/N37/gopapm/P[17]\n                                   net (fanout=1)        0.743       6.752         l1/u_tinyriscv_core/u_exu_muldiv/ll_q [17]\n APM_106_128/PO[0]                 td                    1.926       8.678 r       l1/u_tinyriscv_core/u_exu_muldiv/N40/gopapm/PO[0]\n                                   net (fanout=1)        0.000       8.678         l1/u_tinyriscv_core/u_exu_muldiv/nb0 [0]\n APM_106_140/P[19]                 td                    1.811      10.489 r       l1/u_tinyriscv_core/u_exu_muldiv/N43/gopapm/P[19]\n                                   net (fanout=1)        0.931      11.420         l1/u_tinyriscv_core/u_exu_muldiv/middle [19]\n APM_106_116/P[23]                 td                    2.000      13.420 r       l1/u_tinyriscv_core/u_exu_muldiv/N46/gopapm/P[23]\n                                   net (fanout=1)        1.270      14.690         l1/u_tinyriscv_core/u_exu_muldiv/high_product [23]\n CLMA_146_144/Y2                   td                    0.210      14.900 r       l1/u_tinyriscv_core/ex_md_saved[23]/opit_0_L5Q_perm/Z\n                                   net (fanout=1)        0.408      15.308         l1/u_tinyriscv_core/md_value [23]\n CLMA_146_140/Y0                   td                    0.210      15.518 r       l1/u_tinyriscv_core/N501_28[23]/gateop_perm/Z\n                                   net (fanout=1)        0.120      15.638         l1/u_tinyriscv_core/N501 [23]\n CLMA_146_140/D3                                                           r       l1/u_tinyriscv_core/mem_result[23]/opit_0_L5Q_perm/L3\n\n Data arrival time                                                  15.638         Logic Levels: 5  \n                                                                                   Logic: 7.205ns(67.482%), Route: 3.472ns(32.518%)\n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                        11.764      11.764 r                        \n P20                                                     0.000      11.764 r       clk (port)       \n                                   net (fanout=1)        0.074      11.838         clk              \n IOBS_LR_328_209/DIN               td                    1.047      12.885 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000      12.885         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.048      12.933 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.758      13.691         _N10             \n PLL_158_55/CLK_OUT0               td                    0.100      13.791 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.059      14.850         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000      14.850 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.531      16.381         ntclkbufg_0      \n CLMA_146_140/CLK                                                          r       l1/u_tinyriscv_core/mem_result[23]/opit_0_L5Q_perm/CLK\n clock pessimism                                         0.290      16.671                          \n clock uncertainty                                      -0.150      16.521                          \n\n Setup time                                             -0.377      16.144                          \n\n Data required time                                                 16.144                          \n----------------------------------------------------------------------------------------------------\n Data required time                                                 16.144                          \n Data arrival time                                                  15.638                          \n----------------------------------------------------------------------------------------------------\n Slack (MET)                                                         0.506"
+    },
+    "after": {
+      "lut": 4959,
+      "ff": 3709,
+      "distributed_ram": 34,
+      "apm": 4,
+      "drm": 48,
+      "all_reported_constraints_met": true,
+      "requested_frequency_mhz": 85.005,
+      "estimated_fmax_mhz": 88.145,
+      "setup_slow": {
+        "worst_slack_ns": 0.419,
+        "failing_endpoints": 0
+      },
+      "hold_slow": {
+        "worst_slack_ns": 0.193,
+        "failing_endpoints": 0
+      },
+      "setup_fast": {
+        "worst_slack_ns": 3.362,
+        "failing_endpoints": 0
+      },
+      "hold_fast": {
+        "worst_slack_ns": 0.13,
+        "failing_endpoints": 0
+      },
+      "worst_system_setup_path": "Startpoint  : l1/u_tinyriscv_core/u_ifu/rd_ptr[1]/opit_0_L5Q_perm/CLK\nEndpoint    : l1/u_tinyriscv_core/ex_src1[22]/opit_0_L5Q_perm/L2\nPath Group  : sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred\nPath Type   : max (slow corner)\nPath Class  : sequential timing path\nClock Skew  :    -0.036  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)\n  Capture Clock Delay     :  4.617\n  Launch Clock Delay      :  4.961\n  Clock Pessimism Removal :  0.308\n\n Location                          Delay Type             Incr        Path         Logical Resource \n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                         0.000       0.000 r                        \n P20                                                     0.000       0.000 r       clk (port)       \n                                   net (fanout=1)        0.074       0.074         clk              \n IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.787       2.191         _N10             \n PLL_158_55/CLK_OUT0               td                    0.107       2.298 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.078       3.376         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000       3.376 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.585       4.961         ntclkbufg_0      \n CLMA_202_160/CLK                                                          r       l1/u_tinyriscv_core/u_ifu/rd_ptr[1]/opit_0_L5Q_perm/CLK\n\n CLMA_202_160/Q3                   tco                   0.288       5.249 r       l1/u_tinyriscv_core/u_ifu/rd_ptr[1]/opit_0_L5Q_perm/Q\n                                   net (fanout=67)       0.839       6.088         l1/u_tinyriscv_core/u_ifu/rd_ptr [1]\n CLMS_170_165/Y0                   td                    0.341       6.429 f       l1/u_tinyriscv_core/u_ifu/fifo_inst_11/ram16x1d/RD\n                                   net (fanout=4)        0.801       7.230         l1/u_tinyriscv_core/id_inst [11]\n CLMA_194_153/Y3                   td                    0.210       7.440 r       l1/u_tinyriscv_core/N1398_7/gateop_perm/Z\n                                   net (fanout=2)        0.645       8.085         l1/u_tinyriscv_core/_N27975\n CLMS_162_149/Y3                   td                    0.459       8.544 r       l1/u_tinyriscv_core/N1398_11/gateop_perm/Z\n                                   net (fanout=5)        0.272       8.816         l1/u_tinyriscv_core/_N23226\n CLMS_162_153/Y3                   td                    0.459       9.275 r       l1/u_tinyriscv_core/u_idu/N328_1_3/gateop_perm/Z\n                                   net (fanout=5)        1.053      10.328         l1/u_tinyriscv_core/u_idu/_N27991\n CLMS_202_181/Y3                   td                    0.468      10.796 f       l1/u_tinyriscv_core/ex_rs1[2]/opit_0_L5Q_perm/Z\n                                   net (fanout=260)      2.261      13.057         l1/u_tinyriscv_core/id_rs1 [2]\n CLMA_154_85/Y1                    td                    0.349      13.406 f       l1/u_tinyriscv_core/N1536_102[22]_muxf7/F\n                                   net (fanout=1)        1.595      15.001         l1/u_tinyriscv_core/_N9111\n CLMA_194_164/Y1                   td                    0.460      15.461 r       l1/u_tinyriscv_core/N1536_104[22]/gateop/F\n                                   net (fanout=1)        0.268      15.729         l1/u_tinyriscv_core/_N9175\n CLMA_194_161/C2                                                           r       l1/u_tinyriscv_core/ex_src1[22]/opit_0_L5Q_perm/L2\n\n Data arrival time                                                  15.729         Logic Levels: 7  \n                                                                                   Logic: 3.034ns(28.176%), Route: 7.734ns(71.824%)\n----------------------------------------------------------------------------------------------------\n\n Clock sys_clk|pll1/u_pll_e3/CLKOUT0_Inferred (rising edge)\n                                                        11.764      11.764 r                        \n P20                                                     0.000      11.764 r       clk (port)       \n                                   net (fanout=1)        0.074      11.838         clk              \n IOBS_LR_328_209/DIN               td                    1.047      12.885 r       clk_ibuf/opit_0/O\n                                   net (fanout=1)        0.000      12.885         clk_ibuf/ntD     \n IOL_327_210/INCK                  td                    0.048      12.933 r       clk_ibuf/opit_1/INCK\n                                   net (fanout=1)        0.758      13.691         _N10             \n PLL_158_55/CLK_OUT0               td                    0.100      13.791 r       pll1/u_pll_e3/goppll/CLKOUT0\n                                   net (fanout=1)        1.059      14.850         clkin1           \n USCM_84_108/CLK_USCM              td                    0.000      14.850 r       clkbufg_0/gopclkbufg/CLKOUT\n                                   net (fanout=3405)     1.531      16.381         ntclkbufg_0      \n CLMA_194_161/CLK                                                          r       l1/u_tinyriscv_core/ex_src1[22]/opit_0_L5Q_perm/CLK\n clock pessimism                                         0.308      16.689                          \n clock uncertainty                                      -0.150      16.539                          \n\n Setup time                                             -0.391      16.148                          \n\n Data required time                                                 16.148                          \n----------------------------------------------------------------------------------------------------\n Data required time                                                 16.148                          \n Data arrival time                                                  15.729                          \n----------------------------------------------------------------------------------------------------\n Slack (MET)                                                         0.419"
+    }
+  },
+  "functional_checks": {
+    "pipeline": {
+      "suite": "pipeline",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "statistics_event_pipeline",
+          "status": "PASS"
+        },
+        {
+          "name": "ifu_fifo_protocol",
+          "status": "PASS"
+        },
+        {
+          "name": "five_stage_hazards",
+          "cycles": 825,
+          "status": "PASS",
+          "parallel_grants": 10
+        },
+        {
+          "name": "five_stage_variable_latency",
+          "status": "PASS",
+          "cycles": 1410
+        }
+      ]
+    },
+    "unit": {
+      "suite": "unit",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "local_ram_owner",
+          "status": "PASS",
+          "cases": 10
+        }
+      ]
+    },
+    "data": {
+      "suite": "data",
+      "scope": "Functional synchronous RAM models; no FPGA timing verification",
+      "results": [
+        {
+          "name": "ram2_parallel",
+          "cycles": 1162,
+          "status": "PASS",
+          "parallel_grants": 212
+        }
+      ]
+    }
+  },
+  "rtl_sha256": {
+    "core/tinyriscv_core.v": "7db27a4e86d9eaf85b32bff161a7d7bc9166f032ceca8a16cedfb4ddacb650ba",
+    "sys_bus/local_ram_bus.v": "82355d48f783ac3fff7f66afb076a6ad760e726b577f1b8a3fe7066cb2505df6"
+  },
+  "configuration_sha256": {
+    "hardware/pds/ipcore/pll/pll.v": "3fe27443c016743aa59f3b4ac20fa2c126dd948fe9d50acf7c802abccc863f10",
+    "hardware/pds/constraints/tinydram.fdc": "bb4970715b4dedfd55bb1a43cedcabcdd6b9865115bdbe54bcc1e151b9d4aa3e",
+    "hardware/pds/source/core/defines.v": "da21c67e047d2d51f4c5078f0272e7b1075314ed6c2c036aeed25f25e5d68962",
+    "sw/include/utils.h": "80c3189754aecdedd5c9f76dd6e0cf0e574a8e24d09f5dd975b5992dbf4e86e3"
+  },
+  "limits": [
+    "Six existing checks only; no added test files or full ISA rerun.",
+    "No CoreMark smoke or board measurement for this change; unchanged short test cycles do not establish unchanged full CoreMark cycles.",
+    "One implementation per version; no multi-seed frequency guarantee.",
+    "Existing IO constraints are partial; this is not full IO/CDC signoff.",
+    "No new bitstream generated, board download, Git commit or push."
+  ]
+}
