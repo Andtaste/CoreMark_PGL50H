@@ -1,5 +1,5 @@
 {
-  "status": "VERIFIED_FOR_BOARD_PREPARATION",
+  "status": "VERIFIED_BOARD_PINS_AND_TIMING",
   "branch": "main",
   "variant": "dual_boundary_next_pairbranch_clock82_board5000",
   "configured_cpu_hz": 82000000,
@@ -62,30 +62,30 @@
     "hardware/pds/memory/boot_interleaved.hex": "f7842688d62cd80ac2ecf8da7ff5a874e62af17d380ed95de886e688d7372987"
   },
   "board_manifest": "docs/board5000_20261022/board_manifest.json",
-  "board_manifest_sha256": "82305f3855d4b0a081b438509bf5a4aa8135a66d86e79d1d6bb167c203b99f93",
+  "board_manifest_sha256": "efedf3d6ea68271dedb3e635ecae107912341a5bfe29650a7f96e57993d5949e",
   "bitstream": "output/board5000/top.sbit",
-  "bitstream_sha256": "de9b906d48864c9cbcf4b96fdad2cf57af48613da6ccdbcbb2321ec5dbc59171",
-  "estimated_fmax_mhz": 82.183,
+  "bitstream_sha256": "8a77006b232d7594128b5475486a08d3c4a6f9e67e352aecb9eba1da41eaddf5",
+  "estimated_fmax_mhz": 82.055,
   "corners": {
     "Setup Summary(Slow Corner)": {
-      "worst_slack_ns": 0.027,
+      "worst_slack_ns": 0.008,
       "failing_endpoints": 0
     },
     "Hold Summary(Slow Corner)": {
-      "worst_slack_ns": 0.154,
+      "worst_slack_ns": 0.188,
       "failing_endpoints": 0
     },
     "Setup Summary(Fast Corner)": {
-      "worst_slack_ns": 3.48,
+      "worst_slack_ns": 3.352,
       "failing_endpoints": 0
     },
     "Hold Summary(Fast Corner)": {
-      "worst_slack_ns": 0.111,
+      "worst_slack_ns": 0.11,
       "failing_endpoints": 0
     }
   },
   "routed_resources": {
-    "LUT": 11039,
+    "LUT": 11037,
     "FF": 4476,
     "Distributed RAM": 709,
     "DRM": 48,
@@ -94,5 +94,46 @@
   "full5000_simulation_completed": false,
   "physical_board_measured": false,
   "previous_fixed10_diagnostic_ipc": 1.0405822717268058,
-  "scope": "User requested5000 iterations and all board configuration/files, no full5000 simulation; publish main only. CPU/SoC/peripheral RTL unchanged. New INIT and software timing82MHz, UART and dual-IPC reporting corrected."
+  "scope": "User requested5000 iterations and all board configuration/files, no full5000 simulation; publish main only. CPU/SoC/peripheral RTL unchanged. New INIT and software timing82MHz, UART and dual-IPC reporting corrected.",
+  "board_pins": {
+    "clk": {
+      "location": "P20",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "gpio[0]": {
+      "location": "W11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "gpio[1]": {
+      "location": "V11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "halted_ind": {
+      "location": "B2",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "jtag_TDO": {
+      "location": "Y11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "rst_ext_i": {
+      "location": "K18",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "uart_tx_pin": {
+      "location": "R9",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    }
+  },
+  "chosen_place_seed": 3,
+  "chosen_route_seed": 1,
+  "independent_full_project_runs": 2,
+  "revoked_previous_bitstream_sha256": "de9b906d48864c9cbcf4b96fdad2cf57af48613da6ccdbcbb2321ec5dbc59171"
 }

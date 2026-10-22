@@ -221,7 +221,7 @@
     (_task tsk_pnr
         (_command cmd_pnr
             (_gci_state (_integer 0))
-            (_option gplace_seed (_integer 0))
+            (_option gplace_seed (_integer 3))
             (_option groute_seed (_integer 1))
             (_option optimize_multi_corner_timing (_switch ON))
             (_option fix_hold_violation (_switch ON))

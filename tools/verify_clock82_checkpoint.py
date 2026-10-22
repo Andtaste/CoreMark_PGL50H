@@ -6,6 +6,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--project',type=Path,required=True);parser.add_argument('--install',action='store_true');args=parser.parse_args();project=args.project.resolve()
  checkpoint=project/'checkpoints';record=json.loads((checkpoint/'clock82_checkpoint.json').read_text())
+ if record.get('status')=='REVOKED_WRONG_BOARD_PIN_CONSTRAINTS':raise SystemExit('Revoked board checkpoint: use tools/build_board5000.py with the ordinary PDS project')
  for n,h in record['source_input_sha256'].items():
   if sha(project/n)!=h:raise SystemExit(f'Checkpoint invalid: input changed: {n}. Run rebuild_from_rtl.tcl and repeat seed convergence; never reuse this checkpoint for changed RTL/IP/images/constraints.')
  for n,h in record['checkpoint_sha256'].items():assert sha(checkpoint/n)==h,n

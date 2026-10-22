@@ -1,5 +1,5 @@
 {
-  "status": "VERIFIED_CLOCK82_BOARD5000_PLACEMENT",
+  "status": "REVOKED_WRONG_BOARD_PIN_CONSTRAINTS",
   "clock_hz": 82000000,
   "iterations": 5000,
   "source_input_sha256": {
@@ -48,5 +48,6 @@
   },
   "place_seed": 0,
   "route_seed": 1,
-  "note": "Route from the frozen placement of the new5000 image, not the old fixed10 mapping. Source inputs and complete structural netlist including all RAM INIT bits must match; only equivalent RF replica instance naming may differ."
+  "note": "Route from the frozen placement of the new5000 image, not the old fixed10 mapping. Source inputs and complete structural netlist including all RAM INIT bits must match; only equivalent RF replica instance naming may differ.",
+  "reason": "Do not use this mapped/placed checkpoint for board implementation. Use the ordinary PDS project flow with board.fdc."
 }

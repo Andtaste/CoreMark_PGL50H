@@ -53,3 +53,11 @@ CPU调试JTAG引脚不承担FPGA配置下载。LED1在本核中是`tohost==1`完
 
 已完成新版固件编译、验证种子短跑CRC/独立计数检查、全部16384条32位初始化字的紫光原语读回检查、双口/字节写一致性和实际UART分频检查。
 本机当前只检测到蓝牙串口，没有已连接的CP2102；尚未下载或获取物理板上成绩。不要把RTL/时序报告写成板上实测分数。
+
+## PDS重新布局布线
+
+打开`hardware/pds/new_core.pds`，布局seed设为3、路由seed设为1。保持Optimize Multi-Corner Timing、Fix Hold Violation启用，max_ctrl_chain_length=4。直接执行Place & Route，然后执行Report Timing。完整重跑两次得到相同四角结果：布局3 / 路由1，估算Fmax82.055MHz，慢角setup+0.008ns；布线后11037LUT /4476FF /709分布RAM /48DRM /4APM。
+
+在`place_route/top.prr`核验clk=P20、rst_ext_i=K18、uart_tx_pin=R9，且CONSTRAINT列为YES；`report_timing/top.rtr`须显示All Constraints Met。自动重建用`python tools/build_board5000.py`，会同时检查引脚与时序。
+
+旧提交faa9b5e的下载文件未带入正确引脚约束，不能用于此板。旧固定布局已标记REVOKED且构建入口不再使用。

@@ -2,10 +2,10 @@
   "status": "ACCEPTED_CPU_BOARD5000_READY_FOR_MEASUREMENT",
   "variant": "dual_boundary_next_pairbranch_clock82_board5000",
   "user_instruction": "频率改到82，布局多试试几个seed，看看能不能收敛",
-  "recorded_at": "2026-10-22T12:40:36.722678+08:00",
+  "recorded_at": "2026-10-22T18:05:51.479825+08:00",
   "recorded_date": "2026-10-22",
   "timezone": "Asia/Shanghai",
-  "scope": "User-requested physical clock change to real82MHz, selected full-corner passing seed and independently rerun active main project. CPU pipeline/admission/bypass unchanged. Earlier resource rewrites remain rejected.",
+  "scope": "CoreMark5000 board release. CPU/SoC/peripheral RTL unchanged; ordinary PDS full project flow with actual board pins and all-corner timing independently reproduced.",
   "source_directory": "hardware/pds",
   "source_layout": "direct PDS project: source/{core,perips,sys_bus,top,source}/*.v; not flat isolated overrides",
   "parent_descriptor_sha256": "8b55f4adda3e8e7f76f07e644cac8dfd8fb97325a2ebdf44d2c2f0235609845a",
@@ -13,8 +13,8 @@
   "configured_cpu_hz": 82000000,
   "requested_period_ns": 12.195121951219512,
   "uart_divisor": 712,
-  "chosen_place_seed": 0,
-  "estimated_fmax_mhz": 82.183,
+  "chosen_place_seed": 3,
+  "estimated_fmax_mhz": 82.055,
   "resources": {
     "LUT": 11013,
     "FF": 4476,
@@ -24,19 +24,19 @@
   },
   "corners": {
     "Setup Summary(Slow Corner)": {
-      "worst_slack_ns": 0.027,
+      "worst_slack_ns": 0.008,
       "failing_endpoints": 0
     },
     "Hold Summary(Slow Corner)": {
-      "worst_slack_ns": 0.154,
+      "worst_slack_ns": 0.188,
       "failing_endpoints": 0
     },
     "Setup Summary(Fast Corner)": {
-      "worst_slack_ns": 3.48,
+      "worst_slack_ns": 3.352,
       "failing_endpoints": 0
     },
     "Hold Summary(Fast Corner)": {
-      "worst_slack_ns": 0.111,
+      "worst_slack_ns": 0.11,
       "failing_endpoints": 0
     }
   },
@@ -81,10 +81,10 @@
     "hardware/pds/memory/boot_interleaved.hex": "f7842688d62cd80ac2ecf8da7ff5a874e62af17d380ed95de886e688d7372987"
   },
   "evidence_sha256": {
-    "docs/board5000_20261022/board_manifest.json": "82305f3855d4b0a081b438509bf5a4aa8135a66d86e79d1d6bb167c203b99f93",
-    "docs/board5000_20261022/timing_result.json": "ae0a564f97a113e7c4021847493a72d55898e7a7cbe9b0a4e12aa7db966a32b2",
+    "docs/board5000_20261022/board_manifest.json": "efedf3d6ea68271dedb3e635ecae107912341a5bfe29650a7f96e57993d5949e",
+    "docs/board5000_20261022/timing_result.json": "63df9beaea5baea59c6ad0ddaeec63008051fb4338c44df479b62a3f36cd8955",
     "docs/board5000_20261022/timing.rtr": "096d3d3e7570f099ad756328dcabbeaf2925adb978b79f37a49baa531c456ab0",
-    "output/board5000/top.sbit": "de9b906d48864c9cbcf4b96fdad2cf57af48613da6ccdbcbb2321ec5dbc59171",
+    "output/board5000/top.sbit": "8a77006b232d7594128b5475486a08d3c4a6f9e67e352aecb9eba1da41eaddf5",
     "docs/board5000_20261022/io_result.json": "7cf0d42ec3fbbe83b6875734ede3d3f77709d706f032c8e69b2836e27f471d67",
     "docs/board5000_20261022/validation_result.json": "497eee0d7beee1271543c4afb094ff0e3750ef1a80aaa901999b0cdb2ec8e501",
     "docs/board5000_20261022/guard_checks.json": "8618ba4f25286c133b6325a4b019e404e695d69a56c91e30e94cbb58d8aa4576"
@@ -97,13 +97,13 @@
   "single_issue_reference_sha256": "f9266e85c40bf5a5feaa9d54f1ec77389d00a2feb02b4ed74573b5b1bc171d86",
   "single_issue_sta_sha256": "047c7504f1f3967d2499de007e44faa87013cebec03c94b941682521c12794d9",
   "limits": [
-    "Routed setup/hold passes at genuine PLL82MHz; no board measurement or programming.",
-    "Fixed diagnostic firmware still prints75MHz time metadata; cycle counts and normalized per-MHz diagnostic are independent.",
-    "This promotion is clock/seed configuration only; core RTL unchanged. Existing registered-forward/control paths remain."
+    "No board measurement or programming.",
+    "No full5000 RTL simulation, per user request.",
+    "Positive setup margin is only 0.008 ns."
   ],
   "chosen_route_seed": 1,
   "routed_resources": {
-    "LUT": 11039,
+    "LUT": 11037,
     "FF": 4476,
     "Distributed RAM": 709,
     "DRM": 48,
@@ -112,9 +112,9 @@
   "resource_basis": "resources: device_map/top.dmr; routed_resources: final place_route/top.prr including physical optimization",
   "source_origin": "Published branch main",
   "publication_record": "docs/published_release.json",
-  "publication_record_sha256": "a1164fd6656bbfb321fa435b5e3422d15397bdaa0d943951d5f2feaa989a2c1e",
-  "publication_note": "CPU RTL byte-identical to accepted snapshot. Live input hashes rebound after path-only portability changes; original records retained in docs/release_source_records. Native full-corner build verified in independent checkout.",
-  "validation": "docs/published_build/result.json",
+  "publication_record_sha256": "b1880f8e321a29a3e20ee28df843134604124f5351605ce107006743180bc4b4",
+  "publication_note": "Previous frozen-placement release revoked because actual board pin constraints were not applied. Replaced with ordinary PDS full project build and routed pin checks.",
+  "validation": "docs/board5000_20261022/timing_result.json",
   "historical_fixed10_reference": {
     "ipc": 1.0405822717268058,
     "coremark_stats_cycles": 2698740,
@@ -126,5 +126,45 @@
       "dependency_blocked": 0
     }
   },
-  "performance5000_status": "AWAITING_USER_BOARD_UART"
+  "performance5000_status": "AWAITING_USER_BOARD_UART",
+  "board_pins": {
+    "clk": {
+      "location": "P20",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "gpio[0]": {
+      "location": "W11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "gpio[1]": {
+      "location": "V11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "halted_ind": {
+      "location": "B2",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "jtag_TDO": {
+      "location": "Y11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "rst_ext_i": {
+      "location": "K18",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "uart_tx_pin": {
+      "location": "R9",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    }
+  },
+  "build_mode": "Ordinary PDS project from RTL with live board.fdc; no imported mapping or placement checkpoint",
+  "independent_full_project_runs": 2,
+  "revoked_previous_bitstream_sha256": "de9b906d48864c9cbcf4b96fdad2cf57af48613da6ccdbcbb2321ec5dbc59171"
 }

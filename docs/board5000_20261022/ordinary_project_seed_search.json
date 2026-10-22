@@ -1,0 +1,236 @@
+[
+  {
+    "case": "p0r1",
+    "status": "FAIL",
+    "place_seed": 0,
+    "route_seed": 1,
+    "estimated_mhz": 80.496,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.228,
+        "failing_endpoints": 14
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.168,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 3.296,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.118,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "599b1b0c95e67b88db725bc0638d0dc9ef549681420d1a2b9202dd791afa36aa"
+  },
+  {
+    "case": "p0r1_holdroute",
+    "status": "FAIL",
+    "place_seed": 0,
+    "route_seed": 1,
+    "estimated_mhz": 80.496,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.228,
+        "failing_endpoints": 14
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.168,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 3.296,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.118,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "05ddde7b4e78d32394d99265fbd073c99f506596dcbfe270c3652ccd263d1c25"
+  },
+  {
+    "case": "p0r4",
+    "status": "FAIL",
+    "place_seed": 0,
+    "route_seed": 4,
+    "estimated_mhz": 79.834,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.331,
+        "failing_endpoints": 7
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.181,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 3.272,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.127,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "9b7aa8fef1a258b472be8de1c6044ac31ace286baaf5c622e9805dea5ced55f5"
+  },
+  {
+    "case": "p1r1",
+    "status": "FAIL",
+    "place_seed": 1,
+    "route_seed": 1,
+    "estimated_mhz": 80.71,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.195,
+        "failing_endpoints": 7
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.147,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 3.477,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.102,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "89525a4225fcd11d5e3a0ba5c81f12072b294ce56360cca1037a9514a6c73ec6"
+  },
+  {
+    "case": "p1r2",
+    "status": "FAIL",
+    "place_seed": 1,
+    "route_seed": 2,
+    "estimated_mhz": 80.684,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.199,
+        "failing_endpoints": 2
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.147,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 3.315,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.102,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "1c5bbfff6a339b10af34833b6c99c32571fdd4951b5e8875f3316d362e06f92a"
+  },
+  {
+    "case": "p1r4",
+    "status": "FAIL",
+    "place_seed": 1,
+    "route_seed": 4,
+    "estimated_mhz": 81.36,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.096,
+        "failing_endpoints": 2
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.148,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 3.427,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.103,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "cbb2aabe1bbb8a4939746dad09910afc17386d212b482f47e36f7487c86bb1b4"
+  },
+  {
+    "case": "p22r4",
+    "status": "FAIL",
+    "place_seed": 22,
+    "route_seed": 4,
+    "estimated_mhz": 75.919,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.977,
+        "failing_endpoints": 94
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.116,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 2.765,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.092,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "f5067cf095fa091a343e12e015a54f886f7cc034c74a06fe5bfc5fdacf02f5bd"
+  },
+  {
+    "case": "p2r1",
+    "status": "FAIL",
+    "place_seed": 2,
+    "route_seed": 1,
+    "estimated_mhz": 76.882,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": -0.812,
+        "failing_endpoints": 26
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.179,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 2.94,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.123,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "be33ccfcd79639d60ca472e0895d801fee9ad970b1f1dd5898d9d8737b96798a"
+  },
+  {
+    "case": "p3r1",
+    "status": "PASS",
+    "place_seed": 3,
+    "route_seed": 1,
+    "estimated_mhz": 82.055,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "slack_ns": 0.008,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "slack_ns": 0.188,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "slack_ns": 3.352,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "slack_ns": 0.11,
+        "failing_endpoints": 0
+      }
+    },
+    "report_sha256": "af550a97c7d39a9f745dffaa24f486f781858891b6394deb0406237871d161bf"
+  }
+]

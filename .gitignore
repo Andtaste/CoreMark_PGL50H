@@ -42,3 +42,7 @@ hardware/pds/ipcore/**/*.log
 # Board preparation: keep final output/board5000, omit regenerable simulators
 /simulation/results/board5000*/
 /hardware/pds/generate_bitstream/
+
+/hardware/pds/impl.tcl
+/hardware/pds/multiseed_summary.csv
+/hardware/pds/generate_bitstream.pds
