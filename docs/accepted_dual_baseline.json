@@ -1,6 +1,6 @@
 {
-  "status": "ACCEPTED_DUAL_DEVELOPMENT_BASELINE",
-  "variant": "dual_boundary_next_pairbranch_clock82",
+  "status": "ACCEPTED_CPU_BOARD5000_READY_FOR_MEASUREMENT",
+  "variant": "dual_boundary_next_pairbranch_clock82_board5000",
   "user_instruction": "频率改到82，布局多试试几个seed，看看能不能收敛",
   "recorded_at": "2026-10-22T12:40:36.722678+08:00",
   "recorded_date": "2026-10-22",
@@ -13,8 +13,8 @@
   "configured_cpu_hz": 82000000,
   "requested_period_ns": 12.195121951219512,
   "uart_divisor": 712,
-  "chosen_place_seed": 22,
-  "estimated_fmax_mhz": 82.271,
+  "chosen_place_seed": 0,
+  "estimated_fmax_mhz": 82.183,
   "resources": {
     "LUT": 11013,
     "FF": 4476,
@@ -24,30 +24,21 @@
   },
   "corners": {
     "Setup Summary(Slow Corner)": {
-      "worst_slack_ns": 0.04,
+      "worst_slack_ns": 0.027,
       "failing_endpoints": 0
     },
     "Hold Summary(Slow Corner)": {
-      "worst_slack_ns": 0.166,
+      "worst_slack_ns": 0.154,
       "failing_endpoints": 0
     },
     "Setup Summary(Fast Corner)": {
-      "worst_slack_ns": 3.486,
+      "worst_slack_ns": 3.48,
       "failing_endpoints": 0
     },
     "Hold Summary(Fast Corner)": {
-      "worst_slack_ns": 0.117,
+      "worst_slack_ns": 0.111,
       "failing_endpoints": 0
     }
-  },
-  "coremark_stats_cycles": 2698740,
-  "retired": 2808261,
-  "ipc": 1.0405822717268058,
-  "dual": {
-    "secondary_retired": 802328,
-    "pairs_issued": 843593,
-    "groups_issued": 2067981,
-    "dependency_blocked": 0
   },
   "source_sha256": {
     "hardware/pds/source/core/nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
@@ -67,8 +58,7 @@
     "hardware/pds/source/source/top.v": "cc0ee988c5bd7a3858bcec5178cb32a20600f0e38e8bc04f21fed0acde788be6",
     "hardware/pds/source/sys_bus/nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
     "hardware/pds/source/top/nc_soc.v": "3151fd4d4366252ace254d38bf55cd8fd845512d705171c6a6ba2c1f8d6a7a11",
-    "hardware/pds/constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
-    "hardware/pds/new_core.tcl": "4985d47235483fe0813e8bbb00dd6e9f8f67796654d35a563292ba4a78f81c30"
+    "hardware/pds/constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f"
   },
   "ip_sha256": {
     "hardware/pds/ipcore/pll/pll.idf": "bd706ea1b63f51920baf75a71d4c9e7f1d715868f835bd21241e4b69ad404d53",
@@ -84,26 +74,20 @@
     "hardware/pds/ipcore/ram2_tdp/ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
     "hardware/pds/ipcore/ram2_tdp/ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
     "hardware/pds/ipcore/ram1_tdp/rtl/ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
-    "hardware/pds/ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "hardware/pds/ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v": "f400a202d6da46866974732cc0f8c7a0eff6fd8daff59f0a42b04096a64ab989",
     "hardware/pds/ipcore/ram2_tdp/rtl/ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
     "hardware/pds/ipcore/ram2_tdp/rtl/ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
-    "hardware/pds/memory/boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
-    "hardware/pds/memory/boot_interleaved.hex": "69122268a9d0d546090b2731e63b366d1ffdf090ba19c6de5135986d04d8f631"
+    "hardware/pds/memory/boot.hex": "9faada91a627db9e2f6d4498eee98c05dc8cc428e325037aa79ac726ef6f5515",
+    "hardware/pds/memory/boot_interleaved.hex": "f7842688d62cd80ac2ecf8da7ff5a874e62af17d380ed95de886e688d7372987"
   },
   "evidence_sha256": {
-    "docs/published_build/checkpoint_verification.json": "7f22672fc3de36b8059f313f870a44a08d9e198ebd50a622098ff650783b4e3c",
-    "docs/published_build/guard_checks.json": "5d1bef812b44895023738c27ee6bc9e093eab9d9cbb6e4e0123fd675c04430b9",
-    "docs/published_build/place_route.prr": "0d1b7e1746910404339b29e6cf96a3f43280bc251c3ebe961ebf55ce4caac6c1",
-    "docs/published_build/resources.dmr": "cd344640ebf5161766c8232cf2ed700b28735a67879daa1f1ee253b77ad02706",
-    "docs/published_build/result.json": "24bbdbe893d2d3d0a9bb744f001aa13e47096819574d5d681a86e33f884dd6ea",
-    "docs/published_build/timing.rtr": "827e363c74ff041dde042758669e5fc2388a354985b4c0b5e6b4ec5201dc02e6",
-    "tools/build_release.py": "66c30bda5bb10d465d06e27e6c20c2f7c37c408c59f38950639f80e441cdb7da",
-    "hardware/pds/new_core.tcl": "4985d47235483fe0813e8bbb00dd6e9f8f67796654d35a563292ba4a78f81c30",
-    "hardware/pds/new_core.pds": "2323e7e7858c4fc122cda4f00ee61e9404d0b4e293f8f050a3aed1507583e14c",
-    "hardware/pds/route_verified.tcl": "34feaa2a6401c0a2d2055799670e11a9286f203247b478388def7564a15d5ed5",
-    "tools/verify_clock82_checkpoint.py": "05575a0e587f751f7337a208d054d304e8fb606dbeabd4dfee984712c39a6779",
-    "tools/compare_clock82_netlists.py": "217c82b993a853736ec9fdcd56334a936077322f1e4e6e6080b48a7437c8237e",
-    "hardware/pds/checkpoints/clock82_checkpoint.json": "3474dd21741cfdace827cc33a36ddfbad69097abae6b67c3dff18d1a1047b900"
+    "docs/board5000_20261022/board_manifest.json": "82305f3855d4b0a081b438509bf5a4aa8135a66d86e79d1d6bb167c203b99f93",
+    "docs/board5000_20261022/timing_result.json": "ae0a564f97a113e7c4021847493a72d55898e7a7cbe9b0a4e12aa7db966a32b2",
+    "docs/board5000_20261022/timing.rtr": "096d3d3e7570f099ad756328dcabbeaf2925adb978b79f37a49baa531c456ab0",
+    "output/board5000/top.sbit": "de9b906d48864c9cbcf4b96fdad2cf57af48613da6ccdbcbb2321ec5dbc59171",
+    "docs/board5000_20261022/io_result.json": "7cf0d42ec3fbbe83b6875734ede3d3f77709d706f032c8e69b2836e27f471d67",
+    "docs/board5000_20261022/validation_result.json": "497eee0d7beee1271543c4afb094ff0e3750ef1a80aaa901999b0cdb2ec8e501",
+    "docs/board5000_20261022/guard_checks.json": "8618ba4f25286c133b6325a4b019e404e695d69a56c91e30e94cbb58d8aa4576"
   },
   "historical_descriptor_resolution": {
     "original_path": "docs/accepted_dual_baseline.json",
@@ -117,9 +101,9 @@
     "Fixed diagnostic firmware still prints75MHz time metadata; cycle counts and normalized per-MHz diagnostic are independent.",
     "This promotion is clock/seed configuration only; core RTL unchanged. Existing registered-forward/control paths remain."
   ],
-  "chosen_route_seed": 4,
+  "chosen_route_seed": 1,
   "routed_resources": {
-    "LUT": 11029,
+    "LUT": 11039,
     "FF": 4476,
     "Distributed RAM": 709,
     "DRM": 48,
@@ -128,7 +112,19 @@
   "resource_basis": "resources: device_map/top.dmr; routed_resources: final place_route/top.prr including physical optimization",
   "source_origin": "Published branch main",
   "publication_record": "docs/published_release.json",
-  "publication_record_sha256": "e92bdfde2c9fc1012f02ff57523e8249f0a2d3e5532ab73b3d0faa25160ff404",
+  "publication_record_sha256": "a1164fd6656bbfb321fa435b5e3422d15397bdaa0d943951d5f2feaa989a2c1e",
   "publication_note": "CPU RTL byte-identical to accepted snapshot. Live input hashes rebound after path-only portability changes; original records retained in docs/release_source_records. Native full-corner build verified in independent checkout.",
-  "validation": "docs/published_build/result.json"
+  "validation": "docs/published_build/result.json",
+  "historical_fixed10_reference": {
+    "ipc": 1.0405822717268058,
+    "coremark_stats_cycles": 2698740,
+    "retired": 2808261,
+    "dual": {
+      "secondary_retired": 802328,
+      "pairs_issued": 843593,
+      "groups_issued": 2067981,
+      "dependency_blocked": 0
+    }
+  },
+  "performance5000_status": "AWAITING_USER_BOARD_UART"
 }

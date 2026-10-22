@@ -1,6 +1,7 @@
 {
-  "status": "VERIFIED_CLOCK82_CANONICAL_MAPPING",
+  "status": "VERIFIED_CLOCK82_BOARD5000_PLACEMENT",
   "clock_hz": 82000000,
+  "iterations": 5000,
   "source_input_sha256": {
     "source/core/nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
     "source/core/nc_core.v": "4fbe9d6e11ea5f836b874e2ed04330215f6e0923b3c53cbf0eb4ef035e721377",
@@ -19,6 +20,7 @@
     "source/source/top.v": "cc0ee988c5bd7a3858bcec5178cb32a20600f0e38e8bc04f21fed0acde788be6",
     "source/sys_bus/nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
     "source/top/nc_soc.v": "3151fd4d4366252ace254d38bf55cd8fd845512d705171c6a6ba2c1f8d6a7a11",
+    "constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
     "ipcore/pll/pll.idf": "bd706ea1b63f51920baf75a71d4c9e7f1d715868f835bd21241e4b69ad404d53",
     "ipcore/pll/pll.v": "2d1593771fb23fccf1cc0bea7469bdd7ec96da5b902c80f47f63849be917f5d8",
     "ipcore/pll/pll_tb.v": "078148631660f2a584cd7a5622de31be68f9bf8a8a37965bccb29af54b639311",
@@ -32,20 +34,19 @@
     "ipcore/ram2_tdp/ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
     "ipcore/ram2_tdp/ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
     "ipcore/ram1_tdp/rtl/ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
-    "ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v": "f400a202d6da46866974732cc0f8c7a0eff6fd8daff59f0a42b04096a64ab989",
     "ipcore/ram2_tdp/rtl/ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
     "ipcore/ram2_tdp/rtl/ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
-    "constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
-    "memory/boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
-    "memory/boot_interleaved.hex": "69122268a9d0d546090b2731e63b366d1ffdf090ba19c6de5135986d04d8f631"
+    "memory/boot.hex": "9faada91a627db9e2f6d4498eee98c05dc8cc428e325037aa79ac726ef6f5515",
+    "memory/boot_interleaved.hex": "f7842688d62cd80ac2ecf8da7ff5a874e62af17d380ed95de886e688d7372987"
   },
   "checkpoint_sha256": {
-    "clock82_map.adf": "42a702c86ec4120db045c40cc55021e01df54a74bd636ceb8bc1609b801dcb68",
-    "clock82_mapping.dmr": "cd344640ebf5161766c8232cf2ed700b28735a67879daa1f1ee253b77ad02706",
-    "clock82_syn.vm": "cfd75a9256f7305eb9a4747ceb2593dcbb3419b31048de62163ea568a33748ed"
+    "clock82_map.adf": "b6cdeb7c099cc0bce1dc7fd1e471f19e56540a79707b82474d157822410c2522",
+    "clock82_syn.vm": "e21745f26e9578c7db2f6a3324d3665d7b3c46d11d1763f03a1c50c533e7e71d",
+    "clock82_mapping.dmr": "f19a777859a2a56bb2e42314582321879c458699a186d744f2c1399f1db0dff9",
+    "clock82_place.adf": "e7d749d767532a1ae260687888624d5e8fa485454f9a68019477289fdf8ab62a"
   },
-  "place_seed": 22,
-  "route_seed": 4,
-  "note": "Exact source hashes plus full structural netlist equivalence required before installation. Fresh synthesis can bijectively permute equivalent RF RAM read replicas, changing placement. GUI source edits use a fresh native map; this Tcl entry rejects stale checkpoint reuse.",
-  "publication": "Paths made checkout-relative; all17 RTL files and all3 canonical checkpoint payloads remain byte-identical to adopted82MHz release."
+  "place_seed": 0,
+  "route_seed": 1,
+  "note": "Route from the frozen placement of the new5000 image, not the old fixed10 mapping. Source inputs and complete structural netlist including all RAM INIT bits must match; only equivalent RF replica instance naming may differ."
 }

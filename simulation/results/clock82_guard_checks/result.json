@@ -10,7 +10,7 @@
     "tools\\verify_clock82_checkpoint.py": "05575a0e587f751f7337a208d054d304e8fb606dbeabd4dfee984712c39a6779",
     "tools\\compare_clock82_netlists.py": "217c82b993a853736ec9fdcd56334a936077322f1e4e6e6080b48a7437c8237e",
     "tools\\check_clock82_guard.py": "2a2c8ea39f97b4576db5a48479347655de6819104f8df25259ff631ebd9f23c4",
-    "hardware\\pds\\checkpoints\\clock82_checkpoint.json": "3474dd21741cfdace827cc33a36ddfbad69097abae6b67c3dff18d1a1047b900"
+    "hardware\\pds\\checkpoints\\clock82_checkpoint.json": "42d338ab14f68b5a622fbf8fa66e75d83530cc5d42d9320993c574b9c8699d52"
   },
   "positive_stdout": "PASS: all source/IP/image/constraint hashes and complete structural connectivity match; canonical82 mapping verified and installed\n",
   "stale_source_error": "Checkpoint invalid: input changed: source/core/nc_core.v. Run rebuild_from_rtl.tcl and repeat seed convergence; never reuse this checkpoint for changed RTL/IP/images/constraints.\n",

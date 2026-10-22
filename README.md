@@ -1,43 +1,25 @@
-# new_core — 82 MHz 双发采纳基线
+# new_core — 82 MHz / CoreMark5000 上板版本
 
-本分支保存用户指定的 new_core 项目。实际PLL82 MHz，布局22／路由4，已验证STA估算Fmax82.271 MHz，IPC1.040582。布线后11029 LUT／4476 FF／709分布RAM／48 DRM／4 APM。
+当前主分支已准备5000次迭代的CoreMark v1.0性能镜像，软件计时与实际PLL均为82 MHz，UART115200/8N1。CPU、SoC与外设共17个RTL文件保持采纳版本原字节。
 
-两个分支均以项目根目录组织：`test`为75 MHz单发旧版，`main`为当前82 MHz双发版。
-CPU、SoC和外设共17个RTL文件与对应采纳版本逐字节一致。
-发布适配仅处理初始化镜像路径、构建脚本路径及发布记录，没有改变CPU流水线或增加组合控制链。
+- **直接下载文件：`output/board5000/top.sbit`**，同目录附SHA256与操作说明。
+- **PDS工程：`hardware/pds/new_core.pds`**；完整受保护重建入口：`python tools/build_board5000.py`。
+- [上板说明](docs/board5000_20261022/BOARD_RUN.md)、[配置与文件校验记录](docs/board5000_20261022/board_manifest.json)。
 
-## 工程入口
+新的5000次镜像已通过原生82MHz四角时序：布局0 / 路由1，估算Fmax82.183MHz，慢角setup+0.027ns；布线后11039LUT /4476FF /709分布RAM /48DRM /4APM。
+已检查全部16384条初始化字、实际UART分频712、验证种子短跑CRC和独立计数。**按用户要求不完成5000次全程RTL仿真，尚未上板，当前没有5000次正式实测成绩。**
 
-- PDS项目：`hardware/pds/new_core.pds`
-- 完整构建入口：`tools/build_release.py`；分阶段Tcl位于`hardware/pds/`
-- RTL：`hardware/pds/source/`
-- 软件及CoreMark：`sw/`
-- 发布版本、输入SHA与改动范围：`docs/published_release.json`
-- 路径适配前的原始采纳记录：`docs/release_source_records/`
-- 本发布目录原生构建验证：`docs/published_build/`（原始STA和资源报告）
-
-## 构建
-
-需要Windows、Python3和紫光PDS2022.2-SP1-Lite，器件PGL50H-6 FBG484，板级输入50 MHz。
-在仓库根目录运行：
+在仓库根目录执行：
 
 ```powershell
-python tools/build_release.py --verify-only
-python tools/build_release.py --pds-home E:/pango/PDS_2022.2-SP1-Lite
+python tools/build_board5000.py --verify-only
+# 需要重新生成下载文件时：
+python tools/build_board5000.py --pds-home E:/pango/PDS_2022.2-SP1-Lite
+# 下载后，打开串口并按KEY1重新运行；替换成CP2102的COM号：
+.\tools\capture_board5000.ps1 -Port COM13
 ```
 
-82 MHz完整构建请使用以上Python入口：先运行`new_core.tcl`生成新网表，再由Python校验并安装检查点，最后运行`route_verified.tcl`。不要单独跳过校验直接运行布线阶段。
-初始化镜像使用项目相对路径，Tcl入口会切换到工程目录。
+构建使用本版本自己的5000次映射/布局检查点：先重新综合并核对所有输入与完整结构网表，再从冻结布局进行路由，四角通过后生成下载文件。源文件、镜像、IP或约束变化会使旧检查点失效；请勿跳过校验。`new_core.tcl`是综合阶段，完整构建使用Python入口。
+FPGA配置JTAG临时下载，与未实现的CPU调试JTAG不同；UART采集不需要UART RX或DTM。暂未加入ILA。
 
-82 MHz入口先重新编译、综合和映射，再核对源码、IP、镜像、约束SHA及完整结构网表，核对通过后装入已验证的固定映射检查点并重新布局布线。
-寄存器文件128个等价RAM读副本的实例名可能随综合变化，因此seed必须与映射输入一起固定。
-修改任何输入后，校验会拒绝旧检查点；请使用`hardware/pds/rebuild_from_rtl.tcl`生成新映射并重新收敛。
-
-原短跑固件仍打印75 MHz元数据；以上IPC取独立周期/退休计数。真实PLL为82 MHz，未声称板上正式长跑成绩。
-
-## 发布范围
-
-保留可构建输入、软件、初始化镜像、功能夹具、研究文本记录和当前版本的关键原始时序证据。
-不提交可再生的PDS/仿真缓存、本机备份目录、波形及失败试验的二进制检查点。
-历史研究目录中的旧manifest描述原本机完整归档；本次Git发布范围以`docs/published_release.json`为准。
-重新综合可能改变布局结果，既有历史性能不能自动等同于任意一次重新实现的成绩。尚未上板。
+`test`分支保留旧75MHz单发项目；此前主分支10次诊断镜像保留在Git历史提交`0c9a66b`。历史研究记录中的本机路径、旧manifest和短程分数仅用于追溯，当前发布以board_manifest和本次上板说明为准。

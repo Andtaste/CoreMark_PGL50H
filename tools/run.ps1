@@ -1,5 +1,5 @@
 param([ValidateSet('test','firmware','coremark','coremark-test','ip','pds')][string]$Task='test',
- [int]$Iterations=10,
+ [int]$Iterations=5000,
  [string]$Python='', [string]$PdsHome='E:\pango\PDS_2022.2-SP1-Lite')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path $PSScriptRoot -Parent
@@ -34,6 +34,11 @@ try {
   'coremark-test' {& $Python simulation/scripts/run/coremark.py --iterations $Iterations;if($LASTEXITCODE -ne 0){throw 'CoreMark simulation failed'}}
   'ip' {& $Python tools/prepare_pango.py --pds $PdsHome;if($LASTEXITCODE -ne 0){throw 'IP generation failed'}}
   'pds' {
+   if(Test-Path 'docs/board5000_20261022/board_manifest.json') {
+    & $Python -X utf8 tools/build_board5000.py --pds-home $PdsHome
+    if($LASTEXITCODE -ne 0){throw 'Board5000 native build failed'}
+    break
+   }
    Set-Location hardware/pds
    & (Join-Path $PdsHome 'bin/pds_shell.exe') -f new_core.tcl
    if($LASTEXITCODE -ne 0){throw 'PDS failed; also inspect its report for stage errors'}

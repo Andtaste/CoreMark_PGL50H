@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "requested_mhz": 82.001,
+  "requested_period_ns": 12.195,
+  "estimated_fmax_mhz": 82.183,
+  "corners": {
+    "Setup Summary(Slow Corner)": {
+      "worst_slack_ns": 0.027,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Slow Corner)": {
+      "worst_slack_ns": 0.154,
+      "failing_endpoints": 0
+    },
+    "Setup Summary(Fast Corner)": {
+      "worst_slack_ns": 3.48,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Fast Corner)": {
+      "worst_slack_ns": 0.111,
+      "failing_endpoints": 0
+    }
+  },
+  "sta_sha256": "096d3d3e7570f099ad756328dcabbeaf2925adb978b79f37a49baa531c456ab0",
+  "critical_paths": [
+    {
+      "start": "soc/cpu/f1_data[0]/opit_0_L5Q_perm/CLK",
+      "end": "soc/cpu/memory/held[42]/opit_0_L5Q_perm/L4",
+      "slack_ns": 0.027,
+      "logic_ns": 3.871,
+      "route_ns": 7.99,
+      "logic_levels": 13
+    },
+    {
+      "start": "soc/cpu/f1_data[0]/opit_0_L5Q_perm/CLK",
+      "end": "soc/cpu/memory/held[46]/opit_0_L5Q_perm/L2",
+      "slack_ns": 0.047,
+      "logic_ns": 3.9,
+      "route_ns": 7.694,
+      "logic_levels": 13
+    },
+    {
+      "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q/CLK",
+      "end": "soc/cpu/memory/held_side[19]/opit_0_L5Q_perm/L4",
+      "slack_ns": 0.048,
+      "logic_ns": 3.423,
+      "route_ns": 8.417,
+      "logic_levels": 11
+    }
+  ],
+  "place_seed": 0,
+  "route_seed": 1,
+  "iterations": 5000,
+  "cpu_hz": 82000000,
+  "resources": {
+    "LUT": 11039,
+    "FF": 4476,
+    "Distributed RAM": 709,
+    "DRM": 48,
+    "APM": 4
+  },
+  "mapped_db_sha256": "d227e9779152435b44dadd099e0b143f6cb21b6771ddfafe1af39a4b1095a303",
+  "routed_db_sha256": "eda78533f064ebd7343eeb0dca98ad16b417b3003d379188a50d4c8c107ea279",
+  "scope": "New5000 BRAM INIT, fresh native mapping; placement0 route1 full-corner pass; no full5000 simulation or board measurement",
+  "selected_placement_sha256": "e7d749d767532a1ae260687888624d5e8fa485454f9a68019477289fdf8ab62a",
+  "current_diagnostic_map_sha256": "b6cdeb7c099cc0bce1dc7fd1e471f19e56540a79707b82474d157822410c2522",
+  "rebuild_mode": "Exact new5000 source/IP/INIT hashes and full synthesized connectivity checked; reroute the frozen new5000 placement. Current diagnostic mapping is not used for physical implementation."
+}

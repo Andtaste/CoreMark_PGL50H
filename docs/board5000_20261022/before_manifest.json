@@ -1,0 +1,12 @@
+{
+  "sw/build/boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+  "sw/include/utils.h": "253c368426c115d1d5284da80a6e7f847e74996fbcde78f08c0454a86b89a07e",
+  "sw/coremark/core_portme.h": "3c4537befad33e43af3f2f3ddc62e10a44f77544d6497cfefddf371a7acb5388",
+  "sw/coremark/core_portme.c": "b6c4285bccb20b1e896a26b762f2cd8ec8d85262cd211cd0b6d14d792466cecf",
+  "tools/build_coremark.py": "e38f893b6115e3bb9bf5cab692f73e94df9694d4b76d25814d76047ac2a12a5d",
+  "tools/run.ps1": "1a0dbb9f2c36b3e4afa4e07f53a37080bcdbd21409f3f9648ba130ee213b0eba",
+  "docs/accepted_dual_baseline.json": "11ad0207374f10262226337da7d604e46beaf20967bce872f2d1a3ec34b749f2",
+  "docs/active_pds_baseline.json": "af29dbc504b45bf321e51f0d1eb2eb7e9ab9570a0fd072e0f1e9525e57948af7",
+  "hardware/pds/BASELINE.json": "af29dbc504b45bf321e51f0d1eb2eb7e9ab9570a0fd072e0f1e9525e57948af7",
+  "README.md": "33be641106ea95d84af8731b9e2a07ab5e9d267bc31a4a2dae3a17090fcbcbf5"
+}

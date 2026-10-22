@@ -212,16 +212,17 @@ void portable_fini(core_portable *p)
     if (stats_version >= 2) {
         print_stat("Retired instructions: ", retired_instructions, 0);
         if (!stats[7] && stats[0] && retired_instructions &&
-            (uint64_t)retired_instructions <= (uint64_t)stats[0]) {
+            (uint64_t)retired_instructions <= (uint64_t)stats[0] * 2) {
             print_ratio("IPC                : ", retired_instructions, stats[0]);
             print_ratio("CPI                : ", stats[0], retired_instructions);
-            xprintf("Counter bounds     : PASS (retired <= cycles)\n");
+            xprintf("Counter bounds     : PASS (retired <= 2*cycles)\n");
         } else {
-            xprintf("IPC/CPI unavailable: zero, overflow or retired > cycles.\n");
+            xprintf("IPC/CPI unavailable: zero, overflow or retired > 2*cycles.\n");
         }
     } else {
         xprintf("IPC/CPI unavailable: requires statistics v2 FPGA image.\n");
     }
+    if (stats_version >= 3) print_secondary_stats();
     print_stat("Retired loads      : ", loads, 0);
     print_stat("Retired stores     : ", stores, 0);
     print_stat("EX operand wait    : ", operand_wait, 1);
@@ -240,7 +241,7 @@ void portable_fini(core_portable *p)
     else xprintf("Stats overflow mask: 0x%02lx\n", (unsigned long)stats[7]);
     xprintf("Event counters may overlap; BJP counts include JAL/JALR.\n");
     xprintf("IF bubbles include refill; redirects are events, not penalty cycles.\n");
-    xprintf("No BTB: redirect rate = nonsequential EX branch/jump events / retired BJP.\n");
+    xprintf("BJP redirects count prediction corrections, jumps and stale predictions.\n");
     if (stats_version >= 2)
         xprintf("IPC/CPI use retired instructions and cycles from the same stats window.\n");
     uart_drain();

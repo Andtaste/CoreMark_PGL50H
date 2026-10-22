@@ -1,0 +1,8 @@
+{
+  "status": "STOPPED_AT_USER_REQUEST",
+  "full5000_simulation_completed": false,
+  "reason": "User will measure on physical board; only configuration/image/IO and short validation checks requested",
+  "last_progress_cycles": 300000000,
+  "completed_crc_validation_run": "validation_result.json",
+  "publish_branch": "main"
+}

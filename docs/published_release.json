@@ -1,10 +1,9 @@
 {
-  "status": "VERIFIED_FOR_PUBLICATION",
+  "status": "VERIFIED_FOR_BOARD_PREPARATION",
   "branch": "main",
-  "variant": "dual_boundary_next_pairbranch_clock82",
+  "variant": "dual_boundary_next_pairbranch_clock82_board5000",
   "configured_cpu_hz": 82000000,
-  "historical_estimated_fmax_mhz": 82.271,
-  "historical_ipc": 1.0405822717268058,
+  "coremark_iterations": 5000,
   "cpu_rtl_sha256": {
     "hardware/pds/source/core/nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
     "hardware/pds/source/core/nc_core.v": "4fbe9d6e11ea5f836b874e2ed04330215f6e0923b3c53cbf0eb4ef035e721377",
@@ -42,6 +41,7 @@
     "hardware/pds/source/source/top.v": "cc0ee988c5bd7a3858bcec5178cb32a20600f0e38e8bc04f21fed0acde788be6",
     "hardware/pds/source/sys_bus/nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
     "hardware/pds/source/top/nc_soc.v": "3151fd4d4366252ace254d38bf55cd8fd845512d705171c6a6ba2c1f8d6a7a11",
+    "hardware/pds/constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
     "hardware/pds/ipcore/pll/pll.idf": "bd706ea1b63f51920baf75a71d4c9e7f1d715868f835bd21241e4b69ad404d53",
     "hardware/pds/ipcore/pll/pll.v": "2d1593771fb23fccf1cc0bea7469bdd7ec96da5b902c80f47f63849be917f5d8",
     "hardware/pds/ipcore/pll/pll_tb.v": "078148631660f2a584cd7a5622de31be68f9bf8a8a37965bccb29af54b639311",
@@ -55,79 +55,44 @@
     "hardware/pds/ipcore/ram2_tdp/ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
     "hardware/pds/ipcore/ram2_tdp/ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
     "hardware/pds/ipcore/ram1_tdp/rtl/ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
-    "hardware/pds/ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "hardware/pds/ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v": "f400a202d6da46866974732cc0f8c7a0eff6fd8daff59f0a42b04096a64ab989",
     "hardware/pds/ipcore/ram2_tdp/rtl/ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
     "hardware/pds/ipcore/ram2_tdp/rtl/ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
-    "hardware/pds/constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
-    "hardware/pds/memory/boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
-    "hardware/pds/memory/boot_interleaved.hex": "69122268a9d0d546090b2731e63b366d1ffdf090ba19c6de5135986d04d8f631"
+    "hardware/pds/memory/boot.hex": "9faada91a627db9e2f6d4498eee98c05dc8cc428e325037aa79ac726ef6f5515",
+    "hardware/pds/memory/boot_interleaved.hex": "f7842688d62cd80ac2ecf8da7ff5a874e62af17d380ed95de886e688d7372987"
   },
-  "relocation_changes": {
-    "hardware/pds/ipcore/ram1_tdp/ram1_tdp.idf": {
-      "original": "14f424607c6809616d98100bc22a74761858704d6f87f358c3bfd3f0cabc5cd9",
-      "published": "6e9f74360e9554564de7bdc6f8ec0d116f59f7e9f2c02845f52364dff8a31543",
-      "reason": "RAM image path only; generated INIT parameters unchanged"
+  "board_manifest": "docs/board5000_20261022/board_manifest.json",
+  "board_manifest_sha256": "82305f3855d4b0a081b438509bf5a4aa8135a66d86e79d1d6bb167c203b99f93",
+  "bitstream": "output/board5000/top.sbit",
+  "bitstream_sha256": "de9b906d48864c9cbcf4b96fdad2cf57af48613da6ccdbcbb2321ec5dbc59171",
+  "estimated_fmax_mhz": 82.183,
+  "corners": {
+    "Setup Summary(Slow Corner)": {
+      "worst_slack_ns": 0.027,
+      "failing_endpoints": 0
     },
-    "hardware/pds/ipcore/ram1_tdp/ram1_tdp.v": {
-      "original": "46e0cc69a01a083b9f2e630e7e52c9fbd40310a42e406b08c15544bcc670b139",
-      "published": "13dcfbd0c6842c846612a81f04e22b3551cbb4c09dca22b867b240638707db5b",
-      "reason": "RAM image path only; generated INIT parameters unchanged"
+    "Hold Summary(Slow Corner)": {
+      "worst_slack_ns": 0.154,
+      "failing_endpoints": 0
     },
-    "hardware/pds/ipcore/ram1_tdp/ram1_tdp_tb.v": {
-      "original": "790936656d14d6bdf2b3110de98ad7e2ae1258b2753d06636018fca7f4b67185",
-      "published": "2bc8856f8fead4fae874a194efc3f6d3e986b7c40f737591ee9a2ab3977fd5f1",
-      "reason": "RAM image path only; generated INIT parameters unchanged"
+    "Setup Summary(Fast Corner)": {
+      "worst_slack_ns": 3.48,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Fast Corner)": {
+      "worst_slack_ns": 0.111,
+      "failing_endpoints": 0
     }
   },
-  "scope": "Project sources, software and boot images, functional fixtures, human-readable study records and selected native timing evidence. Rebuildable caches, local backup projects, waveform dumps and failed-run binary checkpoints are omitted. Historical archive manifests describe the original local full archives, not this compact Git publication.",
-  "source_snapshot": "Adopted local82MHz main PDS project and frozen clock82 evidence",
-  "historical_path_relocations": {
-    "docs/ex_id_finish/aux": "docs/ex_id_finish/historical_aux"
+  "routed_resources": {
+    "LUT": 11039,
+    "FF": 4476,
+    "Distributed RAM": 709,
+    "DRM": 48,
+    "APM": 4
   },
-  "published_build": "docs/published_build/result.json",
-  "native_validation": {
-    "configured_cpu_hz": 82000000,
-    "estimated_fmax_mhz": 82.271,
-    "corners": {
-      "Setup Summary(Slow Corner)": {
-        "slack_ns": 0.04,
-        "failing_endpoints": 0
-      },
-      "Hold Summary(Slow Corner)": {
-        "slack_ns": 0.166,
-        "failing_endpoints": 0
-      },
-      "Setup Summary(Fast Corner)": {
-        "slack_ns": 3.486,
-        "failing_endpoints": 0
-      },
-      "Hold Summary(Fast Corner)": {
-        "slack_ns": 0.117,
-        "failing_endpoints": 0
-      }
-    }
-  },
-  "build_inputs_sha256": {
-    "tools/build_release.py": "66c30bda5bb10d465d06e27e6c20c2f7c37c408c59f38950639f80e441cdb7da",
-    "hardware/pds/new_core.tcl": "4985d47235483fe0813e8bbb00dd6e9f8f67796654d35a563292ba4a78f81c30",
-    "hardware/pds/new_core.pds": "2323e7e7858c4fc122cda4f00ee61e9404d0b4e293f8f050a3aed1507583e14c",
-    "hardware/pds/route_verified.tcl": "34feaa2a6401c0a2d2055799670e11a9286f203247b478388def7564a15d5ed5",
-    "tools/verify_clock82_checkpoint.py": "05575a0e587f751f7337a208d054d304e8fb606dbeabd4dfee984712c39a6779",
-    "tools/compare_clock82_netlists.py": "217c82b993a853736ec9fdcd56334a936077322f1e4e6e6080b48a7437c8237e",
-    "hardware/pds/checkpoints/clock82_checkpoint.json": "3474dd21741cfdace827cc33a36ddfbad69097abae6b67c3dff18d1a1047b900"
-  },
-  "publication_evidence_sha256": {
-    "docs/published_build/checkpoint_verification.json": "7f22672fc3de36b8059f313f870a44a08d9e198ebd50a622098ff650783b4e3c",
-    "docs/published_build/guard_checks.json": "5d1bef812b44895023738c27ee6bc9e093eab9d9cbb6e4e0123fd675c04430b9",
-    "docs/published_build/place_route.prr": "0d1b7e1746910404339b29e6cf96a3f43280bc251c3ebe961ebf55ce4caac6c1",
-    "docs/published_build/resources.dmr": "cd344640ebf5161766c8232cf2ed700b28735a67879daa1f1ee253b77ad02706",
-    "docs/published_build/result.json": "24bbdbe893d2d3d0a9bb744f001aa13e47096819574d5d681a86e33f884dd6ea",
-    "docs/published_build/timing.rtr": "827e363c74ff041dde042758669e5fc2388a354985b4c0b5e6b4ec5201dc02e6"
-  },
-  "original_record_sha256": {
-    "docs/release_source_records/docs__accepted_dual_baseline.json": "11ad0207374f10262226337da7d604e46beaf20967bce872f2d1a3ec34b749f2",
-    "docs/release_source_records/docs__active_pds_baseline.json": "af29dbc504b45bf321e51f0d1eb2eb7e9ab9570a0fd072e0f1e9525e57948af7",
-    "docs/release_source_records/hardware__pds__BASELINE.json": "af29dbc504b45bf321e51f0d1eb2eb7e9ab9570a0fd072e0f1e9525e57948af7",
-    "docs/release_source_records/hardware__pds__checkpoints__clock82_checkpoint.json": "7d31c42f47939f7bdd278e348690d52fbc685de6a3b15c78cbe38bc699ed5f4a"
-  }
+  "full5000_simulation_completed": false,
+  "physical_board_measured": false,
+  "previous_fixed10_diagnostic_ipc": 1.0405822717268058,
+  "scope": "User requested5000 iterations and all board configuration/files, no full5000 simulation; publish main only. CPU/SoC/peripheral RTL unchanged. New INIT and software timing82MHz, UART and dual-IPC reporting corrected."
 }

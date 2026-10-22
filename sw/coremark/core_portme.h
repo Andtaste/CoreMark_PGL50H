@@ -1,4 +1,4 @@
-/* Local build defaults: 10 iterations are only for bring-up, not a valid score. */
+/* Board run default; validity still requires measured duration >=10s and CRC PASS. */
 #ifndef FLAGS_STR
 #define FLAGS_STR "-O2 -mcmodel=medlow -march=rv32im_zicsr -mabi=ilp32 -ffunction-sections -fdata-sections -fno-builtin-printf -fno-builtin-malloc"
 #endif
@@ -6,7 +6,7 @@
 #define PERFORMANCE_RUN 1
 #endif
 #ifndef ITERATIONS
-#define ITERATIONS 10
+#define ITERATIONS 5000
 #endif
 
 #ifndef FESDK_CORE_PORTME_H

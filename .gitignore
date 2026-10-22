@@ -38,3 +38,7 @@ hardware/pds/ipcore/**/*.log
 /hardware/pds/report_timing/
 /hardware/pds/constraint_check/
 /simulation/results/release_checks/
+
+# Board preparation: keep final output/board5000, omit regenerable simulators
+/simulation/results/board5000*/
+/hardware/pds/generate_bitstream/
