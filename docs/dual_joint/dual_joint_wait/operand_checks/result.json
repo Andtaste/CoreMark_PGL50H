@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "tests": [
+    "COVER pushes=15351 pops=14338 full=79459 insertion=677 clears=578\r\nPASS operands equivalence cycles=100000 seed=17 pushes=15351 pops=14338 full=79459 insertion_forward=677 duplicate_priority=33334 clears=578",
+    "COVER pushes=15430 pops=14393 full=79634 insertion=640 clears=578\r\nPASS operands equivalence cycles=100000 seed=91 pushes=15430 pops=14393 full=79634 insertion_forward=640 duplicate_priority=33334 clears=578",
+    "COVER pushes=15522 pops=14493 full=79244 insertion=693 clears=578\r\nPASS operands equivalence cycles=100000 seed=2026 pushes=15522 pops=14493 full=79244 insertion_forward=693 duplicate_priority=33334 clears=578"
+  ],
+  "cycles": 300000,
+  "edge_checks": 600000,
+  "scope": "Random stalls/clear/insertion/multi-hit priority; independent separate side-value storage with direct current tag comparisons versus compact packet field capture; not whole-core formal proof",
+  "input_sha256": {
+    "simulation\\research\\dual_native\\nc_operands.v": "842767b1fd1f95a31e34d5f6db53b1a66d3c9b602c4a2943642fde8cc01697b5",
+    "simulation\\research\\dual_native\\operands_tb.v": "eaca5240175af3bd6410bff8bfa45c939e508454bc799222081a16ca60690758",
+    "simulation\\results\\load_bp_dual_joint_wait\\operand_checks\\reference.v": "9b967a327ba94a10f4306ab20311ac25c08bddf5f5e43733be049c6af4b1fa48",
+    "simulation\\results\\load_bp_dual_joint_wait\\operand_checks\\operands_tb.v": "c372743320de8a2821363547d7c2bc6b004c21b4edcae4f63b772d4abaf7486b",
+    "simulation\\results\\load_bp_dual_joint_wait\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "tools\\check_dual_joint_operands.py": "397101fd40ffe8cbc78166fbeb38f8769739f39a82c732eb0de05f15fdb71502"
+  }
+}

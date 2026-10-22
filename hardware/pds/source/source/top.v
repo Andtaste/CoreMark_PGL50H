@@ -1,37 +1,15 @@
-module top(
-    input wire clk,
-    input wire rst_ext_i,
-
-    output wire halted_ind,  // jtag是否已经halt住CPU信号
-
-    output wire uart_tx_pin, // UART发送引脚
-    input wire uart_rx_pin,  // UART接收引脚
-
-    inout wire[1:0] gpio,    // GPIO引脚
-
-    input wire jtag_TCK,     // JTAG TCK引脚
-    input wire jtag_TMS,     // JTAG TMS引脚
-    input wire jtag_TDI,     // JTAG TDI引脚
-    output wire jtag_TDO     // JTAG TDO引脚
-
-   );
-wire clkin1;                 // 此处有修改
-wire pll_locked;             // 此处有修改
-tinyriscv_soc_top l1 (
-    .clk(clkin1),
-    .rst_ext_i(rst_ext_i & pll_locked),
-    .halted_ind(halted_ind),
-    .uart_tx_pin(uart_tx_pin),
-    .uart_rx_pin(uart_rx_pin),
-    .gpio(gpio),
-    .jtag_TCK(jtag_TCK),
-    .jtag_TMS(jtag_TMS),
-    .jtag_TDI(jtag_TDI),
-    .jtag_TDO(jtag_TDO)
-    );
-pll pll1(                   // 生成pll后核对31——35
-    .clkin1(clk),
-    .pll_lock(pll_locked),  // 此处有修改
-    .clkout0(clkin1)
-);
+// Same board pin names; CPU debug/JTAG is intentionally not implemented.
+module top(input wire clk,rst_ext_i,input wire uart_rx_pin,
+ output wire uart_tx_pin,halted_ind,inout wire[1:0] gpio,
+ input wire jtag_TCK,jtag_TMS,jtag_TDI,output wire jtag_TDO);
+ wire sys_clk,locked;reg[3:0] reset_sync;
+ wire arst_n=rst_ext_i && locked;
+ always @(posedge sys_clk or negedge arst_n) begin
+  if(!arst_n) reset_sync<=0;else reset_sync<={reset_sync[2:0],1'b1};
+ end
+ pll clock_ip(.clkin1(clk),.clkout0(sys_clk),.pll_lock(locked));
+ wire[31:0] tohost;wire[1:0] gpio_out;
+ nc_soc #(.CLOCK_HZ(82000000)) soc(.clk(sys_clk),.rst_n(reset_sync[3]),.irq_soft(1'b0),.irq_ext(1'b0),
+  .uart_tx(uart_tx_pin),.gpio_out(gpio_out),.tohost(tohost));
+ assign gpio=gpio_out;assign halted_ind=tohost==1;assign jtag_TDO=1'b0;
 endmodule

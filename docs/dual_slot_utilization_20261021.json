@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "accepted_variant": "dual_fwd_share",
+  "source": "Existing fixed-10 CoreMark profile; recomputed ratios, no RTL or simulation changes",
+  "window_cycles": 3458702,
+  "issued": {
+    "primary": 2684584,
+    "secondary": 192419,
+    "total": 2877003,
+    "single_issue_cycles": 2492165,
+    "dual_issue_cycles": 192419,
+    "no_issue_cycles": 774118,
+    "primary_per_cycle_percent": 77.61825100861537,
+    "secondary_per_cycle_percent": 5.563329827201072,
+    "dual_given_primary_percent": 7.1675537066450525,
+    "two_slot_capacity_percent": 41.59079041790822
+  },
+  "retired": {
+    "primary": 2622590,
+    "secondary": 185671,
+    "total": 2808261,
+    "primary_per_cycle_percent": 75.82584449310752,
+    "secondary_per_cycle_percent": 5.368227733988069,
+    "dual_commit_given_primary_percent": 7.079680773586416,
+    "secondary_instruction_share_percent": 6.611600559919466,
+    "two_slot_capacity_percent": 40.597036113547794,
+    "ipc": 0.8119407222709559
+  },
+  "units": "Actual accepted/retired instructions divided by cycles, not valid-residency or hardware-unit busy time. Issued counts can include squashed speculative work.",
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_fwd_share\\performance\\result.json": "624f7811d5d8377ec7d2395cc0f63eace062bfe74fe05d899b8ff221d2997428",
+    "simulation\\results\\load_bp_dual_type_control\\performance\\result.json": "9f53d93461932129dab3d99dfd810371b29c753bfd7dd533ca085b7b72bb8de2",
+    "docs\\accepted_dual_baseline.json": "acc8a0f8be1dc90d67e6cda8d18fc000911cc4b25a8021ab0f7b17ec244abb01"
+  }
+}

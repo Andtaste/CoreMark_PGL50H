@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS registered predecode combinations=131072",
+    "PASS dual units cycles=30000 rf_reads=240000 fetch_consumptions=8176 pairs=1256 redirects=233 stale_drains=364"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_predecode.py": "d900038e8dfeafcb45fdbe351fda601ee0d419188fb1770079851a1d0f3eb021",
+    "simulation\\results\\load_bp_dual_issue_predecode\\nc_fetch.v": "2d5a8aea9ff4db13ca16d7bec46eca43ba18b6f87145ab670a4a90e8dff73e1b",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "simulation\\results\\load_bp_dual_issue_predecode\\predecode_check\\predecode_tb.v": "a18df19fdea83b11b561926c21161bdfb9a2b55ff2dfe9eeff86d6658ce84cee",
+    "simulation\\research\\dual_issue\\dual_units_tb.v": "02075521db8780b677b212afca965894b406b3ff249e78051def8e8a612953bf",
+    "simulation\\results\\load_bp_dual_issue_predecode\\predecode_check\\dual_units_tb.v": "b4cb243d95232767539979dc5ea7874fb20de8ca2d1930d508020ebf683809b6",
+    "simulation\\results\\load_bp_dual_issue_predecode\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\core\\nc_btb.v": "92281dcdaac6c5481cce453cfdec7536438e393170e9319accaa0029076fc3d4"
+  }
+}

@@ -1,0 +1,49 @@
+
+Run configuration
+Configured CPU Hz  : 75000000
+Software build     : Oct 20 2026 11:14:24
+Report format      : 3 (integer fixed point)
+Stats ABI signature: 0x4e430004
+2K validation run parameters for coremark.
+CRC validation   : PASS
+CoreMark Size    : 666
+Total ticks      : 314225
+Total time (secs): 0.004189
+Iterations/Sec   : 238.682472
+CoreMark/MHz     : 3.182432
+Score status     : short run; diagnostic only
+ERROR! Must execute for at least 10 secs for a valid result!
+Iterations       : 1
+Compiler version : GCC15.2.0
+Compiler flags   : -O2 -fno-common -funroll-loops -finline-functions --param=max-inline-insns-auto=20 -falign-functions=4 -falign-jumps=4 -falign-loops=4 -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow -ffunction-sections -fdata-sections -fno-builtin-printf -fno-builtin-malloc -msmall-data-limit=0 -mno-relax
+Memory location  : STATIC
+seedcrc          : 0x18f2
+[0]crclist       : 0xe3c1
+[0]crcmatrix     : 0x0747
+[0]crcstate      : 0x8d84
+[0]crcfinal      : 0xe3c1
+Errors detected
+
+CPU statistics v4
+Benchmark cycles64 : 314225
+Stats window cycles: 314263
+Retired instructions: 280944
+IPC                : 0.893
+CPI                : 1.118
+Counter bounds     : PASS (retired <= cycles)
+Retired loads      : 55302
+Retired stores     : 14247
+EX operand wait    : 100289 (31.912%)
+ID blocked cycles  : 106188 (33.789%)
+IF request wait    : 0 (0.000%)
+IF queue empty     : 12546 (3.992%)
+MEM occupied cycles: 125007 (39.777%)
+Mul/div stall cycles: 0 (0.000%)
+BJP redirects      : 6273
+BJP instructions   : 57159
+BJP redirect rate %: 10.974
+Stats overflow mask: 0x0000
+Event counters may overlap; BJP counts include JAL/JALR.
+IF bubbles include refill; redirects are events, not penalty cycles.
+No BTB: redirect rate = nonsequential EX branch/jump events / retired BJP.
+IPC/CPI use retired instructions and cycles from the same stats window.

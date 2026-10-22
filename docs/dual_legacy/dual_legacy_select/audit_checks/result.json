@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "variant": "dual_legacy_select",
+  "tests": [
+    "PASS no dangerous lint diagnostics",
+    "PASS EX/MEM FIFO width249/depth4 preserved; no ready-to-EX feedback",
+    "PASS parity bank read addresses depend on registered rd only; no peek/group-cross network",
+    "PASS SAT: actual side admission class, source-use and write flags match full decoder for every possible instruction",
+    "PASS synchronous load return broadcast gated by transaction ownership, error, exception and squash; request path unchanged"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_legacy.py": "a9398b71282b266dbd69a0011061a45496f12ff9b3bd93f9a411c59ce6566b7b",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_core.v": "23adcc2848fe6b0c331e32c091a591d5b601821aa023337e1456136f0c026643",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_memory.v": "ad19baff2a3edc9040387a9f8cc7281ab26c175ee415db30ae6dde06ade17e8e",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_operands.v": "a6ed0bf258ee60241118023b16aefd2a371a22ee291661cc5bf47ef2f5d31b7c",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "simulation\\results\\load_bp_dual_legacy_select\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\results\\load_bp_dual_legacy_select\\audit_checks\\admission_proof.v": "59766000e357a50d6add85976f83724a18577ceacf887c98b7270015368957b8",
+    "tools\\check_dual_legacy_select.py": "88db14b7ce3da1dbfe743eef099c2115f91aada1cc3d6e909a5dcf69f0d6dcf2"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "INVALIDATED_VENDOR_INITIALIZATION",
+  "scope": "Initial straightforward high-word/low-word concatenation; behavioral tests passed but generated hardware initialization is wrong; excluded from qualified candidates",
+  "vendor_readback": "FATAL: C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\research\\dual_ram\\wide_ip_tb.v:20: Generated IP init/width mapping mismatch index=0 A=0001108101130017 B=01130017 expectedB=10008117\r\n       Time: 57000 Scope: wide_ip_tb",
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_ram_wide\\ipcore\\ram1_tdp\\ram1_tdp.v": "6d78c9d6fb0a9bc437b9296b3ce951e1db4f2812657282c440f097c05ab384b5",
+    "simulation\\results\\load_bp_dual_ram_wide\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\research\\dual_ram\\wide_ip_tb.v": "6e9b743f3ae624b3eb01eea01ef26de02e5265f4047a8de3801a59e414b6a947"
+  },
+  "external_library_sha256": {
+    "E:\\pango\\PDS_2022.2-SP1-Lite\\arch\\vendor\\pango\\verilog\\simulation\\GTP_DRM18K.v": "d8ea932d33c088ab6a459c305a60ac28017c7b0594984d33b2d367c891df951a"
+  },
+  "corrected_candidate": "dual_ram_logic"
+}

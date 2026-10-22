@@ -1,0 +1,15 @@
+{
+  "status": "REJECTED_BY_USER",
+  "user_instruction": "不采纳",
+  "recorded_at": "2026-10-22T09:54:43.459436+08:00",
+  "rejected_variants": [
+    "dual_boundary_next_resourceside",
+    "dual_boundary_next_resourcequeue",
+    "dual_boundary_next_resourceboth",
+    "dual_boundary_next_resourcecompare"
+  ],
+  "retained_baseline": "dual_boundary_next_pairbranch",
+  "accepted_descriptor_sha256": "8b55f4adda3e8e7f76f07e644cac8dfd8fb97325a2ebdf44d2c2f0235609845a",
+  "frozen_experiment_manifest_sha256": "c9f27d20c99e9970059af20cf02a4746e50fe2ed6c2a41fcfc1c2926af912597",
+  "scope": "Reject this round resource candidates only; retain explicitly adopted pairbranch baseline and all frozen evidence."
+}

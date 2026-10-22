@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS actual full MEM sequential equivalence and req_banks == req_valid & selected-address bank, EARLY=0,POST=0",
+    "PASS actual full MEM sequential equivalence and req_banks == req_valid & selected-address bank, EARLY=0,POST=1",
+    "PASS actual full MEM sequential equivalence and req_banks == req_valid & selected-address bank, EARLY=1,POST=0",
+    "PASS actual full MEM sequential equivalence and req_banks == req_valid & selected-address bank, EARLY=1,POST=1"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_bank_memory.py": "720287e4f7d0f87282275fba332055996f7ca380f00fc3aa27e22bfabea23503",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\bank_memory_proof\\gold.v": "73f4fa0aef773cd13a877eeaa951f2d9dbc0ddf3f6e30824927be980028ea615",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_memory.v": "cdb63dbdbe5d8e4f2bdf92ae2f5f365f4f1537a1c5ec97fda9aaa9636981c290",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\bank_memory_proof\\gate.v": "ee5fd4ab329acc11fa9fb680ac0c8a01ad3238feb0475eefe6d297f072ffe7c8"
+  }
+}

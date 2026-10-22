@@ -1,0 +1,43 @@
+{
+  "status": "GENERATED",
+  "scope": "dual_lsu_forward; dual_lsu_ports plus separately registered formatted load completion buses, available before atomic group retirement; no raw RAM/EX path and no earlier LSU request; accepted baseline unchanged; not adopted",
+  "override_sha256": {
+    "hardware\\pds\\source\\core\\nc_core.v": "29ca9040b154de979fd992a1b766a95168b205dceb7d8d7ccdfeec8b50d7564d",
+    "hardware\\pds\\source\\core\\nc_csr.v": "2d1b94832573dbfefff9897e8d80ac9ced6c8ed4a61315d8d336a4c6530f8e9d",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "5f4c1cc71acbd3818e1621ec6f463c7f570471ec4904bd5c27eef2f630e9e13f",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "74a48bc2233275bb04ced6605c8528274f89eb5ebde1d69f980711fd5da227ef",
+    "hardware\\pds\\source\\core\\nc_memory.v": "2209e39bc2ca2ade22032f2cd34e27756f10342bc7a57c0bc3475982d7cc7c67",
+    "hardware\\pds\\source\\core\\nc_operands.v": "48e8a3072e191e1cf8cd000ff8fa2c83f73deecc2ed2c2b943d392a893c4165b",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\top\\nc_soc.v": "1af5ef24d8bfc70badcf4371ffea163f4f0b0c9321670fe65a61bcfa7f0fd355",
+    "hardware\\pds\\source\\core\\nc_stats.v": "2623bdad3ba1aba560726fe26a65366e580a94233d39a57e303a5875ba73acec",
+    "hardware\\pds\\source\\core\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "hardware\\pds\\source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba"
+  },
+  "baseline_sha256": "f9266e85c40bf5a5feaa9d54f1ec77389d00a2feb02b4ed74573b5b1bc171d86",
+  "generator_sha256": "55d83365c24e20a17a3f5c45e42d6261dcc62b7c547e067974bb69484299214a",
+  "parent_generation_sha256": "6d891e4e984a5c874208ed82a2a2514278158f364014eb28f98348c13c2a7869",
+  "ip_sha256": {
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram1_tdp\\ram1_tdp.idf": "3b953426720fc44d0a98112d8a7f1db9dd39ad6dda575674e73edb64ea4369f3",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram1_tdp\\ram1_tdp.v": "560b31780cc005a47f88b5f2f0a658dc4248881a99fedd9095f0161853631e92",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram1_tdp\\ram1_tdp_tb.v": "f7c172dfa2632a1ef4803ed94155aa8166c2717645c64c01065b9366059a6703",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "simulation\\results\\load_bp_dual_lsu_forward\\ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "simulation\\results\\load_bp_dual_ram_logic\\boot_interleaved.hex": "69122268a9d0d546090b2731e63b366d1ffdf090ba19c6de5135986d04d8f631"
+  },
+  "forward_policy": "tagged_older_results_capture_and_wait",
+  "accepted_dual_sha256": "acc8a0f8be1dc90d67e6cda8d18fc000911cc4b25a8021ab0f7b17ec244abb01",
+  "canonical_sha256": {
+    "simulation\\research\\dual_lsu\\nc_local_bus.v": "a3b99413cb2f2ca1715097e7e2059f992b24fac8686462e3934ac7ed4c6d01bb",
+    "simulation\\research\\dual_lsu\\nc_memory.v": "5c622a565e94e089f054489b54961fc69906a8c91ed7036a8dc6c4110af876d4",
+    "simulation/research/dual_lsu/nc_local_bus.v": "74a48bc2233275bb04ced6605c8528274f89eb5ebde1d69f980711fd5da227ef"
+  }
+}

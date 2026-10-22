@@ -1,0 +1,43 @@
+{
+  "same_image_sha256": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+  "stages": [
+    {
+      "stage": "baseline",
+      "ticks": 6068007,
+      "window_cycles": 6068053,
+      "retired": 2808261,
+      "ipc": 0.4627944086843012,
+      "cpi": 2.1607866932596367,
+      "diagnostic_cm_per_mhz": 1.647987
+    },
+    {
+      "stage": "mem",
+      "ticks": 5514278,
+      "window_cycles": 5514321,
+      "retired": 2808261,
+      "ipc": 0.5092668707534437,
+      "cpi": 1.9636070151599156,
+      "diagnostic_cm_per_mhz": 1.813474
+    },
+    {
+      "stage": "mem_fetch",
+      "ticks": 5199477,
+      "window_cycles": 5199518,
+      "retired": 2808261,
+      "ipc": 0.5401002554467549,
+      "cpi": 1.8515081041256494,
+      "diagnostic_cm_per_mhz": 1.92327
+    },
+    {
+      "stage": "mem_fetch_mul",
+      "ticks": 5105517,
+      "window_cycles": 5105558,
+      "retired": 2808261,
+      "ipc": 0.550039976041796,
+      "cpi": 1.8180496755821485,
+      "diagnostic_cm_per_mhz": 1.958665
+    }
+  ],
+  "cycle_reduction_percent": 15.861677543027398,
+  "ipc_increase_percent": 18.851906099196203
+}

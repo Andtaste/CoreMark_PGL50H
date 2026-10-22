@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS terminal MUL model seed=17 cycles=30000 accepts=16584 consumes=13439 flushes=475 collisions=1646 early=0 ops=4210,4107,4092,4175",
+    "PASS terminal MUL model seed=91 cycles=30000 accepts=16591 consumes=13514 flushes=470 collisions=1615 early=0 ops=4149,4250,4055,4137",
+    "PASS terminal MUL model seed=2026 cycles=30000 accepts=16590 consumes=13553 flushes=469 collisions=1696 early=0 ops=4285,4082,4083,4140"
+  ],
+  "cycles": 90000,
+  "scope": "Independent direct signed/unsigned product, all4ops, random query/consume/backpressure/clear/token reuse, low/high simultaneous completion and unchanged registered broadcast priority",
+  "input_sha256": {
+    "tools\\check_dual_mul_tail_unit.py": "d84a9170297ad73e41aafb03bf444310ed4dcf20c1dd7a2b10047b482779eedf",
+    "simulation\\results\\load_bp_dual_boundary_mulprobe\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa",
+    "simulation\\results\\load_bp_dual_boundary_mulprobe\\mul_unit\\tail_tb.v": "5bfa46f763d1ca0593d5229d8b1ab6c6c0f7aae08d5910685074ca5f132a80ec"
+  }
+}

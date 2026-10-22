@@ -1,0 +1,10 @@
+{
+  "dual_legacy_fifo/top_pnr.adf": "ddc14cdd677202057b97a241c6503fed75e6769ad48ee1b9682d64861262d320",
+  "dual_legacy_fifo/top_pnr.netlist": "221c877ae26393b701c8558066db914e1fd823b4899881341c0ca5f2e1a022a3",
+  "dual_legacy_return/top_pnr.adf": "35b4ea429fda5bd93d23728f3db2f2b5b7b7e3547ea0035181158c503f3d027d",
+  "dual_legacy_return/top_pnr.netlist": "c1397dbb10b222453c6c31990271bd6101926f547f1bae0be9623361d5298ecb",
+  "dual_legacy_word/top_pnr.adf": "cbf4f941b4a78e11263f1f83f9a0afbc5004e497bbeb2612681ec2eaea314d4d",
+  "dual_legacy_word/top_pnr.netlist": "b14d59bf2543cd3669f10dcba3f60ce5c8b85191995fadf7d0bdafda738760a7",
+  "dual_legacy_select/top_pnr.adf": "4356e988f263a9a089bb83fa6916b6dc497219c9226fbfd1968e6020cd073c62",
+  "dual_legacy_select/top_pnr.netlist": "501c393b82d7a3d400e415532043efcd68fb5790a3ef79af31347084541773e5"
+}

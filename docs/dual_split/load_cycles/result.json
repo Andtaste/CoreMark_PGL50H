@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "scope": "Read-only current full SoC timeline; no early-start/return implementation",
+  "directed": {
+    "dual_joint_fix": [
+      {
+        "load_pc": 76,
+        "consumer_pc": 80,
+        "ex": 15,
+        "request": 16,
+        "wb_capture": 17,
+        "consumer_ex": 18,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 132,
+        "consumer_pc": 136,
+        "ex": 25,
+        "request": 26,
+        "wb_capture": 27,
+        "consumer_ex": 28,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 272,
+        "consumer_pc": 276,
+        "ex": 46,
+        "request": 47,
+        "wb_capture": 48,
+        "consumer_ex": 49,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 276,
+        "consumer_pc": 280,
+        "ex": 49,
+        "request": 50,
+        "wb_capture": 51,
+        "consumer_ex": 52,
+        "ex_bubbles": 2
+      }
+    ],
+    "dual_split_ready": [
+      {
+        "load_pc": 76,
+        "consumer_pc": 80,
+        "ex": 15,
+        "request": 16,
+        "wb_capture": 17,
+        "consumer_ex": 18,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 132,
+        "consumer_pc": 136,
+        "ex": 25,
+        "request": 26,
+        "wb_capture": 27,
+        "consumer_ex": 28,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 272,
+        "consumer_pc": 276,
+        "ex": 46,
+        "request": 47,
+        "wb_capture": 48,
+        "consumer_ex": 49,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 276,
+        "consumer_pc": 280,
+        "ex": 49,
+        "request": 50,
+        "wb_capture": 51,
+        "consumer_ex": 52,
+        "ex_bubbles": 2
+      }
+    ],
+    "dual_split_slow": [
+      {
+        "load_pc": 76,
+        "consumer_pc": 80,
+        "ex": 15,
+        "request": 16,
+        "wb_capture": 17,
+        "consumer_ex": 18,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 132,
+        "consumer_pc": 136,
+        "ex": 25,
+        "request": 26,
+        "wb_capture": 27,
+        "consumer_ex": 28,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 272,
+        "consumer_pc": 276,
+        "ex": 46,
+        "request": 47,
+        "wb_capture": 48,
+        "consumer_ex": 49,
+        "ex_bubbles": 2
+      },
+      {
+        "load_pc": 276,
+        "consumer_pc": 280,
+        "ex": 49,
+        "request": 50,
+        "wb_capture": 51,
+        "consumer_ex": 52,
+        "ex_bubbles": 2
+      }
+    ]
+  },
+  "input_sha256": {
+    "simulation\\results\\load_cycle_structure\\directed.hex": "aaf49c88542ee9f027b6d6c7a130e703dc04b1aaf2f037e5ad2a460504473a2b",
+    "docs\\load_cycle_structure\\result.json": "d939f156a096fe93493baee2d49a79e45079001eb84cf23e9d59228d6693fa3d",
+    "tools\\check_dual_split_load_cycles.py": "22edff89a69b0068daaba174ceb54a19f2e32164d60bf4666f2b5fdef23d418e",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_core.v": "527fecc1509d32d04e99a779174be65b7e20d13f4e256b9089ea47cde5941cfb",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_fetch.v": "93ffb8a40ba6eb4bd4d0f5d0f5ad3542adedd8a6e887b4cd9868904b7e1528e1",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_memory.v": "d80eb2054b4b6c5410fcec8d98aac305d6149decc7f454c447898c65ea82fe4d",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "simulation\\results\\load_bp_dual_joint_fix\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "simulation\\results\\load_bp_dual_joint_fix\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\results\\load_bp_dual_joint_fix\\checks\\soc_tb.v": "68e955ea0f7fe87d0402743ef7f4338140ae2385953b67b0cb01593e6ba9d75b",
+    "simulation\\results\\dual_split_load_cycles\\dual_joint_fix\\soc_tb.v": "5747ba8d97ab08be02a7b1ceb1d41bf15c5391b36d8e91eb858dacc0ba67026d",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_core.v": "9b52ff944410d6e4a95488115083f46ee76d17ff14b55db8fa6ad29339574a8e",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_fetch.v": "93ffb8a40ba6eb4bd4d0f5d0f5ad3542adedd8a6e887b4cd9868904b7e1528e1",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_memory.v": "d80eb2054b4b6c5410fcec8d98aac305d6149decc7f454c447898c65ea82fe4d",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "simulation\\results\\load_bp_dual_split_ready\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "simulation\\results\\load_bp_dual_split_ready\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\results\\load_bp_dual_split_ready\\checks\\soc_tb.v": "68e955ea0f7fe87d0402743ef7f4338140ae2385953b67b0cb01593e6ba9d75b",
+    "simulation\\results\\dual_split_load_cycles\\dual_split_ready\\soc_tb.v": "5747ba8d97ab08be02a7b1ceb1d41bf15c5391b36d8e91eb858dacc0ba67026d",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_core.v": "35681b6576ee53a15a83e80af005875025d0d6512fd4de5c25ac8759b8a106b2",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_fetch.v": "93ffb8a40ba6eb4bd4d0f5d0f5ad3542adedd8a6e887b4cd9868904b7e1528e1",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_memory.v": "d80eb2054b4b6c5410fcec8d98aac305d6149decc7f454c447898c65ea82fe4d",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "simulation\\results\\load_bp_dual_split_slow\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "simulation\\results\\load_bp_dual_split_slow\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\results\\load_bp_dual_split_slow\\checks\\soc_tb.v": "68e955ea0f7fe87d0402743ef7f4338140ae2385953b67b0cb01593e6ba9d75b",
+    "simulation\\results\\dual_split_load_cycles\\dual_split_slow\\soc_tb.v": "5747ba8d97ab08be02a7b1ceb1d41bf15c5391b36d8e91eb858dacc0ba67026d"
+  }
+}

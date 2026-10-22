@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checks": "opcode operands, RAW/x0/WAW, RF ports, flow/recovery, greedy non-overlap",
+  "source_sha256": {
+    "tools\\check_pairing_model.py": "36a2a360d1f87d087f1cb1a0e56bb344950b6d4333ed9d72adb3beee48709aad",
+    "tools\\assess_pairing.py": "6be5e38c6b082eba1593c7dbf4147075d3dd954928a7ff1bbe004ba891b7e13f"
+  }
+}

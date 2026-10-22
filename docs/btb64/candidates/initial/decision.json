@@ -1,0 +1,4 @@
+{
+  "status": "superseded",
+  "reason": "Final variant prewrites redirect token, removes the worst CE endpoint, improves estimated Fmax from 85.056 to 85.616 MHz; same cycles/predictor counts, +9 LUT."
+}

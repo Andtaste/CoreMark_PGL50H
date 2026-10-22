@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "target": "fifo",
+  "scope": "Same diagnostic-adapted binary on all targets: four unsupported old CSR reads after the stats stop are replaced with zero; benchmark instructions unchanged. Common synchronous behavioral word memory with per-CPU fetch protocol adapter and atomic old LSU acceptance. Not an original SoC or physical A64 RAM comparison.",
+  "results": {
+    "validation": {
+      "cycles": 309613,
+      "retired": 280944,
+      "side": 78182,
+      "early_direct": 0,
+      "pc_hash": "188b627b1547ac45",
+      "ipc": 0.9074037588860933,
+      "image_sha256": "16dc877000b01aa853639d636e3c43b01f7d74db196ea2f0457e4792a370542c"
+    },
+    "performance": {
+      "cycles": 3080902,
+      "retired": 2808261,
+      "side": 783254,
+      "early_direct": 0,
+      "pc_hash": "0c9ed17673d041c3",
+      "ipc": 0.9115061108727249,
+      "image_sha256": "066197c35dc2d1f6b9eb4c83eb2a8611982cf6fdf8cf6bea4585af1d0498e288"
+    }
+  },
+  "input_sha256": {
+    "tools\\compare_dual_boundary_old.py": "0ddb2d03f05ed432d65df5b068ddf4ec61afcc2a369b454dec84c0dcd3b807a7",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_local_bus.v": "74a48bc2233275bb04ced6605c8528274f89eb5ebde1d69f980711fd5da227ef",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_core.v": "527fecc1509d32d04e99a779174be65b7e20d13f4e256b9089ea47cde5941cfb",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_memory.v": "d80eb2054b4b6c5410fcec8d98aac305d6149decc7f454c447898c65ea82fe4d",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "simulation\\results\\dual_boundary_common_final\\fifo\\nc_local_bus_common.v": "56628de7aef9e9ebc9ab17334177ad800c9451dc14c01f916852edac513c7eca",
+    "simulation\\results\\load_bp_dual_lsu_ports\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\dual_boundary_common_final\\fifo\\nc_uart_sim.v": "24b5a8db903d4f90dba5577e81b5b0e530c489a602ea754c850a87ffd802628b",
+    "simulation\\results\\dual_boundary_common_final\\fifo\\common_tb.v": "4990ce5eb601a41121541eeb1b620ce8b9a4deb84f35363596eb03fb23af020e",
+    "sw\\build\\coremark_validation_1\\coremark.hex": "5d74666600f9ce8926203f1e7cc2f0d979f884d765c7371edcd45be4435fc059",
+    "simulation\\results\\dual_boundary_common_final\\fifo\\validation_common.hex": "16dc877000b01aa853639d636e3c43b01f7d74db196ea2f0457e4792a370542c",
+    "sw\\build\\coremark_performance_10\\coremark.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+    "simulation\\results\\dual_boundary_common_final\\fifo\\performance_common.hex": "066197c35dc2d1f6b9eb4c83eb2a8611982cf6fdf8cf6bea4585af1d0498e288",
+    "tools\\compare_dual_boundary_old_v3.py": "09d5e6cc750b0ca6afe129ef20f1cbeade8acb70c93bfc436820593d99b9e04f",
+    "tools\\compare_dual_boundary_final.py": "9bc1a61a6a33c290bd073fdaa2f09c9269d1ea624bb312b6915b3236e500dd9a"
+  }
+}

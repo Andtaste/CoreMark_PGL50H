@@ -1,0 +1,4 @@
+{
+  "status": "rejected_by_user",
+  "reason": "User chose not to adopt incoming producer-mask forwarding; no IPC benefit and adds 30 LUT versus fixed-index candidate. Its hold-margin benefit is documented in the candidate report."
+}

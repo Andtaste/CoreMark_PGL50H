@@ -57,6 +57,7 @@
 typedef int core_portable;
 void portable_init(core_portable *p, int *argc, char *argv[]);
 void portable_fini(core_portable *p);
+void portable_print_timing(CORE_TICKS ticks, ee_u32 iterations);
 
 #if !defined(PROFILE_RUN) && !defined(PERFORMANCE_RUN) && !defined(VALIDATION_RUN)
 #if (TOTAL_DATA_SIZE==1200)

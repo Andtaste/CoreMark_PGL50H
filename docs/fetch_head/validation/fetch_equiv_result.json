@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "cycles": 300000,
+  "results": [
+    {
+      "seed": 17,
+      "status": "PASS",
+      "summary": "PASS fetch equivalence cycles=100000 empty=12069 turnover=1314 refill=8947 wrap=2269 full=10261 full_redirect=125 stalled_redirect=127 stale=2125"
+    },
+    {
+      "seed": 91,
+      "status": "PASS",
+      "summary": "PASS fetch equivalence cycles=100000 empty=11932 turnover=1336 refill=8976 wrap=2246 full=10242 full_redirect=125 stalled_redirect=124 stale=2185"
+    },
+    {
+      "seed": 2026,
+      "status": "PASS",
+      "summary": "PASS fetch equivalence cycles=100000 empty=11975 turnover=1365 refill=8951 wrap=2248 full=10248 full_redirect=125 stalled_redirect=117 stale=2153"
+    }
+  ],
+  "reference_sha256": "3524b1b59bd4d2081c82e306d5ee230b9abd28843eb54ffb6d5706ccecd744cc",
+  "source_sha256": {
+    "hardware\\pds\\source\\core\\nc_fetch.v": "aa8fc0824ebd5148febb5da8e0210244a501b50a79380fe37399b9197977a37b",
+    "simulation\\tb\\fetch_equivalence_tb.v": "a0bf6b210bc4591ecfaeb8b87d656d91b8e622741f0df27e373e3f1eaf0da39e"
+  }
+}

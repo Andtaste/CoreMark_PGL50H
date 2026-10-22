@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "variant": "dual_boundary_next_loadsplitv2",
+  "tests": [
+    {
+      "status": "PASS",
+      "load_pc": 76,
+      "consumer_pc": 80,
+      "ex": 15,
+      "request": 15,
+      "wb_capture": 16,
+      "consumer_ex": 17,
+      "ex_bubbles": 1
+    },
+    {
+      "status": "PASS",
+      "load_pc": 132,
+      "consumer_pc": 136,
+      "ex": 24,
+      "request": 24,
+      "wb_capture": 25,
+      "consumer_ex": 26,
+      "ex_bubbles": 1
+    },
+    {
+      "status": "PASS",
+      "load_pc": 272,
+      "consumer_pc": 276,
+      "ex": 44,
+      "request": 44,
+      "wb_capture": 45,
+      "consumer_ex": 46,
+      "ex_bubbles": 1
+    },
+    {
+      "status": "PASS",
+      "load_pc": 276,
+      "consumer_pc": 280,
+      "ex": 46,
+      "request": 46,
+      "wb_capture": 47,
+      "consumer_ex": 48,
+      "ex_bubbles": 1
+    }
+  ],
+  "input_sha256": {
+    "tools\\check_dual_boundary.py": "eecde471f9fce402e4bc9e875ac9178bcecacf0ab6622c02735dece5f5424c12",
+    "simulation\\results\\load_cycle_structure\\directed.hex": "aaf49c88542ee9f027b6d6c7a130e703dc04b1aaf2f037e5ad2a460504473a2b",
+    "docs\\load_cycle_structure\\result.json": "d939f156a096fe93493baee2d49a79e45079001eb84cf23e9d59228d6693fa3d",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\checks\\soc_tb.v": "3d6140b38404b901d9d7b8258f9e635270798ce52c89417c24e1b97202b714d8",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\timeline_checks\\soc_tb.v": "1cb0c02c24286c7b9e48833ead0dc2a481b05fd8b9069a46c771ffa3ad1d928a",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_core.v": "96e685f0c1e074e4bac51f0f8ce69310642dce35bad039682d5c33e2f6576355",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_memory.v": "ac7054c213fa19661d21677b2774d72a804d256caf2db23ef5c15eb5ffbfabc8",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_operands.v": "ab17f69f089e1faffeb89982b4b63729caba7fd5b4df9f3d6be8f2f6c603d548",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\nc_soc.v": "3151fd4d4366252ace254d38bf55cd8fd845512d705171c6a6ba2c1f8d6a7a11",
+    "simulation\\results\\load_bp_dual_boundary_next_loadsplitv2\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "tools\\check_dual_boundary_v2.py": "a311d643ea7c9b0f22a490d8b1b85b6cb81586a227872bfcdbf9bb583e19b50a",
+    "tools\\check_dual_boundary_v3.py": "d83d439ce37723f9b14988ff81142ea0425fbea909a0ed9a0558a08987cf1dbd",
+    "tools\\check_dual_next_units.py": "e265dc422ab45190ed74e296c82bbda5dd74271c1541dacb9127fe2bec6094da"
+  },
+  "adapter_note": "Current future-tag protocol; exact extended admission; load bypass may execute on WB capture edge; paired posted acceptance need not equal group completion."
+}

@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "tests": [
+    "seed=37 PASS dual units cycles=100000 rf_reads=800000 fetch_consumptions=26718 pairs=4409 redirects=772 stale_drains=1209",
+    "seed=613 PASS dual units cycles=100000 rf_reads=800000 fetch_consumptions=26365 pairs=4182 redirects=806 stale_drains=1223",
+    "seed=2026 PASS dual units cycles=100000 rf_reads=800000 fetch_consumptions=26278 pairs=4166 redirects=782 stale_drains=1238",
+    "core dual fault/RAW/WAW/WAR/burst seed=37 PASS",
+    "core dual fault/RAW/WAW/WAR/burst seed=613 PASS",
+    "soc dual fault/RAW/WAW/WAR/burst seed=0 PASS",
+    "PASS dual stats >1 IPC and two-instruction overflow"
+  ],
+  "coverage": [
+    {
+      "kind": "core",
+      "seed": 37,
+      "issued": 102,
+      "executed": 99,
+      "retired": 95,
+      "fault_cancelled": 2,
+      "max_dual_streak": 1,
+      "second_visible": 128,
+      "dependency_blocked": 0,
+      "singles": 60
+    },
+    {
+      "kind": "core",
+      "seed": 613,
+      "issued": 102,
+      "executed": 99,
+      "retired": 95,
+      "fault_cancelled": 2,
+      "max_dual_streak": 1,
+      "second_visible": 129,
+      "dependency_blocked": 0,
+      "singles": 59
+    },
+    {
+      "kind": "soc",
+      "seed": 0,
+      "issued": 115,
+      "executed": 107,
+      "retired": 101,
+      "fault_cancelled": 2,
+      "max_dual_streak": 64,
+      "second_visible": 159,
+      "dependency_blocked": 0,
+      "singles": 61
+    }
+  ],
+  "input_sha256": {
+    "tools\\check_dual_types_extra.py": "9079821380879162d01b673be19601c1ac6a77c4fb267220f772792a89cb84c9",
+    "simulation\\research\\dual_issue\\dual_units_tb.v": "02075521db8780b677b212afca965894b406b3ff249e78051def8e8a612953bf",
+    "simulation\\results\\load_bp_dual_joint_reg\\dual_checks\\dual_units_tb.v": "bb511b9215228513e2758916c46c0126bc82331e0879d8438c59bf20efe416a8",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_fetch.v": "93ffb8a40ba6eb4bd4d0f5d0f5ad3542adedd8a6e887b4cd9868904b7e1528e1",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\research\\dual_issue\\dual_faults.S": "5c2fb1022748605f615df1d7cdf995df85f8d8aeb4c33545a6dee55282580f4a",
+    "simulation\\results\\load_bp_dual_joint_reg\\dual_checks\\dual_faults.hex": "67f5db74511e93984c625b72b65fdd8af57331b4291a665d30c0d390e8e75c95",
+    "simulation\\results\\load_bp_dual_joint_reg\\checks\\core_tb.v": "c7b782a1b42ddc9b05201f527bc1f695c94fb17b81c388ab0e00d57228cde6d2",
+    "simulation\\results\\load_bp_dual_joint_reg\\checks\\soc_tb.v": "68e955ea0f7fe87d0402743ef7f4338140ae2385953b67b0cb01593e6ba9d75b",
+    "simulation\\results\\load_bp_dual_joint_reg\\dual_checks\\stats_dual_tb.v": "3fb731e86189856df36dae2335313d38a9950e4df9f4c145f7c05fc01b8a8625",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "tools/run_dual_joint_reg.py": "af44d86e32ccc2e82e6e34d2d4d99d2cab45895cfc1d03aaff302afe92956de9",
+    "tools/profile_dual_joint.py": "79ed5ff606162bc4feca9b7ca4842f08e8d19becee615e13bc24ccc13e53bcbb",
+    "tools/generate_dual_joint_reg.py": "df946fb3fa2214afc9bb0bb839ee33b54e2a5fd7a67367337e5c5effe18feb01"
+  },
+  "override_sha256": {
+    "hardware\\pds\\source\\core\\nc_core.v": "139695dd061007470162dec29861e2b92ea226782febde2c0517e65e26258075",
+    "hardware\\pds\\source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "93ffb8a40ba6eb4bd4d0f5d0f5ad3542adedd8a6e887b4cd9868904b7e1528e1",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "hardware\\pds\\source\\core\\nc_memory.v": "d80eb2054b4b6c5410fcec8d98aac305d6149decc7f454c447898c65ea82fe4d",
+    "hardware\\pds\\source\\core\\nc_operands.v": "70bc6af58318c0ec9317c1fee9370a88355c578a9ffc146ca5519d69f24fcb3b",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\top\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "hardware\\pds\\source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\core\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "hardware\\pds\\source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa"
+  },
+  "variant": "dual_joint_reg",
+  "scope": "Isolated joint slide, four-source bypass and branch/MUL admission; not adopted",
+  "ip_sha256": {
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram1_tdp\\ram1_tdp.idf": "3b953426720fc44d0a98112d8a7f1db9dd39ad6dda575674e73edb64ea4369f3",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram1_tdp\\ram1_tdp.v": "560b31780cc005a47f88b5f2f0a658dc4248881a99fedd9095f0161853631e92",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram1_tdp\\ram1_tdp_tb.v": "f7c172dfa2632a1ef4803ed94155aa8166c2717645c64c01065b9366059a6703",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "simulation\\results\\load_bp_dual_joint_reg\\ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "simulation\\results\\load_bp_dual_ram_logic\\boot_interleaved.hex": "69122268a9d0d546090b2731e63b366d1ffdf090ba19c6de5135986d04d8f631"
+  }
+}

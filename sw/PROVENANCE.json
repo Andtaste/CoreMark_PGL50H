@@ -1,0 +1,72 @@
+[
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\core_list_join.c",
+    "destination": "coremark\\core_list_join.c",
+    "sha256_before_adaptation": "1c8aa83861634d6a33cb11c785b738ac205404e2e9222571465dc02156f9154d"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\core_main.c",
+    "destination": "coremark\\core_main.c",
+    "sha256_before_adaptation": "2c9c94c3eff40bff61695972d9d882a70584646773ea7e65a5f6fc48ead64fb8"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\core_matrix.c",
+    "destination": "coremark\\core_matrix.c",
+    "sha256_before_adaptation": "acf3fe63db2ddd929f405b67fd273e49f558871f0bf8d51a6814cdd881b602c8"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\core_portme.c",
+    "destination": "coremark\\core_portme.c",
+    "sha256_before_adaptation": "ea3d9f1f5d2fc267432513971c38c292bd7f9b223f514dc4105a23c400996dcb"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\core_state.c",
+    "destination": "coremark\\core_state.c",
+    "sha256_before_adaptation": "02a6e604d852a2806a8eb2a455c924b0483a8042cfe96478009821558cf35521"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\core_util.c",
+    "destination": "coremark\\core_util.c",
+    "sha256_before_adaptation": "f8479f7a4e100ded31e2ebecf1f37ffff8904d88314188b0a85d32687e3ca813"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\coremark.h",
+    "destination": "coremark\\coremark.h",
+    "sha256_before_adaptation": "3ce4936cdfc7b6bd2a9b24c13f2494ed7a4ca22038c2b37052bcc4b1f8c73143"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\coremark\\core_portme.h",
+    "destination": "coremark\\core_portme.h",
+    "sha256_before_adaptation": "3c4537befad33e43af3f2f3ddc62e10a44f77544d6497cfefddf371a7acb5388"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\lib\\xprintf.c",
+    "destination": "lib\\xprintf.c",
+    "sha256_before_adaptation": "1c26f9cf7e76c902dc089c1d4e84b094f39924f97be2697442cb88ed11e2af2e"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\lib\\utils.c",
+    "destination": "lib\\utils.c",
+    "sha256_before_adaptation": "00d372d49411121cfd7b4b3690409b579e8470cc2a31d553737c85bb64caf2f8"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\lib\\uart.c",
+    "destination": "lib\\uart.c",
+    "sha256_before_adaptation": "3a31c0a14b693284323e07a5a66228340809a6f1e31a7f6553ac59ddd6cca863"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\include\\xprintf.h",
+    "destination": "include\\xprintf.h",
+    "sha256_before_adaptation": "5c8fb41a9aca8f2b0c303521460462d4ec870b26876678232522842c41cc77a8"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\include\\utils.h",
+    "destination": "include\\utils.h",
+    "sha256_before_adaptation": "253c368426c115d1d5284da80a6e7f847e74996fbcde78f08c0454a86b89a07e"
+  },
+  {
+    "source": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\sw\\include\\uart.h",
+    "destination": "include\\uart.h",
+    "sha256_before_adaptation": "16852a2e1f675629dd32f2cab1b7c8fcff11545d821484e85a84b14ca6d88023"
+  }
+]

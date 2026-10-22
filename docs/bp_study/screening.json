@@ -1,0 +1,234 @@
+{
+  "status": "PASS",
+  "scope": "Fixed real lookup/training schedule, old-state semantics, full warmup, actual UID binding; not rescheduled CPU or IPC prediction",
+  "trace_sha256": "0b5824642cdf3bc0b44e8f4389d8b6b607a44ea87b03f3c0163feed4ba3c1bb3",
+  "collector_result_sha256": "9b1d56410abbe979a92661898bde930f8a12dfd0b129cf001f5103be22ba3025",
+  "tool_sha256": "6555c36b38cbacda47508b67232fafebc4b5f9116080f5dd69e8ec71aed8bbdb",
+  "events": 4614639,
+  "results": {
+    "baseline": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 282391,
+      "direction_wrong": 53818,
+      "target_wrong": 3702,
+      "next_pc_wrong": 57520,
+      "target_wrong_return": 3682,
+      "target_wrong_other": 20
+    },
+    "fold1": {
+      "resolved": 571070,
+      "hits": 500703,
+      "predicted_taken": 273669,
+      "direction_wrong": 64074,
+      "target_wrong": 3306,
+      "next_pc_wrong": 67380
+    },
+    "fold2": {
+      "resolved": 571070,
+      "hits": 508869,
+      "predicted_taken": 278665,
+      "direction_wrong": 55730,
+      "target_wrong": 3841,
+      "next_pc_wrong": 59571
+    },
+    "fold3": {
+      "resolved": 571070,
+      "hits": 508247,
+      "predicted_taken": 275961,
+      "direction_wrong": 58618,
+      "target_wrong": 3815,
+      "next_pc_wrong": 62433
+    },
+    "fold4": {
+      "resolved": 571070,
+      "hits": 515417,
+      "predicted_taken": 281683,
+      "direction_wrong": 53230,
+      "target_wrong": 3826,
+      "next_pc_wrong": 57056
+    },
+    "fold6": {
+      "resolved": 571070,
+      "hits": 509787,
+      "predicted_taken": 279277,
+      "direction_wrong": 55728,
+      "target_wrong": 3874,
+      "next_pc_wrong": 59602
+    },
+    "fold2_upper": {
+      "resolved": 571070,
+      "hits": 496736,
+      "predicted_taken": 274694,
+      "direction_wrong": 61227,
+      "target_wrong": 3676,
+      "next_pc_wrong": 64903
+    },
+    "fold3_upper": {
+      "resolved": 571070,
+      "hits": 504148,
+      "predicted_taken": 266605,
+      "direction_wrong": 66910,
+      "target_wrong": 2784,
+      "next_pc_wrong": 69694
+    },
+    "fold4_upper": {
+      "resolved": 571070,
+      "hits": 512355,
+      "predicted_taken": 272961,
+      "direction_wrong": 61388,
+      "target_wrong": 3386,
+      "next_pc_wrong": 64774
+    },
+    "direct128": {
+      "resolved": 571070,
+      "hits": 529201,
+      "predicted_taken": 288241,
+      "direction_wrong": 50952,
+      "target_wrong": 3977,
+      "next_pc_wrong": 54929
+    },
+    "fold128": {
+      "resolved": 571070,
+      "hits": 549539,
+      "predicted_taken": 293896,
+      "direction_wrong": 42891,
+      "target_wrong": 3971,
+      "next_pc_wrong": 46862
+    },
+    "local2": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 283347,
+      "direction_wrong": 55046,
+      "target_wrong": 3702,
+      "next_pc_wrong": 58748
+    },
+    "fold2_local2": {
+      "resolved": 571070,
+      "hits": 508869,
+      "predicted_taken": 278461,
+      "direction_wrong": 56552,
+      "target_wrong": 3841,
+      "next_pc_wrong": 60393
+    },
+    "fold3_local2": {
+      "resolved": 571070,
+      "hits": 508247,
+      "predicted_taken": 276116,
+      "direction_wrong": 59443,
+      "target_wrong": 3815,
+      "next_pc_wrong": 63258
+    },
+    "fold4_local2": {
+      "resolved": 571070,
+      "hits": 515417,
+      "predicted_taken": 281745,
+      "direction_wrong": 54140,
+      "target_wrong": 3826,
+      "next_pc_wrong": 57966
+    },
+    "local3": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 285355,
+      "direction_wrong": 57266,
+      "target_wrong": 3702,
+      "next_pc_wrong": 60968
+    },
+    "fold2_local3": {
+      "resolved": 571070,
+      "hits": 508869,
+      "predicted_taken": 278515,
+      "direction_wrong": 57164,
+      "target_wrong": 3841,
+      "next_pc_wrong": 61005
+    },
+    "fold3_local3": {
+      "resolved": 571070,
+      "hits": 508247,
+      "predicted_taken": 276384,
+      "direction_wrong": 60125,
+      "target_wrong": 3815,
+      "next_pc_wrong": 63940
+    },
+    "fold4_local3": {
+      "resolved": 571070,
+      "hits": 515417,
+      "predicted_taken": 282097,
+      "direction_wrong": 54990,
+      "target_wrong": 3826,
+      "next_pc_wrong": 58816
+    },
+    "gshare4_saved": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 286554,
+      "direction_wrong": 74935,
+      "target_wrong": 3702,
+      "next_pc_wrong": 78637
+    },
+    "gshare6_saved": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 287095,
+      "direction_wrong": 79056,
+      "target_wrong": 3702,
+      "next_pc_wrong": 82758
+    },
+    "gshare8_saved": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 285865,
+      "direction_wrong": 70176,
+      "target_wrong": 3702,
+      "next_pc_wrong": 73878
+    },
+    "gshare6_current": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 303955,
+      "direction_wrong": 192298,
+      "target_wrong": 3702,
+      "next_pc_wrong": 196000
+    },
+    "ind_bimodal": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 282014,
+      "direction_wrong": 60569,
+      "target_wrong": 3702,
+      "next_pc_wrong": 64271
+    },
+    "ind_local1": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 281125,
+      "direction_wrong": 54244,
+      "target_wrong": 3702,
+      "next_pc_wrong": 57946
+    },
+    "ras4": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 282391,
+      "direction_wrong": 53818,
+      "target_wrong": 30,
+      "next_pc_wrong": 53848
+    },
+    "ras8": {
+      "resolved": 571070,
+      "hits": 516215,
+      "predicted_taken": 282391,
+      "direction_wrong": 53818,
+      "target_wrong": 30,
+      "next_pc_wrong": 53848
+    }
+  },
+  "limits": [
+    "Changed predictions do not change fetch/EX timing in this replay.",
+    "gshare*_saved needs lookup-index metadata through fetch/ID/EX and registered training.",
+    "gshare*_current deliberately trains using current resolved history; it is a separate cheaper design.",
+    "RAS is resolved-only, no speculative push/pop or rollback. All models retain correction bypass."
+  ]
+}

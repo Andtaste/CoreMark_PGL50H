@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "tests": [
+    "Exact inputs/connectivity accepted and installed",
+    "Changed RTL rejected before checkpoint installation",
+    "Changed synthesized RAM connection rejected before checkpoint installation"
+  ],
+  "all_negative_cases_preserve_installed_map_and_prior_receipt": true,
+  "input_sha256": {
+    "tools\\verify_clock82_checkpoint.py": "05575a0e587f751f7337a208d054d304e8fb606dbeabd4dfee984712c39a6779",
+    "tools\\compare_clock82_netlists.py": "217c82b993a853736ec9fdcd56334a936077322f1e4e6e6080b48a7437c8237e",
+    "tools\\check_clock82_guard.py": "2a2c8ea39f97b4576db5a48479347655de6819104f8df25259ff631ebd9f23c4",
+    "hardware\\pds\\checkpoints\\clock82_checkpoint.json": "7d31c42f47939f7bdd278e348690d52fbc685de6a3b15c78cbe38bc699ed5f4a"
+  },
+  "positive_stdout": "PASS: all source/IP/image/constraint hashes and complete structural connectivity match; canonical82 mapping verified and installed\n",
+  "stale_source_error": "Checkpoint invalid: input changed: source\\core\\nc_core.v. Run rebuild_from_rtl.tcl and repeat seed convergence; never reuse this checkpoint for changed RTL/IP/images/constraints.\n",
+  "structural_mismatch_error": "Traceback (most recent call last):\n  File \"C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\tools\\verify_clock82_checkpoint.py\", line 19, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\tools\\verify_clock82_checkpoint.py\", line 12, in main\n    proof=compare(checkpoint/'clock82_syn.vm',project/'synthesize/top_syn.vm');assert proof['status']=='PASS'\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\tools\\compare_clock82_netlists.py\", line 17, in compare\n    assert set(differences)<= {'nc_regfile'},differences\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ['nc_btb_bank']\n"
+}

@@ -1,0 +1,24 @@
+"""Write the measured IPC/80MHz result without adopting a candidate."""
+from pathlib import Path
+import json
+from parse_dual_joint_timing import paths
+ROOT=Path(__file__).resolve().parents[1]
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def main():
+ a=read(ROOT/'docs/accepted_dual_baseline.json');base=ROOT/a['source_directory'];final=ROOT/'simulation/results/load_bp_dual_boundary_storeprefix';s=read(final/'performance/result.json');p=read(final/'pds/result.json');b=read(base/'performance/result.json');ipc=lambda x:int(x['metrics']['Retired instructions'])/int(x['metrics']['Stats window cycles']);gain=(ipc(s)/ipc(b)-1)*100
+ passed=p['status']=='PASS';recommend='推荐最终隔离候选 `dual_boundary_storeprefix`，但本轮尚未采纳。' if passed else '本轮IPC收益成立，但三个候选均未满足80 MHz，因此不建议替换已采纳基线。'
+ lines=['# MEM等待与IPC优化试验','','2026-10-21。起点为已采纳 `dual_boundary_slots`。'+recommend+' 采纳描述、原单发工程、固定镜像和历史归档保持不变。','',f'固定10次镜像：退休2,808,261条保持一致，统计窗口2,807,614 → 2,704,650拍，减少102,964拍；IPC **{ipc(b):.6f} → {ipc(s):.6f}（+{gain:.3f}%）**。固定1次镜像271,550拍、280,944条；两镜像全部CRC通过。三个实现的全部性能/预测/乘法/双发/等待统计完全一致。','','| 版本 | IPC | Fmax MHz | slow setup ns | 最差hold ns | LUT | FF | 分布RAM | DRM/APM |','|---|---:|---:|---:|---:|---:|---:|---:|---|']
+ def row(label,x,i):
+  r=x['resources'];h=min(v['worst_slack_ns'] for k,v in x['corners'].items() if k.startswith('Hold'));return f'| {label} | {i:.6f} | {x["estimated_fmax_mhz"]:.3f} | {x["corners"]["Setup Summary(Slow Corner)"]["worst_slack_ns"]:+.3f} | {h:+.3f} | {r["LUT"]} | {r["FF"]} | {r["Distributed RAM"]} | {r["DRM"]}/{r["APM"]} |'
+ lines.append(row('已采纳slots',a,ipc(b)))
+ for name,label in (('storeack','本地store接受即完成'),('storemmio','＋MMIO译码用寄存地址'),('storeprefix','＋并行范围判断')):lines.append(row(label,read(ROOT/('simulation/results/load_bp_dual_boundary_'+name+'/pds/result.json')),ipc(s)))
+ lines +=['','三个候选均使用真实PLL80、12.500 ns生成时钟、相同器件/约束/布局布线选项，各跑一次PDS；没有false path/multicycle、降低uncertainty或换seed。Fmax为布线后估算，尚未上板。','','## 修改及收益来源','','基线逐拍统计：MEM阻塞246,730拍，其中等待store响应143,410拍、乘法103,320拍，load本身占用等待为0；主槽单独等操作数390,893拍、副槽单独119,406拍、两槽同时23,527拍，合计633,826拍。load相关等待418,911拍；乘法和其他类别可能与其他操作数同时等待，不能直接相加当作可消除周期。','','本轮只对片上无迟发错误的BRAM store启用快速完成：真实写请求被接受后，MEM槽即可离开，原响应由1位独立状态跟踪并排空。最多只有一份分离响应信用，前一响应未排空时不允许误接下一访存；同拍先保证旧store端口优先，避免年轻load借用旧store握手。已接受store的响应跟踪不会被年轻指令kill清除。MMIO、越界和可能出错的访问仍等待正常响应；通用核心参数 `POST_LOCAL_STORES` 默认关闭，仅固定本地SoC明确开启。没有新增store数据缓冲、第二LSU或RAM原始返回到EX的旁路。','','| 观测项 | 基线 | 本轮 |','|---|---:|---:|','| MEM占用阻塞拍 | 246730 | 125586 |','| EX操作数等待拍 | 633826 | 438473 |','| ID阻塞拍 | 670680 | 493401 |','| load直接交接数 | 361143 / 548709 | 491420 / 548709 |','| load入队数 | 187566 | 57289 |','| 排队年龄总和 / 最大年龄 | 234993 / 7 | 94299 / 2 |','','直接交接的load占比65.82% → 89.56%。队列年龄是每条load的累计观测，并非可直接相加的整核节拍收益。移除store等待后，一部分阻塞改表现为load等待，最终净收益以102,964拍为准。四组定向load/consumer的EX空泡从2/1/4/1降至1/1/1/1；这不代表所有load-use一律只有一拍。','','## 控制链与物理结果','','快速完成增加了 req_ready → MEM完成/队列选择的局部控制；不能声称完全没有增加组合控制。EX输入信用仍只由寄存的队列占用决定，没有将MEM ready反压串回EX准入。第一版最差路径为旁路操作数→AGU→通用地址MMIO译码→tohost CE，13级、逻辑4.151 ns/布线7.754 ns，80 MHz失败。','','第二版统一使用已有寄存MEM地址wa进行非本地/MMIO译码。实际SoC监测验证每次接受的非本地请求wa==da，本地提前load地址路径不受此契约约束。MMIO写入目标余量恢复到+4.847 ns；最差路径转至旁路操作数→32位AGU→范围比较→RAM CE，15级、逻辑4.557 ns/布线8.383 ns，80 MHz仍失败。','','最终版利用load固定有符号12位偏移，使用低8位进位、并行中间组generate/propagate及基址前缀比较判定本地范围，完整32位地址加法仍保留。SAT对实际译码器、全部32位基址及指令输入证明load范围判断等价，覆盖负偏移和32位回绕；不增加请求等待拍。']
+ q=paths(final/'pds/report_timing/top.rtr')[0];lines +=['',f'最终最差路径：`{q["start"]}` → `{q["end"]}`；{q["logic_levels"]}级，逻辑{q["logic_ns"]:.3f} ns/布线{q["route_ns"]:.3f} ns，最大路径内数据扇出{q["max_data_fanout"]}。','','| 最终只读路径查询 | setup ns | 级数 | 逻辑/布线 ns |','|---|---:|---:|---|']
+ for n,v in read(final/'mem_paths/result.json')['paths'].items():
+  q=v[0];lines.append(f'| {n} | {q["slack_ns"]:+.3f} | {q["logic_levels"]} | {q["logic_ns"]:.3f}/{q["route_ns"]:.3f} |')
+ lines +=['','## 验证与保留状态','','最终版通过63项架构/ISA/随机检查、6项配对、4项取消、8项未来tag协议、4项乘法tag、4项MEM回退协议、10项发布地址契约、8项启用posted-store的独立协议、6项真实SoC响应/旁路tag/非本地地址契约、4项逐拍load、4项结构/lint/准入SAT和实顶层UART80完整帧检查。启用posted-store的用例覆盖背压、延迟响应、连续写、写后读、flush、MMIO错误、字节/半字掩码与较老乘法阻塞。','','操作数模块与已采纳版SHA完全相同，复用其300000拍独立等价证据；变化后的整核时序另由协议/真实SoC检查覆盖。三个候选生成器已分别重建并按RTL/IP哈希核对；基线观测版RTL完全相同、原有全部统计相同。归档核验每份输入、编译和IP哈希，保留各次失败STA及路由快照。已清理七个可再生Verilator obj目录约1.10 GiB，RTL、镜像、日志和STA均保留。','','测试夹具适配诊断也保留：外部总线专用directed.hex不适用于SoC，已在原基线复现相同软件DEAD并移出SoC专属契约集合；纯ALU吞吐用例不应强求出现store，监测器仅对此允许零活动；范围输入适配脚本的引号错误在独立工具中修复。以上未修改CPU来迁就测试。','','固定镜像仍打印75 MHz配置且软件IPC输出不接受IPC>1；上表使用独立统计窗口退休数/周期数计算。短诊断不是正式CoreMark成绩，未测板上功耗/Flash游戏。','','完整数据见 [comparison.json](dual_mem_ipc/comparison.json)，冻结源码、证据和清单位于 [dual_mem_ipc](dual_mem_ipc/manifest.json)。']
+ # Take the baseline blocked count from the actual result, avoiding a stale prose number.
+ lines=[line.replace('| ID阻塞拍 | 670680 |', '| ID阻塞拍 | '+b['metrics']['ID blocked cycles'].split()[0]+' |') for line in lines]
+ (ROOT/'docs/dual_mem_ipc.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+ print(recommend)
+if __name__=='__main__':main()

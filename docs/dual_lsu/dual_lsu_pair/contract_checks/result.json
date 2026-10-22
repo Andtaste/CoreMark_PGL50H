@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS no-grant late primary error cancels younger store",
+    "PASS registered result buses retain early side data until older success",
+    "PASS pending offered read stable through older error and drained before fault WB",
+    "PASS guaranteed parallel store and 64-bit physical-line alias serialization",
+    "PASS full memory/subword/alias architectural differential seed=37",
+    "PASS full memory/subword/alias architectural differential seed=613",
+    "PASS full memory/subword/alias architectural differential seed=2026"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_lsu_contract.py": "d0e07e8f112105e3fe1e65b69d0cb16c4cca41e24aeea5957759b5a89be14159",
+    "simulation\\results\\load_bp_dual_lsu_pair\\contract_checks\\memory_tb.v": "7316a61e637c810ee69baf980e71ee0dc7f37015bf47ce938a4974f7674e34bd",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_memory.v": "f47db17acad6f30d3fd84c14b7648bc0d6ba7a0e8fc1e3dae758fa29c6f2d38c",
+    "simulation\\research\\dual_lsu\\pair_lsu.S": "233923a8802352e4902d42a00773aee3ea58fa82708114cf1ecf8694c949b438",
+    "simulation\\results\\load_bp_dual_lsu_pair\\contract_checks\\bulk.S": "545b8d30dd94421cd1d6fbeb0ee70e9183a37628240f0de4c159d2e6ba30a5a8",
+    "simulation\\results\\load_bp_dual_lsu_pair\\contract_checks\\bulk.hex": "fd80b5c54581cf4c1e25958ac5a9fb4941bd73562d99c308dfaba318755a98e4",
+    "simulation\\results\\load_bp_dual_lsu_pair\\checks\\core_tb.v": "1dee7ed3fc519ed86a1e3f36af41380e06a76e08ef920768b552f95a591de094",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_core.v": "003fc0bf98f303c454018fa573730a8ab3ac060f6e4a916960c40852e2db3b52",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_csr.v": "2d1b94832573dbfefff9897e8d80ac9ced6c8ed4a61315d8d336a4c6530f8e9d",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_fetch.v": "5f4c1cc71acbd3818e1621ec6f463c7f570471ec4904bd5c27eef2f630e9e13f",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_operands.v": "48e8a3072e191e1cf8cd000ff8fa2c83f73deecc2ed2c2b943d392a893c4165b",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_lsu_pair\\nc_stats.v": "2623bdad3ba1aba560726fe26a65366e580a94233d39a57e303a5875ba73acec"
+  }
+}

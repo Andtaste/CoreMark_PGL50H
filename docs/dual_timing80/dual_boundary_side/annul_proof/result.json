@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "variant": "dual_boundary_side",
+  "tests": [
+    "PASS SAT: under actual paired-primary instruction admission and not-taken prediction, shortcut equals complete EX prediction_wrong whenever primary has no fault; all operands/PC/target bits unconstrained"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_pair_annul.py": "03dbd8bc532fe778cc2d80db74db0ffa3ddf550ff9a740a75d1c055fff1fb450",
+    "simulation\\results\\load_bp_dual_boundary_side\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_boundary_side\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_boundary_side\\nc_core.v": "ab4c1cfc6a1a8eced3c669c2a98c086c4ab8d73a9e614f4e63dcffd6060b222b",
+    "simulation\\results\\load_bp_dual_boundary_side\\annul_proof\\annul_proof.v": "77f0beb71f697ce5043965009ee5f617ca6b6e3d42ff5d4ba35cd1296c7c2e3c"
+  }
+}

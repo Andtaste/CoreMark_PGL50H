@@ -1,0 +1,803 @@
+{
+  "removed_directories": 194,
+  "reclaimed_bytes": 18337498967,
+  "operations": [
+    {
+      "date": "2026-10-21 15:14:42",
+      "root": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core",
+      "removed_directories": 186,
+      "reclaimed_bytes": 16987288955,
+      "scope": "Historical simulation/results/**/obj only. Preserved all load_bp_dual_lsu_* directories, RTL, images, traces, logs, JSON results, PDS outputs and immutable docs archives.",
+      "skipped": [
+        "simulation/results/load_bp_dual_lsu_ports/performance/obj"
+      ],
+      "removed": [
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\bp_study_trace\\obj",
+          "bytes": 1756631
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator\\obj",
+          "bytes": 1478208
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_btb64\\obj",
+          "bytes": 1622209
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_btb64_stats\\obj",
+          "bytes": 1631036
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_btb64_tag\\obj",
+          "bytes": 1630738
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_cleanup1\\obj",
+          "bytes": 1717963
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_exid_aux\\obj",
+          "bytes": 1737894
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_exid_capture\\obj",
+          "bytes": 1744411
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_exid_head\\obj",
+          "bytes": 1726671
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_ex_fixed\\obj",
+          "bytes": 1552183
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_ex_fixed_revert\\obj",
+          "bytes": 1553146
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_ex_mask\\obj",
+          "bytes": 1537543
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_ex_onehot\\obj",
+          "bytes": 1496432
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_fetch_head\\obj",
+          "bytes": 1571804
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_fetch_head_tval\\obj",
+          "bytes": 1580301
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_ipc_combo\\obj",
+          "bytes": 1736840
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_ipc_lh1\\obj",
+          "bytes": 1721597
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_ipc_mem\\obj",
+          "bytes": 1732587
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_mem\\obj",
+          "bytes": 1454548
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_mem_fetch\\obj",
+          "bytes": 1456265
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_mem_fetch_mul\\obj",
+          "bytes": 1457501
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_mul_final\\obj",
+          "bytes": 1702257
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_mul_low\\obj",
+          "bytes": 1701705
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_mul_parallel\\obj",
+          "bytes": 1701000
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_mul_pipe\\obj",
+          "bytes": 1682339
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_no_bp_btb64_control\\obj",
+          "bytes": 1604969
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage1\\obj",
+          "bytes": 1707435
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage2\\obj",
+          "bytes": 1704069
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage2b\\obj",
+          "bytes": 1733952
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage2c\\obj",
+          "bytes": 1708371
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage3\\obj",
+          "bytes": 1709545
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage4\\obj",
+          "bytes": 1733427
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage5_id3\\obj",
+          "bytes": 1860011
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage6_ff\\obj",
+          "bytes": 1733836
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_stage_final\\obj",
+          "bytes": 1734944
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_10_verilator_wait_metadata\\obj",
+          "bytes": 1461289
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_1_verilator\\obj",
+          "bytes": 1478076
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_performance_1_verilator_wait_final\\obj",
+          "bytes": 1456944
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator\\obj",
+          "bytes": 1477925
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_btb64\\obj",
+          "bytes": 1621941
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_btb64_stats\\obj",
+          "bytes": 1630761
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_btb64_tag\\obj",
+          "bytes": 1630466
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_cleanup1\\obj",
+          "bytes": 1717689
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_exid_final\\obj",
+          "bytes": 1737897
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_ex_fixed\\obj",
+          "bytes": 1551918
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_ex_fixed_revert\\obj",
+          "bytes": 1552870
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_ex_mask\\obj",
+          "bytes": 1537272
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_ex_onehot\\obj",
+          "bytes": 1496149
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_fetch_head\\obj",
+          "bytes": 1571528
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_fetch_head_tval\\obj",
+          "bytes": 1580039
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_ipc_final\\obj",
+          "bytes": 1736550
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_mul_final\\obj",
+          "bytes": 1701984
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_mul_low\\obj",
+          "bytes": 1701410
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_mul_parallel\\obj",
+          "bytes": 1700725
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_mul_pipe\\obj",
+          "bytes": 1682074
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_stage6_ff\\obj",
+          "bytes": 1733561
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_stage_final\\obj",
+          "bytes": 1734669
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_wait_final\\obj",
+          "bytes": 1456810
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\coremark_validation_1_verilator_wait_metadata\\obj",
+          "bytes": 1461009
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\debug_stage1\\obj",
+          "bytes": 1706196
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\debug_stage2\\obj",
+          "bytes": 1722701
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\dual_type_census\\dual_types_bound\\performance\\obj",
+          "bytes": 168762093
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\dual_type_census\\dual_types_branch\\performance\\obj",
+          "bytes": 168735208
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\dual_type_census\\dual_types_mul\\performance\\obj",
+          "bytes": 168756123
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\dual_type_census\\dual_types_slide_bound\\performance\\obj",
+          "bytes": 168795767
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\ipc_profile_accepted\\obj",
+          "bytes": 1775766
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\ipc_profile_final\\obj",
+          "bytes": 1792320
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_baseline\\obj",
+          "bytes": 1889486
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_both\\obj",
+          "bytes": 1764553
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_both_xor\\obj",
+          "bytes": 1762883
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_both_xor_validation\\obj",
+          "bytes": 1764472
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_bp_combo\\obj",
+          "bytes": 1752959
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_bp_combo_deep\\obj",
+          "bytes": 1753734
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_bp_fold\\obj",
+          "bytes": 1735244
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_bp_ras\\obj",
+          "bytes": 1749529
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_bp_ras_deep\\obj",
+          "bytes": 1750293
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_admit_base\\performance\\obj",
+          "bytes": 168300371
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_admit_both\\performance\\obj",
+          "bytes": 168354949
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_admit_both\\validation\\obj",
+          "bytes": 168354783
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_admit_cross\\performance\\obj",
+          "bytes": 168287750
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_admit_cross\\validation\\obj",
+          "bytes": 168287109
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_admit_wb\\performance\\obj",
+          "bytes": 168357104
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_admit_wb\\validation\\obj",
+          "bytes": 168357012
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_bus_local\\performance\\obj",
+          "bytes": 168096463
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_bus_local\\validation\\obj",
+          "bytes": 168096446
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_bus_split\\performance\\obj",
+          "bytes": 168082845
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_bus_split\\validation\\obj",
+          "bytes": 168082720
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fan_banks\\performance\\obj",
+          "bytes": 168065519
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fan_banks\\validation\\obj",
+          "bytes": 168065803
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fan_guide\\performance\\obj",
+          "bytes": 168138391
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fan_guide\\validation\\obj",
+          "bytes": 168138094
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_frontend_only\\performance\\obj",
+          "bytes": 167927208
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fwd_mask\\performance\\obj",
+          "bytes": 168161752
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fwd_mask\\validation\\obj",
+          "bytes": 168161498
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fwd_share\\performance\\obj",
+          "bytes": 168112077
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_fwd_share\\validation\\obj",
+          "bytes": 168112358
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_if_class\\performance\\obj",
+          "bytes": 168112180
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_if_class\\validation\\obj",
+          "bytes": 168112229
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_if_parts\\performance\\obj",
+          "bytes": 168138197
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_if_parts\\validation\\obj",
+          "bytes": 168137614
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_issue\\performance\\obj",
+          "bytes": 167945279
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_issue\\validation\\obj",
+          "bytes": 167945071
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_issue_finish\\performance\\obj",
+          "bytes": 167966799
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_issue_finish\\validation\\obj",
+          "bytes": 167967153
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_issue_predecode\\performance\\obj",
+          "bytes": 168161472
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_issue_predecode\\validation\\obj",
+          "bytes": 168160972
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_issue_profile\\performance\\obj",
+          "bytes": 168174884
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_branch\\performance\\obj",
+          "bytes": 168486396
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_branch\\validation\\obj",
+          "bytes": 168486344
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_fix\\performance\\obj",
+          "bytes": 168486487
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_fix\\validation\\obj",
+          "bytes": 168486302
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_ready\\performance\\obj",
+          "bytes": 168496612
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_ready\\validation\\obj",
+          "bytes": 168496951
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_reg\\performance\\obj",
+          "bytes": 168508079
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_reg\\validation\\obj",
+          "bytes": 168507650
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_wait\\performance\\obj",
+          "bytes": 168484726
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_joint_wait\\validation\\obj",
+          "bytes": 168484975
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_fifo\\performance\\obj",
+          "bytes": 168489664
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_fifo\\validation\\obj",
+          "bytes": 168489446
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_return\\performance\\obj",
+          "bytes": 168576224
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_return\\validation\\obj",
+          "bytes": 168576098
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_select\\performance\\obj",
+          "bytes": 168641009
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_select\\validation\\obj",
+          "bytes": 168640866
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_split\\performance\\obj",
+          "bytes": 168610600
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_split\\validation\\obj",
+          "bytes": 168610936
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_word\\performance\\obj",
+          "bytes": 168575915
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_legacy_word\\validation\\obj",
+          "bytes": 168575716
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_both\\performance\\obj",
+          "bytes": 168783768
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_both\\validation\\obj",
+          "bytes": 168783728
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_fifo\\performance\\obj",
+          "bytes": 168372118
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_fifo\\validation\\obj",
+          "bytes": 168372345
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_forward\\performance\\obj",
+          "bytes": 168610522
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_forward\\validation\\obj",
+          "bytes": 168610845
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_select\\performance\\obj",
+          "bytes": 168462021
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_native_select\\validation\\obj",
+          "bytes": 168461761
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_ram\\performance\\obj",
+          "bytes": 168080421
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_ram_alu\\performance\\obj",
+          "bytes": 168005213
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_ram_alu\\validation\\obj",
+          "bytes": 168005310
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_ram_logic\\performance\\obj",
+          "bytes": 168090299
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_ram_logic\\validation\\obj",
+          "bytes": 168089577
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_ram_wide\\performance\\obj",
+          "bytes": 168039625
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_ram_wide\\validation\\obj",
+          "bytes": 168039674
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_split_ready\\performance\\obj",
+          "bytes": 168498345
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_split_ready\\validation\\obj",
+          "bytes": 168498304
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_split_slow\\performance\\obj",
+          "bytes": 168494269
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_split_slow\\validation\\obj",
+          "bytes": 168494191
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_admit\\performance\\obj",
+          "bytes": 168743549
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_admit\\validation\\obj",
+          "bytes": 168743336
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_base\\performance\\obj",
+          "bytes": 168896281
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_both\\performance\\obj",
+          "bytes": 168742573
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_both\\validation\\obj",
+          "bytes": 168742028
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_bound\\performance\\obj",
+          "bytes": 168743387
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_bound\\validation\\obj",
+          "bytes": 168743382
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_branch\\performance\\obj",
+          "bytes": 168721053
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_branch\\validation\\obj",
+          "bytes": 168720487
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_compact\\performance\\obj",
+          "bytes": 168743472
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_compact\\validation\\obj",
+          "bytes": 168743719
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_mul\\performance\\obj",
+          "bytes": 168733110
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_mul\\validation\\obj",
+          "bytes": 168732904
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_slide\\performance\\obj",
+          "bytes": 168779090
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_slide\\validation\\obj",
+          "bytes": 168778716
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_slide_admit\\performance\\obj",
+          "bytes": 168779505
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_slide_admit\\validation\\obj",
+          "bytes": 168779592
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_slide_bound\\performance\\obj",
+          "bytes": 168780232
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_types_slide_bound\\validation\\obj",
+          "bytes": 168779922
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_type_control\\performance\\obj",
+          "bytes": 168897398
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_wait_full\\performance\\obj",
+          "bytes": 168536796
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_wait_probe\\performance\\obj",
+          "bytes": 168529472
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_window_both\\performance\\obj",
+          "bytes": 168709687
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_window_both\\validation\\obj",
+          "bytes": 168709646
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_window_cross\\performance\\obj",
+          "bytes": 168658206
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_window_cross\\validation\\obj",
+          "bytes": 168658070
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_early_load\\obj",
+          "bytes": 1818870
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_early_load_predecode\\obj",
+          "bytes": 1821764
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_load_lookahead\\obj",
+          "bytes": 1791147
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_load_lookahead_validation\\obj",
+          "bytes": 1792734
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_redirect_lookup\\obj",
+          "bytes": 1737833
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_two_way\\obj",
+          "bytes": 1762111
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_two_way_xor\\obj",
+          "bytes": 1761837
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_cycle_structure\\obj",
+          "bytes": 1831829
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\pair_cleanup1\\obj",
+          "bytes": 1722943
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\stage_opt\\obj",
+          "bytes": 887776
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\wait_profile\\obj",
+          "bytes": 1745959
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\wait_profile_accepted_exid\\obj",
+          "bytes": 1778123
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\wait_profile_ipc_final\\obj",
+          "bytes": 1775840
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\wait_profile_stage_final\\obj",
+          "bytes": 1773891
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21 15:43:54",
+      "root": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core",
+      "removed_directories": 8,
+      "reclaimed_bytes": 1350210012,
+      "scope": "Completed LSU performance/validation obj caches only; RTL, firmware, logs, traces, result JSON, PDS databases and immutable archives preserved.",
+      "removed": [
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_shared\\performance\\obj",
+          "bytes": 168691886
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_shared\\validation\\obj",
+          "bytes": 168691625
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_ports\\performance\\obj",
+          "bytes": 168710688
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_ports\\validation\\obj",
+          "bytes": 168710520
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_forward\\performance\\obj",
+          "bytes": 168849762
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_forward\\validation\\obj",
+          "bytes": 168850111
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_pair\\performance\\obj",
+          "bytes": 168852877
+        },
+        {
+          "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_lsu_pair\\validation\\obj",
+          "bytes": 168852543
+        }
+      ]
+    }
+  ]
+}

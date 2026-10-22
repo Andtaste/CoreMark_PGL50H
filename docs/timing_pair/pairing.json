@@ -1,0 +1,264 @@
+{
+  "retired": 2808261,
+  "baseline_cycles": 3790552,
+  "retired_bad_predictions": 67899,
+  "instruction_classes": {
+    "ALU": 1451106,
+    "JALR": 36338,
+    "SERIAL": 6,
+    "BRANCH": 493527,
+    "STORE": 143410,
+    "LOAD": 548709,
+    "JAL": 41205,
+    "MUL": 93960
+  },
+  "adjacent_eligible": 1043767,
+  "adjacent_eligible_fraction": 0.3716774800054126,
+  "adjacent_rejection_priority_counts": {
+    "second_jalr": 36338,
+    "second_serial": 6,
+    "second_branch": 493527,
+    "nonsequential_flow": 137859,
+    "second_store": 143410,
+    "second_load": 548709,
+    "second_jal": 41205,
+    "first_prediction_recovery": 3605,
+    "raw_load": 16098,
+    "raw_alu": 239696,
+    "second_mul": 93960,
+    "raw_mul": 10080
+  },
+  "policies": {
+    "full0_alu1": {
+      "pairs": 748179,
+      "single_instructions": 1311903,
+      "ideal_issue_groups": 2060082,
+      "paired_instruction_fraction": 0.5328414987068509,
+      "dual_group_fraction": 0.36317923267132085,
+      "width_only_ideal_ipc": 1.3631792326713208,
+      "issue_group_reduction_fraction": 0.26642074935342547,
+      "pair_types": {
+        "LOAD+ALU": 164272,
+        "ALU+ALU": 314438,
+        "STORE+ALU": 78969,
+        "BRANCH+ALU": 122820,
+        "MUL+ALU": 67680
+      },
+      "unique_read_registers": {
+        "1": 182549,
+        "3": 149662,
+        "2": 351608,
+        "0": 4300,
+        "4": 60060
+      },
+      "unique_write_registers": {
+        "2": 546390,
+        "1": 201789
+      },
+      "same_destination_pairs": 0,
+      "war_pairs": 165560,
+      "baseline_retirement_gap_histogram": {
+        "1": 748179
+      },
+      "rejection_priority_counts": {
+        "second_jalr": 25282,
+        "second_serial": 6,
+        "second_branch": 286651,
+        "nonsequential_flow": 137859,
+        "second_store": 125736,
+        "second_load": 501579,
+        "second_jal": 16357,
+        "first_prediction_recovery": 3605,
+        "raw_load": 16098,
+        "raw_alu": 145450,
+        "second_mul": 43200,
+        "raw_mul": 10080
+      }
+    },
+    "alu0_alu1": {
+      "pairs": 402847,
+      "single_instructions": 2002567,
+      "ideal_issue_groups": 2405414,
+      "paired_instruction_fraction": 0.28690139556116756,
+      "dual_group_fraction": 0.1674751207068721,
+      "width_only_ideal_ipc": 1.167475120706872,
+      "issue_group_reduction_fraction": 0.14345069778058378,
+      "pair_types": {
+        "ALU+ALU": 402847
+      },
+      "unique_read_registers": {
+        "1": 117789,
+        "2": 159056,
+        "0": 14740,
+        "3": 91042,
+        "4": 20220
+      },
+      "unique_write_registers": {
+        "2": 402847
+      },
+      "same_destination_pairs": 0,
+      "war_pairs": 36982,
+      "baseline_retirement_gap_histogram": {
+        "1": 402847
+      },
+      "rejection_priority_counts": {
+        "second_jalr": 35770,
+        "second_serial": 6,
+        "second_branch": 421695,
+        "nonsequential_flow": 137859,
+        "second_store": 126689,
+        "second_load": 544072,
+        "first_not_alu": 459919,
+        "first_prediction_recovery": 3605,
+        "second_jal": 37985,
+        "raw_alu": 184206,
+        "second_mul": 50760
+      }
+    },
+    "full0_alu1_branch_solo": {
+      "pairs": 653939,
+      "single_instructions": 1500383,
+      "ideal_issue_groups": 2154322,
+      "paired_instruction_fraction": 0.46572522995547777,
+      "dual_group_fraction": 0.3035474734046257,
+      "width_only_ideal_ipc": 1.3035474734046257,
+      "issue_group_reduction_fraction": 0.23286261497773889,
+      "pair_types": {
+        "LOAD+ALU": 164272,
+        "ALU+ALU": 343018,
+        "STORE+ALU": 78969,
+        "MUL+ALU": 67680
+      },
+      "unique_read_registers": {
+        "1": 145831,
+        "3": 144942,
+        "2": 289976,
+        "0": 14530,
+        "4": 58660
+      },
+      "unique_write_registers": {
+        "2": 574970,
+        "1": 78969
+      },
+      "same_destination_pairs": 0,
+      "war_pairs": 164274,
+      "baseline_retirement_gap_histogram": {
+        "1": 653939
+      },
+      "rejection_priority_counts": {
+        "second_jalr": 27278,
+        "second_serial": 6,
+        "second_branch": 314849,
+        "nonsequential_flow": 137859,
+        "second_store": 124481,
+        "second_load": 502288,
+        "first_control_solo": 122820,
+        "first_prediction_recovery": 3605,
+        "second_jal": 36708,
+        "raw_load": 16098,
+        "raw_alu": 161110,
+        "second_mul": 43200,
+        "raw_mul": 10080
+      }
+    },
+    "full0_alu1_no_waw": {
+      "pairs": 748179,
+      "single_instructions": 1311903,
+      "ideal_issue_groups": 2060082,
+      "paired_instruction_fraction": 0.5328414987068509,
+      "dual_group_fraction": 0.36317923267132085,
+      "width_only_ideal_ipc": 1.3631792326713208,
+      "issue_group_reduction_fraction": 0.26642074935342547,
+      "pair_types": {
+        "LOAD+ALU": 164272,
+        "ALU+ALU": 314438,
+        "STORE+ALU": 78969,
+        "BRANCH+ALU": 122820,
+        "MUL+ALU": 67680
+      },
+      "unique_read_registers": {
+        "1": 182549,
+        "3": 149662,
+        "2": 351608,
+        "0": 4300,
+        "4": 60060
+      },
+      "unique_write_registers": {
+        "2": 546390,
+        "1": 201789
+      },
+      "same_destination_pairs": 0,
+      "war_pairs": 165560,
+      "baseline_retirement_gap_histogram": {
+        "1": 748179
+      },
+      "rejection_priority_counts": {
+        "second_jalr": 25282,
+        "second_serial": 6,
+        "second_branch": 286651,
+        "nonsequential_flow": 137859,
+        "second_store": 125736,
+        "second_load": 501579,
+        "second_jal": 16357,
+        "first_prediction_recovery": 3605,
+        "raw_load": 16098,
+        "raw_alu": 145450,
+        "second_mul": 43200,
+        "raw_mul": 10080
+      }
+    },
+    "full0_alu1_2r1w": {
+      "pairs": 182160,
+      "single_instructions": 2443941,
+      "ideal_issue_groups": 2626101,
+      "paired_instruction_fraction": 0.12973153136407192,
+      "dual_group_fraction": 0.06936519197091048,
+      "width_only_ideal_ipc": 1.0693651919709104,
+      "issue_group_reduction_fraction": 0.06486576568203596,
+      "pair_types": {
+        "BRANCH+ALU": 115980,
+        "STORE+ALU": 66180
+      },
+      "unique_read_registers": {
+        "1": 51899,
+        "2": 130261
+      },
+      "unique_write_registers": {
+        "1": 182160
+      },
+      "same_destination_pairs": 0,
+      "war_pairs": 64292,
+      "baseline_retirement_gap_histogram": {
+        "1": 182160
+      },
+      "rejection_priority_counts": {
+        "second_jalr": 32898,
+        "second_serial": 6,
+        "second_branch": 379948,
+        "nonsequential_flow": 137859,
+        "second_store": 142290,
+        "second_load": 548260,
+        "write_ports": 546213,
+        "read_ports": 287444,
+        "second_jal": 19844,
+        "first_prediction_recovery": 3605,
+        "raw_load": 16098,
+        "raw_alu": 225436,
+        "second_mul": 93960,
+        "raw_mul": 10080
+      }
+    }
+  },
+  "status": "PASS",
+  "scope": "Structural greedy pairing of retired path, not implemented dual IPC",
+  "rules": [
+    "Slot 0 ordinary RV32IM; slot 1 LUI/AUIPC/OP-IMM/non-M OP only.",
+    "No instruction skip/reorder; no same-pair RAW bypass; x0 is not a dependency.",
+    "Only consecutive PC and sequential actual next-PC; no pairing with a taken target.",
+    "A slot-0 prediction recovery serializes that candidate; CSR/system/fence serialize.",
+    "Primary policy assumes up to four unique RF reads and two unique RF writes; WAW uses younger priority.",
+    "Operand readiness, memory/MUL occupancy, RF timing, fetch bandwidth and dual retirement are NOT simulated.",
+    "Rejection counts are priority partitions, not independent loss estimates."
+  ],
+  "trace_gzip_sha256": "b067100ab21337617075b6a2f46dfab7aa2776237a2f3a7195912004cfc254d6"
+}

@@ -1,0 +1,44 @@
+version,2022.2-SP1-Lite<build 132640>
+project name,search.pds
+
+Multi Route Seed:
+Seed,State,Convergence,Setup(Slow),Setup(Fast),Hold(Slow),Hold(Fast),Recovery(Slow),Recovery(Fast),Removal(Slow),Removal(Fast),PBM-GP,PBM-PreGP,PBM-PostGP,LP,Total Placement Cpu Time,Detailed routing,Total Routing Cpu Time,Wire Length After Post-GP,Wire Length After LP,Wire Length After DP,Routing Arc Length,Worst Slack After GP Timing,Worst Slack After LP Timing,Worst Slack Before RP,Worst Slack Before DP,Worst Slack After DP,Worst Slack After Placement,Worst Slack After TA By Preroute,TNS After DP,TNS Before Route,Setup(Slow) Total Failing TNS,Setup(Slow) Total Failing Endpoints,Hold(Slow) Total Failing THS,Hold(Slow) Total Failing Endpoints
+seed_3,OK,NA,-0.077,3.452,0.156,0.112,8.070,9.199,0.647,0.427,NA,NA,NA,NA,NA,98.53,129.77,NA,NA,NA,214346,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.194,4,0.000,0
+seed_1,OK,NA,-0.132,3.349,0.152,0.111,8.076,9.203,0.543,0.374,NA,NA,NA,NA,NA,104.86,136.64,NA,NA,NA,214368,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.151,2,0.000,0
+seed_2,OK,NA,-0.242,3.206,0.154,0.112,7.984,9.157,0.542,0.373,NA,NA,NA,NA,NA,99.47,139.09,NA,NA,NA,214221,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.368,2,0.000,0
+seed_4,OK,OK,0.040,3.486,0.166,0.117,7.971,9.148,0.517,0.362,NA,NA,NA,NA,NA,88.45,111.44,NA,NA,NA,214178,NA,NA,NA,NA,NA,NA,NA,NA,0,0.000,0,0.000,0
+Pass Rate/Convergence Rate,100.00%,25.00%
+
+Synthesize:
+control_set,NA
+Synthesize Performance Summary:
+slack category,Synthesize Setup WNS,Synthesize Setup TNS,Synthesize Recovery WNS,Synthesize Recovery TNS
+slack value,NA,NA,NA,NA
+Synthesize Process Cpu Time,NA
+
+Device Map:
+Device Map Resource Usage Summary:
+Logic Utilization,LUT,FF,DRM,APM,Distributed RAM,HSSTHP,USCM,HCKB,RCKB
+Used,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Available,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Utilization(%),NA,NA,NA,NA,NA,NA,NA,NA,NA
+Device Map Process Cpu Time,NA
+
+Project Configurations:
+top module,
+compile,
+synthesize,
+device map,
+place & route," -gplace_seed 22 
+ -groute_seed 1 
+ -groute_times 4 
+ -route_saved_outcome 4 
+ -route_parallel 3 
+ -optimize_multi_corner_timing 
+ -fix_hold_violation 
+ -input_place_db_file {C:/Users/Lenovo/Desktop/FPGA/new_core/hardware/pds82_place_extra/place_route/seed_22/top_plc.adf} 
+ -max_ctrl_chain_length 4 "
+
+Test Parameters Configurations:
+testparam,
+

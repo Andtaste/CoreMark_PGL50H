@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "target": "old",
+  "scope": "Same diagnostic-adapted binary on all targets: four unsupported old CSR reads after the stats stop are replaced with zero; benchmark instructions unchanged. Common synchronous behavioral word memory with per-CPU fetch protocol adapter and atomic old LSU acceptance. Not an original SoC or physical A64 RAM comparison.",
+  "results": {
+    "validation": {
+      "cycles": 277055,
+      "retired": 280944,
+      "side": 72923,
+      "early_direct": 57523,
+      "pc_hash": "188b627b1547ac45",
+      "ipc": 1.0140369240764469,
+      "image_sha256": "16dc877000b01aa853639d636e3c43b01f7d74db196ea2f0457e4792a370542c"
+    },
+    "performance": {
+      "cycles": 2761634,
+      "retired": 2808261,
+      "side": 730577,
+      "early_direct": 571723,
+      "pc_hash": "0c9ed17673d041c3",
+      "ipc": 1.0168838448541697,
+      "image_sha256": "066197c35dc2d1f6b9eb4c83eb2a8611982cf6fdf8cf6bea4585af1d0498e288"
+    }
+  },
+  "input_sha256": {
+    "tools\\compare_dual_boundary_old.py": "0ddb2d03f05ed432d65df5b068ddf4ec61afcc2a369b454dec84c0dcd3b807a7",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\csr_reg.v": "6a84ec12bba91d94f998f3a1d28cb0cd1f26d059aff61653e3c141c87fb398a6",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\csr_reg.v": "6a84ec12bba91d94f998f3a1d28cb0cd1f26d059aff61653e3c141c87fb398a6",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\defines.v": "5c338bd85497977042a1aa057bf8576d206a5b5bda05a3a77a6126c2ea0f4d94",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\defines.v": "5c338bd85497977042a1aa057bf8576d206a5b5bda05a3a77a6126c2ea0f4d94",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\divider.v": "518b61e9c5eea6a9bb93a0aa949e68e90fc3dbe9c8ea247d929335def12f4717",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\divider.v": "518b61e9c5eea6a9bb93a0aa949e68e90fc3dbe9c8ea247d929335def12f4717",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\dual_alu.v": "dffcd330b8038150a6be612da83bf9baff9b6e06fdbdde08e15a960353348d30",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\dual_alu.v": "dffcd330b8038150a6be612da83bf9baff9b6e06fdbdde08e15a960353348d30",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\exu_mul_pipeline.v": "c2e9908a8cf7796fce035ea1a08e3de522ceef8af5c4abc1da84ad41b58ab2b2",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\exu_mul_pipeline.v": "c2e9908a8cf7796fce035ea1a08e3de522ceef8af5c4abc1da84ad41b58ab2b2",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\gpr_reg.v": "014040cd8b8305431b53e58987dedfac77780a03a4fb090bd84f0a311caccae4",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\gpr_reg.v": "014040cd8b8305431b53e58987dedfac77780a03a4fb090bd84f0a311caccae4",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\idu.v": "6a33506f7dd78bec1e752958ca21ec2557e609f37a273e73c3593f8264ed3dc8",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\idu.v": "6a33506f7dd78bec1e752958ca21ec2557e609f37a273e73c3593f8264ed3dc8",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\ifu.v": "c2d46ed495fedc4c86254c3a8b70db3157b11e4599d87cf6d6bcf0c021459914",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\ifu.v": "c2d46ed495fedc4c86254c3a8b70db3157b11e4599d87cf6d6bcf0c021459914",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\rst_ctrl.v": "dcb33795d64d75df4be17cdc45b52a5fd27aecde4c78204edb823c5aff536c1f",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\rst_ctrl.v": "dcb33795d64d75df4be17cdc45b52a5fd27aecde4c78204edb823c5aff536c1f",
+    "tmp\\dual_round50_20261019\\after\\source\\core\\tinyriscv_core.v": "5dcfb1b2f8b1404c13492ad45b6bcef89fb396b1c1700a264a7e7cbb683e984c",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\tinyriscv_core.v": "5dcfb1b2f8b1404c13492ad45b6bcef89fb396b1c1700a264a7e7cbb683e984c",
+    "tmp\\dual_round50_20261019\\after\\source\\utils\\gen_dff.v": "0709777cabb60396e020dd15d6a3ba62b46a73a0882d94967134b1e05aa4bb20",
+    "simulation\\results\\dual_boundary_common_final\\old\\core\\gen_dff.v": "0709777cabb60396e020dd15d6a3ba62b46a73a0882d94967134b1e05aa4bb20",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_local_bus.v": "74a48bc2233275bb04ced6605c8528274f89eb5ebde1d69f980711fd5da227ef",
+    "simulation\\results\\dual_boundary_common_final\\old\\nc_local_bus_common.v": "18f02ebce0770e2bbc209ace0fb4342ff961382d22e7f0d7249a3d486b7dc5c6",
+    "simulation\\results\\load_bp_dual_lsu_ports\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\dual_boundary_common_final\\old\\nc_uart_sim.v": "24b5a8db903d4f90dba5577e81b5b0e530c489a602ea754c850a87ffd802628b",
+    "simulation\\results\\dual_boundary_common_final\\old\\common_tb.v": "2cd3748a71b778541d23583ea33f1f2702daa889f5e3c0aed65c52c2789b8b6c",
+    "sw\\build\\coremark_validation_1\\coremark.hex": "5d74666600f9ce8926203f1e7cc2f0d979f884d765c7371edcd45be4435fc059",
+    "simulation\\results\\dual_boundary_common_final\\old\\validation_common.hex": "16dc877000b01aa853639d636e3c43b01f7d74db196ea2f0457e4792a370542c",
+    "sw\\build\\coremark_performance_10\\coremark.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+    "simulation\\results\\dual_boundary_common_final\\old\\performance_common.hex": "066197c35dc2d1f6b9eb4c83eb2a8611982cf6fdf8cf6bea4585af1d0498e288",
+    "tools\\compare_dual_boundary_old_v3.py": "09d5e6cc750b0ca6afe129ef20f1cbeade8acb70c93bfc436820593d99b9e04f",
+    "tools\\compare_dual_boundary_final.py": "9bc1a61a6a33c290bd073fdaa2f09c9269d1ea624bb312b6915b3236e500dd9a"
+  }
+}

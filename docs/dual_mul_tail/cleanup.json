@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "Completed isolated Verilator obj caches only; sources/images/logs/STA retained",
+  "removed": [
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_mulprobe\\performance\\obj",
+      "bytes": 168943866.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_pairprobe\\performance\\obj",
+      "bytes": 169363457.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_multail\\performance\\obj",
+      "bytes": 168955040.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_multail\\validation\\obj",
+      "bytes": 168954976.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\performance\\obj",
+      "bytes": 168953836.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\validation\\obj",
+      "bytes": 168953780.0
+    }
+  ],
+  "bytes": 1014124955.0
+}

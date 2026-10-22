@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS exact textual equivalence after reversing only the local priority-data selection/capture transformations",
+    "PASS all five encoded tag comparisons, insertion forwarding, output availability, ready/pop/push, reset/clear and queue state unchanged",
+    "PASS all other overridden modules byte-identical to retained parent"
+  ],
+  "limits": "Static change-scope check, not a routed timing or full functional proof; paired with SAT, cycle equivalence, full regression and routed STA.",
+  "input_sha256": {
+    "tools\\audit_dual_fwd.py": "b2f55a46fc6bd0146e137dbfa2aa6014683bf46f3a71d79f6ce3108bae5859d3",
+    "simulation\\results\\load_bp_dual_if_parts\\nc_operands.v": "eae2935e9215dc9bb3424cce2417b2407c04ab819343b4f735d392dc9afce795",
+    "simulation\\results\\load_bp_dual_fwd_mask\\nc_operands.v": "135b38ae37a019983d7e4b41259956b3b2633113a0c7c7b81b17f39340e890ab",
+    "simulation\\results\\load_bp_dual_if_parts\\generation.json": "8e2c31897d836b68dc71129b92c7aebc094a767f1cce590e50d0f06342bb4718",
+    "simulation\\results\\load_bp_dual_fwd_mask\\generation.json": "ef80e5201b91ec97401c1eaba4490f4cc2163c15417adafe3140ee1277c25194"
+  }
+}

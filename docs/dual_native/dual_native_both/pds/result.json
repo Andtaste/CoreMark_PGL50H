@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "variant": "dual_native_both",
+  "estimated_fmax_mhz": 85.822,
+  "corners": {
+    "Setup Summary(Slow Corner)": {
+      "worst_slack_ns": 1.681,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Slow Corner)": {
+      "worst_slack_ns": 0.157,
+      "failing_endpoints": 0
+    },
+    "Setup Summary(Fast Corner)": {
+      "worst_slack_ns": 5.073,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Fast Corner)": {
+      "worst_slack_ns": 0.113,
+      "failing_endpoints": 0
+    }
+  },
+  "resources": {
+    "LUT": 10331,
+    "FF": 4347,
+    "Distributed RAM": 705,
+    "DRM": 48,
+    "APM": 4
+  },
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_native_both\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_native_both\\nc_core.v": "d54b960f2f8c13aa5cfa5b9e1e32521fe9bb78f443c6dee016ee2ac681b93ff8",
+    "simulation\\results\\load_bp_dual_native_both\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "hardware\\pds\\source\\core\\nc_execute.v": "00b2ec7d2eccd9a1d2b99fd056d943fb614ec795653f6b0be91075ecca98929e",
+    "simulation\\results\\load_bp_dual_native_both\\nc_fetch.v": "7e56e4dd301fdb03f2b04fe6525c2a3fbd119039ca0567f84dba6ece087047e3",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_native_both\\nc_memory.v": "94cc7cff8c9a33e8deeb10e9f6004ffa51b46d0ae510cd1e4a387c90444741fe",
+    "simulation\\results\\load_bp_dual_native_both\\nc_mul_pipeline.v": "132d5d8acf4ca261a8a14f06937ed28f8a3ea97bfef81c6f1e20b1995a1aa3b8",
+    "simulation\\results\\load_bp_dual_native_both\\nc_operands.v": "842767b1fd1f95a31e34d5f6db53b1a66d3c9b602c4a2943642fde8cc01697b5",
+    "simulation\\results\\load_bp_dual_native_both\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_native_both\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_native_both\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "simulation\\results\\load_bp_dual_native_both\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "hardware\\pds\\source\\source\\top.v": "fb25a4662df6e49c1e20d69ea78bcf76153706eddc9421e861afed0ec7a14cc9",
+    "hardware\\pds\\ipcore\\pll\\pll.idf": "3fab7962be47cf630214d3945d046fd9e6c2c11d6913c8028a3072a4a1f51f92",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram1_tdp\\ram1_tdp.idf": "3b953426720fc44d0a98112d8a7f1db9dd39ad6dda575674e73edb64ea4369f3",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram1_tdp\\ram1_tdp.v": "560b31780cc005a47f88b5f2f0a658dc4248881a99fedd9095f0161853631e92",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram1_tdp\\ram1_tdp_tb.v": "f7c172dfa2632a1ef4803ed94155aa8166c2717645c64c01065b9366059a6703",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "simulation\\results\\load_bp_dual_native_both\\ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "hardware\\pds\\constraints\\board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
+    "sw\\build\\boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+    "tools\\research_dual_ram_pds.py": "c5273acc997237f9471019f8d4940f3e4f0a9fe345b90e99f7e5282cb7edaad9"
+  },
+  "tcl_sha256": "c6433fb52f7ddcbaac85ac97252a23d75af7fc5fda5aa763237f8ff8960f4c9a",
+  "pds_exit_code": 0,
+  "production_preserved": true
+}

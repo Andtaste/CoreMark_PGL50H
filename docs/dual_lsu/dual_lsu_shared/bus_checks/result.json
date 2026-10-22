@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "variant": "dual_lsu_shared",
+  "tests": [
+    "PASS LSU bus cycles=30000 seed=17 mode=0 if=11729 primary=11037 secondary=5165 dual=0 ifstalls=8827",
+    "PASS LSU bus cycles=30000 seed=91 mode=0 if=11846 primary=11041 secondary=5059 dual=0 ifstalls=8449",
+    "PASS LSU bus cycles=30000 seed=2026 mode=0 if=11921 primary=10970 secondary=5012 dual=0 ifstalls=8734"
+  ],
+  "coverage": [],
+  "input_sha256": {
+    "tools\\check_dual_lsu.py": "cc4957250ec00f0ece52c218d1fcb68d756a45e157611271e19de3291e822a9a",
+    "simulation\\results\\load_bp_dual_lsu_shared\\nc_local_bus.v": "74a48bc2233275bb04ced6605c8528274f89eb5ebde1d69f980711fd5da227ef",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_lsu_shared\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\research\\dual_lsu\\bus_tb.v": "30fd2a06d0e7d2c601df19d7bb8d88dd9f0724b97f914c52cf132e8fc6b21476"
+  }
+}

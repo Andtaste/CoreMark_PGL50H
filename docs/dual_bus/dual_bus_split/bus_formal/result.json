@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "variant": "dual_bus_split",
+  "tests": [
+    "PASS SAT: original and candidate dr/ir/ia_fire/four RAM enables equal for every binary input and all 32-bit addresses"
+  ],
+  "scope": "Combinational control cones extracted from actual RTL. Does not claim full sequential CPU formal verification.",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--cd",
+    "/mnt/c/Users/Lenovo/Desktop/FPGA/new_core",
+    "--",
+    "yosys",
+    "-Q",
+    "-T",
+    "-p",
+    "read_verilog -sv /mnt/c/Users/Lenovo/Desktop/FPGA/new_core/simulation/results/load_bp_dual_bus_split/bus_formal/cones.v; prep -top proof -flatten; sat -verify -prove equal 1 -show-inputs -show-outputs"
+  ],
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_ram_logic\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "simulation\\results\\load_bp_dual_bus_split\\nc_local_bus.v": "f87ddce39902c98630daef06b2cc9681a9bf7ec67ef1a21b064208fc1591910e",
+    "simulation\\results\\load_bp_dual_bus_split\\bus_formal\\cones.v": "76ccbe4ad62d3286a4f7dbeb4e8a8e190000acb83b17bc873f55b3f1662b9966",
+    "tools\\prove_dual_bus.py": "fe94d564d4228b457fd82b527a929142960c84547926e931e0989436297acc8a"
+  }
+}

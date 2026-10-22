@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "status": "PASS",
+      "consumer": "alu_consumer",
+      "load_pc": 76,
+      "consumer_pc": 80,
+      "ex": 15,
+      "request": 15,
+      "wb_capture": 16,
+      "consumer_ex": 16,
+      "expected_capture_to_ex": 0,
+      "ex_bubbles": 0
+    },
+    {
+      "status": "PASS",
+      "consumer": "store_consumer",
+      "load_pc": 132,
+      "consumer_pc": 136,
+      "ex": 23,
+      "request": 23,
+      "wb_capture": 24,
+      "consumer_ex": 25,
+      "expected_capture_to_ex": 1,
+      "ex_bubbles": 1
+    },
+    {
+      "status": "PASS",
+      "consumer": "pointer_consumer",
+      "load_pc": 272,
+      "consumer_pc": 276,
+      "ex": 43,
+      "request": 43,
+      "wb_capture": 44,
+      "consumer_ex": 45,
+      "expected_capture_to_ex": 1,
+      "ex_bubbles": 1
+    },
+    {
+      "status": "PASS",
+      "consumer": "chain_consumer",
+      "load_pc": 276,
+      "consumer_pc": 280,
+      "ex": 45,
+      "request": 45,
+      "wb_capture": 46,
+      "consumer_ex": 46,
+      "expected_capture_to_ex": 0,
+      "ex_bubbles": 0
+    }
+  ],
+  "scope": "Exact new timing contract on already executed real SoC waveform; original no-return timing assertion failure retained; no RTL change/re-execution needed",
+  "input_sha256": {
+    "tools\\check_dual_next_alu_timeline.py": "2acdc9832f49305b067a13505b8088c31ce611388a3f3af34d7500ccf76af22f",
+    "docs\\load_cycle_structure\\result.json": "d939f156a096fe93493baee2d49a79e45079001eb84cf23e9d59228d6693fa3d",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\timeline_checks\\soc_tb.v": "1cb0c02c24286c7b9e48833ead0dc2a481b05fd8b9069a46c771ffa3ad1d928a",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\timeline_checks\\cycles.trace": "802985a4ce3c34b12513391f0a0fb96508852e3ed1c0d963df0a0304e0267644",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\timeline_checks\\run.log": "813ccb7329a65d3b4c32ad3637165cf5cc620c5d69c2e694166e934835a1c632",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\timeline_checks\\compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\timeline_checks\\retired.trace": "d991428966390189d6f70d45d72aa41d78ed6a1e68a7f8bfcc2ec9f30a5506cf",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_core.v": "3bf4540d896efe218b35031c43070e49219d10d61edbdb015530e27f6873d50b",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_execute.v": "1a3cc0e57c701cac77a9bccc54ddc4e3c5041e6e2e121f3befa3dab55c0a0d17",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_memory.v": "1f622d114fb10df5897b2032643c08eaa5c970045f005179b8d5d33d79e4b036",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_operands.v": "928a8eab894b6ca9d3965f7f273729d62e5fbad45a970ae481b9464d8fe77cc1",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\nc_soc.v": "3151fd4d4366252ace254d38bf55cd8fd845512d705171c6a6ba2c1f8d6a7a11",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44"
+  }
+}

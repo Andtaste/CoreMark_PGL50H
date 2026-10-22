@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "SAT exact 280-bit MEM packet equivalence for all main input bits, controls, predictions, tags and side bits; arbitrary illegal/fetch faults and address wrap included. Divider result stubbed because queue next-PC invariant is independent of DIV value. FIFO storage order uses unchanged nc_fifo."
+  ],
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_boundary_next_resourcequeue\\nc_core.v": "844a54cb9566aa5c66c9bcb12cbef2f71ea94612d2cfbc6b9f6be87e582fe8ed",
+    "simulation\\results\\load_bp_dual_boundary_next_resourcequeue\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_boundary_next_pairbranch\\nc_core.v": "4fbe9d6e11ea5f836b874e2ed04330215f6e0923b3c53cbf0eb4ef035e721377",
+    "simulation\\results\\load_bp_dual_boundary_next_resourcequeue\\resource_proof\\gate.v": "eb4c25cf64c56b5af72adf007d3f786984f0aef462e8b07c4b97f21190622edf",
+    "simulation\\results\\load_bp_dual_boundary_next_resourcequeue\\resource_proof\\gold.v": "7e92e961f3d14bf24061d18d4a4a4b9a95531fd7d9479ce40b1e782a616f4ae6",
+    "simulation\\results\\load_bp_dual_boundary_next_resourcequeue\\resource_proof\\miter.v": "6f471a69186a3907febf854c5ca54a9cdf6ab5fdbc6a404b8ea8c703353c0798",
+    "tools\\prove_dual_resource_queue.py": "6bed8990600ac4958250ff12be2dc82d773d23d9192af5815747a36601e402f2",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d"
+  }
+}

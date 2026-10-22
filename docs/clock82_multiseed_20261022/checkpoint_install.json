@@ -1,0 +1,10 @@
+{
+  "status": "MAIN_REBUILT_VERIFIED",
+  "failed_fresh_setup_ns": -0.977,
+  "successful_independent_repeat_setup_ns": 0.04,
+  "checkpoint_manifest_sha256": "7d31c42f47939f7bdd278e348690d52fbc685de6a3b15c78cbe38bc699ed5f4a",
+  "build_tcl_sha256": "9e8163e881ed80ecd5e182b23bc96c0b24a9747c7808256f46cee60014c4c5a9",
+  "source_rtl_changed": false,
+  "initial_status": "INSTALLED_NATIVE_MAIN_REROUTE_REQUIRED",
+  "main_result_sha256": "48e5b9e979a159b3973c693bbd06b54dcd4f8f4cddbbed69fdaa003eece42002"
+}

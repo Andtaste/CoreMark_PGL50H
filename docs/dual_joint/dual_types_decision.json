@@ -1,0 +1,23 @@
+{
+  "status": "REJECTED_BY_USER",
+  "recorded_date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "user_instruction": "不采纳，增加准入和滑动配对是不是应该同步推进，不然没有显著成效，另外，统计一下现在的主副槽占用率",
+  "rejected_round": "dual_types",
+  "rejected_candidates": [
+    "dual_types_branch",
+    "dual_types_mul",
+    "dual_types_both",
+    "dual_types_compact",
+    "dual_types_slide",
+    "dual_types_bound",
+    "dual_types_slide_bound",
+    "dual_types_admit",
+    "dual_types_slide_admit"
+  ],
+  "retained_accepted_variant": "dual_fwd_share",
+  "accepted_descriptor_sha256": "acc8a0f8be1dc90d67e6cda8d18fc000911cc4b25a8021ab0f7b17ec244abb01",
+  "formal_sta_sha256": "047c7504f1f3967d2499de007e44faa87013cebec03c94b941682521c12794d9",
+  "research_archive_preserved": true,
+  "comparison_sha256": "96fdc2fedf37148df3cce88910b32662e01cbce8cc0827246a7a2016e9d3247f"
+}

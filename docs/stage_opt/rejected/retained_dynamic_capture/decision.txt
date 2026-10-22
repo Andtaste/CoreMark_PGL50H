@@ -1,0 +1,1 @@
+REJECTED: CoreMark failed. Dynamic-array multiple NBA capture required explicit per-slot push priority. Not a valid performance candidate.

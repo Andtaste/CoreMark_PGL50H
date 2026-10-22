@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "tests": [
+    "random_17 PASS",
+    "random_91 PASS",
+    "random_2026 PASS",
+    "prediction PASS"
+  ],
+  "coverage": [
+    {
+      "program": "random_17",
+      "annulled": 57,
+      "checked": 272,
+      "lane1_sources": 33,
+      "older_sources": 66
+    },
+    {
+      "program": "random_91",
+      "annulled": 57,
+      "checked": 256,
+      "lane1_sources": 39,
+      "older_sources": 63
+    },
+    {
+      "program": "random_2026",
+      "annulled": 62,
+      "checked": 272,
+      "lane1_sources": 25,
+      "older_sources": 50
+    },
+    {
+      "program": "prediction",
+      "annulled": 12,
+      "checked": 219,
+      "lane1_sources": 1,
+      "older_sources": 40
+    }
+  ],
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_core.v": "dfb52b387d8db6b13407389f32db1c440d7bfa9c00352296f5fdf670ff7b5433",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_csr.v": "2d1b94832573dbfefff9897e8d80ac9ced6c8ed4a61315d8d336a4c6530f8e9d",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_fetch.v": "5f4c1cc71acbd3818e1621ec6f463c7f570471ec4904bd5c27eef2f630e9e13f",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_memory.v": "5c622a565e94e089f054489b54961fc69906a8c91ed7036a8dc6c4110af876d4",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_stats.v": "2623bdad3ba1aba560726fe26a65366e580a94233d39a57e303a5875ba73acec",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_local_bus.v": "74a48bc2233275bb04ced6605c8528274f89eb5ebde1d69f980711fd5da227ef",
+    "simulation\\results\\load_bp_dual_lsu_ports\\nc_soc.v": "1af5ef24d8bfc70badcf4371ffea163f4f0b0c9321670fe65a61bcfa7f0fd355",
+    "simulation\\results\\load_bp_dual_lsu_ports\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\results\\load_bp_dual_lsu_ports\\checks\\soc_tb.v": "4ca1ca6544917feb7c9e47195092ddcb1802569de4461a6132fe024ad7ad10e4",
+    "simulation\\results\\load_bp_dual_lsu_ports\\cancel_checks\\soc_tb.v": "98e2e0b420e61ed9d9200eccc0cb501625d596a66a7b8cd2ea70c65569350b1b",
+    "tools\\check_dual_joint_cancel.py": "77ec9beba7977281266f83e405163068fabc42f57fad683832d42cd801ba5044",
+    "simulation\\results\\random_17.hex": "30d52944ef7a2122f6399deb5fe2e4dd6c0153f154275c420fb977b3cfe591df",
+    "simulation\\results\\random_17.bin": "fc6e509f0d613ca683a2945ba334c78b2fea40ff5aa422d9ad4320fe8235086e",
+    "simulation\\results\\random_91.hex": "064de82a67034a646cd71244ec7771d29ce11c202bae7e001b85bde740ee269a",
+    "simulation\\results\\random_91.bin": "fbf955ddd057d59dfc0118306bb3ebbf2eabf369cdde1696fb6eb74baf51ed6c",
+    "simulation\\results\\random_2026.hex": "b5bc7548bd450931a5b3f8a6a41c6be3cdf83d3c89551bbcdf4154f4fcbb9a6d",
+    "simulation\\results\\random_2026.bin": "1d9db06c0ef97d9b2aa256cdb512744761dfa0f3e949f379e4f8defae4cfd8cd",
+    "simulation\\results\\prediction.hex": "febcd903e0e66eda30822002b337deeed078efafee4a4b76d39033df52bc7519",
+    "simulation\\results\\prediction.bin": "86f24fe534e55908a2c4ca0e9b27dc0bc8d0e9347137e0ac66767aa326555bdb"
+  }
+}

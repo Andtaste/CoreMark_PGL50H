@@ -1,0 +1,47 @@
+{
+  "scope": "64 total entries, one local-history bit, two 2-bit counters, immediate resolved training, LRU replacement. No speculative timing.",
+  "results": {
+    "ways1_direct": {
+      "misses": 48829,
+      "direction_wrong": 51754,
+      "target_wrong": 3702,
+      "total_wrong": 55456
+    },
+    "ways1_xor": {
+      "misses": 56706,
+      "direction_wrong": 54014,
+      "target_wrong": 3873,
+      "total_wrong": 57887
+    },
+    "ways2_direct": {
+      "misses": 32515,
+      "direction_wrong": 43832,
+      "target_wrong": 3858,
+      "total_wrong": 47690
+    },
+    "ways2_xor": {
+      "misses": 17903,
+      "direction_wrong": 42950,
+      "target_wrong": 3708,
+      "total_wrong": 46658
+    },
+    "ways4_direct": {
+      "misses": 16034,
+      "direction_wrong": 38788,
+      "target_wrong": 3964,
+      "total_wrong": 42752
+    },
+    "ways4_xor": {
+      "misses": 16055,
+      "direction_wrong": 39201,
+      "target_wrong": 3865,
+      "total_wrong": 43066
+    },
+    "ways64_direct": {
+      "misses": 9590,
+      "direction_wrong": 35418,
+      "target_wrong": 4062,
+      "total_wrong": 39480
+    }
+  }
+}

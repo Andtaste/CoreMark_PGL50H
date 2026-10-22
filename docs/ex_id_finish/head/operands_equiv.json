@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "cycles": 300000,
+  "results": [
+    {
+      "seed": 17,
+      "summary": "PASS operands equivalence cycles=100000 seed=17 pushes=25788 pops=24826 full=65685 insertion_forward=3240 duplicate_priority=9091 clears=578"
+    },
+    {
+      "seed": 91,
+      "summary": "PASS operands equivalence cycles=100000 seed=91 pushes=25629 pops=24699 full=65557 insertion_forward=3232 duplicate_priority=9091 clears=578"
+    },
+    {
+      "seed": 2026,
+      "summary": "PASS operands equivalence cycles=100000 seed=2026 pushes=25517 pops=24585 full=66067 insertion_forward=3188 duplicate_priority=9091 clears=578"
+    }
+  ],
+  "input_sha256": {
+    "hardware\\pds\\source\\core\\nc_operands.v": "1c18e3f31fddbbc685050d2ecdaf378f04ac63e52b71c60e4936f41f7d057216",
+    "simulation\\tb\\operands_equivalence_tb.v": "8491073b4b19ab953b1b09fdbe84b4929875d3133b3468a54ea7560e6fc98d25",
+    "docs\\ex_id_finish\\before\\source\\core\\nc_operands.v": "aabaea1edd062d9192ab72d7279796401bb20dc8f9296eea6f74b9288db51a4c",
+    "tools\\check_operands_equivalence.py": "e53cb182bc7935220b6fd60005abf40d2c7fba3361f7644ad954ed2b1d4ad7c7"
+  }
+}

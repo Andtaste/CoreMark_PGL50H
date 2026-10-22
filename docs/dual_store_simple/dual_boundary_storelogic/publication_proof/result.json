@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS actual MEM all-state publication: req_write implies req_valid and selected address equals held write_address; no reset/reachability assumptions"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_store_publication.py": "fa330c7c3569d47ca9f63d8f7411bc66259275f7e98283ee02ad744a5b7a6cbb",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\nc_memory.v": "3d55cdf2ce2c059a8760fb641bce5d06e883b2c189a28fe1c3f6b968e2d0fa55",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\publication_proof\\publication.v": "d1b827f6a2b3f212078b73a6223b372bb8fcea8659442c10b87f55d607c9343c"
+  }
+}

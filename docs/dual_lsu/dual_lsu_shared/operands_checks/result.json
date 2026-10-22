@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "variant": "dual_lsu_shared",
+  "tests": [
+    "PASS shared exact-hash 300000-cycle five-source operand equivalence"
+  ],
+  "coverage": [],
+  "input_sha256": {
+    "tools\\check_dual_lsu.py": "cc4957250ec00f0ece52c218d1fcb68d756a45e157611271e19de3291e822a9a",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\operand_checks\\result.json": "8ad721d03bbfa66124c0b7ed9a11c96487c41adde448eb198e87174ef26b2700",
+    "simulation\\results\\load_bp_dual_lsu_shared\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0"
+  }
+}

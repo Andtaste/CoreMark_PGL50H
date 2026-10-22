@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "variant": "dual_boundary_slot",
+  "tests": [
+    "PASS exact-hash unchanged five-source operand network reuses 300000-cycle independent equivalence"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_boundary.py": "eecde471f9fce402e4bc9e875ac9178bcecacf0ab6622c02735dece5f5424c12",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "simulation\\results\\load_bp_dual_legacy_fifo\\operand_checks\\result.json": "8ad721d03bbfa66124c0b7ed9a11c96487c41adde448eb198e87174ef26b2700",
+    "simulation\\results\\load_bp_dual_boundary_slot\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0"
+  }
+}

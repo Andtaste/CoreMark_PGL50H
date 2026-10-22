@@ -1,0 +1,3172 @@
+{
+  "status": "READ_ONLY_INVENTORY",
+  "date": "2026-10-22",
+  "root": "C:\\Users\\Lenovo\\Desktop\\FPGA",
+  "total_bytes": 14830604109,
+  "total_files": 96124,
+  "categories": {
+    "other_keep_or_review": {
+      "bytes": 3945775315,
+      "files": 34321
+    },
+    "log_review": {
+      "bytes": 255094368,
+      "files": 15696
+    },
+    "protected_source_or_evidence": {
+      "bytes": 2526671101,
+      "files": 35012
+    },
+    "pds_compile_cache": {
+      "bytes": 149715491,
+      "files": 1192
+    },
+    "pds_checkpoint_review": {
+      "bytes": 3527846573,
+      "files": 1089
+    },
+    "iverilog_executable": {
+      "bytes": 665346578,
+      "files": 1054
+    },
+    "simulation_trace_review": {
+      "bytes": 144287688,
+      "files": 6145
+    },
+    "verilator_build_cache": {
+      "bytes": 3314157701,
+      "files": 1508
+    },
+    "python_cache": {
+      "bytes": 1023470,
+      "files": 89
+    },
+    "archive_keep": {
+      "bytes": 300545998,
+      "files": 17
+    },
+    "waveform_review": {
+      "bytes": 139826,
+      "files": 1
+    }
+  },
+  "top_level": {
+    "CoreMark_PGL50H": {
+      "bytes": 110178620,
+      "files": 1083
+    },
+    "CoreMark_PGL50H-2": {
+      "bytes": 314873580,
+      "files": 3406
+    },
+    "new_core": {
+      "bytes": 6134268992,
+      "files": 55818
+    },
+    "tmp": {
+      "bytes": 8267026210,
+      "files": 35810
+    }
+  },
+  "largest_dirs": [
+    {
+      "path": "tmp",
+      "bytes": 8267026210,
+      "files": 35810
+    },
+    {
+      "path": "new_core",
+      "bytes": 6134268992,
+      "files": 55818
+    },
+    {
+      "path": "new_core\\simulation",
+      "bytes": 4427739640,
+      "files": 28489
+    },
+    {
+      "path": "new_core\\simulation\\results",
+      "bytes": 4426983123,
+      "files": 28410
+    },
+    {
+      "path": "new_core\\docs",
+      "bytes": 1663177987,
+      "files": 26630
+    },
+    {
+      "path": "tmp\\nax_tools",
+      "bytes": 708345975,
+      "files": 2311
+    },
+    {
+      "path": "tmp\\new_core_baseline_import_20261021_151158",
+      "bytes": 563645956,
+      "files": 5126
+    },
+    {
+      "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree",
+      "bytes": 563564131,
+      "files": 5121
+    },
+    {
+      "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation",
+      "bytes": 544205055,
+      "files": 4084
+    },
+    {
+      "path": "tmp\\ooo2_integrated_20261019",
+      "bytes": 456658554,
+      "files": 382
+    },
+    {
+      "path": "tmp\\nax_tools\\jdk17.0.20_12",
+      "bytes": 317498032,
+      "files": 492
+    },
+    {
+      "path": "CoreMark_PGL50H-2",
+      "bytes": 314873580,
+      "files": 3406
+    },
+    {
+      "path": "tmp\\ooo2_cut_control_20261019",
+      "bytes": 205950163,
+      "files": 246
+    },
+    {
+      "path": "new_core\\docs\\dual_types",
+      "bytes": 198203197,
+      "files": 2709
+    },
+    {
+      "path": "tmp\\single_btb_boundary_20261019",
+      "bytes": 197412264,
+      "files": 248
+    },
+    {
+      "path": "tmp\\single_btb_boundary_20261019\\after",
+      "bytes": 194968912,
+      "files": 138
+    },
+    {
+      "path": "tmp\\ooo2_rename_rob_20261019",
+      "bytes": 192018433,
+      "files": 149
+    },
+    {
+      "path": "tmp\\nax_tools\\jdk17.0.20_12\\lib",
+      "bytes": 189892198,
+      "files": 20
+    },
+    {
+      "path": "tmp\\native_current_limits_probe",
+      "bytes": 188431085,
+      "files": 78
+    },
+    {
+      "path": "tmp\\native_current_limits_probe\\obj",
+      "bytes": 188108972,
+      "files": 71
+    },
+    {
+      "path": "new_core\\docs\\dual_lsu",
+      "bytes": 183682010,
+      "files": 1567
+    },
+    {
+      "path": "tmp\\native_ooo_obj",
+      "bytes": 181316612,
+      "files": 62
+    },
+    {
+      "path": "tmp\\ooo2_lsq_20261019",
+      "bytes": 181279242,
+      "files": 185
+    },
+    {
+      "path": "tmp\\ooo2_prf_20261019",
+      "bytes": 178512975,
+      "files": 135
+    },
+    {
+      "path": "CoreMark_PGL50H-2\\simulation",
+      "bytes": 178221904,
+      "files": 1527
+    },
+    {
+      "path": "tmp\\ooo2_scheduler_20261019",
+      "bytes": 177650581,
+      "files": 144
+    },
+    {
+      "path": "tmp\\ooo2_integrated_20261019\\obj",
+      "bytes": 173873518,
+      "files": 56
+    },
+    {
+      "path": "tmp\\ooo2_cut_control_20261019\\obj",
+      "bytes": 173846452,
+      "files": 56
+    },
+    {
+      "path": "tmp\\ooo_btb32_20261017",
+      "bytes": 172685276,
+      "files": 69
+    },
+    {
+      "path": "tmp\\ooo_btb32_20261017\\obj",
+      "bytes": 172499333,
+      "files": 56
+    },
+    {
+      "path": "tmp\\ooo_alu_age_20261017",
+      "bytes": 172435267,
+      "files": 71
+    },
+    {
+      "path": "tmp\\native_age_unit_obj",
+      "bytes": 172316801,
+      "files": 62
+    },
+    {
+      "path": "tmp\\ooo_load_order_20261017",
+      "bytes": 172279457,
+      "files": 68
+    },
+    {
+      "path": "tmp\\ooo_complex_age_20261017",
+      "bytes": 172257115,
+      "files": 67
+    },
+    {
+      "path": "tmp\\ooo_alu_age_20261017\\obj",
+      "bytes": 172245819,
+      "files": 59
+    },
+    {
+      "path": "tmp\\ooo_lsu_response_rob_20261017",
+      "bytes": 172226515,
+      "files": 69
+    },
+    {
+      "path": "tmp\\ooo_lsu_response_turnover_20261017",
+      "bytes": 172225142,
+      "files": 70
+    },
+    {
+      "path": "tmp\\nax_pgl50_sim_20261019",
+      "bytes": 172102660,
+      "files": 145
+    },
+    {
+      "path": "tmp\\ooo_load_order_20261017\\obj",
+      "bytes": 172099164,
+      "files": 56
+    },
+    {
+      "path": "tmp\\ooo_complex_age_20261017\\obj",
+      "bytes": 172076403,
+      "files": 56
+    },
+    {
+      "path": "tmp\\ooo_lsu_response_rob_20261017\\obj",
+      "bytes": 172046890,
+      "files": 56
+    },
+    {
+      "path": "tmp\\ooo_lsu_response_turnover_20261017\\obj",
+      "bytes": 172045874,
+      "files": 56
+    },
+    {
+      "path": "tmp\\nax_pgl50_sim_20261019\\obj",
+      "bytes": 172040060,
+      "files": 136
+    },
+    {
+      "path": "tmp\\ooo2_prf_20261019\\coremark_baseline",
+      "bytes": 170478284,
+      "files": 59
+    },
+    {
+      "path": "tmp\\ooo2_scheduler_20261019\\coremark_baseline",
+      "bytes": 169275111,
+      "files": 55
+    },
+    {
+      "path": "tmp\\ooo2_rename_rob_20261019\\coremark_baseline",
+      "bytes": 169274622,
+      "files": 55
+    },
+    {
+      "path": "tmp\\ooo2_lsq_20261019\\coremark_baseline",
+      "bytes": 169274530,
+      "files": 55
+    },
+    {
+      "path": "tmp\\ooo2_integrated_20261019\\coremark_baseline",
+      "bytes": 169274444,
+      "files": 55
+    },
+    {
+      "path": "tmp\\ooo2_scheduler_20261019\\coremark_baseline\\obj",
+      "bytes": 169060728,
+      "files": 50
+    },
+    {
+      "path": "tmp\\ooo2_prf_20261019\\coremark_baseline\\obj",
+      "bytes": 169060702,
+      "files": 50
+    },
+    {
+      "path": "tmp\\ooo2_rename_rob_20261019\\coremark_baseline\\obj",
+      "bytes": 169060238,
+      "files": 50
+    },
+    {
+      "path": "tmp\\ooo2_lsq_20261019\\coremark_baseline\\obj",
+      "bytes": 169060154,
+      "files": 50
+    },
+    {
+      "path": "tmp\\ooo2_integrated_20261019\\coremark_baseline\\obj",
+      "bytes": 169060060,
+      "files": 50
+    },
+    {
+      "path": "tmp\\single_btb_boundary_20261019\\after\\obj",
+      "bytes": 167378185,
+      "files": 50
+    },
+    {
+      "path": "tmp\\NaxRiscv",
+      "bytes": 127240558,
+      "files": 9589
+    },
+    {
+      "path": "new_core\\docs\\dual_joint",
+      "bytes": 120827314,
+      "files": 1423
+    },
+    {
+      "path": "new_core\\docs\\dual_legacy",
+      "bytes": 120000645,
+      "files": 1604
+    },
+    {
+      "path": "tmp\\nax_tools\\coursier\\https",
+      "bytes": 118302214,
+      "files": 1717
+    },
+    {
+      "path": "tmp\\nax_tools\\coursier",
+      "bytes": 118302214,
+      "files": 1717
+    },
+    {
+      "path": "new_core\\docs\\dual_boundary",
+      "bytes": 113474485,
+      "files": 1553
+    },
+    {
+      "path": "CoreMark_PGL50H",
+      "bytes": 110178620,
+      "files": 1083
+    },
+    {
+      "path": "CoreMark_PGL50H-2\\simulation\\results",
+      "bytes": 108776947,
+      "files": 1044
+    },
+    {
+      "path": "CoreMark_PGL50H-2\\simulation\\results\\reports",
+      "bytes": 108027594,
+      "files": 554
+    },
+    {
+      "path": "tmp\\rtl_research",
+      "bytes": 88884878,
+      "files": 2207
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward",
+      "bytes": 86410749,
+      "files": 419
+    },
+    {
+      "path": "tmp\\dual_round50_20261019",
+      "bytes": 85888696,
+      "files": 194
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair",
+      "bytes": 85834205,
+      "files": 419
+    },
+    {
+      "path": "tmp\\NaxRiscv\\ext",
+      "bytes": 85292798,
+      "files": 7389
+    },
+    {
+      "path": "tmp\\NaxRiscv\\ext\\SpinalHDL",
+      "bytes": 84824588,
+      "files": 7357
+    },
+    {
+      "path": "tmp\\dual_round34_20261019",
+      "bytes": 84456669,
+      "files": 184
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_ports",
+      "bytes": 84082770,
+      "files": 416
+    },
+    {
+      "path": "tmp\\dual_round39_20261019",
+      "bytes": 83872544,
+      "files": 177
+    },
+    {
+      "path": "new_core\\docs\\dual_admit",
+      "bytes": 83490394,
+      "files": 1327
+    },
+    {
+      "path": "new_core\\docs\\dual_native",
+      "bytes": 83324584,
+      "files": 1114
+    },
+    {
+      "path": "tmp\\dual_round36_20261019",
+      "bytes": 82228771,
+      "files": 178
+    },
+    {
+      "path": "tmp\\dual_round35_20261019",
+      "bytes": 82084360,
+      "files": 178
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_shared",
+      "bytes": 82037184,
+      "files": 403
+    },
+    {
+      "path": "tmp\\dual_round37_20261019",
+      "bytes": 81884438,
+      "files": 177
+    },
+    {
+      "path": "new_core\\docs\\dual_types\\targeted_paths",
+      "bytes": 81600267,
+      "files": 169
+    },
+    {
+      "path": "tmp\\nax_tools\\boot",
+      "bytes": 80100703,
+      "files": 94
+    },
+    {
+      "path": "tmp\\nax_tools\\boot\\scala-2.12.15",
+      "bytes": 80100703,
+      "files": 92
+    },
+    {
+      "path": "CoreMark_PGL50H-2\\hardware\\pds",
+      "bytes": 79965809,
+      "files": 154
+    },
+    {
+      "path": "CoreMark_PGL50H-2\\hardware",
+      "bytes": 79965809,
+      "files": 154
+    },
+    {
+      "path": "new_core\\docs\\dual_timing80",
+      "bytes": 78166109,
+      "files": 1595
+    },
+    {
+      "path": "tmp\\nax_tools\\jdk17.0.20_12\\jmods",
+      "bytes": 78023657,
+      "files": 71
+    },
+    {
+      "path": "tmp\\dual_round1_20261018",
+      "bytes": 75647114,
+      "files": 221
+    },
+    {
+      "path": "CoreMark_PGL50H-2\\simulation\\firmware\\generated",
+      "bytes": 69215982,
+      "files": 402
+    },
+    {
+      "path": "CoreMark_PGL50H-2\\simulation\\firmware",
+      "bytes": 69215982,
+      "files": 402
+    },
+    {
+      "path": "tmp\\dual_round39_20261019\\after",
+      "bytes": 66817025,
+      "files": 108
+    },
+    {
+      "path": "tmp\\dual_round34_20261019\\after",
+      "bytes": 66758995,
+      "files": 109
+    },
+    {
+      "path": "tmp\\dual_round50_20261019\\after",
+      "bytes": 66335429,
+      "files": 108
+    },
+    {
+      "path": "new_core\\docs\\dual_timing_simplify",
+      "bytes": 66157890,
+      "files": 1402
+    },
+    {
+      "path": "tmp\\ooo2_integrated_20261019\\timing_extended",
+      "bytes": 65755753,
+      "files": 29
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_launch",
+      "bytes": 65599676,
+      "files": 408
+    },
+    {
+      "path": "tmp\\dual_round36_20261019\\after",
+      "bytes": 65258728,
+      "files": 109
+    },
+    {
+      "path": "tmp\\dual_round37_20261019\\after",
+      "bytes": 64695483,
+      "files": 108
+    },
+    {
+      "path": "tmp\\dual_round35_20261019\\after",
+      "bytes": 64686149,
+      "files": 109
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read",
+      "bytes": 64495390,
+      "files": 384
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_legacy_return",
+      "bytes": 64322400,
+      "files": 358
+    },
+    {
+      "path": "new_core\\simulation\\results\\load_bp_dual_legacy_select",
+      "bytes": 64187387,
+      "files": 367
+    }
+  ],
+  "cache_groups": [
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\native_current_limits_probe\\obj",
+      "bytes": 188108972,
+      "files": 71
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\native_ooo\\native_obj",
+      "bytes": 187031933,
+      "files": 74
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\native_ooo_obj",
+      "bytes": 181316612,
+      "files": 62
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo2_integrated_20261019\\obj",
+      "bytes": 173873518,
+      "files": 56
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo2_cut_control_20261019\\obj",
+      "bytes": 173846452,
+      "files": 56
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo_btb32_20261017\\obj",
+      "bytes": 172499333,
+      "files": 56
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\native_age_unit_obj",
+      "bytes": 172316801,
+      "files": 62
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo_alu_age_20261017\\obj",
+      "bytes": 172245819,
+      "files": 59
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo_load_order_20261017\\obj",
+      "bytes": 172099164,
+      "files": 56
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo_complex_age_20261017\\obj",
+      "bytes": 172076403,
+      "files": 56
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo_lsu_response_rob_20261017\\obj",
+      "bytes": 172046890,
+      "files": 56
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo_lsu_response_turnover_20261017\\obj",
+      "bytes": 172045874,
+      "files": 56
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\nax_pgl50_sim_20261019\\obj",
+      "bytes": 172040060,
+      "files": 136
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo2_scheduler_20261019\\coremark_baseline\\obj",
+      "bytes": 169060728,
+      "files": 50
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo2_prf_20261019\\coremark_baseline\\obj",
+      "bytes": 169060702,
+      "files": 50
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo2_rename_rob_20261019\\coremark_baseline\\obj",
+      "bytes": 169060238,
+      "files": 50
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo2_lsq_20261019\\coremark_baseline\\obj",
+      "bytes": 169060154,
+      "files": 50
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\ooo2_integrated_20261019\\coremark_baseline\\obj",
+      "bytes": 169060060,
+      "files": 50
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\single_btb_boundary_20261019\\after\\obj",
+      "bytes": 167378185,
+      "files": 50
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "CoreMark_PGL50H\\simulation\\results\\biriscv\\obj",
+      "bytes": 2628766,
+      "files": 72
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "CoreMark_PGL50H\\hardware\\pds\\compile",
+      "bytes": 2512094,
+      "files": 14
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "CoreMark_PGL50H-2\\hardware\\pds\\compile",
+      "bytes": 2166853,
+      "files": 16
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\hardware\\pds\\compile",
+      "bytes": 2146279,
+      "files": 30
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\pds\\compile",
+      "bytes": 2140293,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair\\pds\\compile",
+      "bytes": 2138352,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_ports\\pds\\compile",
+      "bytes": 2048057,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_lsu_shared\\pds\\compile",
+      "bytes": 2046504,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_headmux\\pds\\compile",
+      "bytes": 2034114,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_legacy_split\\pds\\compile",
+      "bytes": 2027188,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_legacy_select\\pds\\compile",
+      "bytes": 2025451,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_legacy_return\\pds\\compile",
+      "bytes": 2015870,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_legacy_word\\pds\\compile",
+      "bytes": 2014487,
+      "files": 10
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\single_fetch_boundary_20261019\\after\\obj",
+      "bytes": 2008421,
+      "files": 28
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\native_ooo\\baseline_obj",
+      "bytes": 2003598,
+      "files": 28
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_pair\\pds\\compile",
+      "bytes": 1996923,
+      "files": 10
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\native_baseline_obj",
+      "bytes": 1996821,
+      "files": 28
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\single_fetch_boundary_20261019\\before\\obj",
+      "bytes": 1991071,
+      "files": 28
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_uart\\pds\\compile",
+      "bytes": 1988560,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_side\\pds\\compile",
+      "bytes": 1988046,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_pcselect\\pds\\compile",
+      "bytes": 1982104,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_clock\\pds\\compile",
+      "bytes": 1980530,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_launch\\pds\\compile",
+      "bytes": 1979711,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_early\\pds\\compile",
+      "bytes": 1970982,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storeprefix\\pds\\compile",
+      "bytes": 1970434,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_legacy_fifo\\pds\\compile",
+      "bytes": 1968463,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_slot\\pds\\compile",
+      "bytes": 1968001,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read\\pds\\compile",
+      "bytes": 1965761,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\pds\\compile",
+      "bytes": 1965205,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_multail\\pds\\compile",
+      "bytes": 1962992,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_banklocal\\pds\\compile",
+      "bytes": 1962853,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_headlocal\\pds\\compile",
+      "bytes": 1962673,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storewrite\\pds\\compile",
+      "bytes": 1961905,
+      "files": 10
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "tmp\\single_agu_boundary_20261019\\after\\obj",
+      "bytes": 1961636,
+      "files": 28
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_bankreq\\pds\\compile",
+      "bytes": 1960049,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storeack\\pds\\compile",
+      "bytes": 1958959,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storemmio\\pds\\compile",
+      "bytes": 1958481,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storelogic\\pds\\compile",
+      "bytes": 1957865,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_split_ready\\pds\\compile",
+      "bytes": 1957689,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_split_slow\\pds\\compile",
+      "bytes": 1953108,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_slots\\pds\\compile",
+      "bytes": 1952900,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_boundary_wbflags\\pds\\compile",
+      "bytes": 1951621,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_joint_ready\\pds\\compile",
+      "bytes": 1948834,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_joint_reg\\pds\\compile",
+      "bytes": 1945268,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_joint_fix\\pds\\compile",
+      "bytes": 1935292,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_joint_branch\\pds\\compile",
+      "bytes": 1933262,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_joint_wait\\pds\\compile",
+      "bytes": 1931032,
+      "files": 10
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "new_core\\simulation\\results\\load_cycle_structure\\slice_obj",
+      "bytes": 1930748,
+      "files": 28
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "CoreMark_PGL50H\\simulation\\results\\coremark_performance_10_verilator_biriscv_same_image_baseline\\obj",
+      "bytes": 1741810,
+      "files": 28
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "CoreMark_PGL50H\\simulation\\results\\coremark_performance_10_verilator_bi_same\\obj",
+      "bytes": 1739025,
+      "files": 28
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_native_both\\pds\\compile",
+      "bytes": 1730253,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_slide_bound\\pds\\compile",
+      "bytes": 1714197,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_slide_admit\\pds\\compile",
+      "bytes": 1713945,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_slide\\pds\\compile",
+      "bytes": 1707969,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_compact\\pds\\compile",
+      "bytes": 1676976,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_both\\pds\\compile",
+      "bytes": 1675058,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_bound\\pds\\compile",
+      "bytes": 1674681,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_admit\\pds\\compile",
+      "bytes": 1674302,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_native_forward\\pds\\compile",
+      "bytes": 1673409,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_mul\\pds\\compile",
+      "bytes": 1672341,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_types_branch\\pds\\compile",
+      "bytes": 1662144,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_native_select\\pds\\compile",
+      "bytes": 1653242,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_window_both\\pds\\compile",
+      "bytes": 1608539,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_window_cross\\pds\\compile",
+      "bytes": 1598264,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_native_fifo\\pds\\compile",
+      "bytes": 1594932,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_admit_both\\pds\\compile",
+      "bytes": 1563422,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_admit_cross\\pds\\compile",
+      "bytes": 1552240,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_fwd_mask\\pds\\compile",
+      "bytes": 1552160,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_admit_wb\\pds\\compile",
+      "bytes": 1539243,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_fwd_share\\pds\\compile",
+      "bytes": 1533080,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_fan_banks\\pds\\compile",
+      "bytes": 1523553,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_ram_wide\\pds\\compile",
+      "bytes": 1522650,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_fan_guide\\pds\\compile",
+      "bytes": 1517959,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_bus_local\\pds\\compile",
+      "bytes": 1517084,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_bus_split\\pds\\compile",
+      "bytes": 1516712,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_ram_logic\\pds\\compile",
+      "bytes": 1516651,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_if_parts\\pds\\compile",
+      "bytes": 1515979,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_ram_alu\\pds\\compile",
+      "bytes": 1514812,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_if_class\\pds\\compile",
+      "bytes": 1514729,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_issue_predecode\\pds\\compile",
+      "bytes": 1472008,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_issue_finish\\pds\\compile",
+      "bytes": 1468956,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_issue\\pds\\compile",
+      "bytes": 1461700,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_ram\\pds\\compile",
+      "bytes": 1451510,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_early_load\\pds\\compile",
+      "bytes": 1450215,
+      "files": 14
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_early_load_predecode\\pds\\compile",
+      "bytes": 1366408,
+      "files": 12
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_bp_combo\\pds\\compile",
+      "bytes": 1303236,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_bp_fold\\pds\\compile",
+      "bytes": 1284455,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_bp_ras\\pds\\compile",
+      "bytes": 1277834,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_both_xor\\pds\\compile",
+      "bytes": 1276123,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_two_way_xor\\pds\\compile",
+      "bytes": 1275568,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_two_way\\pds\\compile",
+      "bytes": 1274750,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_redirect_lookup\\pds\\compile",
+      "bytes": 1267942,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_load_lookahead\\pds\\compile",
+      "bytes": 1267503,
+      "files": 10
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_baseline\\pds\\compile",
+      "bytes": 1265478,
+      "files": 10
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "new_core\\simulation\\results\\stage_opt\\memory_obj",
+      "bytes": 1154108,
+      "files": 28
+    },
+    {
+      "category": "verilator_build_cache",
+      "path": "new_core\\simulation\\results\\stage_opt\\memory_overlap_obj",
+      "bytes": 773799,
+      "files": 28
+    },
+    {
+      "category": "python_cache",
+      "path": "new_core\\tools\\__pycache__",
+      "bytes": 471801,
+      "files": 47
+    },
+    {
+      "category": "python_cache",
+      "path": "tmp\\__pycache__",
+      "bytes": 265883,
+      "files": 23
+    },
+    {
+      "category": "python_cache",
+      "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\scripts\\run\\__pycache__",
+      "bytes": 188828,
+      "files": 13
+    },
+    {
+      "category": "python_cache",
+      "path": "CoreMark_PGL50H-2\\simulation\\scripts\\run\\__pycache__",
+      "bytes": 55292,
+      "files": 3
+    },
+    {
+      "category": "python_cache",
+      "path": "CoreMark_PGL50H\\simulation\\scripts\\run\\__pycache__",
+      "bytes": 19412,
+      "files": 1
+    },
+    {
+      "category": "python_cache",
+      "path": "new_core\\simulation\\scripts\\run\\__pycache__",
+      "bytes": 19405,
+      "files": 1
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_bus_compare\\baseline\\compile",
+      "bytes": 10555,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_bus_compare\\parallel\\compile",
+      "bytes": 10555,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_compact_single_mul_20261016\\compile",
+      "bytes": 10307,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_control_single_mul_20261016\\compile",
+      "bytes": 10307,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_local_ram_v1\\compile",
+      "bytes": 10153,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_ooo_dual_banked_dispatch_20261017\\compile",
+      "bytes": 10115,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_ooo_dual_parallel_picker_20261017\\compile",
+      "bytes": 10115,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_ooo_dual_parallel_picker_route_retry_20261017\\compile",
+      "bytes": 10115,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_parallel_lookup_20261016\\compile",
+      "bytes": 10109,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_predecode_fixed_20261016\\compile",
+      "bytes": 10109,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_five_stage_v2\\compile",
+      "bytes": 10051,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_five_stage_v3\\compile",
+      "bytes": 10051,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_compact_shared_20261016\\compile",
+      "bytes": 10043,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_control_shared_20261016\\compile",
+      "bytes": 10043,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_lsu_skid_fixed_20261016\\compile",
+      "bytes": 10043,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_control_final_20261016\\compile",
+      "bytes": 9977,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_recovery_control_20261016\\compile",
+      "bytes": 9973,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_priority1_secondary_stats_20261017\\compile",
+      "bytes": 9973,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_ooo_dual_shared_reads_20261017\\compile",
+      "bytes": 9917,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\single_fetch_boundary_20261019\\before\\compile",
+      "bytes": 9839,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_five_stage\\compile",
+      "bytes": 9835,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\single_fetch_boundary_20261019\\after\\compile",
+      "bytes": 9785,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_cleanup_seed5_20261016\\compile",
+      "bytes": 9781,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_ram_ce_write_20261016\\compile",
+      "bytes": 9717,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_predecode_20261016\\compile",
+      "bytes": 9713,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_train_reg_20261016\\compile",
+      "bytes": 9713,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\single_agu_boundary_20261019\\after\\compile",
+      "bytes": 9657,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\single_btb_boundary_20261019\\after\\compile",
+      "bytes": 9657,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_baseline_20261016\\compile",
+      "bytes": 9647,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_lsu_skid_20261016\\compile",
+      "bytes": 9647,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_ooo_dual_initial_20261017\\compile",
+      "bytes": 9587,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_dual_wide_bypass_20261016\\compile",
+      "bytes": 9531,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_dual_wide_final_20261016\\compile",
+      "bytes": 9475,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_load_relative\\compile",
+      "bytes": 9449,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round11_20261018\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round16_20261018\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round17_20261018\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round1_20261018\\before\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round28_20261019\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round34_20261019\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round35_20261019\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round36_20261019\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round37_20261019\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round39_20261019\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round50_20261019\\after\\compile",
+      "bytes": 9269,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_mem_prefix\\compile",
+      "bytes": 9257,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round1_20261018\\after\\compile",
+      "bytes": 9205,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\dual_round4_20261018\\after\\compile",
+      "bytes": 9205,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_lsu1_any_slot_20261017\\compile",
+      "bytes": 9205,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_issue_matrix\\compile",
+      "bytes": 9197,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_forward_pick\\compile",
+      "bytes": 9193,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_lsu_any_slot_20261017\\compile",
+      "bytes": 9141,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_dual_wide_20261016\\compile",
+      "bytes": 9139,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_forwarding_ready_final\\compile",
+      "bytes": 9109,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_project_parse_20261017\\compile",
+      "bytes": 9085,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_lsu_decouple_before\\compile",
+      "bytes": 8947,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_alu_rank\\compile",
+      "bytes": 8945,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_load_bypass_r2\\compile",
+      "bytes": 8935,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_store_done_r2\\compile",
+      "bytes": 8877,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_dual_20261016\\compile",
+      "bytes": 8859,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_local_ram_cleanup\\compile",
+      "bytes": 8839,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_stage_split_final\\compile",
+      "bytes": 8839,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_mul_stream_after\\compile",
+      "bytes": 8797,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_mul_stream_final\\compile",
+      "bytes": 8797,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_forwarding_ready\\compile",
+      "bytes": 8785,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_request_simplify\\compile",
+      "bytes": 8785,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_rob_pick\\compile",
+      "bytes": 8765,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_load_bypass\\compile",
+      "bytes": 8761,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_mul_bypass\\compile",
+      "bytes": 8703,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_store_done\\compile",
+      "bytes": 8703,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_btb_alloc\\compile",
+      "bytes": 8645,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_tdp_20261016\\compile",
+      "bytes": 8645,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_frontend_fifo\\compile",
+      "bytes": 8623,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_steering\\compile",
+      "bytes": 8587,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_hold_fifo_pc\\compile",
+      "bytes": 8569,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_mul_pipeline\\compile",
+      "bytes": 8569,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_stage_split\\compile",
+      "bytes": 8515,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_btb_after\\compile",
+      "bytes": 8407,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_btb_seed6\\compile",
+      "bytes": 8407,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_timing2\\compile",
+      "bytes": 8345,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_clock77\\compile",
+      "bytes": 8299,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_resource1\\compile",
+      "bytes": 8273,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_resource2\\compile",
+      "bytes": 8273,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_resource3\\compile",
+      "bytes": 8273,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_btb32\\compile",
+      "bytes": 8233,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo_timing1\\compile",
+      "bytes": 8165,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_fan_banks\\pds_interrupted\\compile",
+      "bytes": 7829,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "new_core\\simulation\\results\\load_bp_dual_fan_guide\\pds_interrupted\\compile",
+      "bytes": 7829,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\pds_native_ooo\\compile",
+      "bytes": 7733,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_cut_control_20261019\\map_candidate\\compile",
+      "bytes": 7683,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_integrated_20261019\\timing_extended\\compile",
+      "bytes": 7683,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_integrated_20261019\\map_candidate\\compile",
+      "bytes": 7679,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_integrated_20261019\\map_baseline\\compile",
+      "bytes": 6397,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_rename_rob_20261019\\bram\\compile",
+      "bytes": 4053,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_rename_rob_20261019\\ff\\compile",
+      "bytes": 4039,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_scheduler_20261019\\tree\\compile",
+      "bytes": 3881,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\nax_pgl50_20261019\\compile",
+      "bytes": 3875,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_scheduler_20261019\\chain\\compile",
+      "bytes": 3867,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_lsq_20261019\\bram\\compile",
+      "bytes": 3821,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_lsq_20261019\\ff\\compile",
+      "bytes": 3821,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_prf_20261019\\bram\\compile",
+      "bytes": 3821,
+      "files": 3
+    },
+    {
+      "category": "pds_compile_cache",
+      "path": "tmp\\ooo2_prf_20261019\\ff\\compile",
+      "bytes": 3819,
+      "files": 3
+    },
+    {
+      "category": "python_cache",
+      "path": "CoreMark_PGL50H\\tools\\__pycache__",
+      "bytes": 2849,
+      "files": 1
+    }
+  ],
+  "largest_files": {
+    "other_keep_or_review": [
+      {
+        "bytes": 128812825,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\lib\\modules"
+      },
+      {
+        "bytes": 31717995,
+        "path": "tmp\\ooo2_integrated_20261019\\timing_extended\\synthesize\\snr.db"
+      },
+      {
+        "bytes": 25632311,
+        "path": "tmp\\dual_round39_20261019\\after\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 25515083,
+        "path": "tmp\\current76_analysis_20261019\\expanded\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 25333807,
+        "path": "tmp\\dual_round50_20261019\\after\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 25134952,
+        "path": "tmp\\dual_round34_20261019\\after\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 24319056,
+        "path": "tmp\\dual_round36_20261019\\after\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 23745676,
+        "path": "tmp\\dual_round37_20261019\\after\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 23584189,
+        "path": "tmp\\dual_round35_20261019\\after\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 19972821,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\jmods\\java.base.jmod"
+      },
+      {
+        "bytes": 16340073,
+        "path": "tmp\\ooo2_integrated_20261019\\timing_extended\\synthesize\\core_fixture.snr"
+      },
+      {
+        "bytes": 15333226,
+        "path": "tmp\\NaxRiscv\\ext\\SpinalHDL\\lib\\target\\scala-2.12\\spinalhdl-lib_2.12-dev.jar"
+      },
+      {
+        "bytes": 12838424,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\bin\\server\\jvm.dll"
+      },
+      {
+        "bytes": 12581032,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\jmods\\java.desktop.jmod"
+      },
+      {
+        "bytes": 12517376,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\bin\\server\\classes_nocoops.jsa"
+      },
+      {
+        "bytes": 12517376,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\bin\\server\\classes.jsa"
+      },
+      {
+        "bytes": 11569356,
+        "path": "tmp\\nax_tools\\coursier\\https\\repo.maven.apache.org\\maven2\\io\\get-coursier\\lm-coursier-shaded_2.12\\2.0.10\\lm-coursier-shaded_2.12-2.0.10.jar"
+      },
+      {
+        "bytes": 11569356,
+        "path": "tmp\\nax_tools\\boot\\scala-2.12.15\\org.scala-sbt\\sbt\\1.6.0\\lm-coursier-shaded_2.12-2.0.10.jar"
+      },
+      {
+        "bytes": 10983677,
+        "path": "tmp\\nax_tools\\coursier\\https\\repo.maven.apache.org\\maven2\\org\\scala-lang\\scala-compiler\\2.12.18\\scala-compiler-2.12.18.jar"
+      },
+      {
+        "bytes": 10978529,
+        "path": "tmp\\nax_tools\\coursier\\https\\repo.maven.apache.org\\maven2\\org\\scala-lang\\scala-compiler\\2.12.15\\scala-compiler-2.12.15.jar"
+      },
+      {
+        "bytes": 10978529,
+        "path": "tmp\\nax_tools\\boot\\scala-2.12.15\\org.scala-sbt\\sbt\\1.6.0\\scala-compiler-2.12.15.jar"
+      },
+      {
+        "bytes": 10978529,
+        "path": "tmp\\nax_tools\\boot\\scala-2.12.15\\lib\\scala-compiler.jar"
+      },
+      {
+        "bytes": 10252731,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\jmods\\jdk.localedata.jmod"
+      },
+      {
+        "bytes": 9258344,
+        "path": "tmp\\rtl_research\\ultra_riscv\\isa_sim\\images\\linux.elf"
+      },
+      {
+        "bytes": 9256299,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\jmods\\jdk.compiler.jmod"
+      },
+      {
+        "bytes": 9249158,
+        "path": "new_core\\simulation\\results\\dual_fan_paths\\dual_if_parts\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 9184044,
+        "path": "new_core\\simulation\\results\\dual_fan_paths\\dual_fan_banks\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 9154831,
+        "path": "new_core\\simulation\\results\\dual_fan_paths\\dual_fan_guide\\report_timing\\rtr.db"
+      },
+      {
+        "bytes": 8301490,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\lib\\ct.sym"
+      },
+      {
+        "bytes": 8198284,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\targeted_paths\\report_timing\\rtr.db"
+      }
+    ],
+    "log_review": [
+      {
+        "bytes": 1567796,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\hardware\\pds\\logbackup\\run_2026-10-16-00-01-16.log"
+      },
+      {
+        "bytes": 720462,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\hardware\\pds\\logbackup\\run_2026-10-16-17-26-15.log"
+      },
+      {
+        "bytes": 675291,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_headmux\\forward_equivalence\\proof.log"
+      },
+      {
+        "bytes": 662995,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_headlocal\\forward_equivalence\\proof.log"
+      },
+      {
+        "bytes": 526902,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read\\boundary_paths\\build.log"
+      },
+      {
+        "bytes": 526437,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_early\\boundary_paths\\build.log"
+      },
+      {
+        "bytes": 525925,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read\\boundary_paths\\run.log"
+      },
+      {
+        "bytes": 525455,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_early\\boundary_paths\\run.log"
+      },
+      {
+        "bytes": 523263,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_launch\\boundary_paths\\build.log"
+      },
+      {
+        "bytes": 522819,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read\\boundary_paths\\flow.log"
+      },
+      {
+        "bytes": 522341,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_early\\boundary_paths\\flow.log"
+      },
+      {
+        "bytes": 522276,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_launch\\boundary_paths\\run.log"
+      },
+      {
+        "bytes": 519154,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_launch\\boundary_paths\\flow.log"
+      },
+      {
+        "bytes": 495116,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\hardware\\pds\\logbackup\\run_2026-10-17-01-55-11.log"
+      },
+      {
+        "bytes": 465312,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_multail\\mul_paths\\build.log"
+      },
+      {
+        "bytes": 464621,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_multail\\mul_paths\\run.log"
+      },
+      {
+        "bytes": 462101,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_multail\\mul_paths\\flow.log"
+      },
+      {
+        "bytes": 462071,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\mul_paths\\build.log"
+      },
+      {
+        "bytes": 461368,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\mul_paths\\run.log"
+      },
+      {
+        "bytes": 458830,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\mul_paths\\flow.log"
+      },
+      {
+        "bytes": 433260,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\lsu_paths\\build.log"
+      },
+      {
+        "bytes": 432589,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\lsu_paths\\run.log"
+      },
+      {
+        "bytes": 431075,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair\\lsu_paths\\build.log"
+      },
+      {
+        "bytes": 430416,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair\\lsu_paths\\run.log"
+      },
+      {
+        "bytes": 430314,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\hardware\\pds\\logbackup\\run_2026-10-11-23-08-40.log"
+      },
+      {
+        "bytes": 430229,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\lsu_paths\\flow.log"
+      },
+      {
+        "bytes": 428074,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair\\lsu_paths\\flow.log"
+      },
+      {
+        "bytes": 425971,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_shared\\lsu_paths\\build.log"
+      },
+      {
+        "bytes": 425728,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_ports\\lsu_paths\\build.log"
+      },
+      {
+        "bytes": 425304,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_shared\\lsu_paths\\run.log"
+      }
+    ],
+    "protected_source_or_evidence": [
+      {
+        "bytes": 67165239,
+        "path": "new_core\\docs\\dual_types\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 44485426,
+        "path": "new_core\\docs\\dual_timing80\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 43529893,
+        "path": "new_core\\docs\\dual_joint\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 43058184,
+        "path": "new_core\\docs\\dual_admit\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 38691645,
+        "path": "new_core\\docs\\dual_lsu\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 36393470,
+        "path": "new_core\\docs\\dual_boundary\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 36157633,
+        "path": "new_core\\docs\\dual_legacy\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 31888791,
+        "path": "new_core\\docs\\bp_study\\trace\\events.txt.gz"
+      },
+      {
+        "bytes": 29694095,
+        "path": "new_core\\docs\\dual_native\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 21006356,
+        "path": "new_core\\docs\\dual_fan\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 20929148,
+        "path": "new_core\\docs\\dual_fwd\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 20503875,
+        "path": "new_core\\docs\\dual_if\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 20386018,
+        "path": "new_core\\docs\\dual_bus\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 17611626,
+        "path": "new_core\\docs\\dual_split\\routed_snapshots.zip"
+      },
+      {
+        "bytes": 16657076,
+        "path": "CoreMark_PGL50H\\.git\\objects\\pack\\pack-cce3352c0cacf467a54b8f36c886b2da003e362a.pack"
+      },
+      {
+        "bytes": 13425485,
+        "path": "new_core\\docs\\timing_pair\\validation\\pair_retirements.txt.gz"
+      },
+      {
+        "bytes": 13425485,
+        "path": "new_core\\docs\\ipc_opt\\before\\validation\\pair_retirements.txt.gz"
+      },
+      {
+        "bytes": 13425485,
+        "path": "CoreMark_PGL50H\\docs\\timing_pair\\validation\\pair_retirements.txt.gz"
+      },
+      {
+        "bytes": 10847947,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 10602927,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 10108950,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_shared\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 10077994,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_slot\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9961261,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_ports\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9887381,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_word\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9878461,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_return\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9766650,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9751752,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_select\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9660799,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_early\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9660687,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_launch\\pds\\place_route\\top_pnr.adf"
+      },
+      {
+        "bytes": 9623064,
+        "path": "new_core\\simulation\\results\\load_bp_dual_joint_ready\\pds\\place_route\\top_pnr.adf"
+      }
+    ],
+    "pds_compile_cache": [
+      {
+        "bytes": 2018998,
+        "path": "CoreMark_PGL50H\\hardware\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1859481,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1858318,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1768149,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_ports\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1765561,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_shared\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1745653,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_headmux\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1744538,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_split\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1741768,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_select\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1732874,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_word\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1732189,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_return\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1710114,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_pair\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1701787,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_side\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1701751,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_uart\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1693202,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_launch\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1693182,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_clock\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1692546,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_pcselect\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1686845,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_fifo\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1686100,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_early\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1684153,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_slot\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1681317,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1677586,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storeprefix\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1674531,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_multail\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1673451,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1673167,
+        "path": "new_core\\simulation\\results\\load_bp_dual_split_ready\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1672076,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_banklocal\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1671587,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_headlocal\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1671465,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_bankreq\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1670151,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storewrite\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1669400,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storeack\\pds\\compile\\top_comp.adf"
+      },
+      {
+        "bytes": 1668064,
+        "path": "new_core\\simulation\\results\\load_bp_dual_split_slow\\pds\\compile\\top_comp.adf"
+      }
+    ],
+    "pds_checkpoint_review": [
+      {
+        "bytes": 25299116,
+        "path": "tmp\\pds_native_ooo_alu_rank\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 25170677,
+        "path": "tmp\\pds_native_ooo_resource1\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 25157934,
+        "path": "tmp\\pds_native_ooo_issue_matrix\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 25075444,
+        "path": "tmp\\pds_native_ooo\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 25005230,
+        "path": "tmp\\pds_native_ooo_mem_prefix\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24991806,
+        "path": "tmp\\pds_native_ooo_forward_pick\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24831327,
+        "path": "tmp\\pds_native_ooo_load_relative\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24778568,
+        "path": "tmp\\pds_native_ooo_store_done\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24771219,
+        "path": "tmp\\pds_native_ooo_store_done_r2\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24751430,
+        "path": "tmp\\pds_native_ooo_mul_bypass\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24660965,
+        "path": "tmp\\pds_native_ooo_rob_pick\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24638989,
+        "path": "tmp\\pds_native_ooo_load_bypass\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24622803,
+        "path": "tmp\\pds_native_ooo_btb_alloc\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24618719,
+        "path": "tmp\\pds_native_ooo_load_bypass_r2\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24609690,
+        "path": "tmp\\pds_native_ooo_resource2\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24501633,
+        "path": "tmp\\pds_native_ooo_steering\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24468595,
+        "path": "tmp\\pds_native_ooo_btb32\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 24408626,
+        "path": "tmp\\pds_native_ooo_resource3\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 23882726,
+        "path": "tmp\\pds_native_ooo_timing1\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 23796078,
+        "path": "tmp\\pds_native_ooo_timing2\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 18415711,
+        "path": "tmp\\pds_ooo_dual_initial_20261017\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 15992205,
+        "path": "tmp\\pds_ooo_dual_parallel_picker_route_retry_20261017\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 15992205,
+        "path": "tmp\\pds_ooo_dual_parallel_picker_20261017\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 15822341,
+        "path": "tmp\\pds_ooo_dual_shared_reads_20261017\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 14262162,
+        "path": "CoreMark_PGL50H\\hardware\\pds\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 14234824,
+        "path": "tmp\\pds_ooo_dual_banked_dispatch_20261017\\synthesize\\top_syn.vm"
+      },
+      {
+        "bytes": 13398878,
+        "path": "tmp\\nax_pgl50_20261019\\synthesize\\nax_core_fixture_syn.vm"
+      },
+      {
+        "bytes": 10837997,
+        "path": "tmp\\ooo2_integrated_20261019\\timing_extended\\synthesize\\core_fixture_syn.vm"
+      },
+      {
+        "bytes": 10828477,
+        "path": "tmp\\ooo2_integrated_20261019\\map_candidate\\synthesize\\core_fixture_syn.vm"
+      },
+      {
+        "bytes": 10705142,
+        "path": "tmp\\ooo2_cut_control_20261019\\map_candidate\\synthesize\\core_fixture_syn.vm"
+      }
+    ],
+    "iverilog_executable": [
+      {
+        "bytes": 6446053,
+        "path": "CoreMark_PGL50H\\simulation\\results\\biriscv\\ram.vvp"
+      },
+      {
+        "bytes": 6343093,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\native_ooo\\soc.vvp"
+      },
+      {
+        "bytes": 5856720,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\native_ooo\\posted_latency.vvp"
+      },
+      {
+        "bytes": 5856720,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\native_ooo\\latency.vvp"
+      },
+      {
+        "bytes": 5380637,
+        "path": "new_core\\simulation\\results\\load_bp_dual_ram_wide\\hardware_init_check\\negative.vvp"
+      },
+      {
+        "bytes": 5380432,
+        "path": "new_core\\simulation\\results\\load_bp_dual_ram_wide\\wide_debug.vvp"
+      },
+      {
+        "bytes": 5380088,
+        "path": "new_core\\simulation\\results\\load_bp_dual_ram_wide\\wide_ip.vvp"
+      },
+      {
+        "bytes": 5376751,
+        "path": "new_core\\simulation\\results\\load_bp_dual_ram_logic\\equivalence\\ram1_tdp.vvp"
+      },
+      {
+        "bytes": 5376745,
+        "path": "new_core\\simulation\\results\\load_bp_dual_ram_alu\\equivalence\\ram1_tdp.vvp"
+      },
+      {
+        "bytes": 5376567,
+        "path": "new_core\\simulation\\results\\wide_init_interleave_probe\\wide_ip.vvp"
+      },
+      {
+        "bytes": 5335863,
+        "path": "new_core\\simulation\\results\\wide_init32_probe\\wide_ip.vvp"
+      },
+      {
+        "bytes": 2084148,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_btb32_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 2076009,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_alu_age_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1941178,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_load_order_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1939244,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_complex_age_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1923145,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_lsu_response_rob_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1918142,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_lsu_response_turnover_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1898388,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_memory_restore_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1893651,
+        "path": "new_core\\simulation\\results\\load_bp_dual_ram_logic\\equivalence\\ram2_tdp.vvp"
+      },
+      {
+        "bytes": 1893645,
+        "path": "new_core\\simulation\\results\\load_bp_dual_ram_alu\\equivalence\\ram2_tdp.vvp"
+      },
+      {
+        "bytes": 1884125,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_dual_parallel_picker_functional\\soc.vvp"
+      },
+      {
+        "bytes": 1884125,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_dual_parallel_picker\\soc.vvp"
+      },
+      {
+        "bytes": 1822564,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_dual_banked_dispatch_functional\\soc.vvp"
+      },
+      {
+        "bytes": 1822564,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_dual_banked_dispatch\\soc.vvp"
+      },
+      {
+        "bytes": 1812709,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_completion_bypass_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1791307,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_order_completion_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1759811,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_branch_commit_20261017\\soc.vvp"
+      },
+      {
+        "bytes": 1733666,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_dual_initial\\soc.vvp"
+      },
+      {
+        "bytes": 1731184,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_dual_shared_reads\\soc.vvp"
+      },
+      {
+        "bytes": 1715102,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\ooo_btb32_20261017\\cpu_latency.vvp"
+      }
+    ],
+    "simulation_trace_review": [
+      {
+        "bytes": 3681762,
+        "path": "new_core\\simulation\\results\\soc_demo.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_split_slow\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_split_ready\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_shared\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_ports\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_pair\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_lsu_forward\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_word\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_split\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_select\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_return\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_legacy_fifo\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_joint_wait\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_joint_reg\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_joint_ready\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_joint_fix\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_wbflags\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storewrite\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storeprefix\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storemmio\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storelogic\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_storeack\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_slots\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_slot\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_side\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_read\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_pcselect\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_pair\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_multail\\pair_checks\\pair_joint_soc_0.trace"
+      },
+      {
+        "bytes": 122514,
+        "path": "new_core\\simulation\\results\\load_bp_dual_boundary_mullowtail\\pair_checks\\pair_joint_soc_0.trace"
+      }
+    ],
+    "verilator_build_cache": [
+      {
+        "bytes": 87433914,
+        "path": "tmp\\native_current_limits_probe\\obj\\Vooo_native_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 87018886,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\native_ooo\\native_obj\\Vooo_native_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 86442674,
+        "path": "tmp\\native_ooo_obj\\Vooo_native_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 86175671,
+        "path": "tmp\\native_current_limits_probe\\obj\\Vooo_native_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 85764900,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\firmware\\generated\\native_ooo\\native_obj\\Vooo_native_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 85180772,
+        "path": "tmp\\native_ooo_obj\\Vooo_native_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 84098251,
+        "path": "tmp\\ooo2_cut_control_20261019\\obj\\Vooo2_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 84098205,
+        "path": "tmp\\ooo2_integrated_20261019\\obj\\Vooo2_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83840410,
+        "path": "tmp\\ooo_alu_age_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83831946,
+        "path": "tmp\\ooo_btb32_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83823290,
+        "path": "tmp\\ooo_lsu_response_turnover_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83823248,
+        "path": "tmp\\ooo_complex_age_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83823093,
+        "path": "tmp\\ooo_load_order_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83819104,
+        "path": "tmp\\ooo_lsu_response_rob_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83525728,
+        "path": "tmp\\ooo2_prf_20261019\\coremark_baseline\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83525589,
+        "path": "tmp\\ooo2_scheduler_20261019\\coremark_baseline\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83525219,
+        "path": "tmp\\ooo2_lsq_20261019\\coremark_baseline\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83525179,
+        "path": "tmp\\ooo2_integrated_20261019\\coremark_baseline\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83525137,
+        "path": "tmp\\ooo2_rename_rob_20261019\\coremark_baseline\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 83157801,
+        "path": "tmp\\single_btb_boundary_20261019\\after\\obj\\Vcpu_bus_soc_tb__pch.h.fast.gch"
+      },
+      {
+        "bytes": 82981394,
+        "path": "tmp\\nax_pgl50_sim_20261019\\obj\\Vnax_pgl50_soc__pch.h.fast.gch"
+      },
+      {
+        "bytes": 82840158,
+        "path": "tmp\\ooo2_integrated_20261019\\obj\\Vooo2_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82831762,
+        "path": "tmp\\ooo2_cut_control_20261019\\obj\\Vooo2_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82594329,
+        "path": "tmp\\ooo_alu_age_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82577652,
+        "path": "tmp\\ooo_btb32_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82573357,
+        "path": "tmp\\ooo_lsu_response_rob_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82573352,
+        "path": "tmp\\ooo_lsu_response_turnover_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82573317,
+        "path": "tmp\\ooo_complex_age_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82573195,
+        "path": "tmp\\ooo_load_order_20261017\\obj\\Vcpu_bus_soc_tb__pch.h.slow.gch"
+      },
+      {
+        "bytes": 82537438,
+        "path": "tmp\\native_age_unit_obj\\Vooo_issue_select_tb__pch.h.fast.gch"
+      }
+    ],
+    "python_cache": [
+      {
+        "bytes": 28432,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\scripts\\run\\__pycache__\\run_native_ooo.cpython-314.pyc"
+      },
+      {
+        "bytes": 26387,
+        "path": "CoreMark_PGL50H-2\\simulation\\scripts\\run\\__pycache__\\run_bus_regression.cpython-312.pyc"
+      },
+      {
+        "bytes": 26322,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\scripts\\run\\__pycache__\\run_native_ooo.cpython-312.pyc"
+      },
+      {
+        "bytes": 24497,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_timing80.cpython-312.pyc"
+      },
+      {
+        "bytes": 23827,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\scripts\\run\\__pycache__\\run_bus_regression.cpython-313.pyc"
+      },
+      {
+        "bytes": 23253,
+        "path": "tmp\\__pycache__\\collect_dual_round28.cpython-312.pyc"
+      },
+      {
+        "bytes": 22835,
+        "path": "tmp\\__pycache__\\collect_dual_round21.cpython-312.pyc"
+      },
+      {
+        "bytes": 21771,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\scripts\\run\\__pycache__\\run_bus_regression.cpython-314.pyc"
+      },
+      {
+        "bytes": 21716,
+        "path": "tmp\\__pycache__\\collect_dual_round22.cpython-312.pyc"
+      },
+      {
+        "bytes": 21447,
+        "path": "tmp\\__pycache__\\collect_dual_round29.cpython-312.pyc"
+      },
+      {
+        "bytes": 21340,
+        "path": "tmp\\__pycache__\\collect_dual_round27.cpython-312.pyc"
+      },
+      {
+        "bytes": 21122,
+        "path": "tmp\\__pycache__\\collect_dual_round23.cpython-312.pyc"
+      },
+      {
+        "bytes": 20705,
+        "path": "tmp\\__pycache__\\collect_dual_round24.cpython-312.pyc"
+      },
+      {
+        "bytes": 20644,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_legacy.cpython-312.pyc"
+      },
+      {
+        "bytes": 20443,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\scripts\\run\\__pycache__\\run_bus_regression.cpython-312.pyc"
+      },
+      {
+        "bytes": 20439,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_lsu.cpython-312.pyc"
+      },
+      {
+        "bytes": 20268,
+        "path": "new_core\\tools\\__pycache__\\research_dual_issue.cpython-312.pyc"
+      },
+      {
+        "bytes": 19522,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_types.cpython-312.pyc"
+      },
+      {
+        "bytes": 19412,
+        "path": "CoreMark_PGL50H\\simulation\\scripts\\run\\__pycache__\\regression.cpython-312.pyc"
+      },
+      {
+        "bytes": 19405,
+        "path": "new_core\\simulation\\scripts\\run\\__pycache__\\regression.cpython-312.pyc"
+      },
+      {
+        "bytes": 18832,
+        "path": "new_core\\tools\\__pycache__\\assess_pairing.cpython-312.pyc"
+      },
+      {
+        "bytes": 18124,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_boundary.cpython-312.pyc"
+      },
+      {
+        "bytes": 18063,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_joint.cpython-312.pyc"
+      },
+      {
+        "bytes": 16979,
+        "path": "new_core\\tools\\__pycache__\\write_dual_boundary_report.cpython-312.pyc"
+      },
+      {
+        "bytes": 16485,
+        "path": "new_core\\tools\\__pycache__\\write_dual_lsu_report.cpython-312.pyc"
+      },
+      {
+        "bytes": 15934,
+        "path": "new_core\\tools\\__pycache__\\write_dual_joint_report.cpython-312.pyc"
+      },
+      {
+        "bytes": 15932,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_issue.cpython-312.pyc"
+      },
+      {
+        "bytes": 15636,
+        "path": "tmp\\new_core_baseline_import_20261021_151158\\previous_worktree\\simulation\\scripts\\run\\__pycache__\\run_ooo2_prf.cpython-312.pyc"
+      },
+      {
+        "bytes": 14868,
+        "path": "CoreMark_PGL50H-2\\simulation\\scripts\\run\\__pycache__\\run_pairing_profile.cpython-312.pyc"
+      },
+      {
+        "bytes": 14780,
+        "path": "new_core\\tools\\__pycache__\\archive_dual_split.cpython-312.pyc"
+      }
+    ],
+    "archive_keep": [
+      {
+        "bytes": 188087989,
+        "path": "tmp\\nax_tools\\jdk17.zip"
+      },
+      {
+        "bytes": 50899150,
+        "path": "tmp\\nax_tools\\jdk17.0.20_12\\lib\\src.zip"
+      },
+      {
+        "bytes": 31888791,
+        "path": "new_core\\simulation\\results\\bp_study_trace\\events.txt.gz"
+      },
+      {
+        "bytes": 13425485,
+        "path": "new_core\\simulation\\results\\pair_cleanup1\\retirements.txt.gz"
+      },
+      {
+        "bytes": 6955459,
+        "path": "tmp\\iverilog-portable\\toolchain-iverilog-windows_amd64-1.2.1.tar.gz"
+      },
+      {
+        "bytes": 3110167,
+        "path": "tmp\\rtl_research\\rvcorep_ver053.zip"
+      },
+      {
+        "bytes": 2694217,
+        "path": "tmp\\NaxRiscv\\ext\\SpinalHDL\\lib\\target\\scala-2.12\\zinc\\inc_compile_2.12.zip"
+      },
+      {
+        "bytes": 1222555,
+        "path": "tmp\\NaxRiscv\\target\\scala-2.12\\zinc\\inc_compile_2.12.zip"
+      },
+      {
+        "bytes": 672632,
+        "path": "tmp\\NaxRiscv\\ext\\SpinalHDL\\core\\target\\scala-2.12\\zinc\\inc_compile_2.12.zip"
+      },
+      {
+        "bytes": 666476,
+        "path": "new_core\\simulation\\results\\load_bp_baseline\\branches.txt.gz"
+      },
+      {
+        "bytes": 384615,
+        "path": "new_core\\simulation\\results\\ipc_profile_accepted\\branches.txt.gz"
+      },
+      {
+        "bytes": 383854,
+        "path": "new_core\\simulation\\results\\ipc_profile_final\\branches.txt.gz"
+      },
+      {
+        "bytes": 95153,
+        "path": "tmp\\cv-hpdcache\\rtl\\tb\\traces_lib\\trace_spmv_2000x2000_0p001.bin.gz"
+      },
+      {
+        "bytes": 47553,
+        "path": "tmp\\NaxRiscv\\ext\\SpinalHDL\\sim\\target\\scala-2.12\\zinc\\inc_compile_2.12.zip"
+      },
+      {
+        "bytes": 4372,
+        "path": "tmp\\NaxRiscv\\ext\\SpinalHDL\\project\\target\\scala-2.12\\sbt-1.0\\zinc\\inc_compile_2.12.zip"
+      },
+      {
+        "bytes": 4364,
+        "path": "tmp\\NaxRiscv\\ext\\SpinalHDL\\idslplugin\\target\\scala-2.12\\zinc\\inc_compile_2.12.zip"
+      },
+      {
+        "bytes": 3166,
+        "path": "tmp\\NaxRiscv\\ext\\SpinalHDL\\idslpayload\\target\\scala-2.12\\zinc\\inc_compile_2.12.zip"
+      }
+    ],
+    "waveform_review": [
+      {
+        "bytes": 139826,
+        "path": "new_core\\simulation\\results\\load_cycle_structure\\slice.vcd"
+      }
+    ]
+  },
+  "by_project": {
+    "CoreMark_PGL50H_逐步操作教程.pdf": {
+      "other_keep_or_review": 291909
+    },
+    "CoreMark_project_structure.png": {
+      "other_keep_or_review": 1344039
+    },
+    "MES50HP开发板硬件使用手册_1V1.pdf": {
+      "other_keep_or_review": 2612862
+    },
+    "Pango_IP生成参数整理.txt": {
+      "other_keep_or_review": 4562
+    },
+    "pnr_help.pds": {
+      "other_keep_or_review": 2972
+    },
+    "run.log": {
+      "log_review": 363
+    },
+    "verilator_lint.log": {
+      "log_review": 0
+    },
+    "CoreMark_PGL50H": {
+      "protected_source_or_evidence": 53480867,
+      "log_review": 2307520,
+      "other_keep_or_review": 14911139,
+      "pds_compile_cache": 2512094,
+      "pds_checkpoint_review": 23234764,
+      "iverilog_executable": 7450098,
+      "simulation_trace_review": 150276,
+      "verilator_build_cache": 6109601,
+      "python_cache": 22261
+    },
+    "CoreMark_PGL50H-2": {
+      "protected_source_or_evidence": 66363008,
+      "log_review": 6900285,
+      "pds_compile_cache": 2166853,
+      "other_keep_or_review": 161676714,
+      "pds_checkpoint_review": 37760968,
+      "iverilog_executable": 39950460,
+      "python_cache": 55292
+    },
+    "new_core": {
+      "other_keep_or_review": 1755649960,
+      "protected_source_or_evidence": 2329959956,
+      "log_review": 149731127,
+      "pds_compile_cache": 144165968,
+      "pds_checkpoint_review": 1149510949,
+      "iverilog_executable": 409874712,
+      "simulation_trace_review": 144137412,
+      "archive_keep": 46749221,
+      "waveform_review": 139826,
+      "verilator_build_cache": 3858655,
+      "python_cache": 491206
+    },
+    "tmp": {
+      "other_keep_or_review": 2009281158,
+      "log_review": 96155073,
+      "iverilog_executable": 208071308,
+      "protected_source_or_evidence": 76867270,
+      "pds_checkpoint_review": 2317339892,
+      "archive_keep": 253796777,
+      "pds_compile_cache": 870576,
+      "verilator_build_cache": 3304189445,
+      "python_cache": 454711
+    }
+  },
+  "git_tracked_counts": {
+    "CoreMark_PGL50H": 486,
+    "CoreMark_PGL50H-2": 1148
+  },
+  "manifest_count": 27,
+  "frozen_existing_bytes": 1545809012,
+  "referenced_existing_bytes": 685986650,
+  "skipped_reparse": [],
+  "errors": [],
+  "note": "Candidate categories exclude tracked files, manifest-protected files, docs and SHA-input references. Directory totals may include retained files; group bytes count candidates only. Sizes are logical bytes, not guaranteed physical disk reclamation. No deletion or archive transformation performed."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "seeds": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "mapped_input_db": "hardware\\pds82_seed_sweep\\device_map\\top_map.adf",
+    "mapped_db_sha256": "42a702c86ec4120db045c40cc55021e01df54a74bd636ceb8bc1609b801dcb68",
+    "trial_directory": "hardware\\pds82_place_extra",
+    "parallel": 3,
+    "tcl_sha256": "de092d1a573db8f99a79d08fbbbededae060d4123bcf84c3d5019c0443d09be6",
+    "pnr_command": "pnr -input_db_file {C:/Users/Lenovo/Desktop/FPGA/new_core/hardware/pds82_seed_sweep/device_map/top_map.adf} -gplace_seed 20 -gplace_times 20 -seed_step 1 -saved_outcome 20 -parallel 3 -max_ctrl_chain_length 4 -optimize_multi_corner_timing -fix_hold_violation -fix_hold_violation_in_route TRUE"
+  },
+  {
+    "seeds": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "parallel": 3,
+    "trial_directory": "hardware\\pds82_performance",
+    "mapped_input_db": "hardware\\pds82_seed_sweep\\device_map\\top_map.adf",
+    "mapped_db_sha256": "42a702c86ec4120db045c40cc55021e01df54a74bd636ceb8bc1609b801dcb68",
+    "tcl_sha256": "e2252984069ec178ef3b9c1ceeada899f2edffdc8dbe1fcb64df9c3b20049f26",
+    "pnr_command": "pnr -input_db_file {C:/Users/Lenovo/Desktop/FPGA/new_core/hardware/pds82_seed_sweep/device_map/top_map.adf} -gplace_seed 40 -gplace_times 6 -seed_step 1 -saved_outcome 6 -parallel 3 -max_ctrl_chain_length 4 -optimize_multi_corner_timing -fix_hold_violation -fix_hold_violation_in_route TRUE -mode performance",
+    "pnr_options": "-mode performance",
+    "documentation": "Installed Pango_Design_Suite_User_Guide.pdf p108: performance mode prioritizes timing with longer runtime. No RTL/clock/constraint edits."
+  }
+]

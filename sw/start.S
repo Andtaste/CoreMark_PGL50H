@@ -1,49 +1,38 @@
-
-    .section .init;
-    .globl _start;
-    .type _start,@function
-
-
+.section .text.start
+.globl _start
 _start:
-.option push
-.option norelax
-	la gp, __global_pointer$
-.option pop
-	la sp, _sp
-#ifdef SIMULATION
-    li x26, 0x00
-    li x27, 0x00
-#endif
-
-	/* Load data section */
-	la a0, _data_lma
-	la a1, _data
-	la a2, _edata
-	bgeu a1, a2, 2f
-1:
-	lw t0, (a0)
-	sw t0, (a1)
-	addi a0, a0, 4
-	addi a1, a1, 4
-	bltu a1, a2, 1b
-2:
-
-	/* Clear bss section */
-	la a0, __bss_start
-	la a1, _end
-	bgeu a0, a1, 2f
-1:
-	sw zero, (a0)
-	addi a0, a0, 4
-	bltu a0, a1, 1b
-2:
-
-    call _init
-    call main
-
-#ifdef SIMULATION
-    li x26, 0x01
-#endif
-
-loop:
-    j loop
+ .option push
+ .option norelax
+ la sp,__stack_top
+ .option pop
+ la t0,__data_load
+ la t1,__data_start
+ la t2,__data_end
+1: bgeu t1,t2,2f
+ lbu t3,0(t0)
+ sb t3,0(t1)
+ addi t0,t0,1
+ addi t1,t1,1
+ j 1b
+2: la t0,__bss_start
+ la t1,__bss_end
+3: bgeu t0,t1,4f
+ sw zero,0(t0)
+ addi t0,t0,4
+ j 3b
+4: la t0,trap
+ csrw mtvec,t0
+ li a0,0
+ li a1,0
+ call main
+ li t0,0x20003000
+ sw a0,0(t0)
+5: j 5b
+.balign 4
+trap:
+ csrr t1,mcause
+ li t0,0x20003000
+ lui t2,0xdead0
+ or t1,t1,t2
+ sw t1,0(t0)
+ j trap

@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "entries": [
+    {
+      "source": "nc_core.v",
+      "signal": "inflight",
+      "source_mentions": 1,
+      "classification": "Unconsumed population-count debug wire",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    },
+    {
+      "source": "nc_core.v",
+      "signal": "resolved_prediction",
+      "source_mentions": 1,
+      "classification": "Unconsumed target-selection wire",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    },
+    {
+      "source": "nc_core.v",
+      "signal": "mul_busy",
+      "source_mentions": 2,
+      "classification": "Unused multiplier busy output connection",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    },
+    {
+      "source": "nc_core.v",
+      "signal": "second_dep",
+      "source_mentions": 3,
+      "classification": "Assigned constant0, retained for legacy bench observability",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    },
+    {
+      "source": "nc_memory.v",
+      "signal": "request_data",
+      "source_mentions": 1,
+      "classification": "Unconsumed request payload alternative",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    },
+    {
+      "source": "nc_memory.v",
+      "signal": "request_f3",
+      "source_mentions": 1,
+      "classification": "Unconsumed request format alternative",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    },
+    {
+      "source": "nc_memory.v",
+      "signal": "state",
+      "source_mentions": 1,
+      "classification": "Combinational state label used only by observation",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    },
+    {
+      "source": "nc_mul_pipeline.v",
+      "signal": "low2",
+      "source_mentions": 2,
+      "classification": "Assigned32-bit register never consumed",
+      "synthesis_named_node_present": false,
+      "note": "Source cleanup only; unused/constant logic is removed by synthesis. No claimed LUT/FF gain from deleting these names."
+    }
+  ],
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_core.v": "9cd17f8880e4435865dac511ed65f10e37308d4d3d0471d600ba01b8d31738a9",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\pds\\synthesize\\top_syn.vm": "177bfef7d4b5522da534e722e227b3c0f9ca0db5b2c7a0a6264b4d852aa4b260",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa"
+  }
+}

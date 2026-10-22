@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "summary": "PASS execute equivalence vectors=24000 branches=12000 redirects=2264",
+  "reference_sha256": "83f0e92627f567dbec858d47e0076cfb4ed62d85321ca776d8a092f09e412377",
+  "source_sha256": {
+    "hardware\\pds\\source\\core\\nc_execute.v": "6d34a734f9fb86f850fc81a95a9d176b967764e3ef5df715d3a55849234a3d3b",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_muldiv.v": "6e0078530d28b97434151ba841c1cc74c0a7efde10fedca2afdf17afb76c7818",
+    "simulation\\tb\\execute_equivalence_tb.v": "56ced4ce735b70ca20e04fe86fd4c1a73166c0705d40be2601a5a85a22ccedf4"
+  }
+}

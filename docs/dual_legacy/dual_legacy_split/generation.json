@@ -1,0 +1,37 @@
+{
+  "status": "GENERATED",
+  "scope": "dual_legacy_split; individual word FIFO8, joint branch/MUL and four-source bypass; return adds synchronous load-output bypass; split additionally rejects older slow producer dependencies before tag encoding; one LSU, no independent retirement; not adopted",
+  "override_sha256": {
+    "hardware\\pds\\source\\core\\nc_core.v": "8c35457eb5811afe8e4702898fa15f65ddfb69c8594ab7f16352c327142b005a",
+    "hardware\\pds\\source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "hardware\\pds\\source\\core\\nc_memory.v": "dbeaba52dd2ea420074f53e93824ec5dceb6d59b13ecfa24925115651928d53f",
+    "hardware\\pds\\source\\core\\nc_operands.v": "c493d0fbff3d2f7d40e2f4df02d5bbd18f14046fe9e246c38009be209fd5c02d",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\top\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "hardware\\pds\\source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\core\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "hardware\\pds\\source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba"
+  },
+  "baseline_sha256": "f9266e85c40bf5a5feaa9d54f1ec77389d00a2feb02b4ed74573b5b1bc171d86",
+  "generator_sha256": "9ca7c686f867da63766a29f89b116b50f9bc885d86239a05fd5c5c24be8a9aea",
+  "parent_generation_sha256": "f90b429ca0526ff7644aa7a490f03f190b30c0c4726c701afbc00b7b87980242",
+  "ip_sha256": {
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram1_tdp\\ram1_tdp.idf": "3b953426720fc44d0a98112d8a7f1db9dd39ad6dda575674e73edb64ea4369f3",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram1_tdp\\ram1_tdp.v": "560b31780cc005a47f88b5f2f0a658dc4248881a99fedd9095f0161853631e92",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram1_tdp\\ram1_tdp_tb.v": "f7c172dfa2632a1ef4803ed94155aa8166c2717645c64c01065b9366059a6703",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "simulation\\results\\load_bp_dual_legacy_split\\ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "simulation\\results\\load_bp_dual_ram_logic\\boot_interleaved.hex": "69122268a9d0d546090b2731e63b366d1ffdf090ba19c6de5135986d04d8f631"
+  },
+  "forward_policy": "tagged_older_results_capture_and_wait"
+}

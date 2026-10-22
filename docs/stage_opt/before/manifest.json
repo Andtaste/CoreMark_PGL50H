@@ -1,0 +1,19 @@
+{
+  "hardware\\pds\\source\\core\\nc_btb.v": "0bf5fb0a4eff9ed1afce22d66e4d5053115ea36d9911f56cb14156f357745f71",
+  "hardware\\pds\\source\\core\\nc_core.v": "6db617daea593ca21a3523a101805c47a58cea3e8663e5ec8807727142fb8f28",
+  "hardware\\pds\\source\\core\\nc_csr.v": "fd9c56af137eb44b74fc528b71f67942e2e7aa275486a07d6593ae82ac31f116",
+  "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+  "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+  "hardware\\pds\\source\\core\\nc_execute.v": "dba53b27591cb9394748cef622dced45d8701219c3f5797e8adac9b41a9b7eb0",
+  "hardware\\pds\\source\\core\\nc_fetch.v": "cc28fdab0ec5fbb13cc899e59339a0cba9852d7c52f9245d2504bf8930522953",
+  "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+  "hardware\\pds\\source\\core\\nc_memory.v": "bc72dfb73811676d993acc9874e44869dd630d761f66fd38c0fe314dc48c5f3a",
+  "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "9cf96713578a5b776242985d62188ceb6890f1c4eb2014aff00e1c45f872ec12",
+  "hardware\\pds\\source\\core\\nc_operands.v": "aabaea1edd062d9192ab72d7279796401bb20dc8f9296eea6f74b9288db51a4c",
+  "hardware\\pds\\source\\core\\nc_regfile.v": "e31de5896beacb4b7be8d669d17a94f566bcdbe00fcbf117a1e40945664b9bc6",
+  "hardware\\pds\\source\\core\\nc_stats.v": "adb36c79300e0107a199ee77e9c493648523e8a00c0a14c499046565f0acd85a",
+  "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+  "hardware\\pds\\source\\source\\top.v": "fb25a4662df6e49c1e20d69ea78bcf76153706eddc9421e861afed0ec7a14cc9",
+  "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "24f418c49cf4503ef34e441e05b8765ee7abd7d46a0760331d8e3c275aa0e10f",
+  "hardware\\pds\\source\\top\\nc_soc.v": "28cf17217ae88860548ec0366137be76d00ec981e698601304cf0c10ad525a00"
+}

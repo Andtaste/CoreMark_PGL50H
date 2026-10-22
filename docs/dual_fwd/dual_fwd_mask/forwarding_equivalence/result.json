@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS operands equivalence cycles=100000 seed=17 pushes=20336 pops=19359 full=72877 insertion_forward=4255 duplicate_priority=33334 clears=578",
+    "PASS operands equivalence cycles=100000 seed=91 pushes=20441 pops=19459 full=72890 insertion_forward=4277 duplicate_priority=33334 clears=578",
+    "PASS operands equivalence cycles=100000 seed=2026 pushes=20320 pops=19341 full=72957 insertion_forward=4360 duplicate_priority=33334 clears=578",
+    "PASS SAT actual A-side priority mask for all 2-state hits/wait/data; B-side generated symmetrically"
+  ],
+  "cycles": 300000,
+  "edge_checks": 600000,
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_if_parts\\nc_operands.v": "eae2935e9215dc9bb3424cce2417b2407c04ab819343b4f735d392dc9afce795",
+    "simulation\\results\\load_bp_dual_fwd_mask\\nc_operands.v": "135b38ae37a019983d7e4b41259956b3b2633113a0c7c7b81b17f39340e890ab",
+    "simulation\\research\\dual_ram\\fwd_operands_tb.v": "0c0bbf4edf7f264372b90a8a737849764d8750b1909c4fd22dd8f135d7c056f5",
+    "tools\\check_dual_fwd.py": "60e2afb71c4cf4f7e3a34823117495b654e857e437634a9a10c97276bdb04760",
+    "simulation\\results\\load_bp_dual_fwd_mask\\forwarding_equivalence\\mask_proof.v": "d8a55cae43b702c4d406737fa75fd3b74efd5819892175c5a18f518f918786b4"
+  }
+}

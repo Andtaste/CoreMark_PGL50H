@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "scope": "Read-only analysis of exact routed snapshot; no rerouting",
+  "paths": {
+    "secondary_annul": [
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L4",
+        "slack_ns": 0.58,
+        "logic_ns": 4.09,
+        "route_ns": 7.505,
+        "logic_levels": 14,
+        "max_data_fanout": 295
+      },
+      {
+        "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L1",
+        "slack_ns": 3.792,
+        "logic_ns": 2.233,
+        "route_ns": 6.04,
+        "logic_levels": 6,
+        "max_data_fanout": 168
+      },
+      {
+        "start": "soc/cpu/operands/side[0][202]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L2",
+        "slack_ns": 8.437,
+        "logic_ns": 0.978,
+        "route_ns": 2.511,
+        "logic_levels": 2,
+        "max_data_fanout": 177
+      },
+      {
+        "start": "soc/cpu/operands/rd/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L3",
+        "slack_ns": 8.606,
+        "logic_ns": 0.438,
+        "route_ns": 2.873,
+        "logic_levels": 1,
+        "max_data_fanout": 838
+      },
+      {
+        "start": "soc/cpu/operands/side[0][202]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L0",
+        "slack_ns": 8.628,
+        "logic_ns": 0.976,
+        "route_ns": 2.516,
+        "logic_levels": 2,
+        "max_data_fanout": 142
+      }
+    ],
+    "branch_redirect": [
+      {
+        "start": "soc/cpu/wb_q[11]/opit_0/CLK",
+        "end": "soc/cpu/branch_redirect/opit_0_inv_L5Q_perm/L4",
+        "slack_ns": 0.561,
+        "logic_ns": 4.284,
+        "route_ns": 7.331,
+        "logic_levels": 12,
+        "max_data_fanout": 142
+      },
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/cpu/branch_redirect/opit_0_inv_L5Q_perm/L0",
+        "slack_ns": 1.744,
+        "logic_ns": 3.894,
+        "route_ns": 6.461,
+        "logic_levels": 13,
+        "max_data_fanout": 295
+      },
+      {
+        "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/branch_redirect/opit_0_inv_L5Q_perm/L2",
+        "slack_ns": 3.101,
+        "logic_ns": 2.233,
+        "route_ns": 6.594,
+        "logic_levels": 6,
+        "max_data_fanout": 168
+      },
+      {
+        "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/cpu/branch_redirect/opit_0_inv_L5Q_perm/L1",
+        "slack_ns": 3.419,
+        "logic_ns": 3.399,
+        "route_ns": 5.284,
+        "logic_levels": 9,
+        "max_data_fanout": 31
+      },
+      {
+        "start": "soc/cpu/live[6]/opit_0_inv_MUX4TO1Q/CLK",
+        "end": "soc/cpu/branch_redirect/opit_0_inv_L5Q_perm/L3",
+        "slack_ns": 6.616,
+        "logic_ns": 1.255,
+        "route_ns": 4.066,
+        "logic_levels": 3,
+        "max_data_fanout": 73
+      }
+    ],
+    "ram_controls": [
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 0.254,
+        "logic_ns": 4.167,
+        "route_ns": 7.941,
+        "logic_levels": 14,
+        "max_data_fanout": 295
+      },
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 0.303,
+        "logic_ns": 4.167,
+        "route_ns": 7.892,
+        "logic_levels": 14,
+        "max_data_fanout": 295
+      },
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 0.318,
+        "logic_ns": 4.167,
+        "route_ns": 7.877,
+        "logic_levels": 14,
+        "max_data_fanout": 295
+      },
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[1].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 0.44,
+        "logic_ns": 4.275,
+        "route_ns": 7.544,
+        "logic_levels": 16,
+        "max_data_fanout": 295
+      },
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 0.503,
+        "logic_ns": 4.275,
+        "route_ns": 7.463,
+        "logic_levels": 16,
+        "max_data_fanout": 295
+      }
+    ]
+  },
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_boundary_side\\pds\\place_route\\top_pnr.adf": "cd1d94a70bba62bd0e04af4acae1ef3278e83a708c7c48104f83e07018325b89",
+    "simulation\\results\\load_bp_dual_boundary_side\\timing_paths\\run.tcl": "4a8f9451104716d92a797a6dd41ad4f53153795f3a6c334bb8f8dc5347067730",
+    "tools\\report_dual_timing80_paths.py": "5cc3347140b07ae881074bccbb4ce0f0fceea00389dd70cce88048887215a19a",
+    "tools\\parse_dual_joint_timing.py": "f0fa12c37a5965391aefaecd0e2e9ede92b904643d6ecab28d4167fa9f77662c"
+  },
+  "report_sha256": {
+    "secondary_annul.rtr": "a0effa289c1945c882399b6f93edc5f8787706cc800c26185056ee5da1824723",
+    "branch_redirect.rtr": "866668c0d651f86d447671e7f9ae038cd3081d0532b4989dd4b1a9afebed4bd2",
+    "ram_controls.rtr": "bb61a863d6b5cde11d3af516e8d4ced5dce514562c8e13caf5c2b89736453472"
+  }
+}

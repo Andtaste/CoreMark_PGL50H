@@ -1,0 +1,52 @@
+version,2022.2-SP1-Lite<build 132640>
+project name,search.pds
+
+Multi Route Seed:
+Seed,State,Convergence,Setup(Slow),Setup(Fast),Hold(Slow),Hold(Fast),Recovery(Slow),Recovery(Fast),Removal(Slow),Removal(Fast),PBM-GP,PBM-PreGP,PBM-PostGP,LP,Total Placement Cpu Time,Detailed routing,Total Routing Cpu Time,Wire Length After Post-GP,Wire Length After LP,Wire Length After DP,Routing Arc Length,Worst Slack After GP Timing,Worst Slack After LP Timing,Worst Slack Before RP,Worst Slack Before DP,Worst Slack After DP,Worst Slack After Placement,Worst Slack After TA By Preroute,TNS After DP,TNS Before Route,Setup(Slow) Total Failing TNS,Setup(Slow) Total Failing Endpoints,Hold(Slow) Total Failing THS,Hold(Slow) Total Failing Endpoints
+seed_5,OK,NA,-0.281,3.249,0.178,0.124,7.869,9.070,0.679,0.504,NA,NA,NA,NA,NA,91.88,113.73,NA,NA,NA,216361,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.776,6,0.000,0
+seed_7,OK,NA,-0.082,3.492,0.167,0.117,7.883,9.077,0.681,0.515,NA,NA,NA,NA,NA,103.16,126.58,NA,NA,NA,216105,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.142,2,0.000,0
+seed_4,OK,NA,-0.027,3.501,0.097,0.078,7.974,9.136,0.705,0.529,NA,NA,NA,NA,NA,100.70,126.45,NA,NA,NA,216201,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.027,1,0.000,0
+seed_6,OK,NA,-0.034,3.515,0.057,0.035,7.824,9.037,0.701,0.517,NA,NA,NA,NA,NA,103.02,129.12,NA,NA,NA,216255,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.034,1,0.000,0
+seed_8,OK,NA,-0.128,3.419,0.170,0.119,7.869,9.071,0.698,0.514,NA,NA,NA,NA,NA,111.91,138.53,NA,NA,NA,215681,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.232,4,0.000,0
+seed_9,OK,NA,-0.093,3.493,0.156,0.112,7.989,9.151,0.695,0.509,NA,NA,NA,NA,NA,114.03,136.52,NA,NA,NA,216026,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.128,2,0.000,0
+seed_10,OK,NA,-0.034,3.524,0.154,0.111,7.995,9.156,0.689,0.511,NA,NA,NA,NA,NA,114.66,137.52,NA,NA,NA,216495,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.034,1,0.000,0
+seed_11,OK,NA,-0.039,3.504,0.155,0.111,7.873,9.074,0.702,0.526,NA,NA,NA,NA,NA,111.48,133.61,NA,NA,NA,216371,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.039,1,0.000,0
+seed_12,OK,NA,-0.097,3.417,0.158,0.114,8.009,9.164,0.685,0.508,NA,NA,NA,NA,NA,114.44,141.72,NA,NA,NA,216327,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.163,3,0.000,0
+seed_14,OK,NA,-0.028,3.443,0.153,0.111,7.872,9.072,0.699,0.508,NA,NA,NA,NA,NA,111.53,136.38,NA,NA,NA,216173,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.039,2,0.000,0
+seed_15,OK,NA,-0.049,3.499,0.152,0.108,8.029,9.171,0.703,0.527,NA,NA,NA,NA,NA,113.12,136.30,NA,NA,NA,216314,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.049,1,0.000,0
+seed_13,OK,NA,-0.076,3.463,0.096,0.078,7.814,9.038,0.684,0.509,NA,NA,NA,NA,NA,122.75,148.55,NA,NA,NA,216363,NA,NA,NA,NA,NA,NA,NA,NA,0,-0.285,5,0.000,0
+Pass Rate/Convergence Rate,100.00%,0.00%
+
+Synthesize:
+control_set,NA
+Synthesize Performance Summary:
+slack category,Synthesize Setup WNS,Synthesize Setup TNS,Synthesize Recovery WNS,Synthesize Recovery TNS
+slack value,NA,NA,NA,NA
+Synthesize Process Cpu Time,NA
+
+Device Map:
+Device Map Resource Usage Summary:
+Logic Utilization,LUT,FF,DRM,APM,Distributed RAM,HSSTHP,USCM,HCKB,RCKB
+Used,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Available,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Utilization(%),NA,NA,NA,NA,NA,NA,NA,NA,NA
+Device Map Process Cpu Time,NA
+
+Project Configurations:
+top module,
+compile,
+synthesize,
+device map,
+place & route," -gplace_seed 6 
+ -groute_seed 4 
+ -groute_times 12 
+ -route_saved_outcome 12 
+ -route_parallel 4 
+ -optimize_multi_corner_timing 
+ -fix_hold_violation 
+ -input_place_db_file {C:/Users/Lenovo/Desktop/FPGA/new_core/hardware/pds82_seed_sweep/place_route/seed_6/top_plc.adf} 
+ -max_ctrl_chain_length 4 "
+
+Test Parameters Configurations:
+testparam,
+

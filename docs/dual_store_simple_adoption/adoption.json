@@ -1,0 +1,17 @@
+{
+  "status": "ACCEPTED_DUAL_DEVELOPMENT_BASELINE",
+  "variant": "dual_boundary_storewrite",
+  "user_instruction": "采纳",
+  "recorded_at": "2026-10-21T22:15:58.602359+08:00",
+  "accepted_descriptor_sha256": "b68472e674aa2d9e656485c85a450d7cbefcd060c96c26dd0ae8f7b61ee7882a",
+  "previous_descriptor_sha256": "1360c602b6f05ffdedd7193cea0e4f5de1b63d74f9334fc35b86c63371dcd361",
+  "source_directory": "simulation\\results\\load_bp_dual_boundary_storewrite",
+  "next_development_baseline": "dual_boundary_storewrite",
+  "verified_archived_files": {
+    "dual_store_simple": 928,
+    "dual_mem_ipc": 1305,
+    "dual_timing80": 1594
+  },
+  "historical_archive_manifest_sha256": "6aeb5ffec2f2d6ef6cd28cc8f6320b5ea479d9f92d7dcd799d2ede40cdf3db53",
+  "adoption_tool_sha256": "38c7d7667840a5190a99f1c1087d5460a11922b1d5804ed19d0dd9452e030932"
+}

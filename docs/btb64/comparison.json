@@ -1,0 +1,293 @@
+{
+  "chosen": "btb64_with_prewrite_redirect_tag",
+  "same_firmware_sha256": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+  "no_bp_same_rtl_control_matches_before_all_metrics": true,
+  "baseline": {
+    "requested_mhz": 75.002,
+    "estimated_fmax_mhz": 91.166,
+    "all_reported_constraints_met": true,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 2.364,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.183,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 5.487,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.124,
+        "failing_endpoints": 0
+      }
+    },
+    "resources": {
+      "LUT": 5396,
+      "FF": 3262,
+      "Distributed RAM": 96,
+      "DRM": 48,
+      "APM": 4
+    },
+    "worst_paths": [
+      {
+        "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/memory_queue/data[1][166]/opit_0/D",
+        "slack_ns": 2.364
+      },
+      {
+        "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/redirect_tag[0]/opit_0_inv/CE",
+        "slack_ns": 2.408
+      },
+      {
+        "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/redirect_tag[1]/opit_0_inv/CE",
+        "slack_ns": 2.408
+      },
+      {
+        "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/redirect_tag[2]/opit_0_inv/CE",
+        "slack_ns": 2.408
+      },
+      {
+        "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/memory_queue/data[1][16]/opit_0/D",
+        "slack_ns": 2.419
+      }
+    ]
+  },
+  "final": {
+    "requested_mhz": 75.002,
+    "estimated_fmax_mhz": 85.616,
+    "all_reported_constraints_met": true,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 1.653,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.155,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 5.048,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.112,
+        "failing_endpoints": 0
+      }
+    },
+    "resources": {
+      "LUT": 5967,
+      "FF": 3807,
+      "Distributed RAM": 260,
+      "DRM": 48,
+      "APM": 4
+    },
+    "worst_paths": [
+      {
+        "start": "soc/cpu/memory_queue/data[1][140]/opit_0/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEA[0]",
+        "slack_ns": 1.653
+      },
+      {
+        "start": "soc/cpu/memory_queue/data[1][140]/opit_0/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEA[0]",
+        "slack_ns": 1.751
+      },
+      {
+        "start": "soc/cpu/memory_queue/data[1][140]/opit_0/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEA[0]",
+        "slack_ns": 1.981
+      },
+      {
+        "start": "soc/cpu/fetch/head_inst[15]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/va[1][7]/opit_0_MUX4TO1Q/S0",
+        "slack_ns": 1.983
+      },
+      {
+        "start": "soc/cpu/fetch/head_inst[15]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/va[1][15]/opit_0_MUX4TO1Q/S0",
+        "slack_ns": 2.004
+      }
+    ]
+  },
+  "initial_btb": {
+    "requested_mhz": 75.002,
+    "estimated_fmax_mhz": 85.056,
+    "all_reported_constraints_met": true,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 1.576,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.157,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 5.016,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.11,
+        "failing_endpoints": 0
+      }
+    },
+    "resources": {
+      "LUT": 5958,
+      "FF": 3807,
+      "Distributed RAM": 260,
+      "DRM": 48,
+      "APM": 4
+    },
+    "worst_paths": [
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/redirect_tag[2]/opit_0_inv/CE",
+        "slack_ns": 1.576
+      },
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/branch_redirect/opit_0_inv_L5Q_perm/L3",
+        "slack_ns": 1.751
+      },
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/redirect_tag[0]/opit_0_inv/CE",
+        "slack_ns": 1.792
+      },
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/redirect_tag[1]/opit_0_inv/CE",
+        "slack_ns": 1.792
+      },
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/csr/stats/sample[5]/opit_0_inv_L5Q_perm/L4",
+        "slack_ns": 1.862
+      }
+    ]
+  },
+  "coremark": {
+    "before": {
+      "Configured CPU Hz": "75000000",
+      "Software build": "Oct 20 2026 11:13:13",
+      "Report format": "3 (integer fixed point)",
+      "Stats ABI signature": "0x4e430004",
+      "CRC validation": "PASS",
+      "CoreMark Size": "666",
+      "Total ticks": "5105517",
+      "Total time (secs)": "0.068073",
+      "Iterations/Sec": "146.899912",
+      "CoreMark/MHz": "1.958665",
+      "Score status": "short run; diagnostic only",
+      "Iterations": "10",
+      "Compiler version": "GCC15.2.0",
+      "Compiler flags": "-O2 -fno-common -funroll-loops -finline-functions --param=max-inline-insns-auto=20 -falign-functions=4 -falign-jumps=4 -falign-loops=4 -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow -ffunction-sections -fdata-sections -fno-builtin-printf -fno-builtin-malloc -msmall-data-limit=0 -mno-relax",
+      "Memory location": "STATIC",
+      "seedcrc": "0xe9f5",
+      "[0]crclist": "0xe714",
+      "[0]crcmatrix": "0x1fd7",
+      "[0]crcstate": "0x8e3a",
+      "[0]crcfinal": "0xfcaf",
+      "Benchmark cycles64": "5105517",
+      "Stats window cycles": "5105558",
+      "Retired instructions": "2808261",
+      "IPC": "0.550",
+      "CPI": "1.818",
+      "Counter bounds": "PASS (retired <= cycles)",
+      "Retired loads": "548709",
+      "Retired stores": "143410",
+      "EX operand wait": "526190 (10.306%)",
+      "ID blocked cycles": "1352887 (26.498%)",
+      "IF request wait": "0 (0.000%)",
+      "IF queue empty": "629606 (12.331%)",
+      "MEM occupied cycles": "692119 (13.556%)",
+      "Mul/div stall cycles": "281880 (5.521%)",
+      "BJP redirects": "314803",
+      "BJP instructions": "571070",
+      "BJP redirect rate %": "55.125",
+      "Stats overflow mask": "0x0000",
+      "No BTB": "redirect rate = nonsequential EX branch/jump events / retired BJP."
+    },
+    "after": {
+      "Configured CPU Hz": "75000000",
+      "Software build": "Oct 20 2026 11:13:13",
+      "Report format": "3 (integer fixed point)",
+      "Stats ABI signature": "0x4e430004",
+      "CRC validation": "PASS",
+      "CoreMark Size": "666",
+      "Total ticks": "4204015",
+      "Total time (secs)": "0.056053",
+      "Iterations/Sec": "178.400885",
+      "CoreMark/MHz": "2.378678",
+      "Score status": "short run; diagnostic only",
+      "Iterations": "10",
+      "Compiler version": "GCC15.2.0",
+      "Compiler flags": "-O2 -fno-common -funroll-loops -finline-functions --param=max-inline-insns-auto=20 -falign-functions=4 -falign-jumps=4 -falign-loops=4 -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow -ffunction-sections -fdata-sections -fno-builtin-printf -fno-builtin-malloc -msmall-data-limit=0 -mno-relax",
+      "Memory location": "STATIC",
+      "seedcrc": "0xe9f5",
+      "[0]crclist": "0xe714",
+      "[0]crcmatrix": "0x1fd7",
+      "[0]crcstate": "0x8e3a",
+      "[0]crcfinal": "0xfcaf",
+      "Benchmark cycles64": "4204015",
+      "Stats window cycles": "4204056",
+      "Retired instructions": "2808261",
+      "IPC": "0.667",
+      "CPI": "1.497",
+      "Counter bounds": "PASS (retired <= cycles)",
+      "Retired loads": "548709",
+      "Retired stores": "143410",
+      "EX operand wait": "526190 (12.516%)",
+      "ID blocked cycles": "1192097 (28.355%)",
+      "IF request wait": "0 (0.000%)",
+      "IF queue empty": "135798 (3.230%)",
+      "MEM occupied cycles": "692119 (16.463%)",
+      "Mul/div stall cycles": "281880 (6.704%)",
+      "BJP redirects": "67899",
+      "BJP instructions": "571070",
+      "BJP redirect rate %": "11.889",
+      "Stats overflow mask": "0x0000",
+      "No BTB": "redirect rate = nonsequential EX branch/jump events / retired BJP."
+    },
+    "ipc_before": 0.550039976041796,
+    "ipc_after": 0.6679884854055227,
+    "cycle_reduction_percent": 17.657266845269415,
+    "same_frequency_speedup_percent": 21.44362491841212,
+    "estimated_fmax_scaled_speedup_percent": 14.05038491339723,
+    "predictor": {
+      "enabled": 1,
+      "resolved": 571070,
+      "hits": 515615,
+      "predicted_taken": 282752,
+      "direction_wrong": 64197,
+      "target_wrong": 3702,
+      "next_pc_wrong": 67899,
+      "nonbranch_wrong": 0,
+      "recovery_if_empty": 135798,
+      "next_pc_accuracy": 0.8811021415938501,
+      "legacy_firmware_footer": "Unchanged image says No BTB; use enabled and predictor metrics for actual hardware configuration."
+    }
+  },
+  "resource_delta": {
+    "LUT": 571,
+    "FF": 545,
+    "Distributed RAM": 164,
+    "DRM": 0,
+    "APM": 0
+  },
+  "limits": [
+    "Fmax-scaled throughput is arithmetic estimate, not a board measurement.",
+    "Unchanged firmware has historical No BTB footer; actual ENABLE_BP=1 is confirmed by testbench.",
+    "EX updates may include eventually squashed instructions; prediction state is not architectural state."
+  ],
+  "status": "ACCEPTED",
+  "accepted_by": "user",
+  "accepted_at": "2026-10-20T13:40:54.518603+08:00"
+}

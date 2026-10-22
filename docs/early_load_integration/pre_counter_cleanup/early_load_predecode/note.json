@@ -1,0 +1,4 @@
+{
+  "status": "SUPERSEDED_COUNTER_BINDING",
+  "note": "MEM wait CSR counted queue-pop inhibition during early bypass. Final version binds memory_ready directly to selected MEM readiness; bypass always has an empty queue, so CPU execution is unchanged. All final experiments rerun."
+}

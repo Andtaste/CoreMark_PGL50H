@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "variant": "dual_if_parts",
+  "tests": [
+    "PASS SAT: all five classification bits equal for every binary 32-bit instruction",
+    "PASS IF classification decoder combinations=131072"
+  ],
+  "scope": "Combinational classifier proof; registered ownership separately exercised by dual units and whole-core tests",
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_ram_logic\\nc_fetch.v": "4fe5f8eb5facb620d6d67c077353d31ad0d06f74b72dd6239a0c363564eb4b45",
+    "simulation\\results\\load_bp_dual_if_parts\\nc_fetch.v": "af7a589692d6ba736817a43f974ba4c1d9dc2ab782d1076e9cbab05bd5670977",
+    "simulation\\results\\load_bp_dual_if_parts\\classification\\proof.v": "d21b4d68bf1c6555957cc5614db56cde017a5808dd6afd40d04fc5da138d25d2",
+    "simulation\\results\\load_bp_dual_if_parts\\classification\\decode_tb.v": "33a3bcbf3f098aa784701352e519a9f513f4d01bfcede1468319ddbff7515abb",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "tools\\check_dual_if.py": "7cb065af1248570cff14c316ea62fcaf7b8e77d83193eed2d550cbe2f8a8b9c3"
+  }
+}

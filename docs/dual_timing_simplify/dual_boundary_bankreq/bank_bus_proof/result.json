@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS actual bus full state, response, four RAM enables and UART send, mode=0; arbitrary UART ready/tx/RAM read values, raw qualifiers arbitrary in default mode and MEM-proved qualifier contract in enabled mode",
+    "PASS actual bus full state, response, four RAM enables and UART send, mode=1; arbitrary UART ready/tx/RAM read values, raw qualifiers arbitrary in default mode and MEM-proved qualifier contract in enabled mode"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_bank_bus.py": "5738485c909c873af8a036039fcead01029c535bc6820a02c0a57b7b2134be61",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
+    "simulation\\results\\load_bp_dual_boundary_bankreq\\bank_bus_proof\\gold.v": "c194fff0ba17daed0b5de5f65050cda7579c00eb407ca45421408ef6a66ab355",
+    "simulation\\results\\load_bp_dual_boundary_bankreq\\nc_local_bus.v": "0203207c36df0d8d701736b406a511691ca45a733684a41f133f4151a2b2c5f1",
+    "simulation\\results\\load_bp_dual_boundary_bankreq\\bank_bus_proof\\gate.v": "dde5fc3a3c05722aca4283463df2fa086bf87421f8a4374f2b88c0b4f875aacb",
+    "simulation\\results\\load_bp_dual_boundary_bankreq\\bank_bus_proof\\miter0.v": "b975f7ad13399d8518d807c5cd18e0dc452ef04aefbc775f80ee70b3d31117ec",
+    "simulation\\results\\load_bp_dual_boundary_bankreq\\bank_bus_proof\\miter1.v": "42957202bc917bca7796f7328efd6e9579cb12c3c397755e75c983e2c17e6bec"
+  }
+}

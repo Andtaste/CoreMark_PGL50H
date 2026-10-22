@@ -1,0 +1,125 @@
+{
+  "status": "ACCEPTED_DUAL_DEVELOPMENT_BASELINE",
+  "variant": "dual_boundary_launch",
+  "user_instruction": "采纳，接下来请优化时序，目标是80MHz",
+  "recorded_date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "scope": "Accepted dual development source in simulation/results; hardware/pds single-issue reference and historical archives preserved. This accepted source still uses PLL 75MHz.",
+  "source_directory": "simulation\\results\\load_bp_dual_boundary_launch",
+  "parent_descriptor_sha256": "acc8a0f8be1dc90d67e6cda8d18fc000911cc4b25a8021ab0f7b17ec244abb01",
+  "estimated_fmax_mhz": 77.76,
+  "resources": {
+    "LUT": 11498,
+    "FF": 4495,
+    "Distributed RAM": 709,
+    "DRM": 48,
+    "APM": 4
+  },
+  "corners": {
+    "Setup Summary(Slow Corner)": {
+      "worst_slack_ns": 0.473,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Slow Corner)": {
+      "worst_slack_ns": 0.148,
+      "failing_endpoints": 0
+    },
+    "Setup Summary(Fast Corner)": {
+      "worst_slack_ns": 4.137,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Fast Corner)": {
+      "worst_slack_ns": 0.106,
+      "failing_endpoints": 0
+    }
+  },
+  "coremark_stats_cycles": 2807614,
+  "retired": 2808261,
+  "ipc": 1.000230444783364,
+  "dual": {
+    "secondary_retired": 783108,
+    "pairs_issued": 824430,
+    "groups_issued": 2087207,
+    "dependency_blocked": 0
+  },
+  "source_sha256": {
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_core.v": "2ae3a318f5474a0d2521d1f4b899b454a1ed09c2e78323a87aaeb96d62080c5f",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_memory.v": "6976717be90121614a2a2f636b2127ae7ead5857d3720b8979c402a2d1ba4735",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_operands.v": "70bc6af58318c0ec9317c1fee9370a88355c578a9ffc146ca5519d69f24fcb3b",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_local_bus.v": "5e347365a31b58dfeb424671a37744fe43478efcffd0ef28b68d59e2c2e0d9d1",
+    "simulation\\results\\load_bp_dual_boundary_launch\\nc_soc.v": "42f5746e4e31f3f6f27382dcbc3b678da54c6366085d6ceb63d11e5e5300cd61",
+    "hardware\\pds\\source\\source\\top.v": "fb25a4662df6e49c1e20d69ea78bcf76153706eddc9421e861afed0ec7a14cc9",
+    "hardware\\pds\\ipcore\\pll\\pll.idf": "3fab7962be47cf630214d3945d046fd9e6c2c11d6913c8028a3072a4a1f51f92",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp.idf": "3b953426720fc44d0a98112d8a7f1db9dd39ad6dda575674e73edb64ea4369f3",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp.v": "560b31780cc005a47f88b5f2f0a658dc4248881a99fedd9095f0161853631e92",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp_tb.v": "f7c172dfa2632a1ef4803ed94155aa8166c2717645c64c01065b9366059a6703",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "hardware\\pds\\constraints\\board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
+    "sw\\build\\boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+    "tools\\research_dual_ram_pds.py": "c5273acc997237f9471019f8d4940f3e4f0a9fe345b90e99f7e5282cb7edaad9"
+  },
+  "override_sha256": {
+    "hardware\\pds\\source\\core\\nc_core.v": "2ae3a318f5474a0d2521d1f4b899b454a1ed09c2e78323a87aaeb96d62080c5f",
+    "hardware\\pds\\source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "5e347365a31b58dfeb424671a37744fe43478efcffd0ef28b68d59e2c2e0d9d1",
+    "hardware\\pds\\source\\core\\nc_memory.v": "6976717be90121614a2a2f636b2127ae7ead5857d3720b8979c402a2d1ba4735",
+    "hardware\\pds\\source\\core\\nc_operands.v": "70bc6af58318c0ec9317c1fee9370a88355c578a9ffc146ca5519d69f24fcb3b",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\top\\nc_soc.v": "42f5746e4e31f3f6f27382dcbc3b678da54c6366085d6ceb63d11e5e5300cd61",
+    "hardware\\pds\\source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\core\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "hardware\\pds\\source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa"
+  },
+  "ip_sha256": {
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp.idf": "3b953426720fc44d0a98112d8a7f1db9dd39ad6dda575674e73edb64ea4369f3",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp.v": "560b31780cc005a47f88b5f2f0a658dc4248881a99fedd9095f0161853631e92",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp_tb.v": "f7c172dfa2632a1ef4803ed94155aa8166c2717645c64c01065b9366059a6703",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "simulation\\results\\load_bp_dual_boundary_launch\\ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "simulation\\results\\load_bp_dual_ram_logic\\boot_interleaved.hex": "69122268a9d0d546090b2731e63b366d1ffdf090ba19c6de5135986d04d8f631"
+  },
+  "evidence_sha256": {
+    "simulation\\results\\load_bp_dual_boundary_launch\\generation.json": "32c2254d184edad7cb2d7c987d46ff22c8aed5ccb66cc6e5f4c339836181733e",
+    "simulation\\results\\load_bp_dual_boundary_launch\\pds\\result.json": "2aac5411ecc8306261a6260fe14093fa02ca99fcf7569fa3197f9e155b52d7a8",
+    "simulation\\results\\load_bp_dual_boundary_launch\\pds\\report_timing\\top.rtr": "83669f227876f6e82ba89faece43547f11ac9c9d4eac63cd6073623c34265c7f",
+    "simulation\\results\\load_bp_dual_boundary_launch\\performance\\result.json": "b9f7a4b57489181dbd49db539ce7fb05afe9fb2ac6ae4124ee2573ba818a31e9",
+    "simulation\\results\\load_bp_dual_boundary_launch\\validation\\result.json": "0d080625f6e3b2c58a694f3c70274e74ab230ee59c43f40e968def38f9db63de",
+    "simulation\\results\\load_bp_dual_boundary_launch\\checks\\result.json": "a949d88ff9346f37eb344b7ba7913835289d75a77838cd3ec28fe3ca2bf10f8b",
+    "simulation\\results\\load_bp_dual_boundary_launch\\dual_checks\\result.json": "3b2f7189c2321a586567a2967049e7216673e403286a592baebe1f93bbfd9162",
+    "simulation\\results\\load_bp_dual_boundary_launch\\pair_checks\\result.json": "5422251530ba408d95deac9fc44e62118403c71415c4ad832fc6ba30a410dc2c",
+    "simulation\\results\\load_bp_dual_boundary_launch\\cancel_checks\\result.json": "628e3b287883c38c65dde0332fae243ca8e3a5e462b430bc2febe758b41043c0",
+    "simulation\\results\\load_bp_dual_boundary_launch\\timeline_checks\\result.json": "275cea7996c82fa0cb567334fdef7cf66f6ef261c711e34424e7dabbb9edf939",
+    "simulation\\results\\load_bp_dual_boundary_launch\\memory_checks\\result.json": "0f29b6de875919e37bb26808494e53ff2485e43a43d80abdc7c5e2c507f927af",
+    "simulation\\results\\load_bp_dual_boundary_launch\\address_contract\\result.json": "980bf7d5bad3c4cff7e7bef2e4c1880e691d9b21a5d80b69a49e708cbd72cd58"
+  },
+  "single_issue_reference_sha256": "f9266e85c40bf5a5feaa9d54f1ec77389d00a2feb02b4ed74573b5b1bc171d86",
+  "single_issue_sta_sha256": "047c7504f1f3967d2499de007e44faa87013cebec03c94b941682521c12794d9"
+}

@@ -93,7 +93,7 @@ MAIN_RETURN_TYPE main(void) {
 MAIN_RETURN_TYPE main(int argc, char *argv[]) {
 #endif
 	ee_u16 i,j=0,num_algorithms=0;
-	ee_s16 known_id=-1,total_errors=0;
+	ee_s16 known_id=-1,total_errors=0,crc_errors=0;
 	ee_u16 seedcrc=0;
 	CORE_TICKS total_time;
 	core_results results[MULTITHREAD];
@@ -283,17 +283,17 @@ MAIN_RETURN_TYPE main(int argc, char *argv[]) {
 		}
 	}
 	total_errors+=check_data_types();
+	crc_errors=total_errors;
+	ee_printf("CRC validation   : %s\n", crc_errors==0 ? "PASS" : "FAIL");
 	/* and report results */
 	ee_printf("CoreMark Size    : %lu\n",(ee_u32)results[0].size);
-	ee_printf("Total ticks      : %lu\n",(ee_u32)total_time);
 #if HAS_FLOAT
+	ee_printf("Total ticks      : %lu\n",(ee_u32)total_time);
 	ee_printf("Total time (secs): %f\n",time_in_secs(total_time));
 	if (time_in_secs(total_time) > 0)
 		ee_printf("Iterations/Sec   : %f\n",default_num_contexts*results[0].iterations/time_in_secs(total_time));
 #else 
-	ee_printf("Total time (secs): %d\n",time_in_secs(total_time));
-	if (time_in_secs(total_time) > 0)
-		ee_printf("Iterations/Sec   : %d\n",default_num_contexts*results[0].iterations/time_in_secs(total_time));
+	portable_print_timing(total_time, results[0].iterations);
 #endif
 	if (time_in_secs(total_time) < 10) {
 		ee_printf("ERROR! Must execute for at least 10 secs for a valid result!\n");
@@ -350,7 +350,7 @@ MAIN_RETURN_TYPE main(int argc, char *argv[]) {
 	/* And last call any target specific code for finalizing */
 	portable_fini(&(results[0].port));
 
-	return MAIN_RETURN_VAL;	
+	return crc_errors==0 ? 1 : 2;	
 }
 
 

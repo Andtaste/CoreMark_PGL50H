@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "rounds_per_simulator": 128,
+  "overlap_cycles_per_simulator": 14000,
+  "simulators": [
+    "Icarus",
+    "Verilator"
+  ],
+  "source_sha256": {
+    "hardware\\pds\\source\\core\\nc_memory.v": "e15cf3af7f619bb34cf4675137858ddbe0eb75360016d28645ecd7c87564a9d4",
+    "simulation\\tb\\memory_turnover_tb.v": "30ac7abb9a196192d1f3936b56ef423affc803bbde4333e37de7a1b30af4d756",
+    "simulation\\tb\\memory_overlap_tb.v": "87d0d1c83752dad80ca679880996999218d3611d0c353fe3ec21bb8d3474facc",
+    "tools\\check_stage_opt.py": "d3c266097b49a9e530735826e3e3bda76216d46f88d185b77ef09e5342aaf051"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS BTB banks updates=30000 hits=10538 dual_queries=29782 flushes=50 invalidations=5513",
+    "PASS balanced encoded producer identity cases=524288",
+    "ram1_tdp PASS generated A64/B32 IP initialization/bytewrites/coherence checks=36576",
+    "ram2_tdp PASS generated A64/B32 IP initialization/bytewrites/coherence checks=24288",
+    "PASS redundancy/boundary audit: encoded comparison retained; no EX/RAM bypass; registered queue credit"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_ram_equivalence.py": "4b456b3a8b41ed2a76bed5cc550158d1cdb2e558dd377bd42716cb63c6854fc8",
+    "simulation\\research\\dual_ram\\btb_banks_tb.v": "e7f70ae57d5ff0cf679a6df85e6c5ddf6d99261c81203efb2d5b186dd71ce0c1",
+    "hardware\\pds\\source\\core\\nc_btb.v": "92281dcdaac6c5481cce453cfdec7536438e393170e9319accaa0029076fc3d4",
+    "simulation\\results\\load_bp_dual_ram_logic\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_ram_logic\\nc_core.v": "2a1a0fa46366463333acdfb0cf1073e86e7192c6523e286cfe411fb7b002e1a6",
+    "simulation\\results\\load_bp_dual_ram_logic\\equivalence\\producer_encoder_tb.v": "43e184bb9b6e4c2b8d178114a76098fbb7d3a4d2186e2e87b4da2316474e83df",
+    "simulation\\research\\dual_ram\\wide_ip_tb.v": "6e9b743f3ae624b3eb01eea01ef26de02e5265f4047a8de3801a59e414b6a947",
+    "sw\\build\\boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram1_tdp\\ram1_tdp.v": "560b31780cc005a47f88b5f2f0a658dc4248881a99fedd9095f0161853631e92",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "d0e99336c38d3ab5759b93c25e679ee08e1012626fd06169da980abb30b24a6d",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram1_tdp\\ram1_tdp.idf": "3b953426720fc44d0a98112d8a7f1db9dd39ad6dda575674e73edb64ea4369f3",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "simulation\\results\\load_bp_dual_ram_logic\\ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "simulation\\results\\load_bp_dual_ram_logic\\equivalence\\wide_data_ip_tb.v": "e5eae56dde641d0724e614b518f1e024ba76dcf8b1394d51c407d31b09cd7be5",
+    "simulation\\results\\load_bp_dual_ram_logic\\nc_memory.v": "94cc7cff8c9a33e8deeb10e9f6004ffa51b46d0ae510cd1e4a387c90444741fe",
+    "simulation\\results\\load_bp_dual_ram_logic\\nc_operands.v": "eae2935e9215dc9bb3424cce2417b2407c04ab819343b4f735d392dc9afce795"
+  },
+  "external_library_sha256": {
+    "E:\\pango\\PDS_2022.2-SP1-Lite\\arch\\vendor\\pango\\verilog\\simulation\\GTP_DRM18K.v": "d8ea932d33c088ab6a459c305a60ac28017c7b0594984d33b2d367c891df951a"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "root": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core",
+  "date": "2026-10-21 20:39:46",
+  "removed_directories": 3,
+  "reclaimed_bytes": 505698481,
+  "scope": "Timing80 empty-slot follow-up only; completed Verilator obj caches. All source, images, traces, logs, results and PDS outputs preserved.",
+  "removed": [
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_preload\\performance\\obj",
+      "bytes": 168557818
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_slots\\performance\\obj",
+      "bytes": 168570272
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_slots\\validation\\obj",
+      "bytes": 168570391
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "dual_types_branch/top_pnr.adf": "f9037397cf44efe3a570f1dc1ab0f8d9a961db0d5576173a75261118514da507",
+  "dual_types_branch/top_pnr.netlist": "5dbb6eee36f53b72b59e79661881248f708a3fe9e43f9f66fc5588ee07d74fc5",
+  "dual_types_mul/top_pnr.adf": "c6aa16f456258afb41d4a6c3650805b3cfd5ecf2a1b3e73b9dee2374c16f4b10",
+  "dual_types_mul/top_pnr.netlist": "a18adb037af36aef9b50b7c3ce4037efbef6858978a3dde3ec6bf3ef5b1d79fa",
+  "dual_types_both/top_pnr.adf": "fe0289c886b4074dd28267a16ba12b4435557eaafa45e9e8bdc717f86dbdedea",
+  "dual_types_both/top_pnr.netlist": "6a87b42c8fe3d40b92775d48dbc4fde44517db964d57aa47eacc160caf240156",
+  "dual_types_compact/top_pnr.adf": "f4cd765e0682099f2146a05f384f129aa3a28e034ac6a7dbac7abc93c9861dc7",
+  "dual_types_compact/top_pnr.netlist": "9180772f48eea40c16671f3a1ebc1c05b21a99725610648d1e1c79b5815d159a",
+  "dual_types_slide/top_pnr.adf": "4bde5b81d1868fe454796ba17b4391bec7459106fec66dfabd1997871fb43213",
+  "dual_types_slide/top_pnr.netlist": "9d5215abfecb8052b706bcb858beb68de6f55ebe5266e02d9aa2c9fd7e1d4ce0",
+  "dual_types_bound/top_pnr.adf": "82e7671cafcbf8e8d3cb3204edc255eb0c2ee3b17d143a6fb5901f160d3c0e3e",
+  "dual_types_bound/top_pnr.netlist": "851152db81ed71f0848b0d1261f08310b071c59f74ea270bd0c3889c456b3d1d",
+  "dual_types_slide_bound/top_pnr.adf": "868c769fea122c7a9f949bbe50c826aa5c2b9fb309e6a5c31a80bf37488125e0",
+  "dual_types_slide_bound/top_pnr.netlist": "9307106b58b211f9b6fef20cf178d3d903fa556d6051e6be1b1e5b259633d0a3",
+  "dual_types_admit/top_pnr.adf": "24d94768ce8253745857dbdb67addf2dc016b272145444cba163f68f9e6158b1",
+  "dual_types_admit/top_pnr.netlist": "a9a371f12fc3761b27b5d7daa21da68fdb8fa60a7a4a478e11355b239313578f",
+  "dual_types_slide_admit/top_pnr.adf": "4ef9e6ae2599ea3708d890b49d50e096d10de63b8bf8a58fe2908807e1ef4cd3",
+  "dual_types_slide_admit/top_pnr.netlist": "157b27c8d0ede3524693b3771fb2216df7d5d84dcc56ada8ac1c34e4ec949019"
+}

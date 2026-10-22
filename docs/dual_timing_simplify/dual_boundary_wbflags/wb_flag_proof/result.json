@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS temporal induction: actual WB packet/flag/valid capture block, arbitrary metadata/done/reset; both forwarding enables equal original packed-metadata equations including fault suppression"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_wb_flags.py": "bc54b3a62fb004679d8b6318a873a44cf398307bd2ae265866d3d2ca813eb0b7",
+    "simulation\\results\\load_bp_dual_boundary_wbflags\\nc_core.v": "0c02fcaf541fdc62f9854cb4241c484c73ba30239ed9820b68c6f5e1ada2ea7a",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_core.v": "9cd17f8880e4435865dac511ed65f10e37308d4d3d0471d600ba01b8d31738a9",
+    "simulation\\results\\load_bp_dual_boundary_wbflags\\wb_flag_proof\\miter.v": "2e586b4fee65757ae5dd927b4ea778ffbc785e4cacf4c217986a8dd6545a658f"
+  }
+}

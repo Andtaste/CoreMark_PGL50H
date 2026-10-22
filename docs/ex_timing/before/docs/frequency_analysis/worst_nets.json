@@ -1,0 +1,86 @@
+[
+  {
+    "net": "soc/cpu/f_tag [1]",
+    "fanout": 6,
+    "delay_ns": 0.789,
+    "source": "CLMA_138_112/Q1",
+    "sink": "CLMS_130_133/Y1"
+  },
+  {
+    "net": "soc/cpu/operands/nb4 [0]",
+    "fanout": 36,
+    "delay_ns": 0.788,
+    "source": "CLMS_130_133/Y1",
+    "sink": "CLMA_154_137/Y3"
+  },
+  {
+    "net": "soc/cpu/operands/_N8531",
+    "fanout": 1,
+    "delay_ns": 0.555,
+    "source": "CLMA_154_137/Y3",
+    "sink": "CLMS_146_133/Y2"
+  },
+  {
+    "net": "soc/cpu/ex_packet [116]",
+    "fanout": 18,
+    "delay_ns": 1.156,
+    "source": "CLMS_146_133/Y2",
+    "sink": "CLMA_126_177/Y3"
+  },
+  {
+    "net": "soc/cpu/execute/_N1021",
+    "fanout": 4,
+    "delay_ns": 0.409,
+    "source": "CLMA_126_177/Y3",
+    "sink": "CLMA_130_180/Y1"
+  },
+  {
+    "net": "soc/cpu/execute/_N1087",
+    "fanout": 3,
+    "delay_ns": 0.498,
+    "source": "CLMA_130_180/Y1",
+    "sink": "CLMS_122_185/Y2"
+  },
+  {
+    "net": "soc/cpu/execute/nb5 [31]",
+    "fanout": 1,
+    "delay_ns": 0.86,
+    "source": "CLMS_122_185/Y2",
+    "sink": "CLMA_166_184/Y1"
+  },
+  {
+    "net": "soc/cpu/execute/_N7483",
+    "fanout": 1,
+    "delay_ns": 0.441,
+    "source": "CLMA_166_184/Y1",
+    "sink": "CLMS_162_193/Y2"
+  },
+  {
+    "net": "soc/cpu/execute/_N7547",
+    "fanout": 1,
+    "delay_ns": 0.433,
+    "source": "CLMS_162_193/Y2",
+    "sink": "CLMA_166_184/Y3"
+  },
+  {
+    "net": "soc/cpu/execute/N113 [31]",
+    "fanout": 1,
+    "delay_ns": 0.761,
+    "source": "CLMA_166_184/Y3",
+    "sink": "CLMA_154_196/Y3"
+  },
+  {
+    "net": "soc/cpu/execute/_N6961",
+    "fanout": 1,
+    "delay_ns": 0.815,
+    "source": "CLMA_154_196/Y3",
+    "sink": "CLMA_154_145/Y3"
+  },
+  {
+    "net": "soc/cpu/execute_packet [180]",
+    "fanout": 2,
+    "delay_ns": 0.931,
+    "source": "CLMA_154_145/Y3",
+    "sink": "CLMA_166_120/M2"
+  }
+]

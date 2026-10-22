@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS complete actual EX module sequential equivalence, ENABLE_DIV=0, arbitrary packets/controls/prediction/valid/ready/reset/clear, all outputs preserved",
+    "PASS complete actual EX module sequential equivalence, ENABLE_DIV=1, arbitrary packets/controls/prediction/valid/ready/reset/clear, all outputs preserved"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_pc_select.py": "64c96fadc046ab8cbdeb608ce972ae093a6b7766fec0259777ca4f3fee62b650",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_boundary_pcselect\\execute_equivalence\\gold.v": "f9c61f90a74a03df98961d77e59e967d5b46e1116eaef537ea1aba24eb182141",
+    "simulation\\results\\load_bp_dual_boundary_pcselect\\nc_execute.v": "edff893787251d4e607de2ffe64464e4f6cf548d3e10096cc760588503cc7319",
+    "simulation\\results\\load_bp_dual_boundary_pcselect\\execute_equivalence\\gate.v": "728fe9daf2ce862fbfc1f62dd7bdaa0d1e067f40ed164e7904f35f5f9c88b2d5",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_boundary_pcselect\\execute_equivalence\\div0.ys": "8033ceb2f5e2bbdcb3eb969b0ebdf982c5a9eb6199d8b3ce769d1592cdc2e091",
+    "simulation\\results\\load_bp_dual_boundary_pcselect\\execute_equivalence\\div1.ys": "f7907fff5f102a7df435fda7d7cb3f5979c8cfa36e08ef3b814e8a9079178284"
+  }
+}

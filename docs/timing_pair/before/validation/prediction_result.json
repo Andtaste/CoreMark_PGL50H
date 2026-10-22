@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "test": "btb_model",
+      "status": "PASS",
+      "summary": "PASS BTB model updates=20000 hits=9111 allocations=15533 invalidations=85 flushes=100"
+    },
+    {
+      "test": "prediction_core_37",
+      "status": "PASS",
+      "retirements": 1087,
+      "summary": "PASS cycles=     14249 retired=       1087 traps=          0 overlap=          2"
+    },
+    {
+      "test": "prediction_core_613",
+      "status": "PASS",
+      "retirements": 1087,
+      "summary": "PASS cycles=     14258 retired=       1087 traps=          0 overlap=          2"
+    },
+    {
+      "test": "prediction_soc",
+      "status": "PASS",
+      "retirements": 1090,
+      "summary": "PASS cycles=       2454 retired=       1090 max_retire_streak=         52"
+    }
+  ],
+  "source_sha256": {
+    "hardware\\pds\\source\\core\\nc_btb.v": "0bf5fb0a4eff9ed1afce22d66e4d5053115ea36d9911f56cb14156f357745f71",
+    "hardware\\pds\\source\\core\\nc_core.v": "cb1d728fe5a9d6189d342739b33d03e4948ab0afe9f8c4291ee517fcf1cc3d0b",
+    "hardware\\pds\\source\\core\\nc_csr.v": "fd9c56af137eb44b74fc528b71f67942e2e7aa275486a07d6593ae82ac31f116",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "hardware\\pds\\source\\core\\nc_execute.v": "dba53b27591cb9394748cef622dced45d8701219c3f5797e8adac9b41a9b7eb0",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "cc28fdab0ec5fbb13cc899e59339a0cba9852d7c52f9245d2504bf8930522953",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "hardware\\pds\\source\\core\\nc_memory.v": "33386617e32bcf3c17c45670fbab9fe462dd98a76afa8a706938f18f0c94240a",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "9cf96713578a5b776242985d62188ceb6890f1c4eb2014aff00e1c45f872ec12",
+    "hardware\\pds\\source\\core\\nc_operands.v": "aabaea1edd062d9192ab72d7279796401bb20dc8f9296eea6f74b9288db51a4c",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "e31de5896beacb4b7be8d669d17a94f566bcdbe00fcbf117a1e40945664b9bc6",
+    "hardware\\pds\\source\\core\\nc_stats.v": "adb36c79300e0107a199ee77e9c493648523e8a00c0a14c499046565f0acd85a",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "24f418c49cf4503ef34e441e05b8765ee7abd7d46a0760331d8e3c275aa0e10f",
+    "hardware\\pds\\source\\top\\nc_soc.v": "28cf17217ae88860548ec0366137be76d00ec981e698601304cf0c10ad525a00",
+    "simulation\\tests\\prediction.S": "ddbfb4c4430de1b1558a3db7542ebbea757da9a914ab1c2f651707dfbc01aac5",
+    "simulation\\tb\\btb_tb.v": "590b928fe342778084432821dbf8ecde09d8ad2524fbfd41c4ef9c3bc65dca31"
+  }
+}

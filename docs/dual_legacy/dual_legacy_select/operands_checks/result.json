@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "COVER pushes=18352 pops=17328 full=75616 insertion=875 clears=578\r\nPASS operands equivalence cycles=100000 seed=17 pushes=18352 pops=17328 full=75616 insertion_forward=875 duplicate_priority=33334 clears=578",
+    "COVER pushes=18394 pops=17387 full=75629 insertion=891 clears=578\r\nPASS operands equivalence cycles=100000 seed=91 pushes=18394 pops=17387 full=75629 insertion_forward=891 duplicate_priority=33334 clears=578",
+    "COVER pushes=18294 pops=17292 full=75703 insertion=879 clears=578\r\nPASS operands equivalence cycles=100000 seed=2026 pushes=18294 pops=17292 full=75703 insertion_forward=879 duplicate_priority=33334 clears=578"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_legacy_select.py": "88db14b7ce3da1dbfe743eef099c2115f91aada1cc3d6e909a5dcf69f0d6dcf2",
+    "simulation\\results\\load_bp_dual_legacy_return\\operands_checks\\operands_tb.v": "61cc9b1d1b9c79500f131844023f138d6c8cb2c5496d5a4fabc0d495cfd4770f",
+    "simulation\\results\\load_bp_dual_legacy_return\\operands_checks\\reference.v": "71cfaa031e1d3b20e7250693e5c9bd0883326450c1175b19a96607ee4b7b3b2e",
+    "simulation\\results\\load_bp_dual_legacy_select\\operands_checks\\reference.v": "71cfaa031e1d3b20e7250693e5c9bd0883326450c1175b19a96607ee4b7b3b2e",
+    "simulation\\results\\load_bp_dual_legacy_select\\operands_checks\\operands_tb.v": "5709ab518f52f26d9e1cb7be67f2d5b6a3927d876550b7bc474839546919e50a",
+    "simulation\\results\\load_bp_dual_legacy_select\\nc_operands.v": "a6ed0bf258ee60241118023b16aefd2a371a22ee291661cc5bf47ef2f5d31b7c"
+  }
+}

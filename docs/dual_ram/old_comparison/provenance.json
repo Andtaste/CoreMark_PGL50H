@@ -1,0 +1,11 @@
+{
+  "report_sha256": "6ab47ebc40cd313ffb9b8d4a74f21bd01c85b9de85cdf98c107b88955e869068",
+  "current_source_matches_report": {
+    "hardware/pds/source/core/ifu.v": "c2d46ed495fedc4c86254c3a8b70db3157b11e4599d87cf6d6bcf0c021459914",
+    "hardware/pds/source/core/tinyriscv_core.v": "5dcfb1b2f8b1404c13492ad45b6bcef89fb396b1c1700a264a7e7cbb683e984c",
+    "hardware/pds/source/core/gpr_reg.v": "014040cd8b8305431b53e58987dedfac77780a03a4fb090bd84f0a311caccae4",
+    "hardware/pds/source/core/idu.v": "6a33506f7dd78bec1e752958ca21ec2557e609f37a273e73c3593f8264ed3dc8"
+  },
+  "old_status": "awaiting_user_decision",
+  "limits": "Different firmware/build and iteration count; descriptive comparison, not a same-image A/B. Use window secondary_retired=78480, not whole-simulation 113212."
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS pairs",
+    "PASS cancel",
+    "PASS audit",
+    "PASS protocol",
+    "PASS mul_protocol",
+    "PASS soc",
+    "PASS uart",
+    "PASS timeline",
+    "PASS unchanged-module hash evidence reuse memory_checks",
+    "PASS unchanged-module hash evidence reuse posted_module"
+  ],
+  "actual_check_counts": {
+    "pair_checks": 6,
+    "cancel_checks": 4,
+    "audit_checks": 4,
+    "protocol": 8,
+    "mul_protocol": 4,
+    "posted_soc_final": 6,
+    "uart80": 1,
+    "timeline_checks": 4,
+    "checks": 63
+  },
+  "scope": "Integration replay on candidate RTL plus explicit exact-hash unchanged MEM test reuse; no board test",
+  "input_sha256": {
+    "tools\\run_dual_forward_checks.py": "5199e30dcf2573e9b3b50623b40993fd7442cbb39a0fbffafc14cd6cc1fad8cd",
+    "tools\\check_dual_boundary_v3.py": "d83d439ce37723f9b14988ff81142ea0425fbea909a0ed9a0558a08987cf1dbd",
+    "tools\\check_dual_joint_cancel.py": "77ec9beba7977281266f83e405163068fabc42f57fad683832d42cd801ba5044",
+    "tools\\check_dual_boundary.py": "eecde471f9fce402e4bc9e875ac9178bcecacf0ab6622c02735dece5f5424c12",
+    "tools\\check_dual_joint_reg_protocol.py": "f74cac300b609b2b4c6a40224e64dcc180308a0d587aeadb27e72e676d77288e",
+    "tools\\check_dual_joint_reg_mul_protocol.py": "1094730bf06b818d8620f2b90725fb1954f76afde13231abb8f4f418e954d9e8",
+    "tools\\check_dual_store_simple_soc.py": "113db37d41440c308c889d63c5a9f943775cb15eb8627df0b8d31c24cba8117e",
+    "tools\\check_dual_store_ack.py": "5f60af52ffa5c32a305daaf78fc91da15ea0dff8464ddef9d01e8fa2b5fce437",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+    "simulation\\results\\load_bp_dual_boundary_storeack\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+    "simulation\\results\\load_bp_dual_boundary_storeack\\memory_checks\\result.json": "1061f768c6934ac4175c4758866fb1785ed04e7e451f2f8bbc29925292a84bea",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+    "simulation\\results\\load_bp_dual_boundary_storewrite\\posted_module\\result.json": "334c32e45b9d02939de62de82058604c19599cb8ead46ea5c9d12226a370f94c",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\pair_checks\\result.json": "ec6260b95e65b82d5417b4f66f94276e7017f0e81f818aea06373492bc971770",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\cancel_checks\\result.json": "89bdfdcaa0d1718de9f7f4fd8822e3095b4c06142ea378a92451aa0921318622",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\audit_checks\\result.json": "bd29a7c8ae2c3c3293f960f6cab723492daa817815ea7444ec6ff6d3c8ef780a",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\protocol\\result.json": "3eb315a3f0fea2d171531e7e9ccd954d4c5287a8f7ab7237ee6c57be3d2ed031",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\mul_protocol\\result.json": "a3ce8bd473b9c4e8ee501ec7450bf8d4a4a0d7c4469fd2acc5cad292976d1610",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\posted_soc_final\\result.json": "e9474d6d656e706662f1e2cd5627e1efc5e301006b7dcd2f702741e403158ba1",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\uart80\\result.json": "1fe3af7d510cc1f9b67ec9bce1d86787b90c53a137615ff1768e884426c18da0",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\timeline_checks\\result.json": "998dc394b11168e76e5ba1879a33be1b2b382c96c7bd00a6de77e3caf32c954d",
+    "simulation\\results\\load_bp_dual_boundary_headlocal\\checks\\result.json": "c1c58aad620b0c8045487fbe1cf4f457304a8f31df546dadf9f42c4641368e7d"
+  }
+}

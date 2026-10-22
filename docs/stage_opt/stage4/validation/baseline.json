@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-20T14:51:48.513829+08:00",
+  "architecture": "Original five-stage RV32IM single issue; 64-entry tagged BTB with two-bit direction counters; in-order tagged forwarding and retirement; overlapped pipelined multiply with in-order completion",
+  "pds": {
+    "requested_mhz": 75.002,
+    "estimated_fmax_mhz": 86.889,
+    "all_reported_constraints_met": true,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 1.824,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.175,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 5.237,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.12,
+        "failing_endpoints": 0
+      }
+    },
+    "resources": {
+      "LUT": 6403,
+      "FF": 3444,
+      "Distributed RAM": 433,
+      "DRM": 48,
+      "APM": 4
+    },
+    "worst_paths": [
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/redirect_pc[28]/opit_0_inv_L5Q_perm/L2",
+        "slack_ns": 1.824
+      },
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/redirect_pc[15]/opit_0_inv_L5Q_perm/L4",
+        "slack_ns": 2.003
+      },
+      {
+        "start": "soc/cpu/fetch/head_inst[28]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/wb[0]/opit_0_MUX4TO1Q/S0",
+        "slack_ns": 2.013
+      },
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/redirect_pc[27]/opit_0_inv_L5Q_perm/L3",
+        "slack_ns": 2.055
+      },
+      {
+        "start": "soc/cpu/fetch/head_inst[28]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/wb[1]/opit_0_MUX4TO1Q/S0",
+        "slack_ns": 2.125
+      }
+    ]
+  },
+  "functional": {
+    "regression_cases": 14,
+    "inherited_isa_cases": 47,
+    "random_differential_retirements": 12128,
+    "throughput": {
+      "test": "soc_throughput",
+      "status": "PASS",
+      "differential_retirements": 266,
+      "summary": "PASS cycles=        287 retired=        266 max_retire_streak=        261"
+    },
+    "uart_demo": {
+      "test": "soc_demo_uart",
+      "status": "PASS",
+      "summary": "PASS cycles=     145555 retired=      87664 max_retire_streak=         14",
+      "uart": "new_core RV32IM PASS"
+    }
+  },
+  "source_sha256": {
+    "hardware/pds/constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
+    "hardware/pds/ipcore/pll/pll.idf": "3fab7962be47cf630214d3945d046fd9e6c2c11d6913c8028a3072a4a1f51f92",
+    "hardware/pds/ipcore/ram1_tdp/ram1_tdp.idf": "caf14b481361ec75e0f5422104017b6968c1c6967eb5aaa90a514dd8669c1972",
+    "hardware/pds/ipcore/ram2_tdp/ram2_tdp.idf": "bb909fe602d15ea1764134cb43d4ba58be154f497ae2159995e10a4001c8fc17",
+    "hardware/pds/new_core.tcl": "c5a57ce26c94aa00fcd8ac468df8103c25f47cb33f58bcd7ed4d129d45770b29",
+    "hardware/pds/source/core/nc_btb.v": "0bf5fb0a4eff9ed1afce22d66e4d5053115ea36d9911f56cb14156f357745f71",
+    "hardware/pds/source/core/nc_core.v": "cb1d728fe5a9d6189d342739b33d03e4948ab0afe9f8c4291ee517fcf1cc3d0b",
+    "hardware/pds/source/core/nc_csr.v": "fd9c56af137eb44b74fc528b71f67942e2e7aa275486a07d6593ae82ac31f116",
+    "hardware/pds/source/core/nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware/pds/source/core/nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "hardware/pds/source/core/nc_execute.v": "dba53b27591cb9394748cef622dced45d8701219c3f5797e8adac9b41a9b7eb0",
+    "hardware/pds/source/core/nc_fetch.v": "cc28fdab0ec5fbb13cc899e59339a0cba9852d7c52f9245d2504bf8930522953",
+    "hardware/pds/source/core/nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "hardware/pds/source/core/nc_memory.v": "567d098f72a25b2090b66bd41cff5d21b099efeaeecd0451905da19d8d24c9a8",
+    "hardware/pds/source/core/nc_mul_pipeline.v": "9cf96713578a5b776242985d62188ceb6890f1c4eb2014aff00e1c45f872ec12",
+    "hardware/pds/source/core/nc_operands.v": "aabaea1edd062d9192ab72d7279796401bb20dc8f9296eea6f74b9288db51a4c",
+    "hardware/pds/source/core/nc_regfile.v": "e31de5896beacb4b7be8d669d17a94f566bcdbe00fcbf117a1e40945664b9bc6",
+    "hardware/pds/source/core/nc_stats.v": "adb36c79300e0107a199ee77e9c493648523e8a00c0a14c499046565f0acd85a",
+    "hardware/pds/source/perips/nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "hardware/pds/source/source/top.v": "fb25a4662df6e49c1e20d69ea78bcf76153706eddc9421e861afed0ec7a14cc9",
+    "hardware/pds/source/sys_bus/nc_local_bus.v": "24f418c49cf4503ef34e441e05b8765ee7abd7d46a0760331d8e3c275aa0e10f",
+    "hardware/pds/source/top/nc_soc.v": "28cf17217ae88860548ec0366137be76d00ec981e698601304cf0c10ad525a00",
+    "sw/build/boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab"
+  },
+  "limits": [
+    "One default PDS implementation, not a guaranteed board Fmax.",
+    "No board download or bitstream generation.",
+    "External IO timing and complete CDC/signoff are not covered; unused RX/JTAG inputs are unconstrained.",
+    "Functional RAM models, not vendor timing simulation; no complete ISA/privileged certification.",
+    "Pipelined multiply; blocking iterative division; single outstanding data transaction; no nonblocking LSU."
+  ]
+}

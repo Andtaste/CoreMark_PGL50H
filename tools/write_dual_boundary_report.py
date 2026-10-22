@@ -1,0 +1,93 @@
+"""Summarize measured latency, routed timing and the controlled old CPU comparison."""
+from pathlib import Path
+import json
+ROOT=Path(__file__).resolve().parents[1]
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def main():
+ x=read(ROOT/'docs/dual_boundary/comparison.json');a=read(ROOT/'docs/accepted_dual_baseline.json');prev=read(ROOT/'docs/dual_legacy/comparison.json')['candidates'];c=x['candidates'];z=c['dual_boundary_launch'];co=x['common']['results']['performance'];cleanup=read(ROOT/'docs/dual_boundary/cleanup.json')
+ labels={'dual_boundary_slot':'统一 MEM 槽，不提前请求','dual_boundary_early':'本地 load/store 都提前','dual_boundary_read':'只提前 load＋寄存身份选择','dual_boundary_launch':'专用 AGU＋寄存写地址（最终候选）'}
+ rows=[]
+ for label,r in [('已采纳 dual_fwd_share',dict(cycles=a['coremark_stats_cycles'],ipc=a['ipc'],estimated_fmax_mhz=a['estimated_fmax_mhz'],resources=a['resources'],timing_status='PASS')),('上轮逐条 FIFO 对照',prev['dual_legacy_fifo']),('上轮整字返回＋寄存选择',prev['dual_legacy_select']),*[(labels[n],r) for n,r in c.items()]]:
+  rows.append(f"| {label} | {r['cycles']:,} | {r['ipc']:.6f} | {r['estimated_fmax_mhz']:.3f} | {'通过' if r['timing_status']=='PASS' else 'setup 失败'} | {r['resources']['LUT']} / {r['resources']['FF']} / {r['resources']['Distributed RAM']} |")
+ gain_fifo=prev['dual_legacy_fifo']['cycles']/z['cycles']-1;gain_select=prev['dual_legacy_select']['cycles']/z['cycles']-1;peak_select=(gain_select+1)*z['estimated_fmax_mhz']/prev['dual_legacy_select']['estimated_fmax_mhz']-1
+ text=f'''2026-10-21，本轮完成。**最终候选 `dual_boundary_launch`：IPC {z['ipc']:.6f}，估算 Fmax {z['estimated_fmax_mhz']:.3f} MHz，原 75 MHz 约束下四角 setup/hold 全部通过。未纳入基线。** 正式采纳描述仍是 `dual_fwd_share`，RTL、IP、固件、约束和原 STA 证据哈希均保持不变。
+
+这轮优先重建 load 请求与 EX/MEM 交接的关系，没有继续扩大第二 LSU。最终只提前本地 load，store 与 MMIO 保留寄存边界；返回仍进入已有 WB 寄存器，再供消费者使用。没有原始 RAM 返回直通 EX，也没有增加重复的 L1 返回广播。
+
+**统一性能与资源结果**
+
+固定 10 次迭代原镜像，退休指令 2,808,261，load 548,709、store 143,410、BJP 571,070，五项 CRC 全部一致；另验证固定 1 次迭代镜像。各物理候选使用相同 PLL/IP/约束和 PDS 选项，每版一次布局布线，未换 seed 或提 PLL。
+
+| 实现 | 窗口周期 | IPC | 估算 Fmax MHz | 时序 | LUT / FF / 分布 RAM |
+|---|---:|---:|---:|---|---:|
+{chr(10).join(rows)}
+
+全部为 **48 DRM、4 APM**。最终版相对逐条 FIFO 对照增加 327 LUT、74 FF，分布 RAM 不变；相对上轮整字返回选择版少 43 LUT、多 26 FF，分布 RAM 不变。最终版相对本轮 read 版少 438 LUT、FF 数不变，而原镜像两种迭代数下的 metrics、dual、multiply、predictor、joint、boundary 全字典逐项一致。地址与控制拆分没有以增加等待换频率。
+
+同频吞吐相对逐条 FIFO 对照提高 **{gain_fifo*100:.3f}%**，相对上轮整字返回选择版提高 **{gain_select*100:.3f}%**；按各自估算 Fmax×IPC，相对上轮整字返回选择版提高 **{peak_select*100:.3f}%**。相对正式采纳版，同频提高 **{z['same_clock_gain_vs_accepted_percent']:.3f}%**，估算峰值提高约 **9.117%**。实际 PLL 仍为 75 MHz，这些估算不代表已上板运行于 77.760 MHz。CoreMark/MHz 的短运行诊断值为 3.561791，不作正式分数。
+
+分布 RAM 的网表分类仍为：指令 FIFO 64、BTB 174、寄存器堆 256、EX/MEM 溢出 FIFO 215，合计 709。没有因提前 load 增加 BRAM 副本或第二乘法器。
+
+**本轮怎样调整了边界**
+
+原来的 249 位、4 深度 EX/MEM FIFO 保留排队能力，输入 credit 仍只取决于寄存的占用计数。队列为空时，EX 可在当前交接边沿直接把元数据送入统一的 MEM 寄存槽；MEM 暂时不能接受时，指令进入 FIFO，后续按序排出。ALU、load/store、乘法等组的 MEM 所有权统一，依旧顺序执行、成组退休。
+
+提前 load 在元数据交接边沿与本地同步 RAM 请求一起接受；若总线背压，请求的完全相同负载转入 MEM 保存，继续保持 valid，不能重复发出。store 的数据与写授权只来自 MEM 寄存内容，MMIO 也只从 MEM 发起。较老异常或晚到错误阻止较年轻请求，在 WB 清除前不产生年轻副作用。
+
+四个功能候选揭示了不同取舍：
+
+- `slot` 单独统一 MEM 所有权、却不提前请求，周期反而增加；它是测量对照，不能当作有效优化。
+- `early` 提前所有本地 load/store，IPC 达到 1.046345，但操作数选择到 RAM 写数据端出现 −2.420 ns 路径，75 MHz 不通过。
+- `read` 仅提前 load，store 保留寄存，并把已有五类生产者身份比较提前寄存。它不增加数据流水级，IPC 为 1.000230，但共享辅助字段及总线地址相关的控制路径仍使时序失败。
+- `launch` 将早启动地址直接取自专用 `a+imm` AGU；FIFO 中的老指令仍用其已保存地址。分支 next-PC 不再作为早启动地址经过共享辅助字段进入总线。另导出已寄存的 MEM 地址用于 store/UART 写许可及 IF 写碰撞判断，避免 EX load/分支值进入写碰撞反馈。`dwrite` 明确表示已发布的写请求，满足 `dwrite → valid`，且其寄存写地址等于该请求地址。这些合同经过整核专项观察验证。
+
+MEM ready 仍会影响空队列交接与溢出队列写入控制，这不是“所有控制链都消失”。EX 发射 credit 没有组合依赖 MEM/总线请求 ready，提前请求的地址与授权路径则作为新的真实路径进行 STA，而不是用模块名或寄存器数量判断长短。
+
+**原核对齐比较**
+
+冻结的原核来自 `tmp/dual_round50_20261019/after/source`，逐文件验证其源代码哈希。原核和新核使用同一份公共诊断镜像：只将统计停止之后的四条 7cb/7cc/7cd/7ce CSR 读取替换为置零，因为旧核心没有这些新增 CSR。三个目标使用相同补丁镜像；算法和测量窗口内指令未改。
+
+适配器明确处理原核的“两个 LSU 请求同时接受”合同，并根据各核心 IF 接口分别提供按字起点相邻两条、或按 64 位行返回的格式。底层是相同的同步行为级 word 存储服务。这是 CPU 结构对照，**不是完整旧 SoC、旧外设总线或真实 A64 跨行读硬件的性能复现**；物理时序与资源结论只来自本轮候选自己的 PDS。
+
+| 相同公共 10 次镜像 | 周期 | 退休指令 | 副槽退休 | IPC |
+|---|---:|---:|---:|---:|
+| 原 Round50 CPU | {co['targets']['old']['cycles']:,} | {co['targets']['old']['retired']:,} | {co['targets']['old']['side']:,} | {co['targets']['old']['ipc']:.6f} |
+| 新核逐条 FIFO 对照 | {co['targets']['fifo']['cycles']:,} | {co['targets']['fifo']['retired']:,} | {co['targets']['fifo']['side']:,} | {co['targets']['fifo']['ipc']:.6f} |
+| 本轮 read；launch 原平台全指标相同 | {co['targets']['read']['cycles']:,} | {co['targets']['read']['retired']:,} | {co['targets']['read']['side']:,} | {co['targets']['read']['ipc']:.6f} |
+
+两种迭代数下，三个目标的退休指令数、退休 PC 顺序滚动校验值和 CoreMark CRC 均一致。read/fifo 的公共诊断镜像窗口周期还分别等于原始未打补丁镜像的测量值，说明补丁没有改变其测量窗口。10 次的退休 PC 校验值为 `0c9ed17673d041c3`，1 次为 `188b627b1547ac45`；它是顺序滚动校验，不是无界形式证明。
+
+本轮只提前 load 方案相对原核仍多 **45,980 周期，即 1.665%**；已经不再是先前约 0.81 对 1.02 的差距。在这组相同程序/服务下，原核主槽每拍退休约 75.23%、副槽 26.45%；本轮约 {z['occupancy']['primary_percent']:.2f}% / {z['occupancy']['secondary_percent']:.2f}%。本轮副槽退休更多，但主槽等待仍略多，不能继续以副槽占用率作为唯一目标。原核包含第二 LSU、提前 store 及不同的预测/发射组织，本轮没有逐项消融，因此不将剩余 1.665% 全部归因于其中某一项。
+
+**逐拍、等待和长路径**
+
+最终版在窗口内 548,709 次主槽 load 均在 MEM 接收其元数据的边沿发出请求，其中 **361,143 次约 65.82%** 在空 FIFO 下直接与 EX 交接同拍接受；其余仍需先排队。它不是在所有 load 上都比原 FIFO 方案提前一拍。
+
+四项定向 load-use 检查的 EX 气泡分别为 **2、1、4、1**。两个用例降为一拍，一个仍为两拍，一个因队列积压在 EX 后第 3 拍才发请求，出现四拍气泡。load 返回数据在响应握手边沿进入 WB，消费者始终在 WB 捕获之后执行；不能把本轮描述成“所有 load-use 都只有一拍”。完整轨迹和 PC/请求/写回/消费边沿在各版 `timeline_checks`。
+
+最终版 EX 操作数等待 533,826 拍（19.013%），ID 阻塞 596,301 拍（21.238%）；相对逐条 FIFO 对照的 867,760 / 918,164 等旧数据比较时，应以归档中相应原始 metrics 为准。不同事件可重叠，不能相加成节省周期。最终窗口 2,807,614 周期才是整体收益依据。MEM occupied 的定义随统一槽改变，乘法 head_wait 观察点也从队首改为 MEM 槽，不能将其数值差直接解释为物理等待变化。
+
+最终版时序：slow setup **+0.473 ns**、hold **+0.148 ns**；fast setup **+4.137 ns**、hold **+0.106 ns**，全部零失败端点。最差路径从 `f1_valid` 经操作数/分支事件判断到统计采样寄存器，**12 级逻辑、3.993 ns 逻辑＋8.540 ns 布线**；下一条到寄存的 `branch_redirect`，余量 +0.655 ns。跨模块分支控制仍存在，不能宣称彻底消除了长链。
+
+定向 STA 中 RAM 写数据/使能端点最差余量 +0.857 ns，RAM 地址端点 +2.769 ns。`read` 的最差则是 `f1_valid → 分支比较/next-PC → 共享辅助字段 → 总线碰撞 → fetch/cmd_stale`，−1.006 ns。最终地址/写碰撞拆分使同周期实现从 69.740 提高到 77.760 MHz；新增地址不是一个新的流水级，也没有新增 store 数据旁路。
+
+**验证、未采纳尝试与归档**
+
+四个正式候选均通过 63 项架构回归、7 项前端/RF/异常/统计附加检查、6 项分支/乘法配对检查、4 项分支取消、4 项定向逐拍检查、4 项独立 MEM 协议检查，以及危险 lint/副槽预译码 SAT 检查。未变的五源操作数网络按精确源码哈希复用 300,000 拍独立等价证据；read/launch 的寄存匹配版另通过 8 项整核未来身份合同与 4 项副槽乘法身份检查。最终版再通过 10 项地址合同用例，检查早 load AGU 等于架构地址、已发布 store 的地址/valid 一致性。生成脚本也在独立目录重跑，全部 RTL override 哈希与测试版本相同。
+
+预检曾发现只提前 load 时“无关的 write-data/mask”随 EX→MEM 所有权变化而改变，虽然普通 RAM 无背压下 CRC 能过，但完整请求稳定性检查失败。该预检版本明确拒绝，未跑 PDS；read/launch 将 read 请求的无关数据和 mask 固定，随机背压和独立 MEM 单元测试均通过。没有以 CRC 通过掩盖协议失败。
+
+旧观察器的 MUL 类别原本针对输入包，现在改为检查真正持有的 MEM 包；逐拍检查也显式允许 spill 队列等待。Windows 日志中有 WSL/UART 二进制字节，最初后处理的默认 GBK 解码失败；只恢复解析，没有修改 RTL 或仿真日志。旧原核适配中最初未处理成组接受和非 64 位行对齐取指，以及旧核不支持统计结束后新增 CSR，失败诊断均保留，最终公共比较才计为 PASS。
+
+slot 的一次布局布线完成后，原 900 秒流程在加载 STA 数据库时超时。随后只读取相同已布线 ADF 补齐 STA，未重新布局、换 seed 或改约束；其时序失败依然保留。原固件仍把退休数大于周期当作异常，因此部分 UART IPC 字段显示 unavailable；本报告用已经独立核对的硬件窗口计数计算 IPC，未为显示改动原镜像。
+
+四版 RTL、日志、轨迹、完整角报告、资源报告、工具、同程序对照和路由数据库压缩快照保存在 `docs/dual_boundary`，机器可读结果为 `comparison.json`，逐文件 manifest 在完成后冻结。此前九份历史归档重新验证通过。未上板、未更改 Flash/游戏应用。
+
+本轮编译结束后已删除 **{cleanup['removed_directories']} 个 obj 缓存**，释放约 **{cleanup['reclaimed_bytes']/1024**3:.3f} GiB**，保留全部源代码、镜像、测试结果和布局布线证据。清理记录为 `simulation/cleanup_dual_boundary_result.json`。
+
+建议将最终 `dual_boundary_launch` 保留为下一步候选，继续处理少量排队及剩余分支控制；本轮不自动更新任何采纳描述。
+'''
+ # Use exact baseline wait strings; do not bake an older round's wait counts into this report.
+ f=read(ROOT/'simulation/results/load_bp_dual_legacy_fifo/performance/result.json')['metrics'];text=text.replace('867,760 / 918,164 等旧数据',f"{f['EX operand wait']} / {f['ID blocked cycles']} 的原始数据")
+ (ROOT/'docs/dual_boundary.md').write_text(text,encoding='utf-8');print('Wrote docs/dual_boundary.md')
+if __name__=='__main__':main()

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "module_count": 25,
+  "structural_statements": 27019,
+  "original_textual_equal": true,
+  "different_modules_before_replica_name_normalization": [],
+  "ram_replicas_checked": 128,
+  "renamed_replicas": {},
+  "canonical_sha256": "b13f8665eb9e8933de917a2a91f46c999f1bd34eebb4c852a1eb87f531ba6f38",
+  "scope": "Exact multiset equality of every structural statement in all25 modules, preserving port/parameter/wire/bit-lane expressions and duplicate counts. Only names of128 bank1 RAM32X1DP read replicas may be bijectively renamed; complete primitive parameters and connections must match.",
+  "input_sha256": {
+    "hardware\\pds82_seed_sweep\\synthesize\\top_syn.vm": "cfd75a9256f7305eb9a4747ceb2593dcbb3419b31048de62163ea568a33748ed",
+    "hardware\\pds\\synthesize\\top_syn.vm": "cfd75a9256f7305eb9a4747ceb2593dcbb3419b31048de62163ea568a33748ed",
+    "tools\\compare_clock82_netlists.py": "217c82b993a853736ec9fdcd56334a936077322f1e4e6e6080b48a7437c8237e"
+  }
+}

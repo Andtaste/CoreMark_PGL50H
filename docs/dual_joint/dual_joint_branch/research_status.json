@@ -1,0 +1,26 @@
+{
+  "status": "FUNCTIONAL_FAILED_NOT_ELIGIBLE",
+  "reason": "Fast SoC random_17 stalls after primary-branch side annulment: cancelled secondary destination remains in live producer ledger. CoreMark CRC alone passed, insufficient to qualify. Full checks subprocess timed out after240s. Debug found head PC0x838 waiting on group2/lane1 for x7 although branch group retired with side annulled.",
+  "repair": "dual_joint_fix cancels destination1[redirect_tag] on registered branch_redirect before correct-path issue. Existing ready/wait variants do not admit primary branch and are unaffected.",
+  "rtl_sha256": {
+    "hardware\\pds\\source\\core\\nc_core.v": "9319985c1a2cc90217b2963b126727c4d096a660be99369a033edc7f51f9e1b1",
+    "hardware\\pds\\source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "93ffb8a40ba6eb4bd4d0f5d0f5ad3542adedd8a6e887b4cd9868904b7e1528e1",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "hardware\\pds\\source\\core\\nc_memory.v": "d80eb2054b4b6c5410fcec8d98aac305d6149decc7f454c447898c65ea82fe4d",
+    "hardware\\pds\\source\\core\\nc_operands.v": "a2addfb8ab136ac8301dacf50833b9768082f7d13f825ff3c43ebf002cc855d0",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\top\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "hardware\\pds\\source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\core\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "hardware\\pds\\source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "5f1d614e3a3977fe431207f1e541482d3a81fd468fe8289e1f248e71d8292dba"
+  },
+  "debug_sha256": {
+    "simulation\\results\\load_bp_dual_joint_branch\\debug_scheduler\\detail.trace": "8695156f25a8d58f7a632b10b318f9228a41f65800e77c87b0cbe7c56b6fcc8d",
+    "simulation\\results\\load_bp_dual_joint_branch\\debug_scheduler\\run.log": "05c74a4afea80811c5b5b55266d62af07b3c5937787a97dad1b1d4d9f67b5507",
+    "simulation\\results\\load_bp_dual_joint_branch\\debug_scheduler\\soc_tb.v": "7b67f54d670fc272688bec2002a534d46984cf0ef3c7b88aeb54798bef5e1971",
+    "simulation\\results\\load_bp_dual_joint_branch\\debug_scheduler\\trace.txt": "8695156f25a8d58f7a632b10b318f9228a41f65800e77c87b0cbe7c56b6fcc8d",
+    "simulation\\results\\load_bp_dual_joint_branch\\debug_scheduler\\uart.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "pll": {
+    "origin": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\hardware\\pds\\ipcore\\pll\\pll.idf",
+    "origin_sha256": "27f6a018ae6cce556aee887ae7b316bbe52345095a18b20db07f2e6cf84e0e74",
+    "local": "hardware\\pds\\ipcore\\pll\\pll.idf",
+    "regenerated": true
+  },
+  "ram1_tdp": {
+    "origin": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\hardware\\pds\\ipcore\\ram1_tdp\\ram1_tdp.idf",
+    "origin_sha256": "2b24ce9e46afa7f0d5126c7285e8a095b4d419c6549e4bc95b5e2634e133fc9b",
+    "local": "hardware\\pds\\ipcore\\ram1_tdp\\ram1_tdp.idf",
+    "regenerated": true
+  },
+  "ram2_tdp": {
+    "origin": "C:\\Users\\Lenovo\\Desktop\\FPGA\\CoreMark_PGL50H-2\\hardware\\pds\\ipcore\\ram2_tdp\\ram2_tdp.idf",
+    "origin_sha256": "f7d9140f6877558f47b569d9dadc0187026cf18b45063b1b7e241d0a1e34caad",
+    "local": "hardware\\pds\\ipcore\\ram2_tdp\\ram2_tdp.idf",
+    "regenerated": true
+  }
+}

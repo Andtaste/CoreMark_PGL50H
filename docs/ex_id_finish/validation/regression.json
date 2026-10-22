@@ -1,0 +1,119 @@
+{
+  "scope": "core functional + independent RV32IM random differential, not timing signoff",
+  "results": [
+    {
+      "test": "directed",
+      "delay_seed": 37,
+      "status": "PASS",
+      "summary": "PASS cycles=      2321 retired=        203 traps=         10 overlap=          8",
+      "trap_causes": [
+        4,
+        6,
+        5,
+        7,
+        2,
+        11,
+        2,
+        2147483651,
+        2147483655,
+        2147483659
+      ]
+    },
+    {
+      "test": "directed",
+      "delay_seed": 613,
+      "status": "PASS",
+      "summary": "PASS cycles=      2378 retired=        203 traps=         10 overlap=          5",
+      "trap_causes": [
+        4,
+        6,
+        5,
+        7,
+        2,
+        11,
+        2,
+        2147483651,
+        2147483655,
+        2147483659
+      ]
+    },
+    {
+      "test": "random_17",
+      "delay_seed": 37,
+      "status": "PASS",
+      "summary": "PASS cycles=     16248 retired=       1352 traps=          0 overlap=        113",
+      "differential_retirements": 1352
+    },
+    {
+      "test": "random_17",
+      "delay_seed": 613,
+      "status": "PASS",
+      "summary": "PASS cycles=     16173 retired=       1352 traps=          0 overlap=        126",
+      "differential_retirements": 1352
+    },
+    {
+      "test": "random_91",
+      "delay_seed": 37,
+      "status": "PASS",
+      "summary": "PASS cycles=     15899 retired=       1344 traps=          0 overlap=        147",
+      "differential_retirements": 1344
+    },
+    {
+      "test": "random_91",
+      "delay_seed": 613,
+      "status": "PASS",
+      "summary": "PASS cycles=     15800 retired=       1343 traps=          0 overlap=        154",
+      "differential_retirements": 1343
+    },
+    {
+      "test": "random_2026",
+      "delay_seed": 37,
+      "status": "PASS",
+      "summary": "PASS cycles=     16142 retired=       1344 traps=          0 overlap=        132",
+      "differential_retirements": 1344
+    },
+    {
+      "test": "random_2026",
+      "delay_seed": 613,
+      "status": "PASS",
+      "summary": "PASS cycles=     16043 retired=       1344 traps=          0 overlap=        121",
+      "differential_retirements": 1344
+    },
+    {
+      "test": "soc_throughput",
+      "status": "PASS",
+      "differential_retirements": 266,
+      "summary": "PASS cycles=        287 retired=        266 max_retire_streak=        261"
+    },
+    {
+      "test": "soc_soc_faults",
+      "status": "PASS",
+      "differential_retirements": 0,
+      "summary": "PASS cycles=        615 retired=        182 max_retire_streak=          9"
+    },
+    {
+      "test": "soc_random_17",
+      "status": "PASS",
+      "differential_retirements": 1355,
+      "summary": "PASS cycles=       3990 retired=       1355 max_retire_streak=         63"
+    },
+    {
+      "test": "soc_random_91",
+      "status": "PASS",
+      "differential_retirements": 1346,
+      "summary": "PASS cycles=       4178 retired=       1346 max_retire_streak=         64"
+    },
+    {
+      "test": "soc_random_2026",
+      "status": "PASS",
+      "differential_retirements": 1348,
+      "summary": "PASS cycles=       4046 retired=       1347 max_retire_streak=         64"
+    },
+    {
+      "test": "soc_demo_uart",
+      "status": "PASS",
+      "summary": "PASS cycles=     145284 retired=      87661 max_retire_streak=        508",
+      "uart": "new_core RV32IM PASS"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "Completed isolated Verilator obj caches only; source/images/logs/STA retained",
+  "removed": [
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_storewrite\\performance\\obj",
+      "bytes": 168781415.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_storewrite\\validation\\obj",
+      "bytes": 168781455.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_storelogic\\performance\\obj",
+      "bytes": 168761696.0
+    },
+    {
+      "path": "C:\\Users\\Lenovo\\Desktop\\FPGA\\new_core\\simulation\\results\\load_bp_dual_boundary_storelogic\\validation\\obj",
+      "bytes": 168761056.0
+    }
+  ],
+  "bytes": 675085622.0
+}

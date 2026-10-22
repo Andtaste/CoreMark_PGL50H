@@ -1,0 +1,8 @@
+{
+  "trial_directory": "hardware\\pds82_repeat_p22r4",
+  "mapped_input_db": "hardware\\pds82_repeat_p22r4\\clock82_map.adf",
+  "mapped_db_sha256": "42a702c86ec4120db045c40cc55021e01df54a74bd636ceb8bc1609b801dcb68",
+  "tcl_sha256": "668cbce3cf39cc32ce55de0f30495b004fd7c6065e72287259bc73a355eeb6b2",
+  "pnr_command": "pnr -input_db_file {C:/Users/Lenovo/Desktop/FPGA/new_core/hardware/pds82_repeat_p22r4/clock82_map.adf} -gplace_seed 22 -gplace_times 1 -saved_outcome 1 -parallel 1 -groute_seed 4 -groute_times 1 -max_ctrl_chain_length 4 -optimize_multi_corner_timing -fix_hold_violation -fix_hold_violation_in_route TRUE",
+  "reason": "Independent full placement+route repeat on the same pinned mapped DB. A fresh synthesis can permute128 equivalent RF read-replica instance names and invalidate seed reproducibility."
+}

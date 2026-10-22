@@ -1,0 +1,201 @@
+{
+  "chosen": "head_and_parallel_fault_value",
+  "date": "2026-10-20T12:33:47.598834+08:00",
+  "changed_rtl": [
+    "hardware/pds/source/core/nc_execute.v",
+    "hardware/pds/source/core/nc_fetch.v"
+  ],
+  "same_boot_sha256": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+  "same_uart_bytes_both_seeds": true,
+  "stages": [
+    {
+      "name": "before",
+      "requested_mhz": 75.002,
+      "estimated_fmax_mhz": 81.9,
+      "all_reported_constraints_met": true,
+      "corners": {
+        "Setup Summary(Slow Corner)": {
+          "worst_slack_ns": 1.123,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Slow Corner)": {
+          "worst_slack_ns": 0.027,
+          "failing_endpoints": 0
+        },
+        "Setup Summary(Fast Corner)": {
+          "worst_slack_ns": 4.602,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Fast Corner)": {
+          "worst_slack_ns": 0.02,
+          "failing_endpoints": 0
+        }
+      },
+      "resources": {
+        "LUT": 5303,
+        "FF": 3197,
+        "Distributed RAM": 96,
+        "DRM": 48,
+        "APM": 4
+      },
+      "worst_paths": [
+        {
+          "start": "soc/cpu/fetch/rd[2]/opit_0_inv_L5Q_perm/CLK",
+          "end": "soc/cpu/operands/va[0][21]/opit_0_MUX4TO1Q/S0",
+          "slack_ns": 1.123
+        },
+        {
+          "start": "soc/cpu/fetch/rd[2]/opit_0_inv_L5Q_perm/CLK",
+          "end": "soc/cpu/operands/va[1][21]/opit_0_MUX4TO1Q/S0",
+          "slack_ns": 1.221
+        },
+        {
+          "start": "soc/cpu/fetch/rd[2]/opit_0_inv_L5Q_perm/CLK",
+          "end": "soc/cpu/operands/vb[0][6]/opit_0_MUX4TO1Q/CE",
+          "slack_ns": 1.332
+        },
+        {
+          "start": "soc/cpu/fetch/rd[2]/opit_0_inv_L5Q_perm/CLK",
+          "end": "soc/cpu/operands/va[1][27]/opit_0_MUX4TO1Q/S0",
+          "slack_ns": 1.333
+        },
+        {
+          "start": "soc/cpu/fetch/rd[2]/opit_0_inv_L5Q_perm/CLK",
+          "end": "soc/cpu/operands/va[0][20]/opit_0_MUX4TO1Q/S0",
+          "slack_ns": 1.438
+        }
+      ]
+    },
+    {
+      "name": "head_only",
+      "requested_mhz": 75.002,
+      "estimated_fmax_mhz": 80.854,
+      "all_reported_constraints_met": true,
+      "corners": {
+        "Setup Summary(Slow Corner)": {
+          "worst_slack_ns": 0.965,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Slow Corner)": {
+          "worst_slack_ns": 0.074,
+          "failing_endpoints": 0
+        },
+        "Setup Summary(Fast Corner)": {
+          "worst_slack_ns": 4.551,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Fast Corner)": {
+          "worst_slack_ns": 0.063,
+          "failing_endpoints": 0
+        }
+      },
+      "resources": {
+        "LUT": 5363,
+        "FF": 3262,
+        "Distributed RAM": 96,
+        "DRM": 48,
+        "APM": 4
+      },
+      "worst_paths": [
+        {
+          "start": "soc/cpu/f_tag[0]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/memory_queue/data[1][64]/opit_0/D",
+          "slack_ns": 0.965
+        },
+        {
+          "start": "soc/cpu/f_tag[0]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/memory_queue/data[1][77]/opit_0/D",
+          "slack_ns": 1.233
+        },
+        {
+          "start": "soc/cpu/f_tag[0]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/memory_queue/data[1][79]/opit_0/D",
+          "slack_ns": 1.239
+        },
+        {
+          "start": "soc/cpu/f_tag[0]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/memory_queue/data[1][58]/opit_0/D",
+          "slack_ns": 1.247
+        },
+        {
+          "start": "soc/cpu/f_tag[0]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/memory_queue/data[1][83]/opit_0/D",
+          "slack_ns": 1.255
+        }
+      ]
+    },
+    {
+      "name": "head_and_parallel_fault_value",
+      "requested_mhz": 75.002,
+      "estimated_fmax_mhz": 91.166,
+      "all_reported_constraints_met": true,
+      "corners": {
+        "Setup Summary(Slow Corner)": {
+          "worst_slack_ns": 2.364,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Slow Corner)": {
+          "worst_slack_ns": 0.183,
+          "failing_endpoints": 0
+        },
+        "Setup Summary(Fast Corner)": {
+          "worst_slack_ns": 5.487,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Fast Corner)": {
+          "worst_slack_ns": 0.124,
+          "failing_endpoints": 0
+        }
+      },
+      "resources": {
+        "LUT": 5396,
+        "FF": 3262,
+        "Distributed RAM": 96,
+        "DRM": 48,
+        "APM": 4
+      },
+      "worst_paths": [
+        {
+          "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/memory_queue/data[1][166]/opit_0/D",
+          "slack_ns": 2.364
+        },
+        {
+          "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/redirect_tag[0]/opit_0_inv/CE",
+          "slack_ns": 2.408
+        },
+        {
+          "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/redirect_tag[1]/opit_0_inv/CE",
+          "slack_ns": 2.408
+        },
+        {
+          "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/redirect_tag[2]/opit_0_inv/CE",
+          "slack_ns": 2.408
+        },
+        {
+          "start": "soc/cpu/f_tag[1]/opit_0_L5Q_perm/CLK",
+          "end": "soc/cpu/memory_queue/data[1][16]/opit_0/D",
+          "slack_ns": 2.419
+        }
+      ]
+    }
+  ],
+  "resource_delta": {
+    "LUT": 93,
+    "FF": 65,
+    "Distributed RAM": 0,
+    "DRM": 0,
+    "APM": 0
+  },
+  "fmax_change_percent": 11.313797313797291,
+  "coremark": {
+    "window_cycles": 5105558,
+    "retired": 2808261,
+    "ipc": 0.550039976041796,
+    "cycles_delta": 0
+  },
+  "scope": "Identical PLL/constraints/IP/firmware; default PDS single implementation per candidate. No board frequency measurement."
+}

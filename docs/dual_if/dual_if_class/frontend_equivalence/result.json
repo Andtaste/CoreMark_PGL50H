@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "variant": "dual_if_class",
+  "tests": [
+    "PASS frontend cycle equivalence checks=200000 consumed=37701 paired=12228 redirects=1601 high_redirect=778 faults=566"
+  ],
+  "scope": "Arbitrary response/control stimulus, including unsolicited responses; real protocol/ownership also covered by inherited frontend unit and SoC tests",
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_if_class\\frontend_equivalence\\fetch_reference.v": "3b173bed3b025896632ec39bcc27ba9ab9d77a11ca23d4f6ad8f2f344dcda081",
+    "simulation\\results\\load_bp_dual_if_class\\nc_fetch.v": "6202074dd2a7a6b7d0e5814747eee008d10384ccc815ba9dea7b7c41c5c99e05",
+    "simulation\\results\\load_bp_dual_if_class\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\research\\dual_ram\\if_class_equivalence_tb.v": "47bf5486c76b19e15bb1c59fdb4640d91ee6874ac76816e8ff54e2c7646d7bfd",
+    "simulation\\results\\load_bp_dual_ram_logic\\nc_fetch.v": "4fe5f8eb5facb620d6d67c077353d31ad0d06f74b72dd6239a0c363564eb4b45",
+    "tools\\check_dual_if_frontend.py": "132e0fd44ec5b5024ceb0ff8c63787226d976b9dd154e3d93fbc25fecedeea9f"
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "status": "IMPLEMENTED_AND_VERIFIED",
+  "user_accepted": true,
+  "date": "2026-10-20T16:34:41.655260+08:00",
+  "selected_candidate": "aux",
+  "changed_sources": [
+    "hardware/pds/source/core/nc_core.v",
+    "hardware/pds/source/core/nc_execute.v"
+  ],
+  "source_sha256": {
+    "hardware/pds/constraints/board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
+    "hardware/pds/ipcore/pll/pll.idf": "3fab7962be47cf630214d3945d046fd9e6c2c11d6913c8028a3072a4a1f51f92",
+    "hardware/pds/ipcore/ram1_tdp/ram1_tdp.idf": "caf14b481361ec75e0f5422104017b6968c1c6967eb5aaa90a514dd8669c1972",
+    "hardware/pds/ipcore/ram2_tdp/ram2_tdp.idf": "bb909fe602d15ea1764134cb43d4ba58be154f497ae2159995e10a4001c8fc17",
+    "hardware/pds/new_core.tcl": "c5a57ce26c94aa00fcd8ac468df8103c25f47cb33f58bcd7ed4d129d45770b29",
+    "hardware/pds/source/core/nc_btb.v": "92281dcdaac6c5481cce453cfdec7536438e393170e9319accaa0029076fc3d4",
+    "hardware/pds/source/core/nc_core.v": "f873654e00670aec09894559515a859881dd6e9125a485cba36e8481e713f0ad",
+    "hardware/pds/source/core/nc_csr.v": "fd9c56af137eb44b74fc528b71f67942e2e7aa275486a07d6593ae82ac31f116",
+    "hardware/pds/source/core/nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware/pds/source/core/nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "hardware/pds/source/core/nc_execute.v": "00b2ec7d2eccd9a1d2b99fd056d943fb614ec795653f6b0be91075ecca98929e",
+    "hardware/pds/source/core/nc_fetch.v": "cc28fdab0ec5fbb13cc899e59339a0cba9852d7c52f9245d2504bf8930522953",
+    "hardware/pds/source/core/nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "hardware/pds/source/core/nc_memory.v": "e15cf3af7f619bb34cf4675137858ddbe0eb75360016d28645ecd7c87564a9d4",
+    "hardware/pds/source/core/nc_mul_pipeline.v": "9cf96713578a5b776242985d62188ceb6890f1c4eb2014aff00e1c45f872ec12",
+    "hardware/pds/source/core/nc_operands.v": "aabaea1edd062d9192ab72d7279796401bb20dc8f9296eea6f74b9288db51a4c",
+    "hardware/pds/source/core/nc_regfile.v": "e31de5896beacb4b7be8d669d17a94f566bcdbe00fcbf117a1e40945664b9bc6",
+    "hardware/pds/source/core/nc_stats.v": "adb36c79300e0107a199ee77e9c493648523e8a00c0a14c499046565f0acd85a",
+    "hardware/pds/source/perips/nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "hardware/pds/source/source/top.v": "fb25a4662df6e49c1e20d69ea78bcf76153706eddc9421e861afed0ec7a14cc9",
+    "hardware/pds/source/sys_bus/nc_local_bus.v": "24f418c49cf4503ef34e441e05b8765ee7abd7d46a0760331d8e3c275aa0e10f",
+    "hardware/pds/source/top/nc_soc.v": "28cf17217ae88860548ec0366137be76d00ec981e698601304cf0c10ad525a00",
+    "sw/build/boot.hex": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab"
+  },
+  "before": {
+    "requested_mhz": 75.002,
+    "estimated_fmax_mhz": 88.889,
+    "all_reported_constraints_met": true,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 2.083,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.183,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 5.44,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.129,
+        "failing_endpoints": 0
+      }
+    },
+    "resources": {
+      "LUT": 6539,
+      "FF": 3520,
+      "Distributed RAM": 443,
+      "DRM": 48,
+      "APM": 4
+    },
+    "worst_paths": [
+      {
+        "start": "soc/cpu/operands/dep_a[1][1]/opit_0/CLK",
+        "end": "soc/cpu/memory_queue/data_38/ram16x1d/WD",
+        "slack_ns": 2.083
+      },
+      {
+        "start": "soc/cpu/destination[6][3]/opit_0_inv/CLK",
+        "end": "soc/cpu/operands/wb[0]/opit_0_MUX4TO1Q/S0",
+        "slack_ns": 2.156
+      },
+      {
+        "start": "soc/cpu/destination[6][3]/opit_0_inv/CLK",
+        "end": "soc/cpu/operands/vb[0][18]/opit_0_MUX4TO1Q/I1",
+        "slack_ns": 2.194
+      },
+      {
+        "start": "soc/cpu/destination[6][3]/opit_0_inv/CLK",
+        "end": "soc/cpu/operands/wb[1]/opit_0_MUX4TO1Q/S0",
+        "slack_ns": 2.206
+      },
+      {
+        "start": "soc/cpu/multiply/forward_tag[0]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/memory_queue/data_67/ram16x1d/WD",
+        "slack_ns": 2.236
+      }
+    ]
+  },
+  "after": {
+    "requested_mhz": 75.002,
+    "estimated_fmax_mhz": 89.638,
+    "all_reported_constraints_met": true,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 2.177,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.149,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 5.432,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.108,
+        "failing_endpoints": 0
+      }
+    },
+    "resources": {
+      "LUT": 6461,
+      "FF": 3520,
+      "Distributed RAM": 443,
+      "DRM": 48,
+      "APM": 4
+    },
+    "worst_paths": [
+      {
+        "start": "soc/cpu/operands/dep_b[0][1]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/memory_queue/data_68/ram16x1d/WD",
+        "slack_ns": 2.177
+      },
+      {
+        "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 2.189
+      },
+      {
+        "start": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[7].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CLKB[0]",
+        "end": "soc/cpu/wb_q[177]/opit_0_L5Q_perm/L4",
+        "slack_ns": 2.267
+      },
+      {
+        "start": "soc/cpu/operands/dep_a[0][1]/opit_0_MUX8TO1Q/CLK",
+        "end": "soc/cpu/redirect/opit_0_inv_L5Q_perm/L4",
+        "slack_ns": 2.283
+      },
+      {
+        "start": "soc/cpu/operands/dep_b[0][1]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/memory_queue/data_61/ram16x1d/WD",
+        "slack_ns": 2.328
+      }
+    ]
+  },
+  "changes": {
+    "estimated_fmax_percent": 0.842623946720078,
+    "resources": {
+      "LUT": -78,
+      "FF": 0,
+      "Distributed RAM": 0,
+      "DRM": 0,
+      "APM": 0
+    }
+  },
+  "candidates": {
+    "aux": {
+      "pds": {
+        "estimated_fmax_mhz": 89.638,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": 2.177,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.149,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 5.432,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.108,
+            "failing_endpoints": 0
+          }
+        },
+        "resources": {
+          "LUT": 6461,
+          "FF": 3520,
+          "Distributed RAM": 443,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "cycles": 3605011,
+      "status": "RETAINED"
+    },
+    "capture": {
+      "pds": {
+        "estimated_fmax_mhz": 86.941,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": 1.831,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.16,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 5.215,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.114,
+            "failing_endpoints": 0
+          }
+        },
+        "resources": {
+          "LUT": 6384,
+          "FF": 3520,
+          "Distributed RAM": 443,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "cycles": 3605011,
+      "status": "NOT_RETAINED"
+    },
+    "head": {
+      "pds": {
+        "estimated_fmax_mhz": 85.69,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": 1.663,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.036,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 5.177,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.027,
+            "failing_endpoints": 0
+          }
+        },
+        "resources": {
+          "LUT": 6436,
+          "FF": 3520,
+          "Distributed RAM": 443,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "cycles": 3605011,
+      "status": "NOT_RETAINED"
+    }
+  },
+  "coremark_metrics_unchanged": true,
+  "coremark": {
+    "Configured CPU Hz": "75000000",
+    "Software build": "Oct 20 2026 11:13:13",
+    "Report format": "3 (integer fixed point)",
+    "Stats ABI signature": "0x4e430004",
+    "CRC validation": "PASS",
+    "CoreMark Size": "666",
+    "Total ticks": "3604972",
+    "Total time (secs)": "0.048066",
+    "Iterations/Sec": "208.045998",
+    "CoreMark/MHz": "2.773946",
+    "Score status": "short run; diagnostic only",
+    "Iterations": "10",
+    "Compiler version": "GCC15.2.0",
+    "Compiler flags": "-O2 -fno-common -funroll-loops -finline-functions --param=max-inline-insns-auto=20 -falign-functions=4 -falign-jumps=4 -falign-loops=4 -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow -ffunction-sections -fdata-sections -fno-builtin-printf -fno-builtin-malloc -msmall-data-limit=0 -mno-relax",
+    "Memory location": "STATIC",
+    "seedcrc": "0xe9f5",
+    "[0]crclist": "0xe714",
+    "[0]crcmatrix": "0x1fd7",
+    "[0]crcstate": "0x8e3a",
+    "[0]crcfinal": "0xfcaf",
+    "Benchmark cycles64": "3604972",
+    "Stats window cycles": "3605011",
+    "Retired instructions": "2808261",
+    "IPC": "0.778",
+    "CPI": "1.283",
+    "Counter bounds": "PASS (retired <= cycles)",
+    "Retired loads": "548709",
+    "Retired stores": "143410",
+    "EX operand wait": "566646 (15.718%)",
+    "ID blocked cycles": "624189 (17.314%)",
+    "IF request wait": "0 (0.000%)",
+    "IF queue empty": "115040 (3.191%)",
+    "MEM occupied cycles": "71640 (1.987%)",
+    "Mul/div stall cycles": "0 (0.000%)",
+    "BJP redirects": "57520",
+    "BJP instructions": "571070",
+    "BJP redirect rate %": "10.072",
+    "Stats overflow mask": "0x0000",
+    "No BTB": "redirect rate = nonsequential EX branch/jump events / retired BJP."
+  },
+  "predictor_unchanged": true,
+  "multiply_unchanged": true,
+  "image_sha256": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
+  "limits": [
+    "Same approximately 75 MHz PLL; frequency is a PDS estimate. No bitstream or board run.",
+    "No pipeline stage, cycle, RAM bypass, ready cascade or early memory request added.",
+    "Successful branch auxiliary payload may differ; MEM exposes it as tval only on an exception."
+  ],
+  "accepted_at": "2026-10-20T16:49:03.279211+08:00"
+}

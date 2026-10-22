@@ -1,0 +1,272 @@
+[
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+    "slack_ns": 1.751,
+    "logic_ns": 3.526,
+    "route_ns": 7.797,
+    "logic_levels": 10,
+    "max_data_fanout": 212
+  },
+  {
+    "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L4",
+    "slack_ns": 1.821,
+    "logic_ns": 3.971,
+    "route_ns": 7.27,
+    "logic_levels": 15,
+    "max_data_fanout": 32
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[23]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/vb[1][25]/opit_0_L5Q_perm/L3",
+    "slack_ns": 1.884,
+    "logic_ns": 3.796,
+    "route_ns": 7.072,
+    "logic_levels": 10,
+    "max_data_fanout": 132
+  },
+  {
+    "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/memory_queue/data_239/ram16x1d/WD",
+    "slack_ns": 1.918,
+    "logic_ns": 3.971,
+    "route_ns": 7.483,
+    "logic_levels": 15,
+    "max_data_fanout": 32
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[15]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/va[1][27]/opit_0_L5Q_perm/L4",
+    "slack_ns": 1.946,
+    "logic_ns": 3.14,
+    "route_ns": 7.941,
+    "logic_levels": 9,
+    "max_data_fanout": 86
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[2].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+    "slack_ns": 1.977,
+    "logic_ns": 3.526,
+    "route_ns": 7.571,
+    "logic_levels": 10,
+    "max_data_fanout": 212
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[23]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/vb[1][2]/opit_0_L5Q_perm/L4",
+    "slack_ns": 1.982,
+    "logic_ns": 3.747,
+    "route_ns": 7.279,
+    "logic_levels": 9,
+    "max_data_fanout": 132
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[23]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/vb[1][27]/opit_0_L5Q_perm/L3",
+    "slack_ns": 1.986,
+    "logic_ns": 3.367,
+    "route_ns": 7.379,
+    "logic_levels": 8,
+    "max_data_fanout": 132
+  },
+  {
+    "start": "soc/cpu/wb_q[15]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/memory_queue/data_53/ram16x1d/WD",
+    "slack_ns": 1.994,
+    "logic_ns": 3.922,
+    "route_ns": 7.456,
+    "logic_levels": 11,
+    "max_data_fanout": 145
+  },
+  {
+    "start": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CLKA[0]",
+    "end": "soc/cpu/fetch/head_parts[13]/opit_0_L6Q_perm/A1",
+    "slack_ns": 2.04,
+    "logic_ns": 5.128,
+    "route_ns": 5.596,
+    "logic_levels": 9,
+    "max_data_fanout": 5
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[23]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/vb[0][27]/opit_0_L5Q_perm/L0",
+    "slack_ns": 2.043,
+    "logic_ns": 3.367,
+    "route_ns": 7.522,
+    "logic_levels": 8,
+    "max_data_fanout": 132
+  },
+  {
+    "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/execute/md/state_reg[2]/opit_0_inv_L5Q_perm/CE",
+    "slack_ns": 2.068,
+    "logic_ns": 2.563,
+    "route_ns": 7.899,
+    "logic_levels": 10,
+    "max_data_fanout": 284
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/fetch/next_pc[30]/opit_0_inv_L5Q_perm/L4",
+    "slack_ns": 2.07,
+    "logic_ns": 4.36,
+    "route_ns": 6.699,
+    "logic_levels": 14,
+    "max_data_fanout": 212
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[15]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/va[0][27]/opit_0_L5Q_perm/L4",
+    "slack_ns": 2.077,
+    "logic_ns": 3.14,
+    "route_ns": 7.807,
+    "logic_levels": 9,
+    "max_data_fanout": 86
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/fetch/next_pc[19]/opit_0_inv_L5Q_perm/L4",
+    "slack_ns": 2.08,
+    "logic_ns": 4.32,
+    "route_ns": 6.627,
+    "logic_levels": 12,
+    "max_data_fanout": 212
+  },
+  {
+    "start": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CLKA[0]",
+    "end": "soc/cpu/fetch/flags_2[5]/opit_0/D",
+    "slack_ns": 2.085,
+    "logic_ns": 5.201,
+    "route_ns": 5.641,
+    "logic_levels": 9,
+    "max_data_fanout": 5
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[15]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/va[1][29]/opit_0_L5Q/L4",
+    "slack_ns": 2.085,
+    "logic_ns": 2.965,
+    "route_ns": 7.958,
+    "logic_levels": 9,
+    "max_data_fanout": 86
+  },
+  {
+    "start": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CLKA[0]",
+    "end": "soc/cpu/fetch/head_parts[5]/opit_0_L6Q_perm/A0",
+    "slack_ns": 2.098,
+    "logic_ns": 5.201,
+    "route_ns": 5.49,
+    "logic_levels": 9,
+    "max_data_fanout": 5
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/fetch/next_pc[22]/opit_0_inv_L5Q_perm/L3",
+    "slack_ns": 2.104,
+    "logic_ns": 4.128,
+    "route_ns": 6.641,
+    "logic_levels": 12,
+    "max_data_fanout": 212
+  },
+  {
+    "start": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CLKA[0]",
+    "end": "soc/cpu/fetch/flags_1[5]/opit_0/D",
+    "slack_ns": 2.107,
+    "logic_ns": 5.21,
+    "route_ns": 5.601,
+    "logic_levels": 9,
+    "max_data_fanout": 5
+  },
+  {
+    "start": "soc/cpu/wb_q[15]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/memory_queue/data_65/ram16x1d/WD",
+    "slack_ns": 2.108,
+    "logic_ns": 3.988,
+    "route_ns": 7.269,
+    "logic_levels": 11,
+    "max_data_fanout": 145
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/memory/held[138]/opit_0/CE",
+    "slack_ns": 2.126,
+    "logic_ns": 3.715,
+    "route_ns": 6.577,
+    "logic_levels": 12,
+    "max_data_fanout": 232
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/memory/held[186]/opit_0/CE",
+    "slack_ns": 2.126,
+    "logic_ns": 3.715,
+    "route_ns": 6.577,
+    "logic_levels": 12,
+    "max_data_fanout": 232
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/memory/held[267]/opit_0/CE",
+    "slack_ns": 2.126,
+    "logic_ns": 3.715,
+    "route_ns": 6.577,
+    "logic_levels": 12,
+    "max_data_fanout": 232
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/memory/held[274]/opit_0/CE",
+    "slack_ns": 2.126,
+    "logic_ns": 3.715,
+    "route_ns": 6.577,
+    "logic_levels": 12,
+    "max_data_fanout": 232
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[23]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/vb[0][15]/opit_0_L5Q_perm/L2",
+    "slack_ns": 2.129,
+    "logic_ns": 3.688,
+    "route_ns": 6.924,
+    "logic_levels": 10,
+    "max_data_fanout": 132
+  },
+  {
+    "start": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CLKA[0]",
+    "end": "soc/cpu/fetch/flags_3[5]/opit_0/D",
+    "slack_ns": 2.133,
+    "logic_ns": 5.21,
+    "route_ns": 5.575,
+    "logic_levels": 9,
+    "max_data_fanout": 5
+  },
+  {
+    "start": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CLKA[0]",
+    "end": "soc/cpu/fetch/flags_2[13]/opit_0/D",
+    "slack_ns": 2.153,
+    "logic_ns": 5.128,
+    "route_ns": 5.646,
+    "logic_levels": 9,
+    "max_data_fanout": 5
+  },
+  {
+    "start": "soc/cpu/memory_queue/rd[1]/opit_0_inv_L5Q_perm/CLK",
+    "end": "soc/cpu/fetch/next_pc[24]/opit_0_inv_L5Q_perm/L4",
+    "slack_ns": 2.153,
+    "logic_ns": 4.188,
+    "route_ns": 6.789,
+    "logic_levels": 12,
+    "max_data_fanout": 212
+  },
+  {
+    "start": "soc/cpu/fetch/head_inst[23]/opit_0_L5Q_perm/CLK",
+    "end": "soc/cpu/operands/vb[0][2]/opit_0_L5Q_perm/L4",
+    "slack_ns": 2.16,
+    "logic_ns": 3.747,
+    "route_ns": 7.101,
+    "logic_levels": 9,
+    "max_data_fanout": 132
+  }
+]

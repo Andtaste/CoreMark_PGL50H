@@ -1,0 +1,4567 @@
+{
+  "status": "CLOCK82_VERIFIED_AND_PROMOTED",
+  "trial_count": 72,
+  "placement_trials": 46,
+  "fixed_placement_route_trials": 26,
+  "passing_cases": [
+    "place_6_route_18",
+    "place_22_route_4"
+  ],
+  "selected_config": {
+    "status": "PASS",
+    "requested_mhz": 82.001,
+    "requested_period_ns": 12.195,
+    "estimated_fmax_mhz": 82.271,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 0.04,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.166,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 3.486,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.117,
+        "failing_endpoints": 0
+      }
+    },
+    "sta_sha256": "c87de3269435efad086f0bc66104cacfca0e1826bd6ef2bd0673f161cd49bcc9",
+    "critical_paths": [
+      {
+        "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+        "end": "soc/cpu/memory/held_side[30]/opit_0_L5Q_perm/L2",
+        "slack_ns": 0.04,
+        "logic_ns": 3.991,
+        "route_ns": 7.59,
+        "logic_levels": 12
+      },
+      {
+        "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 0.125,
+        "logic_ns": 4.036,
+        "route_ns": 7.896,
+        "logic_levels": 12
+      },
+      {
+        "start": "soc/cpu/destination1[6][3]/opit_0_inv_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/va[0][15]/opit_0_L5Q_perm/L4",
+        "slack_ns": 0.127,
+        "logic_ns": 3.855,
+        "route_ns": 7.907,
+        "logic_levels": 10
+      }
+    ],
+    "gplace_seed": 22,
+    "groute_seed": 4,
+    "directory": "hardware\\pds82_route22\\place_route\\seed_4",
+    "routed_sha256": "fda20b409b096d1de0b37f9a57ebe6abcd23dcf53d1512da16e2b2a6f5f8ad16",
+    "pnr_options": "",
+    "routed_resources": {
+      "LUT": 11029,
+      "FF": 4476,
+      "Distributed RAM": 709,
+      "DRM": 48,
+      "APM": 4
+    },
+    "case": "place_22_route_4"
+  },
+  "closest_case": "p22_r4",
+  "closest_setup_ns": 0.04,
+  "configured_main_hz": 82000000,
+  "trial_hz": 82000000,
+  "resources": {
+    "LUT": 11013,
+    "FF": 4476,
+    "Distributed RAM": 709,
+    "DRM": 48,
+    "APM": 4
+  },
+  "ipc": 1.0405822717268058,
+  "cycles": 2698740,
+  "retired": 2808261,
+  "coremark_per_mhz": 3.705483708285054,
+  "clock82_diagnostic_projection": 303.8496640793744,
+  "seed_results": {
+    "status": "COMPLETE",
+    "planned": 46,
+    "completed": 46,
+    "passing": [],
+    "best_seed": null,
+    "seeds": {
+      "0": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 76.905,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.808,
+            "failing_endpoints": 28
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.171,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.987,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.103,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "3c892c306252a6a8c7affa5f345728e2524f1639d5e4f61441c6879bd0e1c7a6",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.808,
+            "logic_ns": 4.036,
+            "route_ns": 8.829,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.721,
+            "logic_ns": 4.036,
+            "route_ns": 8.742,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.604,
+            "logic_ns": 4.036,
+            "route_ns": 8.625,
+            "logic_levels": 14
+          }
+        ],
+        "routed_sha256": "e7ade41699a724710ec3ca5de439abdab0524fcc45e9c9692a53140dec1bd3f0",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_0",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11041,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "1": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.083,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.292,
+            "failing_endpoints": 7
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.153,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.264,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.113,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "e68fe6de9690d596ee25ccd511aba40fca7a66914a0bf38478de816efb9d6066",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/fetch/head_0[28]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_1[18]/opit_0_L5Q_perm/L1",
+            "slack_ns": -0.292,
+            "logic_ns": 4.059,
+            "route_ns": 8.011,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[28]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_0[17]/opit_0_MUX4TO1Q/S1",
+            "slack_ns": -0.154,
+            "logic_ns": 3.889,
+            "route_ns": 8.154,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[28]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_0[18]/opit_0_MUX4TO1Q/S1",
+            "slack_ns": -0.148,
+            "logic_ns": 3.889,
+            "route_ns": 8.148,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "274b781a36185d492bfb85d8e1e7cc3508ee8e4449ca59587ca2256f5e4c679a",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_1",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "2": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.764,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.342,
+            "failing_endpoints": 31
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.15,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.288,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.109,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "566ea3b4cccc4b487e72b4bc5df321b97c2295b3a70fd4cd1d350c07157d642e",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/fetch/head_0[2]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/side[0][110]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.342,
+            "logic_ns": 2.968,
+            "route_ns": 9.244,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/operands/sw_b[1]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/memory/held[169]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.326,
+            "logic_ns": 3.493,
+            "route_ns": 8.719,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[2]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/side[1][110]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.325,
+            "logic_ns": 2.968,
+            "route_ns": 9.227,
+            "logic_levels": 10
+          }
+        ],
+        "routed_sha256": "d9dd1cf7f3146323abfe50336921f13f32ef5fe40717915390823a7c3824cb37",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_2",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11059,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "3": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.11,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.134,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.147,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.408,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.105,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "40fee1e776443a652c20c75bd4d75e6f1a493c07d1d5f4d2ec899833d17f71c1",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_data[24]/opit_0_L6Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.134,
+            "logic_ns": 3.496,
+            "route_ns": 8.574,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/f1_data[24]/opit_0_L6Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.065,
+            "logic_ns": 3.491,
+            "route_ns": 8.631,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/f1_data[24]/opit_0_L6Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.04,
+            "logic_ns": 3.496,
+            "route_ns": 8.4,
+            "logic_levels": 9
+          }
+        ],
+        "routed_sha256": "b922f3c9424bf79e6da9ec44301e86318cf1d24fb6ab367c1180517509a36e30",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_3",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11038,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "4": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.618,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.365,
+            "failing_endpoints": 8
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.159,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.151,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.109,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "3d1beb014263d8757a0d834da47c0027193ba8f88d0e391056c91f1ead94f615",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[6]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.365,
+            "logic_ns": 4.538,
+            "route_ns": 7.43,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/f1_data[10]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.339,
+            "logic_ns": 4.344,
+            "route_ns": 7.902,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/mmio_data[19]/opit_0_inv_L5Q/L4",
+            "slack_ns": -0.052,
+            "logic_ns": 4.215,
+            "route_ns": 7.705,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "4f0967fc2827a76de808a86fb3e1a35f52fb17862fb7580cfe4c398a98361622",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_4",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11030,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "5": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.631,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.363,
+            "failing_endpoints": 15
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.167,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.292,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.117,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "d7c915ecd03b058db77af4835cf36eb765b76f3317eb30c237cf9098e1c985a8",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[7].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.363,
+            "logic_ns": 3.553,
+            "route_ns": 8.746,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[2].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.342,
+            "logic_ns": 3.553,
+            "route_ns": 8.725,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[4].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.303,
+            "logic_ns": 3.553,
+            "route_ns": 8.686,
+            "logic_levels": 14
+          }
+        ],
+        "routed_sha256": "5cff4d4be81eb8897a7b29608a310547d7c9711f347117c3e5a4c2c135f20263",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_5",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11054,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "6": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.793,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.031,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.059,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.527,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.037,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "cf8c996f5fab62ba0342926f38aa5d78cc59ff00becac602691368479e67d92d",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.031,
+            "logic_ns": 3.712,
+            "route_ns": 8.226,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[24]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/vb[0][6]/opit_0_L5Q_perm/L3",
+            "slack_ns": 0.019,
+            "logic_ns": 3.618,
+            "route_ns": 7.956,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[24]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_1[90]/opit_0_L5Q_perm/L3",
+            "slack_ns": 0.071,
+            "logic_ns": 3.409,
+            "route_ns": 8.114,
+            "logic_levels": 10
+          }
+        ],
+        "routed_sha256": "2b3be636ac6e60f50a6c0620517a3b6d956c1c3c6a2c8339152d6457fc16d151",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_6",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11034,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "7": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.05,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.143,
+            "failing_endpoints": 17
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.154,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.446,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "8a970a8394e3baef7db1c085f7412a3c6f64e2e9b6eabe8c31dff6cde812aa46",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[6].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.143,
+            "logic_ns": 3.043,
+            "route_ns": 9.036,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[113]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.115,
+            "logic_ns": 3.381,
+            "route_ns": 8.63,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[169]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.096,
+            "logic_ns": 3.444,
+            "route_ns": 8.522,
+            "logic_levels": 10
+          }
+        ],
+        "routed_sha256": "df46bf04705fb68340b25a6916c2cf09df02098a188ec2307dce1b9c10123b71",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_7",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11040,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "8": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.777,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.499,
+            "failing_endpoints": 7
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.152,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.175,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "72898bda7893c4f5f24a5621ab60eddc59832b6cef1d6b438f89bfa69f951ade",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[113]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.499,
+            "logic_ns": 3.68,
+            "route_ns": 8.69,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[177]/opit_0_L5Q/L4",
+            "slack_ns": -0.215,
+            "logic_ns": 3.68,
+            "route_ns": 8.405,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/f1_data[10]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.2,
+            "logic_ns": 3.36,
+            "route_ns": 8.776,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "8cbefd5ad8533f8fb9f972ae87f152514f708b05abfeb98099e0c021ed5d9629",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_8",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "9": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.223,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.589,
+            "failing_endpoints": 62
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.153,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.109,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.109,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "c1bdc69e866c01c76b905ce4fad9e4d1f1e0c1e40b055f5cd80630d3130c81c5",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sw_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[7].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.589,
+            "logic_ns": 3.639,
+            "route_ns": 8.904,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/operands/sw_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[1].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.483,
+            "logic_ns": 3.639,
+            "route_ns": 8.78,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/operands/sw_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/memory/held[88]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.422,
+            "logic_ns": 3.036,
+            "route_ns": 9.257,
+            "logic_levels": 9
+          }
+        ],
+        "routed_sha256": "7a01cc287200a2f01d1f47d4918d323fe0ab451b2dbce08efc5078485aff0635",
+        "directory": "hardware\\pds82_seed_sweep\\place_route\\seed_9",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11023,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "10": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.214,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.429,
+            "failing_endpoints": 65
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.028,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.212,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.024,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "fc22add222146059a3cbc516725ff471dccc136fccdb6fec63ebda3e3f20ded6",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.429,
+            "logic_ns": 3.738,
+            "route_ns": 8.627,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.395,
+            "logic_ns": 3.738,
+            "route_ns": 8.593,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q/CLK",
+            "end": "soc/cpu/redirect_pc[30]/opit_0_inv_L5Q_perm/L1",
+            "slack_ns": -0.358,
+            "logic_ns": 3.983,
+            "route_ns": 8.146,
+            "logic_levels": 13
+          }
+        ],
+        "routed_sha256": "cee7dcc44b4c37ae7073d20c13ea70e25e12bd404fc39500af85524522ebbdf7",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_10",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11048,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "11": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.367,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.095,
+            "failing_endpoints": 4
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.068,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.487,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.03,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "84ac42e2ddf8721e7c08bce64c7ab452e508753f018e43f41e3a6fc5c4095948",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/fetch/head_0[21]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/vb[1][16]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.095,
+            "logic_ns": 3.619,
+            "route_ns": 8.069,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[23]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/vb[0][30]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.06,
+            "logic_ns": 2.702,
+            "route_ns": 9.228,
+            "logic_levels": 8
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[21]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/vb[1][24]/opit_0_MUX4TO1Q/I3",
+            "slack_ns": -0.015,
+            "logic_ns": 3.633,
+            "route_ns": 8.179,
+            "logic_levels": 9
+          }
+        ],
+        "routed_sha256": "8711ecc539ad006a1e986494185a75e4332ece8e206b02fb7005a4984ea8f2b7",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_11",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11039,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "12": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.26,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.583,
+            "failing_endpoints": 29
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.152,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.903,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.108,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "ad94b50f7ac57574a95a187d65d91b5333604a96c2231fb82be19c6f5d5f6b47",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.583,
+            "logic_ns": 5.277,
+            "route_ns": 7.242,
+            "logic_levels": 16
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.323,
+            "logic_ns": 5.277,
+            "route_ns": 7.0,
+            "logic_levels": 16
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.239,
+            "logic_ns": 5.277,
+            "route_ns": 6.916,
+            "logic_levels": 16
+          }
+        ],
+        "routed_sha256": "ff0ed39419c6699e8564d1de80af454eaed250996cdf67a3304a5e58821b67f3",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_12",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11028,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "13": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.675,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.356,
+            "failing_endpoints": 21
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.213,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.168,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.142,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "8fb6773c8a35325358b98b135921cea17d4c3f3b1264271f3c4bbaee84a57268",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[30]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.356,
+            "logic_ns": 4.324,
+            "route_ns": 7.92,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[27]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.353,
+            "logic_ns": 4.021,
+            "route_ns": 7.953,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.307,
+            "logic_ns": 3.777,
+            "route_ns": 8.466,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "a5b53ba2f689952cf40297addc73605b4bdf3378a401a653fa310bd25b26d088",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_13",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11032,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "14": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 74.828,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -1.169,
+            "failing_endpoints": 77
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": -0.1,
+            "failing_endpoints": 1
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.687,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": -0.069,
+            "failing_endpoints": 1
+          }
+        },
+        "sta_sha256": "96406198c85f2aa25dc8ecd3185f2a73179f9c6461315ecad1788414a2da6758",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[28]/opit_0_L5Q/L4",
+            "slack_ns": -1.169,
+            "logic_ns": 4.02,
+            "route_ns": 9.037,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[9]/opit_0_L5Q_perm/L1",
+            "slack_ns": -0.882,
+            "logic_ns": 3.421,
+            "route_ns": 9.257,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.848,
+            "logic_ns": 4.688,
+            "route_ns": 8.114,
+            "logic_levels": 14
+          }
+        ],
+        "routed_sha256": "c8abfabaaf12c874d727d3b9d139cca354ba481f9af6ab90e647ef706320b996",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_14",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11043,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "15": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.769,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.186,
+            "failing_endpoints": 3
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.173,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.294,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.121,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "7161bc5f5de72dfb61a217727a79dcf7c7c5812c486391f48cf3553a92a22b6c",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[14]/opit_0/CLK",
+            "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.186,
+            "logic_ns": 3.974,
+            "route_ns": 8.098,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[1].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.053,
+            "logic_ns": 4.065,
+            "route_ns": 7.924,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/wb_q[14]/opit_0/CLK",
+            "end": "soc/bus/derror/opit_0_inv_L5Q_perm/L0",
+            "slack_ns": -0.026,
+            "logic_ns": 4.142,
+            "route_ns": 7.678,
+            "logic_levels": 9
+          }
+        ],
+        "routed_sha256": "249b038fd8858206053387de7bf60f88a01c5af192903b1ef73c0d63cc4c53d2",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_15",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11022,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "16": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.064,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.615,
+            "failing_endpoints": 75
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.152,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.15,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.108,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "0a8f9b117d3b53e8d9c11e79dcfe779004d3646626c5053e0a535b20d98f4ed3",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/redirect_pc[2]/opit_0_inv_L5Q/L0",
+            "slack_ns": -0.615,
+            "logic_ns": 4.212,
+            "route_ns": 8.216,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.554,
+            "logic_ns": 3.863,
+            "route_ns": 8.627,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.539,
+            "logic_ns": 3.863,
+            "route_ns": 8.612,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "f07ee578b64bfe8e96a7e24c25bb7eed1b3341c4b6dfc5ba639a160ae71816fe",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_16",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11040,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "17": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.107,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.774,
+            "failing_endpoints": 36
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.166,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.847,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "006a00b11340c28ffaebcb6ae75ecfd9846e6e0ced7247ffd4ad2916dbcd05a8",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.774,
+            "logic_ns": 3.988,
+            "route_ns": 8.74,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.516,
+            "logic_ns": 3.988,
+            "route_ns": 8.464,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.41,
+            "logic_ns": 3.988,
+            "route_ns": 8.358,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "7b507547cb48d38ab3c98c73b7413c0530717f8da9f48f6b52f22fabf4a43d2a",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_17",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11043,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "18": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.122,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.286,
+            "failing_endpoints": 7
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.168,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.282,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.12,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "0cda5491a0705b3fc4ed9b82f7a35da3c52211028ebd9fc7dbd1527c1f047b60",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/fetch/head_0[29]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_0[21]/opit_0_MUX4TO1Q/S0",
+            "slack_ns": -0.286,
+            "logic_ns": 3.803,
+            "route_ns": 8.102,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[29]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_1[34]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.071,
+            "logic_ns": 4.76,
+            "route_ns": 7.2,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[29]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_1[44]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.039,
+            "logic_ns": 4.621,
+            "route_ns": 7.027,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "b7bff32aa3611c45bfcee6b980cb64fa2f7bfff32d2e8e11b4e06e1c98bbafd3",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_18",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "19": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.515,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.225,
+            "failing_endpoints": 15
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.058,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.296,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.04,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "e46346f33d336861ce2fbcd36427bcf43e327d88c9effde14680264bdde295b9",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.225,
+            "logic_ns": 4.26,
+            "route_ns": 7.872,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[1]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/side[0][113]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.205,
+            "logic_ns": 3.157,
+            "route_ns": 9.059,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[1]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/side[1][113]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.205,
+            "logic_ns": 3.157,
+            "route_ns": 9.059,
+            "logic_levels": 10
+          }
+        ],
+        "routed_sha256": "d3e8c8898394a3bcd1fde59ab67a02a81770862084fa62201c429fa878d96523",
+        "directory": "hardware\\pds82_seed_sweep_more\\place_route\\seed_19",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11041,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "20": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.479,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.387,
+            "failing_endpoints": 18
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.18,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.16,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.125,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "34b01948b3172a0d20ef6d88624acb8f4bbd5470dbcf43c75018f49f845471de",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[22]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.387,
+            "logic_ns": 3.721,
+            "route_ns": 8.287,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[29]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/vb[0][12]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.308,
+            "logic_ns": 3.435,
+            "route_ns": 8.761,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[29]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/vb[1][12]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.3,
+            "logic_ns": 3.435,
+            "route_ns": 8.735,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "7509f15ae709171d8d7f0f1aaa13a7939b294331925ad4c9d75274748f6403c7",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_20",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11034,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "21": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.53,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.539,
+            "failing_endpoints": 82
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.159,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.028,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.107,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "14487dec52778edc6844410a4a1f1fe453c10ce8b6507848d5621f83e406d8d5",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.539,
+            "logic_ns": 4.129,
+            "route_ns": 8.364,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/cpu/memory/held_side[17]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.472,
+            "logic_ns": 3.67,
+            "route_ns": 8.405,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/fetch/head_1[22]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/operands/side[0][95]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.454,
+            "logic_ns": 3.236,
+            "route_ns": 9.209,
+            "logic_levels": 9
+          }
+        ],
+        "routed_sha256": "7c36187203ea3a778ffdf6643966cea89596bb7c76869b9fbdf913da2b247055",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_21",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11037,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "22": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.553,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.067,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.154,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.334,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "b1024b79108e663a90bed4d301aedd00c0021065d94e5d202cad30be306e39b5",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[30]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.067,
+            "logic_ns": 4.906,
+            "route_ns": 6.789,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory_queue/data_205/ram16x1d/WD",
+            "slack_ns": 0.051,
+            "logic_ns": 4.906,
+            "route_ns": 7.277,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.128,
+            "logic_ns": 4.036,
+            "route_ns": 7.893,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "72c82c3535307afbb6f86fca91ed67a71a4e0ab3d2664f8540bee45413bbfe59",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_22",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "23": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 76.179,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.932,
+            "failing_endpoints": 121
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.127,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.853,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.106,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "f00e2010a08920ad6796ee0fde2c2ee823119eb7eacc41ab2758a2014045c89b",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory_queue/data_187/ram16x1d/WD",
+            "slack_ns": -0.932,
+            "logic_ns": 3.636,
+            "route_ns": 9.523,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.849,
+            "logic_ns": 4.685,
+            "route_ns": 8.1,
+            "logic_levels": 16
+          },
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.797,
+            "logic_ns": 4.685,
+            "route_ns": 8.066,
+            "logic_levels": 16
+          }
+        ],
+        "routed_sha256": "632dacdb731ebc9245965595f9945932d116a6fbb7622003f4aeca747a06b924",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_23",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11030,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "24": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.401,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.56,
+            "failing_endpoints": 73
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.17,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.05,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.11,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "556775e413392ade338e2d70499eabe683e327c5245383dec0335c56ab2316a5",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/derror/opit_0_inv_L5Q_perm/L1",
+            "slack_ns": -0.56,
+            "logic_ns": 4.072,
+            "route_ns": 8.249,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[19]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.483,
+            "logic_ns": 3.287,
+            "route_ns": 9.066,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.478,
+            "logic_ns": 3.572,
+            "route_ns": 8.86,
+            "logic_levels": 14
+          }
+        ],
+        "routed_sha256": "0f671756fda583240cc64a365b3bd56ab8ce1810d05c4f994ac493deacaf52a1",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_24",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11047,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "25": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.803,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.658,
+            "failing_endpoints": 41
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.169,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.054,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.119,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "751373497521daa0e237d944b8d445df494bb2f242d061ede355693acadbf0e3",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.658,
+            "logic_ns": 4.127,
+            "route_ns": 8.523,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[2].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.603,
+            "logic_ns": 4.127,
+            "route_ns": 8.456,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[6]/opit_0_L5Q_perm/L1",
+            "slack_ns": -0.375,
+            "logic_ns": 4.203,
+            "route_ns": 7.943,
+            "logic_levels": 14
+          }
+        ],
+        "routed_sha256": "8459a4639b23d47b3510fd5f6fcbf8aded869fc282374fd526bef06cf6f97eac",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_25",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "26": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.083,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.778,
+            "failing_endpoints": 70
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.057,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.003,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.036,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "1c418e4f8f7a4b5fd466da224a56d796cca0d5c58719c6bb057052e9ff1a3429",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/fetch/next_pc[3]/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/fetch/next_pc[31]/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.778,
+            "logic_ns": 4.39,
+            "route_ns": 8.274,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/bus/derror/opit_0_inv_L5Q_perm/L3",
+            "slack_ns": -0.751,
+            "logic_ns": 4.635,
+            "route_ns": 7.707,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[4].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.683,
+            "logic_ns": 4.426,
+            "route_ns": 8.193,
+            "logic_levels": 10
+          }
+        ],
+        "routed_sha256": "e6b1e2340b5cb9cd7087071fb16f4871ca5195748663dbaaf29f189b25bbaba7",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_26",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11035,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "27": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.936,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.636,
+            "failing_endpoints": 37
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.053,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.01,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.042,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "7b6ffcdabb72210d9a79d36b1d7b8b13d96d203a633da5fc82c52a8a1f28cd78",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[89]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.636,
+            "logic_ns": 3.421,
+            "route_ns": 9.103,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[153]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.632,
+            "logic_ns": 3.421,
+            "route_ns": 9.097,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/f1_data[10]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[6].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.469,
+            "logic_ns": 4.173,
+            "route_ns": 8.288,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "51ec4ba8ed4323dd8189f1ca0e69f0b9e88ba9e46638807d24ad45f91df63c2a",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_27",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11048,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "28": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.808,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.335,
+            "failing_endpoints": 8
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.1,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.197,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.082,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "86d1496597170d4884a766d95606a632ea2245220cb71d5c94ba529c43a64400",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.335,
+            "logic_ns": 4.691,
+            "route_ns": 7.701,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.325,
+            "logic_ns": 4.691,
+            "route_ns": 7.57,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.279,
+            "logic_ns": 4.691,
+            "route_ns": 7.524,
+            "logic_levels": 14
+          }
+        ],
+        "routed_sha256": "89032c06bdd8ab2b4a125485572bab3bbff9453c739c7222fa698886afc0df45",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_28",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11038,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "29": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 74.294,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -1.265,
+            "failing_endpoints": 179
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.153,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.512,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.11,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "7530689e0f1cad63d29fcc76ca2e9ce3206172e9389b540ee1728c5b01d3efea",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L0",
+            "slack_ns": -1.265,
+            "logic_ns": 4.234,
+            "route_ns": 8.846,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -1.089,
+            "logic_ns": 3.951,
+            "route_ns": 9.074,
+            "logic_levels": 14
+          },
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[2].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -1.065,
+            "logic_ns": 3.951,
+            "route_ns": 9.05,
+            "logic_levels": 14
+          }
+        ],
+        "routed_sha256": "a77ba9bf9261b3d88390a1c918ce44b1d32ce1d4faf42194b080198fe3920cb9",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_29",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11034,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "30": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.954,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.007,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.155,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.382,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "62e7696bd78022f4d07529fac90fe8def1bae651afebf371d2aa1684c710454c",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/cpu/memory/held_side[27]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.007,
+            "logic_ns": 4.452,
+            "route_ns": 7.176,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/cpu/memory/held_side[29]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.03,
+            "logic_ns": 4.438,
+            "route_ns": 7.153,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/cpu/memory_queue/data_175/ram16x1d/WD",
+            "slack_ns": 0.082,
+            "logic_ns": 3.875,
+            "route_ns": 8.27,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "850eb8fff5bbd07dde0ca255383e3dd6151be861b08210923fa33d5627621618",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_30",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11038,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "31": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 75.075,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -1.125,
+            "failing_endpoints": 155
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.156,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.65,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.107,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "53774a6fc3471918a652552a375bdb56287dd956be696cfb1d9b286ade0d571a",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -1.125,
+            "logic_ns": 4.464,
+            "route_ns": 8.474,
+            "logic_levels": 16
+          },
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.961,
+            "logic_ns": 4.464,
+            "route_ns": 8.451,
+            "logic_levels": 16
+          },
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.951,
+            "logic_ns": 4.477,
+            "route_ns": 8.258,
+            "logic_levels": 16
+          }
+        ],
+        "routed_sha256": "d56f7cc25d7901fb8943474afbeb8d8620b051b9f838f1e0fc230af55904c7b2",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_31",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11057,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "32": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.949,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.313,
+            "failing_endpoints": 3
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.155,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.287,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "5e8d6e10ac58199933f16f270c1184db120efde8304657070a03281cd8fbd591",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[170]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.313,
+            "logic_ns": 3.742,
+            "route_ns": 8.182,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[106]/opit_0_L5Q_perm/L0",
+            "slack_ns": -0.154,
+            "logic_ns": 3.742,
+            "route_ns": 8.223,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[1].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.087,
+            "logic_ns": 3.547,
+            "route_ns": 8.476,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "b25443b3f9e858d0e4f4e2ddd2d49719e0532ca99a3193fab76a95cf8370b0d6",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_32",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "33": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.142,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.129,
+            "failing_endpoints": 5
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.155,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.324,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "78b64208977234e13f0ea5140eec90db232e1f5f5c3110acb2b92cbcae253d1b",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/mmio_data[23]/opit_0_inv_L5Q_perm/L1",
+            "slack_ns": -0.129,
+            "logic_ns": 4.297,
+            "route_ns": 7.629,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[50]/opit_0_MUX4TO1Q/S0",
+            "slack_ns": -0.056,
+            "logic_ns": 3.658,
+            "route_ns": 8.03,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[20]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.008,
+            "logic_ns": 4.208,
+            "route_ns": 7.421,
+            "logic_levels": 13
+          }
+        ],
+        "routed_sha256": "072bb064458f0ce22451994182cec5d346268b9f59656f8378ed53216c01e6c8",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_33",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11028,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "34": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.709,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.51,
+            "failing_endpoints": 39
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.157,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.113,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.113,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "de93ae4ac5a5e8e22e1ac6d0fabfd1109eeace9638403c0e043de9acd92c2f80",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.51,
+            "logic_ns": 4.721,
+            "route_ns": 7.697,
+            "logic_levels": 16
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[22]/opit_0_L5Q_perm/L1",
+            "slack_ns": -0.314,
+            "logic_ns": 3.186,
+            "route_ns": 8.775,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/redirect_pc[1]/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.294,
+            "logic_ns": 3.838,
+            "route_ns": 8.203,
+            "logic_levels": 13
+          }
+        ],
+        "routed_sha256": "565b736bebff3d379a85ef2909f9b4a18c7b36d7ea580287dc94e86ad2dce4a8",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_34",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "35": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 74.974,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -1.143,
+            "failing_endpoints": 64
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.151,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.757,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.113,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "00c6600ccc5f8e8e4292f79dd5f6e3e020743b406183ca0fa7d6906497fe06d5",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/rd/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -1.143,
+            "logic_ns": 2.575,
+            "route_ns": 10.504,
+            "logic_levels": 7
+          },
+          {
+            "start": "soc/cpu/operands/rd/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -1.042,
+            "logic_ns": 2.575,
+            "route_ns": 10.524,
+            "logic_levels": 7
+          },
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory_queue/data_194/ram16x1d/WD",
+            "slack_ns": -0.932,
+            "logic_ns": 3.26,
+            "route_ns": 9.899,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "32e388f2df825a4b79589a35c3cfa40ce0379d6e9224e9d9e266b390c213f4c0",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_35",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11032,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "36": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.375,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.729,
+            "failing_endpoints": 47
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.035,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.097,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.001,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "6d2c721123c60935464355f85e74d17d4783e229f09373e3e8dcdcc10c6ad0d7",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[21]/opit_0_L5Q/L4",
+            "slack_ns": -0.729,
+            "logic_ns": 3.377,
+            "route_ns": 9.24,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[23]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.725,
+            "logic_ns": 3.193,
+            "route_ns": 9.172,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[22]/opit_0_L5Q_perm/L1",
+            "slack_ns": -0.665,
+            "logic_ns": 3.534,
+            "route_ns": 8.893,
+            "logic_levels": 10
+          }
+        ],
+        "routed_sha256": "e031c5430ace3e25359fb6af1694b8d01bae48ae0bd535d9073239d455507c87",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_36",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11040,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "37": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.195,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.432,
+            "failing_endpoints": 10
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.156,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.258,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "bc2ea1504d20eacb49f3ee6ac297c8e440857b57c1133ffa4f3a63ee626452f4",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.432,
+            "logic_ns": 3.744,
+            "route_ns": 8.624,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.269,
+            "logic_ns": 3.759,
+            "route_ns": 8.417,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.185,
+            "logic_ns": 3.744,
+            "route_ns": 8.377,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "978f786a4772520da6f7f878c8353b741c0dd17346aad8ddac8ce137cd26b894",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_37",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11031,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "38": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.967,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.631,
+            "failing_endpoints": 39
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.161,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.022,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.114,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "42bda73d1ee730b4fc2cdecb52c30fbdfdb47889ae66247e4cd1bbcebed080c7",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[7].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.631,
+            "logic_ns": 4.603,
+            "route_ns": 7.964,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.594,
+            "logic_ns": 3.828,
+            "route_ns": 8.673,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.594,
+            "logic_ns": 3.814,
+            "route_ns": 8.716,
+            "logic_levels": 12
+          }
+        ],
+        "routed_sha256": "7edb064911e7451d3e50d630821e74f036b3e9f774cc5f22b6f9d1f547844496",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_38",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11035,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "39": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 76.365,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.9,
+            "failing_endpoints": 137
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.192,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.977,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.115,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "57edff66b3630d6db553c9d0f3d64b075b22b112e8db08e0cae2adee6ea23a3c",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.9,
+            "logic_ns": 3.736,
+            "route_ns": 9.1,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.892,
+            "logic_ns": 3.736,
+            "route_ns": 9.092,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/memory/load_byte_lane[1]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.725,
+            "logic_ns": 4.115,
+            "route_ns": 8.48,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "c399399dc3e1e8917aba19667a3d87e72155a058bd3c9063a730a304bbdef110",
+        "directory": "hardware\\pds82_place_extra\\place_route\\seed_39",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11044,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "40": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.447,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.392,
+            "failing_endpoints": 9
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.168,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.174,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.118,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "6594d8cbfc85112a8c250529e8091ee45d2bbbc6e8f0f00e94764e5a2b6aa020",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sf_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.392,
+            "logic_ns": 4.082,
+            "route_ns": 8.264,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/operands/sf_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.308,
+            "logic_ns": 4.082,
+            "route_ns": 8.162,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/operands/sf_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.308,
+            "logic_ns": 4.082,
+            "route_ns": 8.18,
+            "logic_levels": 13
+          }
+        ],
+        "routed_sha256": "dec7be54e6bc9afee874123ccca99b8b5d54d97b4c43e635b19122b03e4bd181",
+        "directory": "hardware\\pds82_performance\\place_route\\seed_40",
+        "pnr_options": "-mode performance",
+        "routed_resources": {
+          "LUT": 11021,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "41": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.008,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.462,
+            "failing_endpoints": 20
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.163,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.147,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "da79ec8e8aef3aea75d57d2a770d8d91fc7b1950e2a68f8442c3d33069052c62",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/cpu/memory/held_side[7]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.462,
+            "logic_ns": 3.214,
+            "route_ns": 8.841,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/operands/sf1_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.414,
+            "logic_ns": 4.008,
+            "route_ns": 8.463,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/operands/sf1_b[0]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/memory/held[46]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.347,
+            "logic_ns": 4.239,
+            "route_ns": 7.978,
+            "logic_levels": 13
+          }
+        ],
+        "routed_sha256": "3ca2ac4379d553c6b2168917b5ffe687c282e586676c80b9a4b1ebb683a7af35",
+        "directory": "hardware\\pds82_performance\\place_route\\seed_41",
+        "pnr_options": "-mode performance",
+        "routed_resources": {
+          "LUT": 11032,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "42": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 78.162,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.599,
+            "failing_endpoints": 15
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.175,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.046,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.125,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "002ef7854fdac5b5c506c6cc78fc14a40081f9b1300f7adbe44fa5463c1d6f70",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.599,
+            "logic_ns": 4.672,
+            "route_ns": 7.863,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.501,
+            "logic_ns": 4.672,
+            "route_ns": 7.765,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.383,
+            "logic_ns": 4.672,
+            "route_ns": 7.647,
+            "logic_levels": 13
+          }
+        ],
+        "routed_sha256": "0c5b05ac47fff5f0a64821663a1cfa5c19daf7e8f20810e10b07a57a8a6ddc93",
+        "directory": "hardware\\pds82_performance\\place_route\\seed_42",
+        "pnr_options": "-mode performance",
+        "routed_resources": {
+          "LUT": 11021,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "43": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.73,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.67,
+            "failing_endpoints": 75
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.152,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.029,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.116,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "8acbba0f203e44c4390345b496c27971f7ac8d42d4c72c3bb94672c765ae296d",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[11]/opit_0/CLK",
+            "end": "soc/cpu/memory/held_side[13]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.67,
+            "logic_ns": 3.856,
+            "route_ns": 8.702,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/operands/sm_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.6,
+            "logic_ns": 4.803,
+            "route_ns": 7.733,
+            "logic_levels": 16
+          },
+          {
+            "start": "soc/cpu/wb_q[11]/opit_0/CLK",
+            "end": "soc/cpu/memory/held_side[20]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.525,
+            "logic_ns": 4.008,
+            "route_ns": 8.138,
+            "logic_levels": 10
+          }
+        ],
+        "routed_sha256": "5b69abbf49d514aa30763c9a0fc066913ef1989d47a627ac1b452347defbd9d7",
+        "directory": "hardware\\pds82_performance\\place_route\\seed_43",
+        "pnr_options": "-mode performance",
+        "routed_resources": {
+          "LUT": 11038,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "44": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 79.453,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.391,
+            "failing_endpoints": 16
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": -0.103,
+            "failing_endpoints": 1
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.253,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": -0.071,
+            "failing_endpoints": 1
+          }
+        },
+        "sta_sha256": "8a61ade84302b749dbae12fabe49830e7f2f041a9bc924e430b8ffd00755a4a8",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[6].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.391,
+            "logic_ns": 3.496,
+            "route_ns": 8.831,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.367,
+            "logic_ns": 3.496,
+            "route_ns": 8.928,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[4].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.357,
+            "logic_ns": 3.496,
+            "route_ns": 8.918,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "50c2c71b2fa993239272ca9d88c58a17a37dcbffb0255521d61ee9247af6a25a",
+        "directory": "hardware\\pds82_performance\\place_route\\seed_44",
+        "pnr_options": "-mode performance",
+        "routed_resources": {
+          "LUT": 11035,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "45": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 77.018,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.789,
+            "failing_endpoints": 12
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.17,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 2.971,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.128,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "115b19db9e1c190b68f854fa2b710e9c82a2e092b37170500ae023920ecff0a7",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.789,
+            "logic_ns": 4.025,
+            "route_ns": 8.7,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/dbank/opit_0_inv_MUX4TO1Q/CE",
+            "slack_ns": -0.379,
+            "logic_ns": 3.597,
+            "route_ns": 8.277,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[3].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.265,
+            "logic_ns": 4.025,
+            "route_ns": 8.194,
+            "logic_levels": 11
+          }
+        ],
+        "routed_sha256": "d45d42397c299bd9a5a2214d463d93cfd61405f6c5760320cafd76c1f2cdee34",
+        "directory": "hardware\\pds82_performance\\place_route\\seed_45",
+        "pnr_options": "-mode performance",
+        "routed_resources": {
+          "LUT": 11024,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      }
+    },
+    "selection": "All timing constraints plus both-corner setup/hold pass at actual 82MHz PLL; maximize slow setup, then minimum hold. No failing seed can be selected."
+  },
+  "route_results": {
+    "status": "COMPLETE",
+    "completed": 26,
+    "planned": 26,
+    "place_seed": 6,
+    "routes": {
+      "1": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.633,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.055,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.156,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.443,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "bde6bbcde2a8e48c5041d49aab2ced3c25c322938dcee11cf41dbdd53cb3204f",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.055,
+            "logic_ns": 3.712,
+            "route_ns": 8.25,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[34]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.038,
+            "logic_ns": 3.781,
+            "route_ns": 7.876,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[23]/opit_0_L5Q_perm/L3",
+            "slack_ns": 0.035,
+            "logic_ns": 3.781,
+            "route_ns": 7.803,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 1,
+        "directory": "hardware\\pds82_route_sweep\\place_route\\seed_1",
+        "routed_sha256": "7de36848ac0e319774d57553853502f668295db9756c846de994d0eebc84c2b4",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11022,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "2": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.806,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.029,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.099,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.478,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.078,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "69b9d8473ef999e589984e70846cda9539973f290578f736f79df7a728ea4d9a",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.029,
+            "logic_ns": 3.712,
+            "route_ns": 8.224,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[34]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.002,
+            "logic_ns": 3.781,
+            "route_ns": 7.84,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.114,
+            "logic_ns": 3.698,
+            "route_ns": 8.245,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 2,
+        "directory": "hardware\\pds82_route_sweep\\place_route\\seed_2",
+        "routed_sha256": "ac33d0d4e07d07e8a8e5336916ed549b224d823a385462c8ba803825499e132d",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11024,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "3": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.887,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.017,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.168,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.523,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.118,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "ea51ba916626577df725567ffd7f33f5b30296ac9b995b07c6d265627372e64f",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.017,
+            "logic_ns": 3.712,
+            "route_ns": 8.212,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.126,
+            "logic_ns": 3.698,
+            "route_ns": 8.233,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[29]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.131,
+            "logic_ns": 3.493,
+            "route_ns": 7.979,
+            "logic_levels": 10
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 3,
+        "directory": "hardware\\pds82_route_sweep\\place_route\\seed_3",
+        "routed_sha256": "710d2c2adac1572e8c727092f910bc083d7bfe66c6a202c48929e00c914667f2",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11026,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "4": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.82,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.027,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.097,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.501,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.078,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "cb6f8ede087740d9abd83b8e7f00557d46d8ae83421045541917c928f532ddfc",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.027,
+            "logic_ns": 3.712,
+            "route_ns": 8.222,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[28]/opit_0_L5Q_perm/L4",
+            "slack_ns": 0.056,
+            "logic_ns": 3.986,
+            "route_ns": 7.829,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[29]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.097,
+            "logic_ns": 3.408,
+            "route_ns": 8.098,
+            "logic_levels": 11
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 4,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_4",
+        "routed_sha256": "4a6b8ae1d19267f6e413e57d4be78db26b2764a638b367ba905efa44c9fec249",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11026,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "5": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.154,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.281,
+            "failing_endpoints": 6
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.178,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.249,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.124,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "1ab05beb5bbff3597e8ca89e6fe0ce7f66fdb4157ba187ca5d5043ab9b1f3265",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[34]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.281,
+            "logic_ns": 4.058,
+            "route_ns": 7.842,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[23]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.201,
+            "logic_ns": 4.058,
+            "route_ns": 7.762,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[48]/opit_0_L5Q_perm/L1",
+            "slack_ns": -0.129,
+            "logic_ns": 4.058,
+            "route_ns": 7.842,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 5,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_5",
+        "routed_sha256": "bfa18e1e77f593b90781337c3936ea7be728040820eefa946785ba31fd80b1da",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11030,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "6": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.773,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.034,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.057,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.515,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.035,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "1215db06bc20dbc426feb3973774e643df58d7e458cd050cb56d7c6ea234596d",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.034,
+            "logic_ns": 3.712,
+            "route_ns": 8.229,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[24]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_1[106]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.0,
+            "logic_ns": 3.16,
+            "route_ns": 8.435,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.111,
+            "logic_ns": 3.698,
+            "route_ns": 8.248,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 6,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_6",
+        "routed_sha256": "c82d4819600a82e58b584455a623bfdc2f23f930734481b25f66229ced656d66",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11030,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "7": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.453,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.082,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.167,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.492,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.117,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "04a248a974cdbfee01c8fa1f9e2a10f5688191fc481df2d156c5164e28666e97",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.082,
+            "logic_ns": 4.419,
+            "route_ns": 7.57,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/fetch/cmd_pc[22]/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/fetch/next_pc[25]/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.06,
+            "logic_ns": 4.069,
+            "route_ns": 7.879,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/fetch/cmd_pc[22]/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/fetch/next_pc[23]/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": 0.011,
+            "logic_ns": 4.008,
+            "route_ns": 7.87,
+            "logic_levels": 13
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 7,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_7",
+        "routed_sha256": "8907f6706d382be5b3b81b19e26c296aea45249a1632eeb00692703e92f5f465",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11032,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "8": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.149,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.128,
+            "failing_endpoints": 4
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.17,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.419,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.119,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "400553b9adb202c3c9176f725ec5ee8ce8d9305f2194327cf42eae32b013550a",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[28]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.128,
+            "logic_ns": 4.417,
+            "route_ns": 7.582,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[22]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.057,
+            "logic_ns": 4.024,
+            "route_ns": 7.654,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.035,
+            "logic_ns": 3.712,
+            "route_ns": 8.23,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 8,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_8",
+        "routed_sha256": "d0e17843b1938d22b91629453841e9645b161c02fef6625df7f5b325b01d3adc",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11032,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "9": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.38,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.093,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.156,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.493,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "520dfa6e9934b97a396ff0874dcb2f4bcef2c4398b3a6534fd89e2931741c099",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.093,
+            "logic_ns": 4.226,
+            "route_ns": 7.774,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[24]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/fetch/head_1[87]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.035,
+            "logic_ns": 3.396,
+            "route_ns": 8.232,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.059,
+            "logic_ns": 4.212,
+            "route_ns": 7.786,
+            "logic_levels": 13
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 9,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_9",
+        "routed_sha256": "e61f1631a386abf25b70119a5a64870d4173461bd742c574ad343d850aadc647",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11026,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "10": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.773,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.034,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.154,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.524,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "3b7684010f0a3fd3a93f74c7eb6305721f8bd701e1592ac3e98ef5a1b9b9536b",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.034,
+            "logic_ns": 3.712,
+            "route_ns": 8.229,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/wb_side_q[39]/opit_0/CLK",
+            "end": "soc/cpu/memory/held_side[22]/opit_0_L5Q_perm/L3",
+            "slack_ns": 0.055,
+            "logic_ns": 3.976,
+            "route_ns": 7.606,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.114,
+            "logic_ns": 3.698,
+            "route_ns": 8.245,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 10,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_10",
+        "routed_sha256": "883c067debefbeca511b9ba0102db8461e62bd45d3c2ebe2bedf2bf1349f478c",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11030,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "11": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.739,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.039,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.155,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.504,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "32f08ef8f9f4bdf40397fa187c3c44395cf1f336d10e96dbc37b61729cc6f0a5",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.039,
+            "logic_ns": 3.712,
+            "route_ns": 8.234,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[29]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.03,
+            "logic_ns": 3.3,
+            "route_ns": 8.273,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.108,
+            "logic_ns": 3.698,
+            "route_ns": 8.251,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 11,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_11",
+        "routed_sha256": "9845e5aec72cf77c249d1de21c29a80038ea8758081ec7b36344b526929a1165",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11016,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "12": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.354,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.097,
+            "failing_endpoints": 3
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.158,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.417,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.114,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "955c5578e3dda2ae15a09fbf2af1d9deccae6c12b6a9b4a5263a6bdd4854f838",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[34]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.097,
+            "logic_ns": 3.856,
+            "route_ns": 7.86,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.05,
+            "logic_ns": 3.712,
+            "route_ns": 8.245,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/fetch/cmd_pc[22]/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/fetch/next_pc[25]/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": -0.016,
+            "logic_ns": 3.889,
+            "route_ns": 8.015,
+            "logic_levels": 9
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 12,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_12",
+        "routed_sha256": "0c9cbfabc228fce49029bfec1cb100e7d72e7acfac16a4aa390342b2f5b11643",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11028,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "13": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.493,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.076,
+            "failing_endpoints": 5
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.096,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.463,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.078,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "462e22b3743f26c133284f5459fdc64b85af09221f613cdb844446b4da31176b",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[48]/opit_0_L5Q_perm/L1",
+            "slack_ns": -0.076,
+            "logic_ns": 3.855,
+            "route_ns": 7.992,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[21]/opit_0_L5Q_perm/L3",
+            "slack_ns": -0.063,
+            "logic_ns": 3.855,
+            "route_ns": 7.827,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.062,
+            "logic_ns": 3.712,
+            "route_ns": 8.257,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 13,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_13",
+        "routed_sha256": "50f7695365f9da6c0e685c69cb4d29a3bf14b286236507e15b6b3fbd5ccb10de",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11032,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "14": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.813,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.028,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.153,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.443,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "7cd7a11ea52d9093cc3d24195b7f5317a63357b20abb9cebf8050d88e9888da7",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_data[12]/opit_0_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.028,
+            "logic_ns": 4.359,
+            "route_ns": 7.594,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[22]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.011,
+            "logic_ns": 3.905,
+            "route_ns": 7.727,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[48]/opit_0_L5Q_perm/L1",
+            "slack_ns": 0.008,
+            "logic_ns": 4.058,
+            "route_ns": 7.705,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 14,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_14",
+        "routed_sha256": "79159e53d46ac3a81c977bd1de26a472807113cb1810d37f2c3ee288b7da52be",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11024,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "15": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.673,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.049,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.152,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.499,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.108,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "0e659b9485dd5b1dd5dc2213c333f78a5ff082a36aff29c3bdc87982d9acf9f1",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.049,
+            "logic_ns": 3.712,
+            "route_ns": 8.244,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.094,
+            "logic_ns": 3.698,
+            "route_ns": 8.265,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held[43]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.13,
+            "logic_ns": 3.93,
+            "route_ns": 7.535,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 15,
+        "directory": "hardware\\pds82_route_extra\\place_route\\seed_15",
+        "routed_sha256": "78a3afd2b7526406ec4e99afe9e378b1bafef2520266b5bfa643f54f1592439b",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11030,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "16": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.407,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.089,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.158,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.436,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.113,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "ec72d4e9aeeb5f53fd3fd1dc4d48c133541827a2bb54eddd3865b0054eab52a9",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.089,
+            "logic_ns": 3.936,
+            "route_ns": 8.06,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.059,
+            "logic_ns": 3.922,
+            "route_ns": 8.076,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/wb_v/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.258,
+            "logic_ns": 3.922,
+            "route_ns": 7.877,
+            "logic_levels": 11
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 16,
+        "directory": "hardware\\pds82_route_iterate\\place_route\\seed_16",
+        "routed_sha256": "7e952f65dfdb16ce22b3a4388a6ab52b55266de427f969ab3c05bd4b8101b2bb",
+        "pnr_options": "-enable_route_constraint_iterate -route_constraint_iterate_times 4 -route_constraint_slack 0.05 -route_constraint_max_timing_path 5",
+        "routed_resources": {
+          "LUT": 11036,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "17": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.94,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.009,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.159,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.568,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.114,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "2a760a637c818a2fb5fd8ef6ddc397007afc4be3403c4cd3cea5f03105e241c5",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.009,
+            "logic_ns": 3.429,
+            "route_ns": 8.637,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/fetch/cmd_pc[22]/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/fetch/next_pc[25]/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": 0.058,
+            "logic_ns": 3.521,
+            "route_ns": 8.309,
+            "logic_levels": 9
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.088,
+            "logic_ns": 3.429,
+            "route_ns": 8.419,
+            "logic_levels": 11
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 17,
+        "directory": "hardware\\pds82_route_iterate\\place_route\\seed_17",
+        "routed_sha256": "53edeb504dbf9cec831152cf4d1fe3b047e0da349151ad4d9a26eefcaf6d0478",
+        "pnr_options": "-enable_route_constraint_iterate -route_constraint_iterate_times 4 -route_constraint_slack 0.05 -route_constraint_max_timing_path 5",
+        "routed_resources": {
+          "LUT": 11030,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "18": {
+        "status": "PASS",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 82.048,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": 0.007,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.103,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.532,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.083,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "a6973c2b82346ae8d30126a6e67d519bfde32a4215d3be303370651431e33752",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[2].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.007,
+            "logic_ns": 3.429,
+            "route_ns": 8.621,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held[34]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.022,
+            "logic_ns": 3.498,
+            "route_ns": 8.101,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/fetch/head_0[20]/opit_0_MUX4TO1Q/CLK",
+            "end": "soc/cpu/operands/vb[0][6]/opit_0_L5Q_perm/L3",
+            "slack_ns": 0.09,
+            "logic_ns": 3.509,
+            "route_ns": 7.994,
+            "logic_levels": 10
+          }
+        ],
+        "gplace_seed": 6,
+        "groute_seed": 18,
+        "directory": "hardware\\pds82_route_iterate\\place_route\\seed_18",
+        "routed_sha256": "a575d75ff8650a9f5826a6023c34a2bd0266310affa245e14c2bdf1a7ab62b80",
+        "pnr_options": "-enable_route_constraint_iterate -route_constraint_iterate_times 4 -route_constraint_slack 0.05 -route_constraint_max_timing_path 5",
+        "routed_resources": {
+          "LUT": 11026,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p22_r1": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.123,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.132,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.152,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.349,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.111,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "1d9576f5e192b50170cc4cee846b2f94edf4675f181a6811011605fa63aea601",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held_side[30]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.132,
+            "logic_ns": 4.141,
+            "route_ns": 7.612,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory_queue/data_205/ram16x1d/WD",
+            "slack_ns": -0.019,
+            "logic_ns": 4.141,
+            "route_ns": 8.105,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.068,
+            "logic_ns": 3.375,
+            "route_ns": 8.614,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 22,
+        "groute_seed": 1,
+        "directory": "hardware\\pds82_route22\\place_route\\seed_1",
+        "routed_sha256": "2cb25e8175b8f720f270f4cbbe10f3ee02ff2fa5109cd3715c1aad876da2ba26",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11037,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p22_r2": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.405,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.242,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.154,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.206,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "054c1667bec5d95a7b89d9474a74ad3d84d38232424652597273b64c44a34004",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[30]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.242,
+            "logic_ns": 5.147,
+            "route_ns": 6.723,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory_queue/data_205/ram16x1d/WD",
+            "slack_ns": -0.126,
+            "logic_ns": 5.147,
+            "route_ns": 7.213,
+            "logic_levels": 13
+          },
+          {
+            "start": "soc/cpu/wb_q[2]/opit_0_L5Q_perm/CLK",
+            "end": "soc/cpu/memory/held_side[3]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.052,
+            "logic_ns": 4.843,
+            "route_ns": 6.726,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 22,
+        "groute_seed": 2,
+        "directory": "hardware\\pds82_route22\\place_route\\seed_2",
+        "routed_sha256": "e8b9590c6bb7d59f66cef9d5830f286f72ca2d875c364d02ec478156f31dce6f",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11037,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p22_r3": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.486,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.077,
+            "failing_endpoints": 4
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.156,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.452,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "a5711088c4f00fb558ff76a9cfb57f38b128ce41b8d1b4c68efd8a162ea20555",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.077,
+            "logic_ns": 3.652,
+            "route_ns": 8.482,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.057,
+            "logic_ns": 3.652,
+            "route_ns": 8.341,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[0].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": -0.045,
+            "logic_ns": 3.652,
+            "route_ns": 8.329,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 22,
+        "groute_seed": 3,
+        "directory": "hardware\\pds82_route22\\place_route\\seed_3",
+        "routed_sha256": "8f951e90c6a6f9ddee8168d2d01a23c180446d1d66cdca86f18fb09bb3fdfac7",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11033,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p22_r4": {
+        "status": "PASS",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 82.271,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": 0.04,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.166,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.486,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.117,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "c87de3269435efad086f0bc66104cacfca0e1826bd6ef2bd0673f161cd49bcc9",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held_side[30]/opit_0_L5Q_perm/L2",
+            "slack_ns": 0.04,
+            "logic_ns": 3.991,
+            "route_ns": 7.59,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[0].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.125,
+            "logic_ns": 4.036,
+            "route_ns": 7.896,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/destination1[6][3]/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/cpu/operands/va[0][15]/opit_0_L5Q_perm/L4",
+            "slack_ns": 0.127,
+            "logic_ns": 3.855,
+            "route_ns": 7.907,
+            "logic_levels": 10
+          }
+        ],
+        "gplace_seed": 22,
+        "groute_seed": 4,
+        "directory": "hardware\\pds82_route22\\place_route\\seed_4",
+        "routed_sha256": "fda20b409b096d1de0b37f9a57ebe6abcd23dcf53d1512da16e2b2a6f5f8ad16",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11029,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p30_r1": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.5,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.075,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.155,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.359,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.112,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "7f1fcbd14dbf8ecfff8c864c9a6ca2409ed5a413683bb070045c09ca6708a6d9",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held_side[27]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.075,
+            "logic_ns": 4.017,
+            "route_ns": 7.679,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/wb_q[14]/opit_0/CLK",
+            "end": "soc/cpu/f1_valid/opit_0_inv_L5Q_perm/L4",
+            "slack_ns": 0.006,
+            "logic_ns": 4.041,
+            "route_ns": 7.86,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/multiply/forward_valid/opit_0_inv_L5Q_perm/CLK",
+            "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[5].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+            "slack_ns": 0.041,
+            "logic_ns": 3.825,
+            "route_ns": 8.07,
+            "logic_levels": 11
+          }
+        ],
+        "gplace_seed": 30,
+        "groute_seed": 1,
+        "directory": "hardware\\pds82_route30\\place_route\\seed_1",
+        "routed_sha256": "6bf66f11fe91761eadfdd2f4104d560ea34b5321501ba01754355c5a6651a868",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11038,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p30_r2": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.841,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.175,
+            "failing_endpoints": 3
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.161,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.311,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.116,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "2d4cb064a8d806c71f48e18e7a3832b4c13252947c5ec01cb57ed87e52994139",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held_side[19]/opit_0_L5Q_perm/L4",
+            "slack_ns": -0.175,
+            "logic_ns": 3.454,
+            "route_ns": 8.607,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held_side[27]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.133,
+            "logic_ns": 4.292,
+            "route_ns": 7.462,
+            "logic_levels": 11
+          },
+          {
+            "start": "soc/cpu/wb_q[13]/opit_0/CLK",
+            "end": "soc/cpu/memory/held_side[9]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.012,
+            "logic_ns": 4.16,
+            "route_ns": 7.47,
+            "logic_levels": 11
+          }
+        ],
+        "gplace_seed": 30,
+        "groute_seed": 2,
+        "directory": "hardware\\pds82_route30\\place_route\\seed_2",
+        "routed_sha256": "493a2c71ea92b470229d8e2ef5c2d81be121ac23320ab2702577d526afe3883b",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11038,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p30_r3": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 81.686,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.047,
+            "failing_endpoints": 1
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.17,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.356,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.126,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "281530e20b657b22b29cc3cbb9cdd703c4ee0a80de521313f9ad7f6fa7e6ac8b",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held_side[27]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.047,
+            "logic_ns": 4.169,
+            "route_ns": 7.499,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/operands/sf_b[1]/opit_0_A2Q1/CLK",
+            "end": "soc/cpu/memory/held[162]/opit_0_L5Q_perm/L4",
+            "slack_ns": 0.102,
+            "logic_ns": 3.88,
+            "route_ns": 7.907,
+            "logic_levels": 10
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory_queue/data_202/ram16x1d/WD",
+            "slack_ns": 0.116,
+            "logic_ns": 4.169,
+            "route_ns": 7.942,
+            "logic_levels": 12
+          }
+        ],
+        "gplace_seed": 30,
+        "groute_seed": 3,
+        "directory": "hardware\\pds82_route30\\place_route\\seed_3",
+        "routed_sha256": "2f7d11f71ec7312d0f6c1b299a25fe4b692395be0cc45ca394193fb24eb6593a",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11028,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      },
+      "p30_r4": {
+        "status": "TIMING_FAILED",
+        "requested_mhz": 82.001,
+        "requested_period_ns": 12.195,
+        "estimated_fmax_mhz": 80.386,
+        "corners": {
+          "Setup Summary(Slow Corner)": {
+            "worst_slack_ns": -0.245,
+            "failing_endpoints": 2
+          },
+          "Hold Summary(Slow Corner)": {
+            "worst_slack_ns": 0.16,
+            "failing_endpoints": 0
+          },
+          "Setup Summary(Fast Corner)": {
+            "worst_slack_ns": 3.273,
+            "failing_endpoints": 0
+          },
+          "Hold Summary(Fast Corner)": {
+            "worst_slack_ns": 0.116,
+            "failing_endpoints": 0
+          }
+        },
+        "sta_sha256": "51bf7786266ebfefbad7aedb58859832eba9b833e53a6de59a95ea137ea8b0f1",
+        "critical_paths": [
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory/held_side[27]/opit_0_L5Q_perm/L2",
+            "slack_ns": -0.245,
+            "logic_ns": 4.128,
+            "route_ns": 7.738,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/f_valid/opit_0_inv_MUX4TO1Q/CLK",
+            "end": "soc/cpu/memory_queue/data_202/ram16x1d/WD",
+            "slack_ns": -0.082,
+            "logic_ns": 4.128,
+            "route_ns": 8.181,
+            "logic_levels": 12
+          },
+          {
+            "start": "soc/cpu/wb_q[13]/opit_0/CLK",
+            "end": "soc/cpu/memory_queue/data_175/ram16x1d/WD",
+            "slack_ns": 0.037,
+            "logic_ns": 3.951,
+            "route_ns": 8.246,
+            "logic_levels": 11
+          }
+        ],
+        "gplace_seed": 30,
+        "groute_seed": 4,
+        "directory": "hardware\\pds82_route30\\place_route\\seed_4",
+        "routed_sha256": "5adafe5bd2816b76c3be6ce47b67167e5815a8693badafc816ea82f3fc01fc4f",
+        "pnr_options": "",
+        "routed_resources": {
+          "LUT": 11032,
+          "FF": 4476,
+          "Distributed RAM": 709,
+          "DRM": 48,
+          "APM": 4
+        }
+      }
+    },
+    "passing": [
+      "18",
+      "p22_r4"
+    ]
+  },
+  "verified_test_input_files": 25,
+  "scope": "Real PLL82 and UART712; CPU RTL unchanged. All native final per-seed summaries compared against dispatcher CSV. Projection is not a board result or a valid long-duration CoreMark score.",
+  "native_pnr_runs_including_priority_iterations": 81,
+  "routed_resources": {
+    "LUT": 11029,
+    "FF": 4476,
+    "Distributed RAM": 709,
+    "DRM": 48,
+    "APM": 4
+  },
+  "resource_basis": "resources: mapping; routed_resources: final physical resource counts"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "tests": [
+    "SAT actual EX complete outputs, redirect, prediction correctness and ready/valid for all packet/control/prediction bits; divider disabled in both, unchanged DIV separately covered by ISA regression."
+  ],
+  "input_sha256": {
+    "simulation\\results\\load_bp_dual_boundary_next_resourcecompare\\resource_proof\\gold.v": "0e2e5d4642ff70f921641413be569d1f5ba04f12380462b81bfd4be9977e7260",
+    "simulation\\results\\load_bp_dual_boundary_next_resourcecompare\\resource_proof\\gate.v": "321352a3f4fa1d8f44b7263dcdc8426d2d456ff8b3bdbf3bce8a427a510a3ba1",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_boundary_next_resourcecompare\\resource_proof\\miter.v": "5636f95b20a9e713b61aaa9be8e42a49aa25f0852ae3e60ef011362fce077352",
+    "simulation\\results\\load_bp_dual_boundary_next_resourcecompare\\nc_execute.v": "5a518f7ccc57c932bc49a3f49fda274aa5b886001097dc03040bf0efd486f1d9",
+    "simulation\\results\\load_bp_dual_boundary_next_pairbranch\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "tools\\prove_dual_resource_compare.py": "82973723d7008e49b7742a29759b07a9da9b7ad3a11d04555b67ff77f3c58162"
+  }
+}

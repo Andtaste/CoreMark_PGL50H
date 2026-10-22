@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "tests": [
+    "seed=37 PASS dual units cycles=100000 rf_reads=800000 fetch_consumptions=26749 pairs=4426 redirects=772 stale_drains=1211",
+    "seed=613 PASS dual units cycles=100000 rf_reads=800000 fetch_consumptions=26388 pairs=4190 redirects=806 stale_drains=1225",
+    "seed=2026 PASS dual units cycles=100000 rf_reads=800000 fetch_consumptions=26290 pairs=4166 redirects=782 stale_drains=1242",
+    "core dual fault/RAW/WAW/WAR/burst seed=37 PASS",
+    "core dual fault/RAW/WAW/WAR/burst seed=613 PASS",
+    "soc dual fault/RAW/WAW/WAR/burst seed=0 PASS",
+    "PASS dual stats >1 IPC and two-instruction overflow"
+  ],
+  "coverage": [
+    {
+      "kind": "core",
+      "seed": 37,
+      "issued": 102,
+      "executed": 99,
+      "retired": 95,
+      "fault_cancelled": 2,
+      "max_dual_streak": 1,
+      "second_visible": 128,
+      "dependency_blocked": 0,
+      "singles": 60
+    },
+    {
+      "kind": "core",
+      "seed": 613,
+      "issued": 102,
+      "executed": 99,
+      "retired": 95,
+      "fault_cancelled": 2,
+      "max_dual_streak": 1,
+      "second_visible": 129,
+      "dependency_blocked": 0,
+      "singles": 59
+    },
+    {
+      "kind": "soc",
+      "seed": 0,
+      "issued": 115,
+      "executed": 107,
+      "retired": 101,
+      "fault_cancelled": 2,
+      "max_dual_streak": 64,
+      "second_visible": 159,
+      "dependency_blocked": 0,
+      "singles": 61
+    }
+  ],
+  "input_sha256": {
+    "tools\\check_dual_native_extra.py": "f11d1500ebb6506f474bd6aa323bed56412492d1e8dbf34a9717c2ccab304a91",
+    "simulation\\research\\dual_issue\\dual_units_tb.v": "02075521db8780b677b212afca965894b406b3ff249e78051def8e8a612953bf",
+    "simulation\\results\\load_bp_dual_boundary_side\\dual_checks\\dual_units_tb.v": "cac36bf9102025ef9aaf144a6afaa23b7f687e5097cf6d638fa6f83bdba71604",
+    "simulation\\results\\load_bp_dual_boundary_side\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "simulation\\results\\load_bp_dual_boundary_side\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_boundary_side\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\research\\dual_issue\\dual_faults.S": "5c2fb1022748605f615df1d7cdf995df85f8d8aeb4c33545a6dee55282580f4a",
+    "simulation\\results\\load_bp_dual_boundary_side\\dual_checks\\dual_faults.hex": "67f5db74511e93984c625b72b65fdd8af57331b4291a665d30c0d390e8e75c95",
+    "simulation\\results\\load_bp_dual_boundary_side\\checks\\core_tb.v": "a9faced250cc294fe7bda1ddd98d99e01d065253e9d7352d5bed9a203328a326",
+    "simulation\\results\\load_bp_dual_boundary_side\\checks\\soc_tb.v": "a08d71e0aaf01b7ed1b7a8c3dd03ede6350eb172d183411f1261085b79b8a14d",
+    "simulation\\results\\load_bp_dual_boundary_side\\dual_checks\\stats_dual_tb.v": "3fb731e86189856df36dae2335313d38a9950e4df9f4c145f7c05fc01b8a8625",
+    "simulation\\results\\load_bp_dual_boundary_side\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "tools\\check_dual_legacy.py": "a9398b71282b266dbd69a0011061a45496f12ff9b3bd93f9a411c59ce6566b7b",
+    "tools\\check_dual_boundary.py": "eecde471f9fce402e4bc9e875ac9178bcecacf0ab6622c02735dece5f5424c12"
+  },
+  "override_sha256": {
+    "hardware\\pds\\source\\core\\nc_core.v": "ab4c1cfc6a1a8eced3c669c2a98c086c4ab8d73a9e614f4e63dcffd6060b222b",
+    "hardware\\pds\\source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "5e347365a31b58dfeb424671a37744fe43478efcffd0ef28b68d59e2c2e0d9d1",
+    "hardware\\pds\\source\\core\\nc_memory.v": "6976717be90121614a2a2f636b2127ae7ead5857d3720b8979c402a2d1ba4735",
+    "hardware\\pds\\source\\core\\nc_operands.v": "70bc6af58318c0ec9317c1fee9370a88355c578a9ffc146ca5519d69f24fcb3b",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\top\\nc_soc.v": "42f5746e4e31f3f6f27382dcbc3b678da54c6366085d6ceb63d11e5e5300cd61",
+    "hardware\\pds\\source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\core\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "hardware\\pds\\source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa"
+  }
+}

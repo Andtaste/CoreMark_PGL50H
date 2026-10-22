@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS accepted descriptor/source/IP/evidence unchanged",
+    "PASS original single-issue descriptor and routed STA unchanged",
+    "PASS alulanes exact RTL/IP reproduction, actual compilation hashes, fixed1/10 CRC and architectural retirement totals, registered input credit"
+  ],
+  "input_sha256": {
+    "docs\\accepted_dual_baseline.json": "b68472e674aa2d9e656485c85a450d7cbefcd060c96c26dd0ae8f7b61ee7882a",
+    "tools\\verify_dual_next_reproduction.py": "1d26744a345fa1ab089fce6f374b8cc8d3b1599ced56ca0e67d0b823d4191698",
+    "simulation\\results\\load_bp_dual_boundary_next_alulanes\\performance\\result.json": "e16375c8e8c2c536b26094d305383cfae7bd0d95db0807bcd89b7e2d03b3d6f4",
+    "simulation\\results\\load_bp_dual_boundary_next_alulanes\\validation\\result.json": "aa50d7d1bf2152bef9ff109a27f48748b13db85229719df1ef3732baa048c486",
+    "simulation\\results\\load_bp_dual_boundary_next_alulanes\\checks\\result.json": "6ef7f3f31a64285e5331a58d7e056d1ab2c6a4560211d2d7568c93119e4aa8be",
+    "tools\\generate_dual_next_alulanes.py": "2ffadd722fd15d366df9dcd71f72ba54b4371107821a03dfd8272f96123e36f6",
+    "simulation\\results\\load_bp_dual_boundary_next_alulanes\\generation.json": "5503687bace75ae4bf9b2327307ebb2f2e6f17304f3c43329980f1bf90f3fb69",
+    "simulation\\results\\dual_next_reproduction_alulanes\\alulanes\\generation.json": "5ea133477110c9822fdc6ac01cf2376a0d2cac48e6d74d5b02cc2218453aeb71",
+    "tools\\verify_dual_next_alulanes_reproduction.py": "2042edc6ea970de534ec59abc209220d9ef0268deca82f2a11f70d2761236359"
+  }
+}

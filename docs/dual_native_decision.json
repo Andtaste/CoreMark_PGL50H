@@ -1,0 +1,16 @@
+{
+  "status": "REJECTED_BY_USER",
+  "recorded_date": "2026-10-21",
+  "user_instruction": "不采纳，看看网上的方案，他们怎么做的双发，各指标如何",
+  "rejected_round": "dual_native",
+  "rejected_candidates": [
+    "dual_native_fifo",
+    "dual_native_select",
+    "dual_native_forward",
+    "dual_native_both"
+  ],
+  "retained_accepted_variant": "dual_fwd_share",
+  "accepted_descriptor_sha256": "acc8a0f8be1dc90d67e6cda8d18fc000911cc4b25a8021ab0f7b17ec244abb01",
+  "formal_sta_sha256": "047c7504f1f3967d2499de007e44faa87013cebec03c94b941682521c12794d9",
+  "research_archive_preserved": true
+}

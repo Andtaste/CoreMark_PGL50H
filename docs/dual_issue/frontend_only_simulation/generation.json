@@ -1,0 +1,18 @@
+{
+  "status": "GENERATED",
+  "scope": "Isolated limited dual-issue trial, not adopted",
+  "override_sha256": {
+    "hardware\\pds\\source\\core\\nc_core.v": "e694ad27d0eacc531a3f18d8b9b3551afc5e52b5f11ffdd28258696a1a06b11e",
+    "hardware\\pds\\source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_fetch.v": "0e697c432bb16687c0933430d6089ee72a319f9baada0e4496341202317d0e3b",
+    "hardware\\pds\\source\\sys_bus\\nc_local_bus.v": "45f793c493e0087e21cbb2b68ab91e585a40cb77c0155c59cc1647475def53f7",
+    "hardware\\pds\\source\\core\\nc_memory.v": "822e21ae9537e42be108e384d649d33a87a4bbe657778acfd21da36cf70e8113",
+    "hardware\\pds\\source\\core\\nc_operands.v": "eae2935e9215dc9bb3424cce2417b2407c04ab819343b4f735d392dc9afce795",
+    "hardware\\pds\\source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "hardware\\pds\\source\\top\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "hardware\\pds\\source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92"
+  },
+  "baseline_sha256": "f9266e85c40bf5a5feaa9d54f1ec77389d00a2feb02b4ed74573b5b1bc171d86",
+  "generator_sha256": "fb1d1079fe28b8ec39951339c1d38ff4521ebe4ba1c2bfb0ebe3a01acf00b506",
+  "probe": "Same wide frontend, pair_candidate forced false; simulation only"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS SAT: actual decoder load kind, all32-bit bases/all instruction words including signed offsets and modular wrap; parallel qualifier equals full32-bit range comparisons"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_store_prefix.py": "d9f5e0f7db38808c14a13fb188924025d73dd119daf63a0d4ec753b872fae503",
+    "simulation\\results\\load_bp_dual_boundary_storeprefix\\nc_core.v": "ca64bdece307d08c2ca28e43bf3f752897a31b4a6b8aa2c256e861ce40d8c806",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "simulation\\results\\load_bp_dual_boundary_storeprefix\\range_proof\\range_proof.v": "00a2628c2a266bcdbc881ccb64b0679562baf9affac9fe75d7d3403efdb217df"
+  }
+}

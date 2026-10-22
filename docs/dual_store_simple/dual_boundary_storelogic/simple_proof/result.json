@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS actual bus RTL all internal state/output equivalence by temporal induction under core write publication contract; RAM/UART stubbed, separate integration tests cover them",
+    "PASS actual full MEM sequential equivalence POST_LOCAL_STORES=0",
+    "PASS actual full MEM sequential equivalence POST_LOCAL_STORES=1"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_store_simple.py": "52eb08169f14738237ac51a2c49e0fc2d13445f113bbcf3a66afecba3ba791f7",
+    "simulation\\results\\load_bp_dual_boundary_storeack\\nc_local_bus.v": "5e347365a31b58dfeb424671a37744fe43478efcffd0ef28b68d59e2c2e0d9d1",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\simple_proof\\gold_bus.v": "c90b38c078fa0eaf1773d46b287e16b98dcc9914ec7fb241382bf298c8499272",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\nc_local_bus.v": "6b55d53c642ab8155f793f92d934c4c2035737802a09b46de5737480dc82d8e1",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\simple_proof\\gate_bus.v": "bf83d95a1992c425a5df8fa7a9fbe22591d8c2e2286b1926fd3092a0792d3a48",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\simple_proof\\stubs.v": "cac0788044033422dec29a57c40e70d705c5a83c413cec2a3cf80598d98842e5",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\simple_proof\\bus_miter.v": "2d369f79d4ed1a0d8d5ad8794c277ba2efb244dd724d46dc450865fcc3d107aa",
+    "simulation\\results\\load_bp_dual_boundary_storeack\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\simple_proof\\gold_mem.v": "bf8df2bc0aa71a022a5abe557e24a55ea90e4650a314a9b0f24f9114bc46514d",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\nc_memory.v": "3d55cdf2ce2c059a8760fb641bce5d06e883b2c189a28fe1c3f6b968e2d0fa55",
+    "simulation\\results\\load_bp_dual_boundary_storelogic\\simple_proof\\gate_mem.v": "028207a14a3f435bdfcce42d39d7378dce475f245d185e165264f502332145ef",
+    "tools\\check_dual_store_logic_equiv.py": "db882d172429ca78bfe99b8b13a8eb3328cc6a908c461b6be9145300e574394b"
+  }
+}

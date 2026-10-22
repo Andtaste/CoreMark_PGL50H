@@ -1,0 +1,240 @@
+{
+  "scope": "47 inherited RV32I/M fixtures, not a complete architecture compliance suite",
+  "results": [
+    {
+      "test": "rv32ui-p-add",
+      "status": "PASS",
+      "summary": "PASS cycles=        577 retired=        432 max_retire_streak=        129"
+    },
+    {
+      "test": "rv32ui-p-addi",
+      "status": "PASS",
+      "summary": "PASS cycles=        282 retired=        209 max_retire_streak=         98"
+    },
+    {
+      "test": "rv32ui-p-and",
+      "status": "PASS",
+      "summary": "PASS cycles=        597 retired=        452 max_retire_streak=         72"
+    },
+    {
+      "test": "rv32ui-p-andi",
+      "status": "PASS",
+      "summary": "PASS cycles=        238 retired=        165 max_retire_streak=         41"
+    },
+    {
+      "test": "rv32ui-p-auipc",
+      "status": "PASS",
+      "summary": "PASS cycles=         50 retired=         25 max_retire_streak=         19"
+    },
+    {
+      "test": "rv32ui-p-beq",
+      "status": "PASS",
+      "summary": "PASS cycles=        435 retired=        258 max_retire_streak=         10"
+    },
+    {
+      "test": "rv32ui-p-bge",
+      "status": "PASS",
+      "summary": "PASS cycles=        489 retired=        276 max_retire_streak=         10"
+    },
+    {
+      "test": "rv32ui-p-bgeu",
+      "status": "PASS",
+      "summary": "PASS cycles=        514 retired=        301 max_retire_streak=         11"
+    },
+    {
+      "test": "rv32ui-p-blt",
+      "status": "PASS",
+      "summary": "PASS cycles=        435 retired=        258 max_retire_streak=         10"
+    },
+    {
+      "test": "rv32ui-p-bltu",
+      "status": "PASS",
+      "summary": "PASS cycles=        460 retired=        283 max_retire_streak=         11"
+    },
+    {
+      "test": "rv32ui-p-bne",
+      "status": "PASS",
+      "summary": "PASS cycles=        443 retired=        258 max_retire_streak=         10"
+    },
+    {
+      "test": "rv32ui-p-fence_i",
+      "status": "PASS",
+      "summary": "PASS cycles=        315 retired=        258 max_retire_streak=        198"
+    },
+    {
+      "test": "rv32ui-p-jal",
+      "status": "PASS",
+      "summary": "PASS cycles=         55 retired=         22 max_retire_streak=          6"
+    },
+    {
+      "test": "rv32ui-p-jalr",
+      "status": "PASS",
+      "summary": "PASS cycles=        144 retired=         75 max_retire_streak=          8"
+    },
+    {
+      "test": "rv32ui-p-lb",
+      "status": "PASS",
+      "summary": "PASS cycles=        308 retired=        212 max_retire_streak=          9"
+    },
+    {
+      "test": "rv32ui-p-lbu",
+      "status": "PASS",
+      "summary": "PASS cycles=        308 retired=        212 max_retire_streak=          9"
+    },
+    {
+      "test": "rv32ui-p-lh",
+      "status": "PASS",
+      "summary": "PASS cycles=        316 retired=        224 max_retire_streak=          9"
+    },
+    {
+      "test": "rv32ui-p-lhu",
+      "status": "PASS",
+      "summary": "PASS cycles=        321 retired=        231 max_retire_streak=         10"
+    },
+    {
+      "test": "rv32ui-p-lui",
+      "status": "PASS",
+      "summary": "PASS cycles=         57 retired=         32 max_retire_streak=         26"
+    },
+    {
+      "test": "rv32ui-p-lw",
+      "status": "PASS",
+      "summary": "PASS cycles=        324 retired=        234 max_retire_streak=         10"
+    },
+    {
+      "test": "rv32ui-p-or",
+      "status": "PASS",
+      "summary": "PASS cycles=        600 retired=        455 max_retire_streak=         73"
+    },
+    {
+      "test": "rv32ui-p-ori",
+      "status": "PASS",
+      "summary": "PASS cycles=        245 retired=        172 max_retire_streak=         44"
+    },
+    {
+      "test": "rv32ui-p-sb",
+      "status": "PASS",
+      "summary": "PASS cycles=        553 retired=        397 max_retire_streak=         10"
+    },
+    {
+      "test": "rv32ui-p-sh",
+      "status": "PASS",
+      "summary": "PASS cycles=        586 retired=        450 max_retire_streak=         11"
+    },
+    {
+      "test": "rv32ui-p-simple",
+      "status": "PASS",
+      "summary": "PASS cycles=         29 retired=          8 max_retire_streak=          5"
+    },
+    {
+      "test": "rv32ui-p-sll",
+      "status": "PASS",
+      "summary": "PASS cycles=        605 retired=        460 max_retire_streak=        156"
+    },
+    {
+      "test": "rv32ui-p-slli",
+      "status": "PASS",
+      "summary": "PASS cycles=        281 retired=        208 max_retire_streak=         97"
+    },
+    {
+      "test": "rv32ui-p-slt",
+      "status": "PASS",
+      "summary": "PASS cycles=        571 retired=        426 max_retire_streak=        123"
+    },
+    {
+      "test": "rv32ui-p-slti",
+      "status": "PASS",
+      "summary": "PASS cycles=        277 retired=        204 max_retire_streak=         92"
+    },
+    {
+      "test": "rv32ui-p-sltiu",
+      "status": "PASS",
+      "summary": "PASS cycles=        277 retired=        204 max_retire_streak=         92"
+    },
+    {
+      "test": "rv32ui-p-sltu",
+      "status": "PASS",
+      "summary": "PASS cycles=        571 retired=        426 max_retire_streak=        123"
+    },
+    {
+      "test": "rv32ui-p-sra",
+      "status": "PASS",
+      "summary": "PASS cycles=        624 retired=        479 max_retire_streak=        175"
+    },
+    {
+      "test": "rv32ui-p-srai",
+      "status": "PASS",
+      "summary": "PASS cycles=        296 retired=        223 max_retire_streak=        108"
+    },
+    {
+      "test": "rv32ui-p-srl",
+      "status": "PASS",
+      "summary": "PASS cycles=        618 retired=        473 max_retire_streak=        169"
+    },
+    {
+      "test": "rv32ui-p-srli",
+      "status": "PASS",
+      "summary": "PASS cycles=        290 retired=        217 max_retire_streak=        102"
+    },
+    {
+      "test": "rv32ui-p-sub",
+      "status": "PASS",
+      "summary": "PASS cycles=        569 retired=        424 max_retire_streak=        121"
+    },
+    {
+      "test": "rv32ui-p-sw",
+      "status": "PASS",
+      "summary": "PASS cycles=        589 retired=        457 max_retire_streak=         11"
+    },
+    {
+      "test": "rv32ui-p-xor",
+      "status": "PASS",
+      "summary": "PASS cycles=        599 retired=        454 max_retire_streak=         72"
+    },
+    {
+      "test": "rv32ui-p-xori",
+      "status": "PASS",
+      "summary": "PASS cycles=        247 retired=        174 max_retire_streak=         45"
+    },
+    {
+      "test": "rv32um-p-div",
+      "status": "PASS",
+      "summary": "PASS cycles=        295 retired=         63 max_retire_streak=          6"
+    },
+    {
+      "test": "rv32um-p-divu",
+      "status": "PASS",
+      "summary": "PASS cycles=        296 retired=         64 max_retire_streak=          7"
+    },
+    {
+      "test": "rv32um-p-mul",
+      "status": "PASS",
+      "summary": "PASS cycles=        578 retired=        426 max_retire_streak=        108"
+    },
+    {
+      "test": "rv32um-p-mulh",
+      "status": "PASS",
+      "summary": "PASS cycles=        602 retired=        426 max_retire_streak=          9"
+    },
+    {
+      "test": "rv32um-p-mulhsu",
+      "status": "PASS",
+      "summary": "PASS cycles=        602 retired=        426 max_retire_streak=          9"
+    },
+    {
+      "test": "rv32um-p-mulhu",
+      "status": "PASS",
+      "summary": "PASS cycles=        602 retired=        426 max_retire_streak=          9"
+    },
+    {
+      "test": "rv32um-p-rem",
+      "status": "PASS",
+      "summary": "PASS cycles=        295 retired=         63 max_retire_streak=          6"
+    },
+    {
+      "test": "rv32um-p-remu",
+      "status": "PASS",
+      "summary": "PASS cycles=        295 retired=         63 max_retire_streak=          6"
+    }
+  ]
+}

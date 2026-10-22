@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "cases_per_simulator": 256,
+  "simulators": [
+    "Icarus",
+    "Verilator"
+  ],
+  "source_sha256": {
+    "hardware\\pds\\source\\core\\nc_operands.v": "3c5722a19414fba64490addcd2d87733dfd4bd181f4550592b2a6f2a447dcfdd",
+    "simulation\\tb\\operands_retained_tb.v": "906558948482d058da9b43295a33ca1ec4a3d20c49c8fcbe217e1f2e48261623"
+  }
+}

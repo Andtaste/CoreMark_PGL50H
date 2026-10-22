@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS no dangerous lint diagnostics",
+    "PASS side source tags use existing packet data bits; no separate C/D value RAM or lookahead tag protocol",
+    "PASS EX/MEM width249 and depth4 unchanged; no added full-width side metadata queue",
+    "PASS secondary divider disabled explicitly at elaboration",
+    "PASS extended pairs require ordinary ALU primary and source independence; group precise-fault policy retained",
+    "PASS no secondary LSU or new physical RAM port; memory-ready still terminates at registered-credit FIFO",
+    "PASS SAT: actual compact WB branch and MEM MUL decode equal full decode for every admitted instruction word",
+    "PASS following cache stores only one instruction; backing groups retained; adjacency crosses command/flight/cache registers",
+    "PASS SAT actual frontend plain-ALU classification implies legal nonserial noncontrol primary; together with registered clean-fetch/no-prediction admission removes redundant EX fault/prediction term from side-MUL DSP CE",
+    "PASS SAT actual registered side type/write flags equal full decoder on every admitted instruction; no full-decoder write/illegal term in pair qualification"
+  ],
+  "lint_warning_counts": {
+    "DECLFILENAME": 1,
+    "PINCONNECTEMPTY": 11,
+    "UNUSEDSIGNAL": 48,
+    "WIDTHEXPAND": 6,
+    "WIDTHTRUNC": 2
+  },
+  "input_sha256": {
+    "tools\\audit_dual_joint.py": "9fb1074e941e0b77e8668a17077402a4b6e9dccece3367c47203a3bc3f99c990",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_core.v": "139695dd061007470162dec29861e2b92ea226782febde2c0517e65e26258075",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_fetch.v": "93ffb8a40ba6eb4bd4d0f5d0f5ad3542adedd8a6e887b4cd9868904b7e1528e1",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_memory.v": "d80eb2054b4b6c5410fcec8d98aac305d6149decc7f454c447898c65ea82fe4d",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_operands.v": "70bc6af58318c0ec9317c1fee9370a88355c578a9ffc146ca5519d69f24fcb3b",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_local_bus.v": "9c8850eb60f73745cd5f2b4be2554db64df35091d5fed417bb23ab4cde0c22cc",
+    "simulation\\results\\load_bp_dual_joint_reg\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "simulation\\results\\load_bp_dual_joint_reg\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\results\\load_bp_dual_joint_reg\\audit\\opcode_proof.v": "e52087807fd8778e8fe008c3fcb2ab2c2aaa2a0aa13844f969ff2dc3931f7e35",
+    "simulation\\results\\load_bp_dual_joint_reg\\audit\\primary_admission_proof.v": "698f650c5157b5da2bcf2db3276f877040adb1c6244e50d3526e28e2946b0b21",
+    "simulation\\results\\load_bp_dual_joint_reg\\audit\\side_admission_proof.v": "abd7d6cd49a1fff7cf4b4bcd7093511b2967f1f28519c679a4bfd9b047be225b"
+  }
+}

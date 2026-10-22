@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "paths": {
+    "id_boundary": [
+      {
+        "start": "soc/cpu/fetch/head_1[18]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/side[1][91]/opit_0_L5Q_perm/L4",
+        "slack_ns": -0.257,
+        "logic_ns": 2.754,
+        "route_ns": 9.694,
+        "logic_levels": 9,
+        "max_data_fanout": 92
+      },
+      {
+        "start": "soc/cpu/memory/held[138]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/fetch/next_pc[28]/opit_0_inv_L5Q_perm/L4",
+        "slack_ns": -0.144,
+        "logic_ns": 3.81,
+        "route_ns": 8.525,
+        "logic_levels": 13,
+        "max_data_fanout": 62
+      },
+      {
+        "start": "soc/cpu/fetch/head_1[18]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/side[1][96]/opit_0_L5Q_perm/L4",
+        "slack_ns": -0.122,
+        "logic_ns": 2.825,
+        "route_ns": 9.49,
+        "logic_levels": 9,
+        "max_data_fanout": 92
+      },
+      {
+        "start": "soc/cpu/fetch/head_1[18]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/side[0][92]/opit_0_L5Q_perm/L2",
+        "slack_ns": -0.108,
+        "logic_ns": 2.974,
+        "route_ns": 9.06,
+        "logic_levels": 9,
+        "max_data_fanout": 92
+      },
+      {
+        "start": "soc/cpu/fetch/head_1[18]/opit_0_L5Q_perm/CLK",
+        "end": "soc/cpu/operands/side[1][99]/opit_0_L5Q_perm/L4",
+        "slack_ns": -0.102,
+        "logic_ns": 2.814,
+        "route_ns": 9.482,
+        "logic_levels": 9,
+        "max_data_fanout": 92
+      }
+    ],
+    "operand_control": [
+      {
+        "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+        "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[3].DATA_LOOP[2].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": -0.279,
+        "logic_ns": 3.704,
+        "route_ns": 8.816,
+        "logic_levels": 12,
+        "max_data_fanout": 42
+      },
+      {
+        "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+        "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": -0.272,
+        "logic_ns": 3.704,
+        "route_ns": 8.809,
+        "logic_levels": 12,
+        "max_data_fanout": 42
+      },
+      {
+        "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+        "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[7].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": -0.241,
+        "logic_ns": 3.704,
+        "route_ns": 8.834,
+        "logic_levels": 12,
+        "max_data_fanout": 42
+      },
+      {
+        "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+        "end": "soc/bus/ram_code/U_ipml_dpram_ram1_tdp/ADDR_LOOP[4].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": -0.199,
+        "logic_ns": 3.704,
+        "route_ns": 8.797,
+        "logic_levels": 12,
+        "max_data_fanout": 42
+      },
+      {
+        "start": "soc/cpu/operands/sf1_a[1]/opit_0_A2Q1/CLK",
+        "end": "soc/bus/ram_data/U_ipml_dpram_ram2_tdp/ADDR_LOOP[1].DATA_LOOP[1].U_GTP_DRM18K/iGopDrm_inv/CEB[0]",
+        "slack_ns": 0.039,
+        "logic_ns": 4.123,
+        "route_ns": 8.079,
+        "logic_levels": 12,
+        "max_data_fanout": 42
+      }
+    ],
+    "ram_b_control": []
+  },
+  "queries": {
+    "id_boundary": " -to {soc/cpu/fetch/* soc/cpu/operands/*}",
+    "operand_control": " -from {soc/cpu/operands/*} -to {soc/cpu/redirect*/* soc/cpu/f_valid/* soc/cpu/f1_valid/* soc/bus/ram_code/*/CEB* soc/bus/ram_data/*/CEB*}",
+    "ram_b_control": " -from {soc/bus/ram_code/*/CLKB* soc/bus/ram_data/*/CLKB*} -to {soc/cpu/redirect*/* soc/cpu/f_valid/* soc/cpu/f1_valid/* soc/bus/ram_code/*/CEB* soc/bus/ram_data/*/CEB*}"
+  },
+  "scope": "Read-only routed snapshots; empty RAM-B control set is recorded as no reported matching path, not proof of whole-core noninterference",
+  "input_sha256": {
+    "tools\\report_dual_next_paths.py": "b574f982dd8e22eed391677e0327baf4a0a9847cad38cd8c7c166066384cca08",
+    "tools\\parse_dual_joint_timing.py": "f0fa12c37a5965391aefaecd0e2e9ede92b904643d6ecab28d4167fa9f77662c",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\pds\\place_route\\top_pnr.adf": "6da5ac9880859307f137023de817c83f90342db09f5ca654744e5d921c81adb3",
+    "simulation\\results\\load_bp_dual_boundary_next_aluwake\\next_paths\\run.tcl": "739368fb6a33d3e3f1fde7dc0638123972618379adcf974a7ff28f7854f04cb1"
+  },
+  "report_sha256": {
+    "id_boundary.rtr": "da8f898302c683e705362b5f1313a9b6c1536a83e384adc00a5f14a0f848ee7e",
+    "operand_control.rtr": "d14bb63f143d9f1540f94495a96fae0bf9701dea9080152b991bed0914761521",
+    "ram_b_control.rtr": "0eb80dd831ffe41ec99e53b6cafa2c1f9be339458dfec6adb3a48d759734f483"
+  }
+}

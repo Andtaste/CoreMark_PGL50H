@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "tests": [
+    "COVER pushes=15379 pops=14353 full=79615 insertion=675 clears=578\r\nPASS operands equivalence cycles=100000 seed=17 pushes=15379 pops=14353 full=79615 insertion_forward=675 duplicate_priority=33334 clears=578",
+    "COVER pushes=15310 pops=14269 full=79416 insertion=717 clears=578\r\nPASS operands equivalence cycles=100000 seed=91 pushes=15310 pops=14269 full=79416 insertion_forward=717 duplicate_priority=33334 clears=578",
+    "COVER pushes=15382 pops=14348 full=79572 insertion=719 clears=578\r\nPASS operands equivalence cycles=100000 seed=2026 pushes=15382 pops=14348 full=79572 insertion_forward=719 duplicate_priority=33334 clears=578"
+  ],
+  "cycles": 300000,
+  "edge_checks": 600000,
+  "scope": "Random stalls/clear/insertion/multi-hit priority; independent separate side-value storage with direct current tag comparisons versus compact packet field capture; not whole-core formal proof",
+  "input_sha256": {
+    "simulation\\research\\dual_native\\nc_operands.v": "842767b1fd1f95a31e34d5f6db53b1a66d3c9b602c4a2943642fde8cc01697b5",
+    "simulation\\research\\dual_native\\operands_tb.v": "eaca5240175af3bd6410bff8bfa45c939e508454bc799222081a16ca60690758",
+    "simulation\\results\\load_bp_dual_boundary_next_loadcapture\\operand_checks\\reference.v": "9b967a327ba94a10f4306ab20311ac25c08bddf5f5e43733be049c6af4b1fa48",
+    "simulation\\results\\load_bp_dual_boundary_next_loadcapture\\operand_checks\\operands_tb.v": "5816aa50c9e3033672509afbf8cedaea23091f04e1c004d9473c2345b4535d52",
+    "simulation\\results\\load_bp_dual_boundary_next_loadcapture\\nc_operands.v": "1ff526083afef20a68289f93faeefd00e35b5a3edf7d3abc27e61c1ba45dcb94",
+    "tools\\check_dual_joint_reg_operands.py": "253143e87b2acb00426e4e723b2e8c37f681a9650412a3225cd428ca5fdb6cef",
+    "tools\\check_dual_next_operand_v2.py": "2510f0e8c6a1fe1733d7a3538ae3e3302584146bcf4610062f299a32dd6643c4"
+  },
+  "contract_note": "Qualified hit: exact next-cycle source valid; capture-only: current load return becomes next-cycle WB with same identity/data, conflicting live broadcasts agree on value. Independent separate operand storage model, valid outputs compared; whole-core arbitrary data tested separately."
+}

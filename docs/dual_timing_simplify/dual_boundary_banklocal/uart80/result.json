@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS physical top CLOCK_HZ=80000000 DIV=694; A5 8N1 exact 694-cycle bits"
+  ],
+  "scope": "Real physical top/SoC/bus/UART RTL, TX injection; PLL replaced by clock shim for simulation; actual PLL period checked separately by routed STA",
+  "input_sha256": {
+    "tools\\check_dual_timing80_uart.py": "8cbc84040ac98cd4048984bd61b98ed1d497930a5c30ee558d037a2de58c1f45",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_core.v": "9936184da0748a18ea6851c380fa59a4c227d74cc985f7cdae8b8e3ed9d2cdc8",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_fetch.v": "9825b72ba622af88cbc9af44d8b0d2c6e98395e79d6966f653fc75f646668096",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_memory.v": "cdb63dbdbe5d8e4f2bdf92ae2f5f365f4f1537a1c5ec97fda9aaa9636981c290",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_mul_pipeline.v": "dbbfd78ade5f5a6fba3e0462f51a095407be0fba06dd38da711b6a7ee0b522aa",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_operands.v": "fbc9bd42d69e5a1114af33c3c3cfc6e127f5afd81bcafef6e29996375031dea0",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_local_bus.v": "0203207c36df0d8d701736b406a511691ca45a733684a41f133f4151a2b2c5f1",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\nc_soc.v": "bf6d591ed06cb0d7bb324ba15b52e48b323c200500f467affce801c939b6e9ad",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\top.v": "f73f1d152781b16e0f38e56730f11fdb18c1dd880290316fb1c950d646f76874",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44",
+    "simulation\\results\\load_bp_dual_boundary_banklocal\\uart80\\uart80_tb.v": "0cbe1f720107f93573184e6d83a55a3181177264d801a6830370fd4020b01810",
+    "tools\\check_dual_store_ack.py": "5f60af52ffa5c32a305daaf78fc91da15ea0dff8464ddef9d01e8fa2b5fce437"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS blocked read request stable across EX/MEM transfer and ordered store turnover",
+    "PASS older held exception blocks younger side effects before WB kill",
+    "PASS older late bus error blocks younger local request and preserves cause",
+    "PASS MMIO uses MEM request with registered result boundary"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_boundary_memory.py": "d7acee9c77379b4e4ccc430decfc907623663dbd8b9e6ba5be0c6431dc0558f6",
+    "simulation\\results\\load_bp_dual_boundary_slots\\memory_checks\\memory_tb.v": "b13d3b1e728040418e96717540cb215d84636f26def44e9bed6013cf1c9a75ff",
+    "simulation\\results\\load_bp_dual_boundary_slots\\nc_memory.v": "6976717be90121614a2a2f636b2127ae7ead5857d3720b8979c402a2d1ba4735",
+    "tools\\check_dual_boundary_launch.py": "3fd7dd219cc6ffed60bcc2c97e6a7b86a3ded3cebf6a36a694e650da6e9c9c54",
+    "tools\\check_dual_timing80.py": "74ea5654ef40311bfe34a864c3ebf7c3cc3dea9ff780b56c5af21bfb71380fd7"
+  }
+}

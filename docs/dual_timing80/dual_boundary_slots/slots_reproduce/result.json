@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS exact preload RTL/PLL/RAM regeneration",
+    "PASS exact slots RTL/PLL/RAM regeneration"
+  ],
+  "input_sha256": {
+    "tools\\check_dual_timing80_slots.py": "6e2eea0c08c6710f2f8716d1cf45183296088929c61ea18507f0dc2c43e2988d",
+    "tools\\generate_dual_timing80_preload.py": "4d591eda1c8cc08f01f13555376cc97bef4db1a44c82ba2461eee3ec4c378297",
+    "simulation\\results\\load_bp_dual_boundary_preload\\generation.json": "8315f575f16c2d325551f8a4eb7cdd294f082a38d2b73dad72c86cda364cbca9",
+    "simulation\\results\\dual_timing80_repro\\preload\\generation.json": "a3c95f0d01142c0af7c151d3128233e6a5736c3c34cd2f5de6f5b594d1cc333a",
+    "tools\\generate_dual_timing80_slots.py": "0d6785e8079a7c93d031a9315eb83afa26b3164b0160e1969bb2d6dc1af469ae",
+    "simulation\\results\\load_bp_dual_boundary_slots\\generation.json": "e08c0cb31726a398732d4d01eab483f34b9d291a6a3ee9a3f191ca186980f5a1",
+    "simulation\\results\\dual_timing80_repro\\slots\\generation.json": "fe2015944a17e1aceb804fea7f621cf5e3ee6fa97474eca8e50ce9a8f6efb5ef"
+  }
+}

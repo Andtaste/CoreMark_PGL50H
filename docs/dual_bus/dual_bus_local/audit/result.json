@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "tests": [
+    "PASS no undriven/implicit/latch/combinational-cycle/multiple-driver lint warnings",
+    "PASS duplicate BTB lookup tables replaced by two disjoint 32-entry banks",
+    "PASS redundant secondary PC/rd storage removed using existing next-PC and instruction fields",
+    "PASS duplicate forwarding tag FF declaration and unused lookup/address declarations removed",
+    "PASS group-tag encoding plus dynamic lane lookup replaced by equivalent balanced four-bit encoder"
+  ],
+  "lint_warning_counts": {
+    "DECLFILENAME": 1,
+    "PINCONNECTEMPTY": 14,
+    "UNUSEDSIGNAL": 42,
+    "WIDTHEXPAND": 6,
+    "WIDTHTRUNC": 2
+  },
+  "lint_limits": "Full packet/trace fields and x0 unused data bits can remain unused; no claim that every unused-bit warning is removable hardware.",
+  "input_sha256": {
+    "tools\\audit_dual_ram.py": "f3462cdb36d34e71dbf51c437fb86cefe7332dabcc4e34a845a4d3165febb051",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_btb.v": "250921e41f027cbd8d8609703d3fa17ad24e9a4e2f7b0a851db49f72b9bf8487",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_core.v": "2a1a0fa46366463333acdfb0cf1073e86e7192c6523e286cfe411fb7b002e1a6",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "hardware\\pds\\source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "hardware\\pds\\source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "hardware\\pds\\source\\core\\nc_execute.v": "00b2ec7d2eccd9a1d2b99fd056d943fb614ec795653f6b0be91075ecca98929e",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_fetch.v": "4fe5f8eb5facb620d6d67c077353d31ad0d06f74b72dd6239a0c363564eb4b45",
+    "hardware\\pds\\source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_memory.v": "94cc7cff8c9a33e8deeb10e9f6004ffa51b46d0ae510cd1e4a387c90444741fe",
+    "hardware\\pds\\source\\core\\nc_mul_pipeline.v": "9cf96713578a5b776242985d62188ceb6890f1c4eb2014aff00e1c45f872ec12",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_operands.v": "eae2935e9215dc9bb3424cce2417b2407c04ab819343b4f735d392dc9afce795",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "hardware\\pds\\source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_local_bus.v": "ffdcf876233e07d26cbd29f68f528604465d776ff5e3a197ac41e50998d8ac09",
+    "simulation\\results\\load_bp_dual_bus_local\\nc_soc.v": "9b9877fe2322fe966981e7a4f73dfc64abc60992fc8fdd8d91542244fa84864d",
+    "simulation\\results\\load_bp_dual_bus_local\\pango_ram_wide_models.v": "5e1acae6224d80ef313026e7e62424adabb9330a26919dfc7e212bb911664b44"
+  },
+  "baseline_sha256": "f9266e85c40bf5a5feaa9d54f1ec77389d00a2feb02b4ed74573b5b1bc171d86"
+}

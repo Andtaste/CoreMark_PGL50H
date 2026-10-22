@@ -1,0 +1,22 @@
+[
+  {
+    "test": "checks",
+    "exit": 0
+  },
+  {
+    "test": "validation",
+    "exit": 0
+  },
+  {
+    "test": "pairs",
+    "exit": 0
+  },
+  {
+    "test": "cancel",
+    "exit": 0
+  },
+  {
+    "test": "audit",
+    "exit": 1
+  }
+]
