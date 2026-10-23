@@ -1,0 +1,179 @@
+{
+  "status": "ACCEPTED_COMPILER_PROFILE",
+  "profile": "o3_inline80",
+  "added_flags": [
+    "-O3",
+    "--param=max-inline-insns-auto=80"
+  ],
+  "source_date_epoch": 1792684800,
+  "compatible_rtl_manifest_sha256": "42a9a024a469f058a9d573389f40499da65ff4127427b0f4382cf33593139e76",
+  "rtl_baseline": "docs\\active_optimization_baseline.json",
+  "hardware": {
+    "project_directory": "hardware\\pds_optimized_inline80_20261023",
+    "configured_cpu_hz": 82000000,
+    "place_seed": 3,
+    "route_seed": 1,
+    "input_sha256": {
+      "source\\core\\nc_btb.v": "76adba2e7c47272a3243d65308c03f2bd77a560064d98586afd89a9a0547adf0",
+      "source\\core\\nc_core.v": "15bce7a42b9df16fcdf56664b7e8ceb8ec0c63c4e3dc1ceb6151da76157527b6",
+      "source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+      "source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+      "source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+      "source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+      "source\\core\\nc_fetch.v": "b220a2821dee48d28a5d26fe5412cf90b998e11930179dc93e2ea0dd55a5073c",
+      "source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+      "source\\core\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+      "source\\core\\nc_mul_pipeline.v": "6b739b5423e3bd35fff63ae302b71c3d0aaa8ac9014e1ebd4f2cc47628b6ea8b",
+      "source\\core\\nc_operands.v": "fbc9bd42d69e5a1114af33c3c3cfc6e127f5afd81bcafef6e29996375031dea0",
+      "source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+      "source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+      "source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+      "source\\source\\top.v": "cc0ee988c5bd7a3858bcec5178cb32a20600f0e38e8bc04f21fed0acde788be6",
+      "source\\sys_bus\\nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
+      "source\\top\\nc_soc.v": "3151fd4d4366252ace254d38bf55cd8fd845512d705171c6a6ba2c1f8d6a7a11",
+      "ipcore\\pll\\.last_generated": "41659f4236409842f7ab6289c01a463f2ec12fe29514a747c6e1cd5c87068b20",
+      "ipcore\\pll\\clock82_generate.log": "abd74e4a9a678e09e3ddef7047b28abfd86e611b15e23970debdc2ae7dfc5f40",
+      "ipcore\\pll\\generate.log": "4e8c98ff804d2d2e18761e9160e30eefb20593a61153520bfefa2c255a4e9f87",
+      "ipcore\\pll\\pll.idf": "bd706ea1b63f51920baf75a71d4c9e7f1d715868f835bd21241e4b69ad404d53",
+      "ipcore\\pll\\pll.v": "2d1593771fb23fccf1cc0bea7469bdd7ec96da5b902c80f47f63849be917f5d8",
+      "ipcore\\pll\\pll_tb.v": "078148631660f2a584cd7a5622de31be68f9bf8a8a37965bccb29af54b639311",
+      "ipcore\\pll\\pll_tmpl.v": "2cec9a58532366c312ccaa63c2919bf52b6addaaf37c0de2af2626eac45fe02b",
+      "ipcore\\pll\\pll_tmpl.vhdl": "d49ab80f2c88fe218e1a44621dc6938f6cec05631a77e1415518d753f7b0177a",
+      "ipcore\\pll\\regenerate.log": "9289db5621271e914b4a4ab76905c98813e2cf5e947ea90d241c5b52b57f96af",
+      "ipcore\\pll\\timing80_generate.log": "f9b5fc34a852019cb446c974349b535c94979e3735e2d06793c9c33eb465848a",
+      "ipcore\\ram1_tdp\\.last_generated": "8bd8c30337e7b5ed7f66a0c341c953fdc3131b4434aeaceb13fce6b820267b99",
+      "ipcore\\ram1_tdp\\compiler_o3_generate.log": "f07b1048fabbe49a3dfff8e83ec5a0b8304e37d3dcfbfefa3b3f5d557408afa7",
+      "ipcore\\ram1_tdp\\generate.log": "1e837daa7f6249d379b1b0a9110a03df0ded3c8eea1646dbfa831f0cad93b0bc",
+      "ipcore\\ram1_tdp\\init_param_bin_exmp.dat": "99f0926eb01a10dc1573d15b812055e57d586763e370a2ceebd9f6763c0100d7",
+      "ipcore\\ram1_tdp\\init_param_hex_exmp.dat": "1e0f90abf756d8a8fab7e8361f33833423ecbdf9b546f0cbc277432ead91e6d8",
+      "ipcore\\ram1_tdp\\ram1_tdp.idf": "596a0709131f0b738962392f1064bc467ae931243ac93b6420f96eac28622464",
+      "ipcore\\ram1_tdp\\ram1_tdp.v": "3a5197e45bc52f0afc65fbe302fd8455a5a69aeab3583f1978ff2e61baae6f7c",
+      "ipcore\\ram1_tdp\\ram1_tdp_tb.v": "6ea3de2175b88b967e3b3d157096ce3fcf581c6e021d1af266c1981a461c0d78",
+      "ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+      "ipcore\\ram1_tdp\\ram1_tdp_tmpl.vhdl": "039c278465f2c1022f81cd4fd7c3218268a318bbba41cbdb79a8ccfc62ed93dd",
+      "ipcore\\ram1_tdp\\regenerate.log": "21d4710d4158ffa953b5b7c5a559d39a6ce1bba0c234f859451784f1f0b8aac7",
+      "ipcore\\ram2_tdp\\.last_generated": "f08f4f4871f3501d9985705eaab8f26e12279e0f411e3091aaedce6fa2475000",
+      "ipcore\\ram2_tdp\\generate.log": "e13e51a3d803761e1a4c577e5c388d9f3262fb1a696f7eda54bd586495d301d0",
+      "ipcore\\ram2_tdp\\init_param_bin_exmp.dat": "99f0926eb01a10dc1573d15b812055e57d586763e370a2ceebd9f6763c0100d7",
+      "ipcore\\ram2_tdp\\init_param_hex_exmp.dat": "1e0f90abf756d8a8fab7e8361f33833423ecbdf9b546f0cbc277432ead91e6d8",
+      "ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+      "ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+      "ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+      "ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+      "ipcore\\ram2_tdp\\ram2_tdp_tmpl.vhdl": "7b6ea7f3f45c9c58e194f3112048c743e17ac33c926475dbf8fd7fdddf0234ef",
+      "ipcore\\ram2_tdp\\regenerate.log": "fd632101d5823f54bbccac6034511d7202e071379479078568dcf19f13ebc45e",
+      "ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+      "ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "70ed03443e62266a621c1837d1da165c5aa5882a9e4288a4c9436876bf9d2f3f",
+      "ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+      "ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+      "constraints\\board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
+      "memory\\boot.hex": "be7846abe319fdaa20dfe5c990f9cd20598a1b376999116ead6d4b7f93ba29a4",
+      "memory\\boot_interleaved.hex": "315ddd8cc501b495000d07756805b074967625b332f8abe21582847f2d0ee537"
+    },
+    "estimated_fmax_mhz": 83.043,
+    "resources": {
+      "LUT": 11046,
+      "FF": 4437,
+      "Distributed RAM": 709,
+      "DRM": 48,
+      "APM": 4
+    },
+    "physical_verification": {
+      "status": "PASS",
+      "requested_mhz": 82.001,
+      "estimated_fmax_mhz": 83.043,
+      "corners": {
+        "Setup Summary(Slow Corner)": {
+          "worst_slack_ns": 0.153,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Slow Corner)": {
+          "worst_slack_ns": 0.172,
+          "failing_endpoints": 0
+        },
+        "Setup Summary(Fast Corner)": {
+          "worst_slack_ns": 3.635,
+          "failing_endpoints": 0
+        },
+        "Hold Summary(Fast Corner)": {
+          "worst_slack_ns": 0.118,
+          "failing_endpoints": 0
+        }
+      },
+      "board_pins": {
+        "clk": {
+          "location": "P20",
+          "iostandard": "LVTTL33",
+          "constraint_applied": true
+        },
+        "gpio[0]": {
+          "location": "W11",
+          "iostandard": "LVCMOS33",
+          "constraint_applied": true
+        },
+        "gpio[1]": {
+          "location": "V11",
+          "iostandard": "LVCMOS33",
+          "constraint_applied": true
+        },
+        "halted_ind": {
+          "location": "B2",
+          "iostandard": "LVCMOS33",
+          "constraint_applied": true
+        },
+        "jtag_TDO": {
+          "location": "Y11",
+          "iostandard": "LVCMOS33",
+          "constraint_applied": true
+        },
+        "rst_ext_i": {
+          "location": "K18",
+          "iostandard": "LVTTL33",
+          "constraint_applied": true
+        },
+        "uart_tx_pin": {
+          "location": "R9",
+          "iostandard": "LVCMOS33",
+          "constraint_applied": true
+        }
+      },
+      "sta_sha256": "27dbcf4f70784be8fdf7307801844ec6409a25c8ae834b1a1fb12b0015319f32",
+      "pnr_report_sha256": "9089455fca763ee2baa29ff182524dbdada370a2932caf5e8a996f46abeeb7cc",
+      "routed_db_sha256": "f4247d47351e8fd92bde5a0e11d7e74ac09ccac4e8c07f70a3058f660954ac0c",
+      "routed_resources": {
+        "LUT": 11046,
+        "FF": 4437,
+        "Distributed RAM": 709,
+        "DRM": 48,
+        "APM": 4
+      }
+    },
+    "independent_native_runs": 2
+  },
+  "firmware_bytes": 54260,
+  "firmware_iterations": 5000,
+  "diagnostic_10": {
+    "cycles": 2299628,
+    "baseline_cycles": 2601147,
+    "cm_per_mhz": 4.348529414322664,
+    "gain_pct": 13.111642404771562
+  },
+  "diagnostic_100": {
+    "cycles": 22995853,
+    "baseline_cycles": 26010275,
+    "cm_per_mhz": 4.34861016027542,
+    "gain_pct": 13.108546136557742
+  },
+  "evidence_sha256": {
+    "simulation\\results\\compiler_profiles_20261023\\result.json": "88065c0a3b356660f4e87f4527d36e00c69bf010440e98dd3876088ed7322425",
+    "simulation\\results\\compiler_profiles_20261023\\extra_result.json": "495d5ea567535bacd31db53133f3a4a6176f3ee6bdb77f5eb5ed9ecfba621f0d",
+    "simulation\\results\\compiler_profiles_20261023\\o3_inline80_10.json": "ceedd2fd39e5700ce614dac662a501b74eee36762d648b6db5b60db37eb81173",
+    "simulation\\results\\compiler_profiles_20261023\\o3_inline80_validation.json": "acd27619d91827477eae40c95b55583e36fbca81ad4fa638a5766f958cae4d10",
+    "simulation\\results\\compiler_profiles_20261023\\o3_inline80_100.json": "dd6a27ba4a61f68f6bc1e4de2e53fa0c32af5ba53c8ba98fea1c09bda5749d60",
+    "simulation\\results\\compiler_profiles_20261023\\longer_comparison.json": "96a68d8161c048ca6b33bd0ba90488b9e8cc457c8b7f4f58b11138cf9f3d360a",
+    "simulation\\results\\compiler_profiles_20261023\\reproducible_cli.json": "96531a3bb8c4aef7c7ceee431e2cc15f3b86a95637a9456720dae8317acde8ff",
+    "simulation\\results\\compiler_profiles_20261023\\inline80_repeat.json": "8433fc286a91e49d1ca23d07ba3927e2a84463f1542c4b4b3ff38e7214dbb9db",
+    "simulation\\results\\continuous_clock82_shortmul_o3_inline80_io\\result.json": "c9c04ee6dea77c1255a46e5629c559d5f4b39760c33e45c12c265b8c654c2105"
+  },
+  "scope": "Compiler gains compare freshly built identical-source baseline at the same iteration count. RTL baseline fixed historical-image metrics remain separate. Actual82MHz hardware and5000-iteration ROM built twice; firmware performance tested at1/10/100 iterations. No board programming or official board CoreMark score."
+}

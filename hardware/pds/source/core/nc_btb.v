@@ -12,7 +12,7 @@ module nc_btb_bank(input wire clk,rst_n,flush,
  reg conditional[0:31] /* synthesis syn_ramstyle="lut_ram" */;
  // {last resolved outcome, counter after taken, counter after not-taken}.
  reg[4:0] directions[0:31] /* synthesis syn_ramstyle="lut_ram" */;
- wire[4:0] r=lookup_pc[7:3],w=update_pc[7:3];
+ wire[4:0] r=lookup_pc[7:3]^lookup_pc[14:10],w=update_pc[7:3]^update_pc[14:10];
  wire hit=valid[r] && tags[r]==lookup_pc[31:8];
  wire[4:0] read_direction=directions[r];
  wire predicted_direction=read_direction[4] ? read_direction[3] : read_direction[1];

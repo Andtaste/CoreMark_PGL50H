@@ -5,7 +5,7 @@ import argparse, hashlib, json, re
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
-def inspect(project):
+def inspect(project, expected_mhz=82):
     project = Path(project)
     fdc = (project/'constraints/board.fdc').read_text()
     locations = dict(re.findall(r'define_attribute \{p:(.*?)\} \{PAP_IO_LOC\} \{(.*?)\}',fdc))
@@ -31,7 +31,7 @@ def inspect(project):
     report = project/'report_timing/top.rtr'
     data = report.read_text(errors='replace')
     match = re.search(r'(\d+\.\d+) MHz\s+(\d+\.\d+) MHz',data)
-    assert match and abs(float(match[1])-82)<0.01, 'Expected actual 82 MHz clock constraint'
+    assert match and abs(float(match[1])-expected_mhz)<0.01, f'Expected actual {expected_mhz} MHz clock constraint'
     assert 'All Constraints Met.' in data, 'Timing constraints violated'
     corners = {}
     for name in ('Setup Summary(Slow Corner)','Hold Summary(Slow Corner)',
@@ -53,8 +53,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--project',type=Path,required=True)
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--expected-mhz',type=float,default=82)
     args = parser.parse_args()
-    result = inspect(args.project)
+    result = inspect(args.project,args.expected_mhz)
     if args.output:
         args.output.write_text(json.dumps(result,indent=2)+'\n')
     print('PASS actual routed board pins and all-corner timing')

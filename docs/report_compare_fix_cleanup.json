@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "trial_counts": {
+    "PASS": 1,
+    "FAIL": 21,
+    "CANCELLED": 2
+  },
+  "removed_bytes_this_final_cleanup": 211067611,
+  "retained_mapping": "simulation/results/report_compare_xor83_20261023_p9r1/device_map",
+  "retained_main": "hardware/pds",
+  "retained_previous_main": "hardware/pds_before_compare_fix_20261023",
+  "scope": "Test traces, simulator binaries and trial implementation databases removed. Source inputs, logs, reports, results and one reusable mapped database retained. Main project databases retained for local use."
+}

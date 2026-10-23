@@ -19,7 +19,7 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
                     {3'b0,live[4]}+{3'b0,live[5]}+{3'b0,live[6]}+{3'b0,live[7]};
  wire irq_pending;wire[31:0] irq_cause,trap_base,return_pc;wire vector_mode;
  wire irq_take=irq_pending && live==0 && !redirect;
- wire[9:0] id_pair_flags;wire id_valid,id_fault,id_ready,id_second,pair_issue;wire[31:0] id_pc,id_insn,id_insn1,id_prediction1;
+ wire id_mul_hint;wire[9:0] id_pair_flags;wire id_valid,id_fault,id_ready,id_second,pair_issue;wire[31:0] id_pc,id_insn,id_insn1,id_prediction1;
  wire[31:0] id_prediction,ex_prediction;
  reg bp_update_valid,bp_update_branch,bp_update_conditional,bp_update_taken,bp_flush;
  reg[31:0] bp_update_pc,bp_update_target;
@@ -45,7 +45,7 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
   .stop(barrier || irq_pending),.req_valid(i_req_valid),.req_ready(i_req_ready),.req_addr(i_addr),
   .rsp_valid(i_rsp_valid),.rsp_ready(i_rsp_ready),.rsp_data(i_data),.rsp_error(i_error),
   .valid(id_valid),.ready(id_ready),.take_two(pair_issue),.second_valid(id_second),
-  .pair_flags(id_pair_flags),.prediction1(id_prediction1),.inst1(id_insn1),.pc(id_pc),.inst(id_insn),.fault(id_fault));
+  .primary_multiply_hint(id_mul_hint),.pair_flags(id_pair_flags),.prediction1(id_prediction1),.inst1(id_insn1),.pc(id_pc),.inst(id_insn),.fault(id_fault));
  wire[3:0] id_kind;wire[31:0] id_imm;wire use1,use2,id_wr,id_serial,id_illegal;
  wire[4:0] rs1,rs2,rd;wire csr_exists,csr_writable;wire[31:0] csr_read,a,b;
  wire[18:0] id_control,ex_control;
@@ -130,7 +130,8 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  // register boundary. Only live dependency comparisons remain in ID.
  wire extended_pair=id_pair_flags[9] && (id_pair_flags[3] ||
   ((id_kind==4 || id_kind==5) && id_insn1[6])) && !id_prediction[31];
- wire pair_candidate=id_second && !id_fault && id_pair_flags[4] &&
+ // Declining a pair leaves its second instruction at the fetch head.
+ wire pair_candidate=!(id_mul_hint && (dep_c || dep_d)) && id_second && !id_fault && id_pair_flags[4] &&
   !id_prediction[30] && ((id_pair_flags[8] && !id_prediction1[31]) || (extended_pair && (id_insn1[6] || !id_prediction1[31]))) &&
   !second_dep && !(id_pair_flags[2] && rd!=0 && ((id_pair_flags[5] && rd==rs1_1) || (id_pair_flags[6] && rd==rs2_1))) &&
   !(id_pair_flags[2] && id_pair_flags[7] && rd!=0 && rd==rd1);

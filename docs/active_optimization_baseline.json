@@ -1,0 +1,190 @@
+{
+  "status": "ACCEPTED_OPTIMIZATION_BASELINE",
+  "variant": "dual_boundary_mul_early_products_btb_fold10_clock82",
+  "source_trial": "mul_early_products",
+  "project_directory": "hardware\\pds_optimized_mul_early_products_20261022",
+  "configured_cpu_hz": 82000000,
+  "place_seed": 3,
+  "route_seed": 1,
+  "priority": [
+    "total_throughput",
+    "clock_mhz",
+    "cm_per_mhz",
+    "resources"
+  ],
+  "parent": "hardware\\pds_optimized_mul_fold10_20261022",
+  "parent_backup": "simulation\\results\\autonomous_20261022\\original_board",
+  "input_sha256": {
+    "source\\core\\nc_btb.v": "76adba2e7c47272a3243d65308c03f2bd77a560064d98586afd89a9a0547adf0",
+    "source\\core\\nc_core.v": "15bce7a42b9df16fcdf56664b7e8ceb8ec0c63c4e3dc1ceb6151da76157527b6",
+    "source\\core\\nc_csr.v": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823",
+    "source\\core\\nc_decode.v": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4",
+    "source\\core\\nc_divide.v": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d",
+    "source\\core\\nc_execute.v": "d1398274b514b37160239a5db2a3b39411f152dd05d829e6d6dcbe6582f7790c",
+    "source\\core\\nc_fetch.v": "b220a2821dee48d28a5d26fe5412cf90b998e11930179dc93e2ea0dd55a5073c",
+    "source\\core\\nc_fifo.v": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf",
+    "source\\core\\nc_memory.v": "422c6d08704a404b0d8984f638612d66a4b74073149def98973c3aaacdf41456",
+    "source\\core\\nc_mul_pipeline.v": "6b739b5423e3bd35fff63ae302b71c3d0aaa8ac9014e1ebd4f2cc47628b6ea8b",
+    "source\\core\\nc_operands.v": "fbc9bd42d69e5a1114af33c3c3cfc6e127f5afd81bcafef6e29996375031dea0",
+    "source\\core\\nc_regfile.v": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a",
+    "source\\core\\nc_stats.v": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92",
+    "source\\perips\\nc_uart.v": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa",
+    "source\\source\\top.v": "cc0ee988c5bd7a3858bcec5178cb32a20600f0e38e8bc04f21fed0acde788be6",
+    "source\\sys_bus\\nc_local_bus.v": "3b1d0991318dd5ac5b386f4d7e7325c458e3e15a99e7201ce9e28f3386c77dd3",
+    "source\\top\\nc_soc.v": "3151fd4d4366252ace254d38bf55cd8fd845512d705171c6a6ba2c1f8d6a7a11",
+    "ipcore\\pll\\.last_generated": "41659f4236409842f7ab6289c01a463f2ec12fe29514a747c6e1cd5c87068b20",
+    "ipcore\\pll\\clock82_generate.log": "abd74e4a9a678e09e3ddef7047b28abfd86e611b15e23970debdc2ae7dfc5f40",
+    "ipcore\\pll\\generate.log": "4e8c98ff804d2d2e18761e9160e30eefb20593a61153520bfefa2c255a4e9f87",
+    "ipcore\\pll\\pll.idf": "bd706ea1b63f51920baf75a71d4c9e7f1d715868f835bd21241e4b69ad404d53",
+    "ipcore\\pll\\pll.v": "2d1593771fb23fccf1cc0bea7469bdd7ec96da5b902c80f47f63849be917f5d8",
+    "ipcore\\pll\\pll_tb.v": "078148631660f2a584cd7a5622de31be68f9bf8a8a37965bccb29af54b639311",
+    "ipcore\\pll\\pll_tmpl.v": "2cec9a58532366c312ccaa63c2919bf52b6addaaf37c0de2af2626eac45fe02b",
+    "ipcore\\pll\\pll_tmpl.vhdl": "d49ab80f2c88fe218e1a44621dc6938f6cec05631a77e1415518d753f7b0177a",
+    "ipcore\\pll\\regenerate.log": "9289db5621271e914b4a4ab76905c98813e2cf5e947ea90d241c5b52b57f96af",
+    "ipcore\\pll\\timing80_generate.log": "f9b5fc34a852019cb446c974349b535c94979e3735e2d06793c9c33eb465848a",
+    "ipcore\\ram1_tdp\\.last_generated": "ff790460afc365359d80521b93fc57d2c5ad84884ca13a0e321a1cbd12d4823a",
+    "ipcore\\ram1_tdp\\generate.log": "d9d421f9fcf92ac0e6fcd01262bca0276bec41c5089bba84ab2666fadb59a58d",
+    "ipcore\\ram1_tdp\\init_param_bin_exmp.dat": "99f0926eb01a10dc1573d15b812055e57d586763e370a2ceebd9f6763c0100d7",
+    "ipcore\\ram1_tdp\\init_param_hex_exmp.dat": "1e0f90abf756d8a8fab7e8361f33833423ecbdf9b546f0cbc277432ead91e6d8",
+    "ipcore\\ram1_tdp\\ram1_tdp.idf": "6e9f74360e9554564de7bdc6f8ec0d116f59f7e9f2c02845f52364dff8a31543",
+    "ipcore\\ram1_tdp\\ram1_tdp.v": "13dcfbd0c6842c846612a81f04e22b3551cbb4c09dca22b867b240638707db5b",
+    "ipcore\\ram1_tdp\\ram1_tdp_tb.v": "2bc8856f8fead4fae874a194efc3f6d3e986b7c40f737591ee9a2ab3977fd5f1",
+    "ipcore\\ram1_tdp\\ram1_tdp_tmpl.v": "c9b790bcb5044b708daa02140cfdb6ffc80e83d5965033c60cb9d793dbcbaf3a",
+    "ipcore\\ram1_tdp\\ram1_tdp_tmpl.vhdl": "039c278465f2c1022f81cd4fd7c3218268a318bbba41cbdb79a8ccfc62ed93dd",
+    "ipcore\\ram1_tdp\\regenerate.log": "21d4710d4158ffa953b5b7c5a559d39a6ce1bba0c234f859451784f1f0b8aac7",
+    "ipcore\\ram2_tdp\\.last_generated": "f08f4f4871f3501d9985705eaab8f26e12279e0f411e3091aaedce6fa2475000",
+    "ipcore\\ram2_tdp\\generate.log": "e13e51a3d803761e1a4c577e5c388d9f3262fb1a696f7eda54bd586495d301d0",
+    "ipcore\\ram2_tdp\\init_param_bin_exmp.dat": "99f0926eb01a10dc1573d15b812055e57d586763e370a2ceebd9f6763c0100d7",
+    "ipcore\\ram2_tdp\\init_param_hex_exmp.dat": "1e0f90abf756d8a8fab7e8361f33833423ecbdf9b546f0cbc277432ead91e6d8",
+    "ipcore\\ram2_tdp\\ram2_tdp.idf": "40a1655b49d89d0f1b32a79f670c472d32de745a9bc8ec951400aa1cb7071e84",
+    "ipcore\\ram2_tdp\\ram2_tdp.v": "cebdba9cb861e1217175e14f7871f2bfef9687db6ecfaef504f679f55b457cd9",
+    "ipcore\\ram2_tdp\\ram2_tdp_tb.v": "350f9d09d16cf90a7de043c57675093d45edf1c28a45d57bf573b9af2a595068",
+    "ipcore\\ram2_tdp\\ram2_tdp_tmpl.v": "edde2420fd13b415eccd5227f3e86f0a80dfea51953c3441dabfd9bd9918e4f8",
+    "ipcore\\ram2_tdp\\ram2_tdp_tmpl.vhdl": "7b6ea7f3f45c9c58e194f3112048c743e17ac33c926475dbf8fd7fdddf0234ef",
+    "ipcore\\ram2_tdp\\regenerate.log": "fd632101d5823f54bbccac6034511d7202e071379479078568dcf19f13ebc45e",
+    "ipcore\\ram1_tdp\\rtl\\ipml_dpram_v1_6_ram1_tdp.v": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9",
+    "ipcore\\ram1_tdp\\rtl\\ram1_tdp_init_param.v": "f400a202d6da46866974732cc0f8c7a0eff6fd8daff59f0a42b04096a64ab989",
+    "ipcore\\ram2_tdp\\rtl\\ipml_dpram_v1_6_ram2_tdp.v": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c",
+    "ipcore\\ram2_tdp\\rtl\\ram2_tdp_init_param.v": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5",
+    "constraints\\board.fdc": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f",
+    "memory\\boot.hex": "9faada91a627db9e2f6d4498eee98c05dc8cc428e325037aa79ac726ef6f5515",
+    "memory\\boot_interleaved.hex": "f7842688d62cd80ac2ecf8da7ff5a874e62af17d380ed95de886e688d7372987"
+  },
+  "benchmark_cycles": 2627125,
+  "stats_cycles": 2627162,
+  "retired": 2808261,
+  "ipc": 1.0689333204423632,
+  "cm_per_mhz": 3.806442403768378,
+  "same_clock_throughput_gain_pct": 1.4525384212780157,
+  "gain_vs_original_board_pct": 2.724575343769331,
+  "estimated_fmax_mhz": 83.043,
+  "resources": {
+    "LUT": 11046,
+    "FF": 4437,
+    "Distributed RAM": 709,
+    "DRM": 48,
+    "APM": 4
+  },
+  "corners": {
+    "Setup Summary(Slow Corner)": {
+      "worst_slack_ns": 0.153,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Slow Corner)": {
+      "worst_slack_ns": 0.172,
+      "failing_endpoints": 0
+    },
+    "Setup Summary(Fast Corner)": {
+      "worst_slack_ns": 3.635,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Fast Corner)": {
+      "worst_slack_ns": 0.118,
+      "failing_endpoints": 0
+    }
+  },
+  "physical_verification": {
+    "status": "PASS",
+    "requested_mhz": 82.001,
+    "estimated_fmax_mhz": 83.043,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 0.153,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.172,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 3.635,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.118,
+        "failing_endpoints": 0
+      }
+    },
+    "board_pins": {
+      "clk": {
+        "location": "P20",
+        "iostandard": "LVTTL33",
+        "constraint_applied": true
+      },
+      "gpio[0]": {
+        "location": "W11",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "gpio[1]": {
+        "location": "V11",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "halted_ind": {
+        "location": "B2",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "jtag_TDO": {
+        "location": "Y11",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "rst_ext_i": {
+        "location": "K18",
+        "iostandard": "LVTTL33",
+        "constraint_applied": true
+      },
+      "uart_tx_pin": {
+        "location": "R9",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      }
+    },
+    "sta_sha256": "0cd4eadc7b421af0d0bef06bdcaf1ec7473ddeded6f69a815644a8109ffa0395",
+    "pnr_report_sha256": "5067478b7b2e61f0c945cfd791ee90db6bdf9a1c9655fa0cbfd869e58ef6ac19",
+    "routed_db_sha256": "4626b950e5666054cae056b622b68b53a20d4e00341820b7d854bc2cc14e580b",
+    "routed_resources": {
+      "LUT": 11046,
+      "FF": 4437,
+      "Distributed RAM": 709,
+      "DRM": 48,
+      "APM": 4
+    }
+  },
+  "independent_native_runs": 2,
+  "test_evidence": {
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\generation.json": "258f8d44805d175275f0f9808ce3578196b6ffccb27b1437c2b676cb9433b1ee",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\checks\\result.json": "c46673098210dacc6436f472a9e8db1230c7e5b838e4be5d01b7ff096d2b0034",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\performance\\result.json": "1641d3e41e710c5934f67d917da3eb00dd1ad5e26ca13e74c7262464236fdf78",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\validation\\result.json": "7d928f60f279b31fe06001b15f4c5e128c8a0fbd63a224d224265c899726fa5d",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\pair_checks\\result.json": "4f51548169e23de33edc88985b6504159e49b6e66f0d1b4838c2ecdcd8754ba5",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\mul_protocol\\result.json": "be34abc77ffbf735863cf2f29a651e733e8f8c585d3dcea8690475fcab8bb158",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\posted_soc_final\\result.json": "aca8e7f1851a0d2f6e40bd2e0c39ebdea241dc1f3ff88db72cb0dbd99d3d74fa",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\cancel_checks\\result.json": "f55c0805833f6b186feb016be4a3e445693f55baf80e82ef6063416c283ad6a3",
+    "simulation\\results\\load_bp_dual_boundary_auto_mul_early_products\\mul_unit\\result.json": "aad3fdda89251ffeaf7fe5c4df11fb9a4ee6afefcc2f9bd5ef8b7067ae262ae9"
+  },
+  "scope": "Fixed10/fixed1 diagnostic simulations; unchanged binaries and compiler flags; actual82MHz PLL, board pins and two independent native builds. No board programming or official long-run CoreMark score.",
+  "build_command": "tools/run.ps1 -Task pds"
+}

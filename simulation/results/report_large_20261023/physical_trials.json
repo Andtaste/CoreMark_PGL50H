@@ -1,0 +1,295 @@
+[
+  {
+    "project": "simulation\\results\\report_compare_fix83_20261023",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 79.586,
+    "place_seed": 7,
+    "route_seed": 2,
+    "sta_sha256": "14748bd79f09c65371652d5fd5a98ec257b083d9e75c07dc4f2f1eef67c3d449"
+  },
+  {
+    "project": "simulation\\results\\report_compare_fix83_20261023_p0r0",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 80.167,
+    "sta_sha256": "554b25509761c97b21d8402ddd8c59a08f9e7cd0c8c5171a2ae07979313a4557",
+    "place_seed": 0,
+    "route_seed": 0
+  },
+  {
+    "project": "simulation\\results\\report_compare_fix83_20261023_p3r0",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 78.964,
+    "sta_sha256": "bdf597888d6c7a66f423f725f07a9cf3985060aba55b7b10cefae386df573cf6",
+    "place_seed": 3,
+    "route_seed": 0
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 81.559,
+    "place_seed": 7,
+    "route_seed": 2,
+    "sta_sha256": "2a5453c76155ba0e86ccdd558ffefef7557428f949b5850764c3344466a0b56f"
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_f32_p7r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 81.268,
+    "sta_sha256": "5b00bc9fe36afdea720d55cd5b683fed26c18aee684df5b8af507d1cf2ce3e40",
+    "place_seed": 7,
+    "route_seed": 1,
+    "fanout_guide": 32
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_f48_p7r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 80.815,
+    "sta_sha256": "578486a926b035a01f84595578abded056d3ad24141384bc5b69c11114fd286f",
+    "place_seed": 7,
+    "route_seed": 1,
+    "fanout_guide": 48
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_fast_p4r1",
+    "status": "CANCELLED",
+    "reason": "Verified83MHz repair already promoted; stopped redundant remaining seed run. No timing pass/fail conclusion for this unfinished run.",
+    "place_seed": 4,
+    "route_seed": 1
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_fast_p8r1",
+    "status": "CANCELLED",
+    "reason": "Verified83MHz repair already promoted; stopped redundant remaining seed run. No timing pass/fail conclusion for this unfinished run.",
+    "place_seed": 8,
+    "route_seed": 1
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p0r0",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 79.962,
+    "sta_sha256": "6390d6c8e560a3a9404e24444613f9936617bb4ee9925e9c40b2e3aa8fa1a4c8",
+    "place_seed": 0,
+    "route_seed": 0
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p0r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 78.573,
+    "sta_sha256": "6c9001ab7bea5767cf25490840f0b28b079f20df267ac86f8a5263105b50fb92",
+    "place_seed": 0,
+    "route_seed": 1
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p11r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 71.927,
+    "sta_sha256": "5710865346f2433bb5acaa58d02c6c7758ea99efb6fb6c564d5360f196cf4e45",
+    "place_seed": 11,
+    "route_seed": 1,
+    "fanout_guide": 64
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p1r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 80.932,
+    "sta_sha256": "e5d5e0e7c553aa0e6b04a85b7d5cb816c3ec5c1b9e0bf1e90a43ef6998a0a773",
+    "place_seed": 1,
+    "route_seed": 1,
+    "fanout_guide": 64
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p2r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 81.513,
+    "sta_sha256": "7d7c98582de071afe2343acfc8d272c23b9199d8740509c4ef9cfe38b1f1aedc",
+    "place_seed": 2,
+    "route_seed": 1,
+    "fanout_guide": 64,
+    "priority_routing": false
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p3r0",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 81.934,
+    "sta_sha256": "3e120dddd192a98a2de77aa2203a81ebc92b0f34a5c68b60b44f9707ad9fbd94",
+    "place_seed": 3,
+    "route_seed": 0
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p3r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 82.284,
+    "sta_sha256": "5ccb9c9951d33fdd5f91b41d7e77ec7bbfcee29a618e791b13cf76877f8ff291",
+    "place_seed": 3,
+    "route_seed": 1
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p5r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 76.499,
+    "sta_sha256": "0ec37ec7ec39de2cba571160692bb3b893d7d1dbc44e4444a8aa33a5b38ca7ac",
+    "place_seed": 5,
+    "route_seed": 1,
+    "fanout_guide": 64
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p6r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 78.746,
+    "sta_sha256": "2059c9bb929bf6e6e62252b90da98118e9e672bb52008388362d60fb1e38cd3a",
+    "place_seed": 6,
+    "route_seed": 1,
+    "fanout_guide": 64,
+    "priority_routing": false
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p7r0",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 81.619,
+    "sta_sha256": "9729b8126b2e6239a3748e022bfb5255538f26f6d32264295b887d217dcd6c0e",
+    "place_seed": 7,
+    "route_seed": 0
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p7r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 82.42,
+    "sta_sha256": "75bcdf5667c6ddce68e57b0670ec33d891a704dad03b5e811cca12292deda97a",
+    "place_seed": 7,
+    "route_seed": 1
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p9r0",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 82.583,
+    "sta_sha256": "783e25cb4c3307fa1943a09925949842db1c980b5ab4fc6ae8ed0f9cd3c6bff0",
+    "place_seed": 9,
+    "route_seed": 0,
+    "fanout_guide": 64,
+    "priority_routing": false
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p9r1",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 82.795,
+    "sta_sha256": "abd7c249d8082fca1a17baa4d0d252bd3b885dc3f24ba8da6a0b994ca3fcbc98",
+    "place_seed": 9,
+    "route_seed": 1,
+    "fanout_guide": 64
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p9r2",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 82.495,
+    "sta_sha256": "2da05e9b1745b4f8607db81c5d03e406637247569600bbfc30396b50066de81d",
+    "place_seed": 9,
+    "route_seed": 2,
+    "fanout_guide": 64
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_p9r3",
+    "status": "FAIL",
+    "reason": "Timing constraints violated",
+    "estimated_fmax_mhz": 81.813,
+    "sta_sha256": "23f22489882ae36ecf857a9b2737793639174331cb98e4cbf9f574fbc2ade3f3",
+    "place_seed": 9,
+    "route_seed": 3,
+    "fanout_guide": 64,
+    "priority_routing": false
+  },
+  {
+    "project": "simulation\\results\\report_compare_xor83_20261023_priority_p9r1",
+    "status": "PASS",
+    "requested_mhz": 83.001,
+    "estimated_fmax_mhz": 83.368,
+    "corners": {
+      "Setup Summary(Slow Corner)": {
+        "worst_slack_ns": 0.053,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Slow Corner)": {
+        "worst_slack_ns": 0.168,
+        "failing_endpoints": 0
+      },
+      "Setup Summary(Fast Corner)": {
+        "worst_slack_ns": 3.515,
+        "failing_endpoints": 0
+      },
+      "Hold Summary(Fast Corner)": {
+        "worst_slack_ns": 0.117,
+        "failing_endpoints": 0
+      }
+    },
+    "board_pins": {
+      "clk": {
+        "location": "P20",
+        "iostandard": "LVTTL33",
+        "constraint_applied": true
+      },
+      "gpio[0]": {
+        "location": "W11",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "gpio[1]": {
+        "location": "V11",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "halted_ind": {
+        "location": "B2",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "jtag_TDO": {
+        "location": "Y11",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      },
+      "rst_ext_i": {
+        "location": "K18",
+        "iostandard": "LVTTL33",
+        "constraint_applied": true
+      },
+      "uart_tx_pin": {
+        "location": "R9",
+        "iostandard": "LVCMOS33",
+        "constraint_applied": true
+      }
+    },
+    "sta_sha256": "470ae54a164c943f615e3660fe5d59074e34f7b446d21478369fae68c0f124bb",
+    "pnr_report_sha256": "2f2970af068c3aad02c00e16c2260ff7bd5229adc0dfa8dee7b5550d228202cf",
+    "routed_db_sha256": "d30fd73cee56bfba313191da408a6a82e78fee1a7fde92c10eb94e75cba1074a",
+    "routed_resources": {
+      "LUT": 11242,
+      "FF": 4545,
+      "Distributed RAM": 709,
+      "DRM": 48,
+      "APM": 4
+    },
+    "place_seed": 9,
+    "route_seed": 1,
+    "fanout_guide": 64,
+    "priority_routing": true
+  }
+]

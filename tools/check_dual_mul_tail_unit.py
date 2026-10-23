@@ -53,7 +53,16 @@ module tail_tb;
 endmodule
 '''
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--variant',required=True);a=ap.parse_args();src=ROOT/('simulation/results/load_bp_'+a.variant);out=src/'mul_unit';out.mkdir(exist_ok=True);tb=out/'tail_tb.v';low=not a.variant.endswith('mulprobe');high=a.variant.endswith('multail');tb.write_text(TB.replace('@LOW@',str(int(low))).replace('@HIGH@',str(int(high))));iv=ROOT.parent/'tmp/iverilog-portable/bin/iverilog.exe';vvp=iv.with_name('vvp.exe');inputs=[Path(__file__).resolve(),src/'nc_mul_pipeline.v',tb];tests=[]
+ ap=argparse.ArgumentParser();ap.add_argument('--variant',required=True)
+ ap.add_argument('--low-latency',type=int,choices=range(1,5),default=2)
+ ap.add_argument('--high-latency',type=int,choices=range(2,6),default=3)
+ ap.add_argument('--registered-query',action='store_true')
+ a=ap.parse_args();src=ROOT/('simulation/results/load_bp_'+a.variant);out=src/'mul_unit';out.mkdir(exist_ok=True);tb=out/'tail_tb.v'
+ low=not a.variant.endswith('mulprobe') and not a.registered_query
+ high=a.variant.endswith('multail') and not a.registered_query
+ code=TB.replace('@LOW@',str(int(low))).replace('@HIGH@',str(int(high)))
+ code=code.replace('cyc+(operation==0 ? 2 : 3)',f'cyc+(operation==0 ? {a.low_latency} : {a.high_latency})')
+ tb.write_text(code);iv=ROOT.parent/'tmp/iverilog-portable/bin/iverilog.exe';vvp=iv.with_name('vvp.exe');inputs=[Path(__file__).resolve(),src/'nc_mul_pipeline.v',tb];tests=[]
  def run(cmd,log):
   p=subprocess.run(list(map(str,cmd)),cwd=ROOT,capture_output=True,timeout=180);(out/log).write_bytes(p.stdout+p.stderr);assert p.returncode==0,(p.stdout+p.stderr)[-2200:];return p.stdout.decode(errors='replace')
  run([iv,'-g2012','-s','tail_tb','-o',out/'unit.vvp',src/'nc_mul_pipeline.v',tb],'compile.log')

@@ -89,7 +89,7 @@
         </param>
         <param>
             <name>STATIC_RATIOF_advancedPage</name>
-            <value>82</value>
+            <value>83</value>
         </param>
         <param>
             <name>STATIC_PHASE0_basicPage</name>
@@ -122,7 +122,7 @@
         </param>
         <param>
             <name>CLKOUT0_REQ_FREQ_basicPage</name>
-            <value>82.0000</value>
+            <value>83.0000</value>
             <decimal>4</decimal>
         </param>
         <param>
@@ -394,7 +394,7 @@
         </param>
         <param>
             <name>STATIC_DUTYF_basicPage</name>
-            <value>82</value>
+            <value>83</value>
         </param>
         <param>
             <name>CLKOUT0_EN_advancedPage</name>
@@ -424,7 +424,7 @@
         </param>
         <param>
             <name>STATIC_RATIOF_basicPage</name>
-            <value>82</value>
+            <value>83</value>
         </param>
         <param>
             <name>CLKOUT3_EN_advancedPage</name>

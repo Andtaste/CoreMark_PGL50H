@@ -50,6 +50,13 @@ module nc_execute #(parameter ENABLE_DIV=1)(input wire clk,rst_n,clear,input wir
                          ({32{clean}} & tval) |
                          ({32{illegal && !fetch_error}} & insn) | ({32{fetch_error}} & pc);
  wire[31:0] add_value=a+(rhs^{32{control[13]}})+{31'b0,control[13]};
+ // ADS workaround: derive unsigned comparison by flipping the signed
+ // result exactly when operand sign bits differ. Never synthesize a pair
+ // of signed/unsigned relational operators on the same operands.
+ wire alu_signed_lt=$signed(a)<$signed(rhs);
+ wire alu_unsigned_lt=alu_signed_lt ^ (a[31]^rhs[31]);
+ wire branch_signed_lt=$signed(a)<$signed(b);
+ wire branch_unsigned_lt=branch_signed_lt ^ (a[31]^b[31]);
  wire[31:0] left_value=a<<rhs[4:0];
  wire signed[32:0] right_input={control[14] && a[31],a};
  wire[32:0] right_value=$signed(right_input)>>>rhs[4:0];
@@ -58,8 +65,8 @@ module nc_execute #(parameter ENABLE_DIV=1)(input wire clk,rst_n,clear,input wir
  wire[31:0] selected_result=
   ({32{control[0]}} & add_value) |
   ({32{control[1]}} & left_value) |
-  ({32{control[2]}} & {31'b0,$signed(a)<$signed(rhs)}) |
-  ({32{control[3]}} & {31'b0,a<rhs}) |
+  ({32{control[2]}} & {31'b0,alu_signed_lt}) |
+  ({32{control[3]}} & {31'b0,alu_unsigned_lt}) |
   ({32{control[4]}} & (a^rhs)) |
   ({32{control[5]}} & right_value[31:0]) |
   ({32{control[6]}} & (a|rhs)) |
@@ -81,8 +88,8 @@ module nc_execute #(parameter ENABLE_DIV=1)(input wire clk,rst_n,clear,input wir
  always @* begin
   result=selected_result;next_pc=sequential_pc;tval=0;csr_data=csr_old;exception=0;cause=0;csr_we=0;taken=0;
   case(f3)
-   0:taken=a==b;1:taken=a!=b;4:taken=$signed(a)<$signed(b);
-   5:taken=$signed(a)>=$signed(b);6:taken=a<b;7:taken=a>=b;default:;
+   0:taken=a==b;1:taken=a!=b;4:taken=branch_signed_lt;
+   5:taken=!branch_signed_lt;6:taken=branch_unsigned_lt;7:taken=!branch_unsigned_lt;default:;
   endcase
   case(kind)
    0:;

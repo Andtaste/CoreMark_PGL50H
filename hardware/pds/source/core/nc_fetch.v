@@ -6,7 +6,7 @@ module nc_fetch #(parameter ENABLE_BP=1)(input wire clk,rst_n,redirect,stop,inpu
  input wire[31:0] bp_update_pc,bp_update_target,output wire[31:0] prediction,prediction1,
  output wire req_valid,input wire req_ready,output wire[31:0] req_addr,
  input wire rsp_valid,output wire rsp_ready,input wire[63:0] rsp_data,input wire rsp_error,
- output wire[9:0] pair_flags,
+ output wire[9:0] pair_flags,output wire primary_multiply_hint,
  output wire valid,input wire ready,input wire take_two,output wire second_valid,
  output wire[31:0] pc,inst,inst1,output wire fault);
  reg[31:0] next_pc,cmd_pc,flight_pc,cmd_prediction,flight_prediction,cmd_prediction1,flight_prediction1;
@@ -101,6 +101,8 @@ module nc_fetch #(parameter ENABLE_BP=1)(input wire clk,rst_n,redirect,stop,inpu
  assign second_valid=count>=2 && head_1[32] && !head_1[33] && !prediction[30];
  wire[4:0] side_flags=pack_flags(head_1[42:34]);
  assign pair_flags={head_1[42],side_flags[3:0],pack_flags(head_0[42:34])};
+ // Existing registered classify_parts[7], not a new ID opcode decode.
+ assign primary_multiply_hint=head_0[41];
  // Candidate states after consuming one/two words are prepared in parallel.
  // The final take_two choice is a data mux into head FFs, not a RAM address.
  wire[106:0] after_one_0=count>1 ? head_1 : push ? in0 : 107'b0;

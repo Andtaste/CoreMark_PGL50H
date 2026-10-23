@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Port,[int]$Seconds=60,[string]$Python='')
+param([Parameter(Mandatory=$true)][string]$Port,[int]$Seconds=60,[string]$Python='',[int]$CpuHz=83000000)
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path $PSScriptRoot -Parent
 if(!$Python){$Python=(Get-Command python -ErrorAction SilentlyContinue).Source}
@@ -25,5 +25,5 @@ try {
  }
 } finally {$writer.Dispose();if($serial.IsOpen){$serial.Close()};$serial.Dispose()}
 Write-Host "UART saved: $logPath"
-& $Python -X utf8 (Join-Path $PSScriptRoot 'verify_board5000_uart.py') $logPath
+& $Python -X utf8 (Join-Path $PSScriptRoot 'verify_board5000_uart.py') $logPath --cpu-hz $CpuHz
 if($LASTEXITCODE -ne 0){throw 'UART transcript incomplete or checks failed; inspect the saved log.'}

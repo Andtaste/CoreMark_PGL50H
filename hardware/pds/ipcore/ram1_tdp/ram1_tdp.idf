@@ -126,7 +126,7 @@
         </param>
         <param>
             <name>INIT_FILE</name>
-            <value>memory/boot_interleaved.hex</value>
+            <value>boot_interleaved.hex</value>
         </param>
         <param>
             <name>RESET_TYPE</name>

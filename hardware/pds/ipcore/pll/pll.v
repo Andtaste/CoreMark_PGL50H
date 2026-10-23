@@ -29,13 +29,13 @@ module pll (
     localparam integer STATIC_RATIO2    = 16;
     localparam integer STATIC_RATIO3    = 16;
     localparam integer STATIC_RATIO4    = 16;
-    localparam integer STATIC_RATIOF    = 82;
+    localparam integer STATIC_RATIOF    = 83;
     localparam integer STATIC_DUTY0     = 10;
     localparam integer STATIC_DUTY1     = 16;
     localparam integer STATIC_DUTY2     = 16;
     localparam integer STATIC_DUTY3     = 16;
     localparam integer STATIC_DUTY4     = 16;
-    localparam integer STATIC_DUTYF     = 82;
+    localparam integer STATIC_DUTYF     = 83;
     localparam integer STATIC_PHASE0    = 16;
     localparam integer STATIC_PHASE1    = 16;
     localparam integer STATIC_PHASE2    = 16;

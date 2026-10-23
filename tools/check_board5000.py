@@ -6,7 +6,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def linux(p):p=p.resolve();return '/mnt/'+p.drive[0].lower()+p.as_posix()[2:]
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--full-run',action='store_true',help='Explicitly execute all5000 iterations; not run by default');args=parser.parse_args()
- project=ROOT/'hardware/pds';out=ROOT/'simulation/results/board5000';out.mkdir(exist_ok=True)
+ project=ROOT/'hardware/pds_board5000';out=ROOT/'simulation/results/board5000';out.mkdir(exist_ok=True)
  prefix=['wsl.exe','-d','Ubuntu','--cd',linux(ROOT),'--']
  actual=[p for d in ('core','perips','sys_bus','top') for p in sorted((project/'source'/d).glob('*.v'))]
  model=ROOT/'simulation/models/pango_ram_wide_models.v';shutil.copyfile(model,out/'pango_ram_wide_models.v');model=out/'pango_ram_wide_models.v'

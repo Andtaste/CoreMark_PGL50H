@@ -9,7 +9,7 @@ module top(input wire clk,rst_ext_i,input wire uart_rx_pin,
  end
  pll clock_ip(.clkin1(clk),.clkout0(sys_clk),.pll_lock(locked));
  wire[31:0] tohost;wire[1:0] gpio_out;
- nc_soc #(.CLOCK_HZ(82000000)) soc(.clk(sys_clk),.rst_n(reset_sync[3]),.irq_soft(1'b0),.irq_ext(1'b0),
+ nc_soc #(.CLOCK_HZ(83000000)) soc(.clk(sys_clk),.rst_n(reset_sync[3]),.irq_soft(1'b0),.irq_ext(1'b0),
   .uart_tx(uart_tx_pin),.gpio_out(gpio_out),.tohost(tohost));
  assign gpio=gpio_out;assign halted_ind=tohost==1;assign jtag_TDO=1'b0;
 endmodule
