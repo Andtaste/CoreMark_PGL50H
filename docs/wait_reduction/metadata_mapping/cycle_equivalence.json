@@ -1,5 +1,0 @@
-{
-  "uart_byte_exact_with_previous_mapping": true,
-  "image_sha256": "e9abfc84cbe4cf1402b4f2f17a035e5416751893dc98a261f06a914fdc2fb9ab",
-  "scope": "Same 10-iteration CoreMark, only FIFO PC/fault storage mapping changed."
-}

@@ -1,4 +1,0 @@
-{
-  "status": "not_selected_alone",
-  "reason": "Front-end critical path removed but full-core estimated Fmax decreased to 80.854 MHz; EX branch tval now limits frequency."
-}

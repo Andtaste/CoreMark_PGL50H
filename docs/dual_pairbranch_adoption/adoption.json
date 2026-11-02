@@ -1,9 +1,0 @@
-{
-  "status": "ACCEPTED_DUAL_DEVELOPMENT_BASELINE",
-  "variant": "dual_boundary_next_pairbranch",
-  "recorded_at": "2026-10-22T09:29:08.652344+08:00",
-  "accepted_descriptor_sha256": "8b55f4adda3e8e7f76f07e644cac8dfd8fb97325a2ebdf44d2c2f0235609845a",
-  "previous_descriptor_sha256": "b68472e674aa2d9e656485c85a450d7cbefcd060c96c26dd0ae8f7b61ee7882a",
-  "verified_archive_files": 4793,
-  "archive_manifest_sha256": "66b7ab246859ff903727111086f64bc7dd3822c5b6f5ae906e30886fe145065b"
-}

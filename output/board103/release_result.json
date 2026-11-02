@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "requested_mhz": 103.0,
+  "estimated_fmax_mhz": 103.0531,
+  "corners": {
+    "Setup Summary(Slow Corner)": {
+      "worst_slack_ns": 0.005,
+      "failing_endpoints": 0
+    },
+    "Setup Summary(Fast Corner)": {
+      "worst_slack_ns": 2.736,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Slow Corner)": {
+      "worst_slack_ns": 0.127,
+      "failing_endpoints": 0
+    },
+    "Hold Summary(Fast Corner)": {
+      "worst_slack_ns": 0.087,
+      "failing_endpoints": 0
+    },
+    "Recovery Summary(Slow Corner)": {
+      "worst_slack_ns": 4.944,
+      "failing_endpoints": 0
+    },
+    "Recovery Summary(Fast Corner)": {
+      "worst_slack_ns": 6.319,
+      "failing_endpoints": 0
+    },
+    "Removal Summary(Slow Corner)": {
+      "worst_slack_ns": 0.745,
+      "failing_endpoints": 0
+    },
+    "Removal Summary(Fast Corner)": {
+      "worst_slack_ns": 0.57,
+      "failing_endpoints": 0
+    }
+  },
+  "board_pins": {
+    "clk": {
+      "location": "P20",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "gpio[0]": {
+      "location": "W11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "gpio[1]": {
+      "location": "V11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "halted_ind": {
+      "location": "B2",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "jtag_TCK": {
+      "location": "AB13",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "jtag_TDI": {
+      "location": "AB11",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "jtag_TDO": {
+      "location": "Y11",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    },
+    "jtag_TMS": {
+      "location": "Y13",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "rst_ext_i": {
+      "location": "K18",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "uart_rx_pin": {
+      "location": "R8",
+      "iostandard": "LVTTL33",
+      "constraint_applied": true
+    },
+    "uart_tx_pin": {
+      "location": "R9",
+      "iostandard": "LVCMOS33",
+      "constraint_applied": true
+    }
+  },
+  "sta_sha256": "5aff69feb432e17f841557a19f8ac7010e0bb8945dbbb1fecd6cfaf0d45710e2",
+  "pnr_report_sha256": "3e4f314bf45511f943a7e7f8c46045ca7ed1a37527d63332b7ee88a97b3938c5",
+  "routed_db_sha256": "99b71501ecdb9a1d6c06cd6195d151c91071e9b560230feb29d411c155704acd",
+  "routed_resources": {
+    "LUT": 14734.0,
+    "FF": 4473.0,
+    "LUT_logic": 12605.0,
+    "LUTRAM": 1044.0,
+    "DRM": 48.0,
+    "APM": 4.0,
+    "counting_scope": "PDS2025 physical CLMA+CLMS totals, including constant/bypass LUTs; compare within this tool version."
+  },
+  "configured_cpu_hz": 103000000,
+  "iterations": 6000,
+  "bitstream": "download/top.sbit",
+  "bitstream_sha256": "eb9c2fbd2fb3d5d3a308d25edf69443e82e3447273039eb3add15a5b0dc534be",
+  "routed_rom": {
+    "status": "PASS",
+    "physical_code_drms": 32,
+    "init_blocks": 2048,
+    "decoded_bytes": 65536,
+    "decoded_words": 16384,
+    "rom_sha256": "d8c1c6ff94a97ae2639b6a0676a324b6aaa3d77134cd45290dc316f20dff4361",
+    "routed_netlist_sha256": "05ce5dbff1bdb6cf8d7bcafc4d1c4a2dbc812488c01d0e9fc3f76b080202c0c8",
+    "scope": "PDS2025 V_DRM18K physical instance INIT values decoded independently from bank/column hierarchy; exact64KiB including zero padding. No timing or board claim."
+  },
+  "scope": "GUI seed11/1 rebuild reproduced accepted full STA; exact routed export and physical ROM audited. No new board measurement."
+}

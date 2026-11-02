@@ -1,1 +1,0 @@
-Not retained: full token result cache saved only 81 benchmark-window cycles, cost +322 LUT/+392 FF versus compact-queue stage1. All function/STA checks passed after per-slot capture rewrite.

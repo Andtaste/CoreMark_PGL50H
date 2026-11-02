@@ -1,1 +1,0 @@
-Not retained: preserving EX broadcast across bubbles changed no measured CoreMark-window cycles. No PDS run needed for a zero-benefit functional candidate.

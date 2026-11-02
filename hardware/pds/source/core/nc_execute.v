@@ -1,7 +1,7 @@
 // EX has no physical RAM outputs and no combinational frontend control.
 // Its complete result/transaction is captured by MEM before authorization.
-module nc_execute #(parameter ENABLE_DIV=1)(input wire clk,rst_n,clear,input wire valid,output wire ready,
- input wire[203:0] packet,input wire[18:0] control,output wire out_valid,input wire out_ready,
+module nc_execute #(parameter ENABLE_DIV=1,USE_PRECOMPUTED_ADDRESS=0)(input wire clk,rst_n,clear,input wire valid,output wire ready,
+ input wire[203:0] packet,input wire[18:0] control,input wire[31:0] fast_address,output wire out_valid,input wire out_ready,
  output wire redirect_needed,output wire[31:0] redirect_target,
  input wire[31:0] prediction,output wire prediction_wrong,output wire branch_taken,
  output wire[276:0] out_packet,output wire[31:0] memory_aux);
@@ -10,7 +10,7 @@ module nc_execute #(parameter ENABLE_DIV=1)(input wire clk,rst_n,clear,input wir
  assign {kind,pc,insn,a,b,imm,csr_old,rd,wr,illegal,fetch_error}=packet;
  wire[2:0] f3=insn[14:12];
  wire[31:0] rhs=control[15] ? imm : b;
- wire[31:0] address=a+imm;
+ wire[31:0] address=USE_PRECOMPUTED_ADDRESS ? fast_address : a+imm;
  wire[31:0] direct_target=pc+imm;
  wire[31:0] csr_operand=f3[2] ? {27'b0,insn[19:15]} : a;
  reg[31:0] result,next_pc,tval,csr_data;
@@ -49,7 +49,7 @@ module nc_execute #(parameter ENABLE_DIV=1)(input wire clk,rst_n,clear,input wir
  wire[31:0] selected_tval=(taken ? branch_taken_tval : branch_untaken_tval) | jump_tval |
                          ({32{clean}} & tval) |
                          ({32{illegal && !fetch_error}} & insn) | ({32{fetch_error}} & pc);
- wire[31:0] add_value=a+(rhs^{32{control[13]}})+{31'b0,control[13]};
+ wire[31:0] add_value=(USE_PRECOMPUTED_ADDRESS && control[0] && control[15]) ? fast_address : a+(rhs^{32{control[13]}})+{31'b0,control[13]};
  // ADS workaround: derive unsigned comparison by flipping the signed
  // result exactly when operand sign bits differ. Never synthesize a pair
  // of signed/unsigned relational operators on the same operands.

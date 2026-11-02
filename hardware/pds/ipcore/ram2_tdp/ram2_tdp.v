@@ -47,9 +47,9 @@ localparam A_ADDR_WIDTH = 12 ; // @IPC int 9,20
 
 localparam A_DATA_WIDTH = 64 ; // @IPC int 1,1152
 
-localparam B_ADDR_WIDTH = 13 ; // @IPC int 9,20
+localparam B_ADDR_WIDTH = 12 ; // @IPC int 9,20
 
-localparam B_DATA_WIDTH = 32 ; // @IPC int 1,1152
+localparam B_DATA_WIDTH = 64 ; // @IPC int 1,1152
 
 localparam A_OUTPUT_REG = 0 ; // @IPC bool
 
@@ -73,7 +73,7 @@ localparam WR_BYTE_EN = 1 ; // @IPC bool
 
 localparam A_BE_WIDTH = 8 ; // @IPC int 2,128
 
-localparam B_BE_WIDTH = 4 ; // @IPC int 2,128
+localparam B_BE_WIDTH = 8 ; // @IPC int 2,128
 
 localparam A_WRITE_MODE = "READ_BEFORE_WRITE"; // @IPC enum NORMAL_WRITE,TRANSPARENT_WRITE,READ_BEFORE_WRITE
 
@@ -85,7 +85,7 @@ localparam BYTE_SIZE = 8 ; // @IPC enum 8,9
 
 localparam INIT_EN = 0 ; // @IPC bool
 
-localparam SAMEWIDTH_EN = 0 ; // @IPC bool
+localparam SAMEWIDTH_EN = 1 ; // @IPC bool
 
 localparam A_CLK_EN = 1 ; // @IPC bool
 

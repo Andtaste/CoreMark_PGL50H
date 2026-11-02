@@ -47,9 +47,9 @@ localparam A_ADDR_WIDTH = 13 ; // @IPC int 9,20
 
 localparam A_DATA_WIDTH = 64 ; // @IPC int 1,1152
 
-localparam B_ADDR_WIDTH = 14 ; // @IPC int 9,20
+localparam B_ADDR_WIDTH = 13 ; // @IPC int 9,20
 
-localparam B_DATA_WIDTH = 32 ; // @IPC int 1,1152
+localparam B_DATA_WIDTH = 64 ; // @IPC int 1,1152
 
 localparam A_OUTPUT_REG = 0 ; // @IPC bool
 
@@ -65,7 +65,7 @@ localparam B_CLK_OR_POL_INV = 0 ; // @IPC bool
 
 localparam POWER_OPT = 0 ; // @IPC bool
 
-localparam INIT_FILE = "boot_interleaved.hex" ; // @IPC string
+localparam INIT_FILE = "memory/boot64.dat" ; // @IPC string
 
 localparam INIT_FORMAT = "HEX" ; // @IPC enum BIN,HEX
 
@@ -73,7 +73,7 @@ localparam WR_BYTE_EN = 1 ; // @IPC bool
 
 localparam A_BE_WIDTH = 8 ; // @IPC int 2,128
 
-localparam B_BE_WIDTH = 4 ; // @IPC int 2,128
+localparam B_BE_WIDTH = 8 ; // @IPC int 2,128
 
 localparam A_WRITE_MODE = "READ_BEFORE_WRITE"; // @IPC enum NORMAL_WRITE,TRANSPARENT_WRITE,READ_BEFORE_WRITE
 
@@ -85,7 +85,7 @@ localparam BYTE_SIZE = 8 ; // @IPC enum 8,9
 
 localparam INIT_EN = 1 ; // @IPC bool
 
-localparam SAMEWIDTH_EN = 0 ; // @IPC bool
+localparam SAMEWIDTH_EN = 1 ; // @IPC bool
 
 localparam A_CLK_EN = 1 ; // @IPC bool
 
@@ -187,14 +187,14 @@ assign b_rd_data         = ((DEVICE_NAME == "PGT30G") && (B_DATA_WIDTH <= 9)) ? 
 
 
 //pg_flex_sdpram IP instance
-ipml_dpram_v1_6_ram1_tdp
+ipml_dpram_v1_8_ram1_tdp
     #(
     .c_SIM_DEVICE              (SIM_DEVICE                   ),
-    .c_A_ADDR_WIDTH            (A_ADDR_WIDTH                 ),  //write address width  legal value:9~20 
+    .c_A_ADDR_WIDTH            (A_ADDR_WIDTH                 ),  //write address width  legal value:9~20
     .c_A_DATA_WIDTH            (A_DATA_WIDTH_WRAP            ),  //write data width     1)WR_BYTE_EN =0 legal value:1~1152  2)WR_BYTE_EN=1  legal value:2^N or 9*2^N
     .c_B_ADDR_WIDTH            (B_ADDR_WIDTH                 ),  //read address width   legal value:9~20
     .c_B_DATA_WIDTH            (B_DATA_WIDTH_WRAP            ),  //read data width      1)WR_BYTE_EN =0 legal value:1~1152  2)WR_BYTE_EN=1  legal value:2^N or 9*2^N
-    .c_A_OUTPUT_REG            (A_OUTPUT_REG                 ),  //port A output register      legal value: 0 or 1 
+    .c_A_OUTPUT_REG            (A_OUTPUT_REG                 ),  //port A output register      legal value: 0 or 1
     .c_B_OUTPUT_REG            (B_OUTPUT_REG                 ),  //PORT B output register      legal value: 1 or 0
     .c_A_RD_OCE_EN             (A_RD_OCE_EN                  ),  //port A rd_oce enable
     .c_B_RD_OCE_EN             (B_RD_OCE_EN                  ),  //port B rd_oce enable

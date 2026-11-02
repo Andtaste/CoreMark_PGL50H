@@ -3,13 +3,13 @@
 // Two-entry ID/EX and four-entry EX/MEM boundaries isolate backpressure. An eight-token
 // dependency ledger identifies youngest writers (including WAW) and supports
 // precise squash. Execution and retirement remain strictly in order.
-module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n,input wire irq_soft,irq_timer,irq_ext,
+module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0,BULK_READ_FILL=0)(input wire clk,rst_n,input wire irq_soft,irq_timer,irq_ext,
  output wire i_req_valid,input wire i_req_ready,output wire[31:0] i_addr,
  input wire i_rsp_valid,output wire i_rsp_ready,input wire[63:0] i_data,input wire i_error,
  output wire d_req_valid,input wire d_req_ready,output wire[31:0] d_addr,d_wdata,
  output wire[31:0] d_write_addr,
  output wire[3:0] d_mask,output wire d_write,
- input wire d_rsp_valid,output wire d_rsp_ready,input wire[31:0] d_rdata,input wire d_error,
+ input wire d_rsp_valid,output wire d_rsp_ready,input wire[31:0] d_rdata,input wire[63:0] d_line_data,input wire d_error,
  output reg trace_valid,trace_trap,output reg[31:0] trace_pc,trace_insn,trace_data,trace_cause,
  output reg[4:0] trace_rd);
  reg redirect,branch_redirect;reg[31:0] redirect_pc,arch_pc;reg[2:0] redirect_tag;
@@ -118,7 +118,8 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
   dep_c=id_pair_flags[5] && |(match_c|match_c1);dep_d=id_pair_flags[6] && |(match_d|match_d1);
  end
  wire ex_credit,ex_valid,ex_pop,ex_occupied;wire[203:0] ex_packet;wire[2:0] ex_tag;
- reg f_valid;reg[2:0] f_tag;reg[31:0] f_data;
+ reg f_valid;reg[2:0] f_tag;reg[31:0] f_alu_data,f_cache_data;reg f_is_cache;
+ wire[31:0] f_data=f_is_cache ? f_cache_data : f_alu_data;
  reg f1_valid;wire[2:0] f1_tag=f_tag;reg[31:0] f1_data;
  wire m_valid,m_lane;wire[2:0] m_tag;wire[3:0] m_next_tag;wire[2:0] future_w_tag;wire[31:0] m_data;
  wire issue=id_valid && !barrier && !redirect && !do_trap && !irq_pending && ex_credit && !live[tail] &&
@@ -131,16 +132,17 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  wire extended_pair=id_pair_flags[9] && (id_pair_flags[3] ||
   ((id_kind==4 || id_kind==5) && id_insn1[6])) && !id_prediction[31];
  // Declining a pair leaves its second instruction at the fetch head.
- wire pair_candidate=!(id_mul_hint && (dep_c || dep_d)) && id_second && !id_fault && id_pair_flags[4] &&
+ wire pair_candidate=!(id_insn[6] && id_insn[3]) && !(id_mul_hint && (dep_c || dep_d)) && id_second && !id_fault && id_pair_flags[4] &&
   !id_prediction[30] && ((id_pair_flags[8] && !id_prediction1[31]) || (extended_pair && (id_insn1[6] || !id_prediction1[31]))) &&
   !second_dep && !(id_pair_flags[2] && rd!=0 && ((id_pair_flags[5] && rd==rs1_1) || (id_pair_flags[6] && rd==rs2_1))) &&
   !(id_pair_flags[2] && id_pair_flags[7] && rd!=0 && rd==rd1);
  assign pair_issue=issue && pair_candidate;
  assign id_ready=issue;
  wire[223:0] ex_side;
- wire[3:0] id_side_kind=extended_pair ? (id_insn1[6] ? 4'd1 : 4'd6) : 4'd0;
+ wire[3:0] id_side_kind=extended_pair ? (id_insn1[6] ? (id_insn1[3] ? 4'd2 : 4'd1) : 4'd6) : 4'd0;
  wire[223:0] id_side={pair_candidate,id1_control,id_side_kind,id_pc+32'd4,id_insn1,c,d,id1_imm,id_prediction1,rd1,id_pair_flags[7],2'b0};
- nc_operands operands(.clk(clk),.rst_n(rst_n),.clear(redirect || do_trap),
+ wire[31:0] operand_address,saved_lookup_address;wire early_addi_for_agu;
+ nc_operands #(.USE_SPLIT_F0(1),.REGISTER_LOAD_ADDRESS(1),.EARLY_ADDI_AGU(1)) operands(.early_addi_valid(early_addi_for_agu),.out_address(operand_address),.load_lookup_address(saved_lookup_address),.clk(clk),.rst_n(rst_n),.clear(redirect || do_trap),
   .in_valid(issue),.in_ready(ex_credit),.in_tag(tail),.in_side(id_side),.out_side(ex_side),
   .in_control(id_control),.out_control(ex_control),
   .in_prediction(id_prediction),.out_prediction(ex_prediction),
@@ -148,7 +150,7 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
   .next_f_tag(ex_tag),.next_w_tag(future_w_tag),.next_m_tag(m_next_tag),
   .wait_c(pair_candidate && dep_c),.wait_d(pair_candidate && dep_d),.tag_c(tag_c),.tag_d(tag_d),
   .wait_a(dep_a),.wait_b(dep_b),.tag_a(tag_a),.tag_b(tag_b),
-  .f_valid(f_valid),.f_tag({f_tag,1'b0}),.f_data(f_data),
+  .f_valid(f_valid),.f_tag({f_tag,1'b0}),.f_data(f_data),.f_alu_data(f_alu_data),.f_cache_data(f_cache_data),.f_is_cache(f_is_cache),
   .f1_valid(f1_valid),.f1_tag({f1_tag,1'b1}),.f1_data(f1_data),
   .w1_valid(commit1 && w1_rd!=0),.w1_tag({w_tag,1'b1}),.w1_data(w1_result),
   .w_valid(commit && w_wr && w_rd!=0),.w_tag({w_tag,1'b0}),.w_data(w_result),
@@ -161,14 +163,41 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  wire execute_redirect;wire[31:0] execute_target,execute_aux;
  wire prediction_wrong,execute_taken;
  assign ex_pop=execute_ready && ex_enable;
- nc_execute execute(.clk(clk),.rst_n(rst_n),.clear(redirect || do_trap),
+ nc_execute #(.USE_PRECOMPUTED_ADDRESS(1)) execute(.fast_address(saved_lookup_address),.clk(clk),.rst_n(rst_n),.clear(redirect || do_trap),
   .valid(ex_valid && ex_enable),.ready(execute_ready),.packet(ex_packet),.control(ex_control),
   .redirect_needed(execute_redirect),.redirect_target(execute_target),
   .prediction(ex_prediction),.prediction_wrong(prediction_wrong),.branch_taken(execute_taken),
   .out_valid(execute_valid),.out_ready(mem_credit),.out_packet(execute_packet),.memory_aux(execute_aux));
  wire ex_fire=execute_valid && mem_credit;
+ reg[7:0] pending_stores;
+ wire[7:0] older_stores;wire[2:0] load_age=ex_tag-head;genvar cs;
+ generate for(cs=0;cs<8;cs=cs+1) begin:cache_store_order
+  wire[2:0] store_age=cs-head;
+  assign older_stores[cs]=pending_stores[cs] && store_age<load_age;
+ end endgenerate
+ wire l0_lookup_hit,l0_hit,l0_fill_valid;wire[31:0] l0_word,l0_fill_address,l0_fill_word;
+ wire l0_store=d_req_valid && d_req_ready && d_write;
+ wire l0_flush=do_trap || irq_take || (commit && w_insn[6:0]==7'h0f);
+ wire saved_load_fault=(ex_packet[149:148]==2 && |saved_lookup_address[1:0]) ||
+                       (ex_packet[149:148]==1 && saved_lookup_address[0]);
+ nc_l0_word_cache l0(.clk(clk),.rst_n(rst_n),.flush(l0_flush),.lookup_address(saved_lookup_address),
+  .hit(l0_lookup_hit),.lookup_word(l0_word),.fill_valid(l0_fill_valid),.fill_wide(BULK_READ_FILL!=0),.fill_line(d_line_data),.fill_address(l0_fill_address),.fill_word(l0_fill_word),
+  .store_valid(l0_store),.store_address(d_write_addr),.store_word(d_wdata),.store_mask(d_mask));
+ assign l0_hit=ex_valid && ex_packet[203:200]==4 && !(|ex_packet[1:0]) && !saved_load_fault && !(|older_stores) && l0_lookup_hit;
+ wire[31:0] l0_shifted=l0_word>>{saved_lookup_address[1:0],3'b0};
+ reg[31:0] l0_result;
+ always @* begin
+  case(ex_packet[150:148])
+   0:l0_result={{24{l0_shifted[7]}},l0_shifted[7:0]};
+   1:l0_result={{16{l0_shifted[15]}},l0_shifted[15:0]};
+   2:l0_result=l0_word;
+   4:l0_result={24'b0,l0_shifted[7:0]};
+   5:l0_result={16'b0,l0_shifted[15:0]};
+   default:l0_result=0;
+  endcase
+ end
  wire[276:0] secondary_result;wire side_wrong,side_taken;wire[31:0] side_target;
- wire side_branch=ex_side[223] && ex_side[203:200]==1;
+ wire side_branch=ex_side[223] && (ex_side[203:200]==1 || ex_side[203:200]==2);
  wire side_multiply=ex_side[223] && ex_side[203:200]==6;
  wire resolved_branch=ex_branch || side_branch;
  wire[31:0] resolved_prediction=side_branch ? ex_side[39:8] : ex_prediction;
@@ -177,14 +206,18 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  // Side admission permits conditional branches, ALU and MUL only.
  // Tie JAL/JALR control off at this boundary, removing unused AGU/target
  // comparisons from the secondary prediction path; no added cycle.
- nc_execute #(.ENABLE_DIV(0)) execute1(.clk(clk),.rst_n(rst_n),.clear(redirect || do_trap),
-  .valid(ex_valid && ex_enable && ex_side[223]),.ready(),.packet(ex_side[203:0]),.control({2'b0,ex_side[220:204]}),
+ nc_execute #(.ENABLE_DIV(0)) execute1(.fast_address(32'b0),.clk(clk),.rst_n(rst_n),.clear(redirect || do_trap),
+  .valid(ex_valid && ex_enable && ex_side[223]),.ready(),.packet(ex_side[203:0]),.control({1'b0,ex_side[221:204]}),
   .redirect_needed(),.redirect_target(side_target),.prediction(ex_side[39:8]),.prediction_wrong(side_wrong),.branch_taken(side_taken),
   .out_valid(),.out_ready(mem_credit),.out_packet(secondary_result),.memory_aux());
+ // A clean accepted primary ADDI returns saved_lookup_address itself.
+ // This is an existing FF result, rather than a same-cycle ALU bypass.
+ assign early_addi_for_agu=ex_fire && ex_packet[203:200]==0 && ex_control[0] && ex_control[15] &&
+   ex_packet[2] && ex_packet[7:3]!=0 && !(|ex_packet[1:0]);
  wire side_execute=ex_side[223] && !execute_packet[2] && !prediction_wrong;
  wire[31:0] side_value=side_branch ? secondary_result[212:181] : side_multiply ? 32'b0 : secondary_result[180:149];
  wire[64:0] side_result={side_execute,secondary_result[244:213],side_value};
- always @(posedge clk) if(ex_fire) begin f1_data<=secondary_result[180:149];end
+ always @(posedge clk) begin f1_data<=secondary_result[180:149];end
  always @(posedge clk or negedge rst_n) begin
   if(!rst_n) f1_valid<=0;else f1_valid<=ex_fire && side_execute && !side_branch && !side_multiply && secondary_result[15:11]!=0;
  end
@@ -199,7 +232,7 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  wire[31:0] mul_a=side_multiply ? ex_side[135:104] : ex_packet[135:104];
  wire[31:0] mul_b=side_multiply ? ex_side[103:72] : ex_packet[103:72];
  wire[1:0] mul_op=side_multiply ? ex_side[149:148] : ex_packet[149:148];
- nc_mul_pipeline multiply(.clk(clk),.rst_n(rst_n),.clear(do_trap),.accept(mul_accept),
+ nc_mul_pipeline #(.REGISTER_CONSUME(1)) multiply(.clk(clk),.rst_n(rst_n),.clear(do_trap),.accept(mul_accept),
   .in_tag(ex_tag),.in_lane(side_multiply),.forward_lane(m_lane),.operation(mul_op),.a(mul_a),.b(mul_b),
   .next_forward_tag(m_next_tag),.query_tag(mul_query_tag),.consume(mul_consume),.query_ready(mul_query_ready),.query_data(mul_query_data),
   .forward_valid(m_valid),.forward_tag(m_tag),.forward_data(m_data),.busy(mul_busy));
@@ -209,7 +242,7 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  wire branch_event=ex_fire && (prediction_wrong || (side_branch && !execute_packet[2] && side_wrong));
  always @(posedge clk) begin
   bp_update_pc<=side_branch ? secondary_result[276:245] : execute_packet[276:245];bp_update_target<=resolved_target;
-  bp_update_branch<=resolved_branch;bp_update_conditional<=side_branch || execute_packet[7:4]==1;
+  bp_update_branch<=resolved_branch;bp_update_conditional<=(side_branch && ex_side[203:200]==1) || execute_packet[7:4]==1;
   bp_update_taken<=resolved_taken;
  end
  always @(posedge clk or negedge rst_n) begin
@@ -226,32 +259,33 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  // synchronous trap values belong to distinct classes. Qualification uses
  // registered EX class/illegal/fetch bits, never a late branch-fault mux.
  wire queue_store=ex_packet[203:200]==5;
- wire[31:0] queue_value=queue_store ? execute_packet[116:85] : execute_packet[180:149];
+ wire[31:0] queue_value=l0_hit ? l0_result : queue_store ? execute_packet[116:85] : execute_packet[180:149];
  wire[31:0] queue_aux=execute_aux;
  wire[183:0] compact_packet;wire[64:0] compact_side,memory_side;
- wire queued_valid,queue_credit;wire[248:0] queued_packet;
- wire[248:0] incoming_packet={side_result,ex_tag,execute_packet[276:181],queue_value,queue_aux,execute_packet[20:0]};
+ wire queued_valid,queue_credit;wire[249:0] queued_packet;wire compact_l0_hit;
+ wire[249:0] incoming_packet={l0_hit,side_result,ex_tag,execute_packet[276:181],queue_value,queue_aux,execute_packet[20:0]};
  // Input credit is still registered occupancy. Empty queue hands EX to the
  // MEM slot on the same edge; blocked instructions enter the existing FIFO.
  assign mem_credit=queue_credit;
  assign mem_valid=queued_valid || execute_valid;
- assign {compact_side,compact_packet}=queued_valid ? queued_packet : incoming_packet;
+ assign {compact_l0_hit,compact_side,compact_packet}=queued_valid ? queued_packet : incoming_packet;
  wire direct_take=!queued_valid && execute_valid && memory_ready;
  // Separate request address from the compact auxiliary field. Branch next-PC
  // is a valid auxiliary value, but must not drive the early load address cone.
- wire[31:0] direct_agu=ex_packet[135:104]+ex_packet[71:40];
+ wire[31:0] direct_agu=operand_address;
  wire[31:0] launch_address=queued_valid ? compact_packet[52:21] : direct_agu;
 
- nc_fifo #(.WIDTH(249),.DEPTH(4)) memory_queue(.clk(clk),.rst_n(rst_n),.clear(do_trap),
+ nc_fifo #(.WIDTH(250),.DEPTH(4)) memory_queue(.clk(clk),.rst_n(rst_n),.clear(do_trap),
   .in_valid(execute_valid && !direct_take),.in_ready(queue_credit),
   .in_data(incoming_packet),
   .out_valid(queued_valid),.out_ready(memory_ready),.out_data(queued_packet));
  wire[31:0] compact_value=compact_packet[84:53],compact_aux=compact_packet[52:21];
  wire compact_store=compact_packet[7:4]==5;
- assign mem_packet={compact_packet[183:85],(compact_store ? 32'b0 : compact_value),compact_aux,
-                    (compact_store ? compact_value : 32'b0),(compact_packet[2] ? compact_aux : 32'b0),
-                    (compact_packet[7:4]==7 && !compact_packet[2] ? compact_aux : 32'b0),compact_packet[20:0]};
- nc_memory #(.EARLY_REQUEST(1),.POST_LOCAL_STORES(POST_LOCAL_STORES)) memory(.side_packet(compact_side),.wb_side(memory_side),.clk(clk),.rst_n(rst_n),.kill(do_trap),.valid(mem_valid),.ready(memory_ready),.packet(mem_packet),.launch_address(launch_address),.write_address(d_write_addr),
+ wire[31:0] held_store_value=queued_valid ? queued_packet[84:53] : ex_packet[103:72];
+ assign mem_packet={compact_packet[183:85],compact_value,compact_aux,
+                    held_store_value,compact_aux,compact_aux,compact_packet[20:0]};
+ wire[31:0] format_load_address=queued_valid ? compact_packet[52:21] : direct_agu;
+ nc_memory #(.EARLY_REQUEST(0),.POST_LOCAL_STORES(POST_LOCAL_STORES),.USE_SEPARATE_LOAD_ADDRESS(1),.ENABLE_L0_CACHE(1)) memory(.l0_hit(compact_l0_hit),.l0_fill_valid(l0_fill_valid),.l0_fill_address(l0_fill_address),.l0_fill_word(l0_fill_word),.load_address(format_load_address),.side_packet(compact_side),.wb_side(memory_side),.clk(clk),.rst_n(rst_n),.kill(do_trap),.valid(mem_valid),.ready(memory_ready),.packet(mem_packet),.launch_address(launch_address),.write_address(d_write_addr),
   .mul_tag(mul_query_tag),.mul_ready(mul_query_ready),.mul_data(mul_query_data),.mul_consume(mul_consume),
   .wb_valid(memory_done),.wb_packet(memory_packet),
   .req_valid(d_req_valid),.req_ready(d_req_ready),.req_addr(d_addr),.req_data(d_wdata),
@@ -259,15 +293,15 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
   .rsp_data(d_rdata),.rsp_error(d_error));
  reg[64:0] wb_side_q;assign w_side=wb_side_q;
  reg wb_v;reg[279:0] wb_q;assign wb_valid=wb_v;assign wb_packet=wb_q;
- always @(posedge clk) if(memory_done) begin wb_q<=memory_packet;wb_side_q<=memory_side;end
+ always @(posedge clk) begin wb_q<=memory_packet;wb_side_q<=memory_side;end
  always @(posedge clk or negedge rst_n) begin
   if(!rst_n) wb_v<=0;else wb_v<=memory_done;
  end
- always @(posedge clk) if(ex_fire) begin f_tag<=ex_tag;f_data<=execute_packet[180:149];end
+ always @(posedge clk) begin f_tag<=ex_tag;f_alu_data<=execute_packet[180:149];f_cache_data<=l0_result;f_is_cache<=l0_hit;end
  always @(posedge clk or negedge rst_n) begin
   if(!rst_n) f_valid<=0;
   else f_valid<=ex_fire && !execute_packet[2] && execute_packet[3] && execute_packet[15:11]!=0 &&
-                execute_packet[7:4]!=4 && !ex_multiply;
+                (execute_packet[7:4]!=4 || l0_hit) && !ex_multiply;
  end
  nc_csr csr(.clk(clk),.rst_n(rst_n),.retire(commit),.retire1(commit1),.raddr(id_insn[31:20]),
   .stats_events({
@@ -295,6 +329,17 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
  end
  always @(posedge clk or negedge rst_n) begin
   if(!rst_n) trace1_valid<=0;else trace1_valid<=commit1;
+ end
+ integer cache_slot;
+ always @(posedge clk or negedge rst_n) begin
+  if(!rst_n) pending_stores<=0;
+  else if(do_trap || irq_take) pending_stores<=0;
+  else begin
+   if(l0_store) pending_stores[memory_packet[279:277]]<=0;
+   if(issue && id_kind==5) pending_stores[tail]<=1;
+   if(branch_redirect) for(cache_slot=0;cache_slot<8;cache_slot=cache_slot+1)
+    if(((cache_slot-head)&7)>((redirect_tag-head)&7)) pending_stores[cache_slot]<=0;
+  end
  end
  integer r;
  always @(posedge clk or negedge rst_n) begin
@@ -337,6 +382,83 @@ module nc_core #(parameter ENABLE_BP=1,POST_LOCAL_STORES=0)(input wire clk,rst_n
     redirect_pc<=trap_base + (irq_take && vector_mode ? {25'b0,irq_cause[4:0],2'b0} : 0);
     arch_pc<=trap_base + (irq_take && vector_mode ? {25'b0,irq_cause[4:0],2'b0} : 0);
    end
+  end
+ end
+endmodule
+
+// Two independently valid words share one direct-mapped 64-bit line tag.
+// Scalar fallback fills one word; a successful local wide read fills both.
+module nc_l0_word_cache #(parameter INDEX_BITS=7)(input wire clk,rst_n,flush,
+ input wire[31:0] lookup_address,output wire hit,output wire[31:0] lookup_word,
+ input wire fill_valid,input wire[31:0] fill_address,fill_word,
+ input wire fill_wide,input wire[63:0] fill_line,
+ input wire store_valid,input wire[31:0] store_address,store_word,input wire[3:0] store_mask);
+ localparam LINE_BITS=INDEX_BITS-1,SIZE=1<<LINE_BITS,TAG_BITS=15-INDEX_BITS;
+ function local_address;
+  input[31:0] address;
+  begin local_address=address[31:16]==0 || address[31:15]==17'h2000;end
+ endfunction
+ wire[LINE_BITS-1:0] r=lookup_address[INDEX_BITS+1:3],f=fill_address[INDEX_BITS+1:3],w=store_address[INDEX_BITS+1:3];
+ wire[TAG_BITS-1:0] rt={lookup_address[28],lookup_address[15:INDEX_BITS+2]};
+ wire[TAG_BITS-1:0] ft={fill_address[28],fill_address[15:INDEX_BITS+2]};
+ wire[TAG_BITS-1:0] wt={store_address[28],store_address[15:INDEX_BITS+2]};
+ reg clearing;reg[LINE_BITS-1:0] clear_index;
+ reg[TAG_BITS+1:0] tags[0:SIZE-1] /* synthesis syn_ramstyle="lut_ram" */;
+ wire[63:0] lookup_line; // BYTE_WRITE_L0: only lookup reads data arrays.
+ wire[1:0] read_valid=tags[r][TAG_BITS+:2];
+ assign hit=!clearing && local_address(lookup_address) && read_valid[lookup_address[2]] && tags[r][TAG_BITS-1:0]==rt;
+ assign lookup_word=lookup_address[2] ? lookup_line[63:32] : lookup_line[31:0];
+ wire fill=fill_valid && local_address(fill_address);
+ wire store=store_valid && local_address(store_address);
+ wire fill_tag_matches=tags[f][TAG_BITS-1:0]==ft;
+ wire store_tag_matches=tags[w][TAG_BITS-1:0]==wt;
+ wire[1:0] store_valid_bits=store_tag_matches ? tags[w][TAG_BITS+:2] : 2'b00;
+ wire store_hit=store_valid_bits[store_address[2]];
+ wire same_fill_line=fill && f==w && ft==wt;
+ wire[1:0] filled_valid=fill_wide ? 2'b11 : (fill_tag_matches ? tags[f][TAG_BITS+:2] : 2'b00) | (2'b01<<fill_address[2]);
+ wire fill_covers_store=same_fill_line && filled_valid[store_address[2]];
+ wire update_store=store && ((&store_mask) || store_hit || fill_covers_store);
+ wire[1:0] merged_valid=(same_fill_line ? filled_valid : store_valid_bits) | (2'b01<<store_address[2]);
+ // One physical write address. A store update drops an unrelated fill;
+ // a same-line fill is merged with all accepted store bytes, in either half.
+ always @(posedge clk) begin
+  if(clearing)tags[clear_index]<=0;
+  else if(update_store)begin tags[w]<={merged_valid,wt};end
+  else if(fill)begin tags[f]<={filled_valid,ft};end
+ end
+ // Each byte has one lookup read and one masked write. No old word is
+ // read for scalar-fill preservation or partial stores: unwritten bytes hold.
+ wire[INDEX_BITS-2:0] byte_write_index=update_store ? w : f;
+ genvar lane;
+ generate for(lane=0;lane<8;lane=lane+1)begin:byte_lanes
+  reg[7:0] data[0:SIZE-1] /* synthesis syn_ramstyle="lut_ram" */;
+  assign lookup_line[lane*8+:8]=data[r];
+  wire store_byte=update_store && store_address[2]==(lane/4) && store_mask[lane%4];
+  wire fill_byte=fill && (fill_wide || fill_address[2]==(lane/4));
+  wire byte_enable=store_byte || (fill_byte && (!update_store || same_fill_line));
+  wire[7:0] byte_value=store_byte ? store_word[(lane%4)*8+:8] :
+    fill_wide ? fill_line[lane*8+:8] : fill_word[(lane%4)*8+:8];
+  always @(posedge clk)if(!clearing && byte_enable)data[byte_write_index]<=byte_value;
+ end endgenerate
+ // Simulation observability only. Functional lookup never reads this view;
+ // it must not create constant-address read ports in the synthesized cache.
+ // synthesis translate_off
+`ifndef SYNTHESIS
+ wire[63:0] words[0:SIZE-1];
+ genvar view_index;
+ generate for(view_index=0;view_index<SIZE;view_index=view_index+1)begin:debug_words
+  assign words[view_index]={byte_lanes[7].data[view_index],byte_lanes[6].data[view_index],
+   byte_lanes[5].data[view_index],byte_lanes[4].data[view_index],byte_lanes[3].data[view_index],
+   byte_lanes[2].data[view_index],byte_lanes[1].data[view_index],byte_lanes[0].data[view_index]};
+ end endgenerate
+`endif
+ // synthesis translate_on
+ always @(posedge clk or negedge rst_n)begin
+  if(!rst_n)begin clearing<=1;clear_index<=0;end
+  else if(flush)begin clearing<=1;clear_index<=0;end
+  else if(clearing)begin
+   if(&clear_index)clearing<=0;
+   else clear_index<=clear_index+1'b1;
   end
  end
 endmodule

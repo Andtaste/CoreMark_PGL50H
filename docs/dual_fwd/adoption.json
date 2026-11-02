@@ -1,8 +1,0 @@
-{
-  "status": "ACCEPTED_DUAL_DEVELOPMENT_BASELINE",
-  "variant": "dual_fwd_share",
-  "user_instruction": "很好，采纳",
-  "recorded_date": "2026-10-21",
-  "timezone": "Asia/Shanghai",
-  "scope": "Accepted working baseline for subsequent dual-issue development. Original single-issue production checkout remains a preserved comparison/reference; no PLL or board deployment change."
-}

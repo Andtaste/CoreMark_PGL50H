@@ -1,5 +1,0 @@
-{
-  "accepted": false,
-  "reason": "PDS native hold repair attempted 6 router iterations but left the same -0.103/-0.071 ns FF-to-LUTRAM write-data paths.",
-  "next": "Keep instruction data in LUT RAM and map FIFO PC/fault metadata to registers; no cycle added."
-}

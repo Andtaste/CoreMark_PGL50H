@@ -15,10 +15,10 @@ module nc_fetch #(parameter ENABLE_BP=1)(input wire clk,rst_n,redirect,stop,inpu
  wire[31:0] even_prediction,odd_prediction;
  wire[31:0] even_pc={next_pc[31:3],3'b000},odd_pc={next_pc[31:3],3'b100};
  generate if(ENABLE_BP) begin:predictor
-  nc_btb_bank btb(.clk(clk),.rst_n(rst_n),.flush(bp_flush),.lookup_pc(even_pc),.prediction(even_prediction),
+  nc_btb_bank #(.COMPACT_LOCAL(1)) btb(.clk(clk),.rst_n(rst_n),.flush(bp_flush),.lookup_pc(even_pc),.prediction(even_prediction),
    .update_valid(bp_update_valid && !bp_update_pc[2]),.update_branch(bp_update_branch),.update_conditional(bp_update_conditional),
    .update_taken(bp_update_taken),.update_pc(bp_update_pc),.update_target(bp_update_target));
-  nc_btb_bank btb1(.clk(clk),.rst_n(rst_n),.flush(bp_flush),.lookup_pc(odd_pc),.prediction(odd_prediction),
+  nc_btb_bank #(.COMPACT_LOCAL(1)) btb1(.clk(clk),.rst_n(rst_n),.flush(bp_flush),.lookup_pc(odd_pc),.prediction(odd_prediction),
    .update_valid(bp_update_valid && bp_update_pc[2]),.update_branch(bp_update_branch),.update_conditional(bp_update_conditional),
    .update_taken(bp_update_taken),.update_pc(bp_update_pc),.update_target(bp_update_target));
  assign lookup_prediction=next_pc[2] ? odd_prediction : even_prediction;
@@ -43,7 +43,7 @@ module nc_fetch #(parameter ENABLE_BP=1)(input wire clk,rst_n,redirect,stop,inpu
    memory_op=(op==7'h03 && (!f3[1] || f3==2)) ||
              (op==7'h23 && !f3[2] && f3[1:0]!=3);
    multiply_op=reg_op && f7==1 && !f3[2];
-   classify_parts={((1 && op==7'h63 && f3!=2 && f3!=3 && !insn[8]) || (1 && multiply_op)),multiply_op,memory_op,alt_alu,zero_alu,base_alu,
+   classify_parts={(((op==7'h63 && f3!=2 && f3!=3 && !insn[8]) || (op==7'h6f && insn[11:7]==0 && !insn[21])) || (1 && multiply_op)),multiply_op,memory_op,alt_alu,zero_alu,base_alu,
                    op!=7'h23 && op!=7'h63,reg_op || op==7'h63,imm_op || reg_op || op==7'h63};
   end
  endfunction
@@ -64,7 +64,11 @@ module nc_fetch #(parameter ENABLE_BP=1)(input wire clk,rst_n,redirect,stop,inpu
  // has one write and one read; no take_two-dependent RAM read address.
  reg[31:0] even_inst[0:3],odd_inst[0:3] /* synthesis syn_ramstyle="lut_ram" */;
  reg[74:0] even_meta[0:3],odd_meta[0:3] /* synthesis syn_ramstyle="registers" */;
- reg[106:0] head_0,head_1;
+ reg[106:0] head_raw0,head_raw1;
+ // Retain the logical stream word, deriving its class after the cached
+ // instruction FFs instead of before the RAM response capture boundary.
+ wire[106:0] head_0={head_raw0[106:43],classify_parts(head_raw0[31:0]),head_raw0[33:0]};
+ wire[106:0] head_1={head_raw1[106:43],classify_parts(head_raw1[31:0]),head_raw1[33:0]};
  reg[2:0] rd,wr;reg[3:0] count;
  reg cmd_link,flight_link,stream_tail_sequential;
  wire response=flight && rsp_valid;
@@ -86,11 +90,17 @@ module nc_fetch #(parameter ENABLE_BP=1)(input wire clk,rst_n,redirect,stop,inpu
  wire prepared_seq1=!lookup_prediction1[30] || {lookup_prediction1[29:0],2'b0}==next_pc+32'd8;
  wire[31:0] in_inst0=flight_pc[2] ? rsp_data[63:32] : rsp_data[31:0];
  // PC, prediction, partial class, fault, adjacency, instruction.
- wire[106:0] in0={flight_pc,flight_prediction,classify_parts(in_inst0),rsp_error,flight_link,in_inst0};
- wire[106:0] in1={flight_pc+32'd4,flight_prediction1,classify_parts(rsp_data[63:32]),rsp_error,1'b1,rsp_data[63:32]};
+ wire[8:0] low_parts=classify_parts(rsp_data[31:0]),high_parts=classify_parts(rsp_data[63:32]);
+ wire[8:0] first_parts=flight_pc[2] ? high_parts : low_parts;
+ wire[106:0] in0={flight_pc,flight_prediction,9'b0,rsp_error,flight_link,in_inst0};
+ wire[106:0] in1={flight_pc+32'd4,flight_prediction1,9'b0,rsp_error,1'b1,rsp_data[63:32]};
  wire even_write=push && (!wr[0] || flight_two),odd_write=push && (wr[0] || flight_two);
  wire[1:0] even_write_row=wr[2:1]+{1'b0,wr[0]},odd_write_row=wr[2:1];
- wire[106:0] even_input=wr[0] ? in1 : in0,odd_input=wr[0] ? in0 : in1;
+ wire[106:0] even_selected=wr[0] ? in1 : in0,odd_selected=wr[0] ? in0 : in1;
+ wire[8:0] even_parts=(wr[0] || flight_pc[2]) ? high_parts : low_parts;
+ wire[8:0] odd_parts=(!wr[0] || flight_pc[2]) ? high_parts : low_parts;
+ wire[106:0] even_input={even_selected[106:43],9'b0,even_selected[33:0]};
+ wire[106:0] odd_input={odd_selected[106:43],9'b0,odd_selected[33:0]};
  wire[1:0] even_read_row=rd[2:1]+(rd[0] ? 2'd2 : 2'd1),odd_read_row=rd[2:1]+2'd1;
  wire[106:0] er={even_meta[even_read_row],even_inst[even_read_row]};
  wire[106:0] orv={odd_meta[odd_read_row],odd_inst[odd_read_row]};
@@ -113,11 +123,11 @@ module nc_fetch #(parameter ENABLE_BP=1)(input wire clk,rst_n,redirect,stop,inpu
   if(even_write) begin even_inst[even_write_row]<=even_input[31:0];even_meta[even_write_row]<=even_input[106:32];end
   if(odd_write) begin odd_inst[odd_write_row]<=odd_input[31:0];odd_meta[odd_write_row]<=odd_input[106:32];end
   if(consume) begin
-   head_0<=pop_two ? after_two_0 : after_one_0;
-   head_1<=pop_two ? after_two_1 : after_one_1;
+   head_raw0<=pop_two ? after_two_0 : after_one_0;
+   head_raw1<=pop_two ? after_two_1 : after_one_1;
   end else if(push && count<2) begin
-   head_0<=count==0 ? in0 : head_0;
-   head_1<=count==0 ? (flight_two ? in1 : 107'b0) : in0;
+   head_raw0<=count==0 ? in0 : head_0;
+   head_raw1<=count==0 ? (flight_two ? in1 : 107'b0) : in0;
   end
  end
  always @(posedge clk or negedge rst_n) begin

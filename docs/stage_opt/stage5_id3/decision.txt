@@ -1,1 +1,0 @@
-Not retained: only 13,530 fewer cycles (0.357%) versus stage4, but Fmax 86.889 -> 81.407 MHz with +162 LUT/+262 FF. Keep two ID/EX slots and registered credits.

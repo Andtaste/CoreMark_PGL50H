@@ -1,7 +1,7 @@
 // Fixed-latency, one-input-per-cycle multiply datapath.
 // Partial products are captured on acceptance. Completion is buffered
 // by the existing in-flight token; only the MEM head may consume a result.
-module nc_mul_pipeline(input wire clk,rst_n,clear,accept,
+module nc_mul_pipeline #(parameter REGISTER_CONSUME=0)(input wire clk,rst_n,clear,accept,
  input wire in_lane,output reg forward_lane,input wire[2:0] in_tag,input wire[1:0] operation,input wire[31:0] a,b,
  input wire[2:0] query_tag,input wire consume,output wire query_ready,output wire[31:0] query_data,
  output reg forward_valid,output reg[2:0] forward_tag,output reg[31:0] forward_data,
@@ -26,9 +26,13 @@ module nc_mul_pipeline(input wire clk,rst_n,clear,accept,
  wire[31:0] low_completed={middle[15:0],p_ll[15:0]};
  reg[31:0] results[0:7] /* synthesis syn_ramstyle="registers" */;
  reg[7:0] available;
+ reg consume_q;reg[2:0] consume_tag_q;
+ wire release_valid=REGISTER_CONSUME ? consume_q : consume;
+ wire[2:0] release_tag=REGISTER_CONSUME ? consume_tag_q : query_tag;
  assign query_ready=available[query_tag];assign query_data=results[query_tag];
  assign busy=v1 || (v2 && op2!=0) || |available;
  always @(posedge clk) begin
+  consume_tag_q<=query_tag;
   // Capture partial products immediately; token ownership follows acceptance.
   if(accept) begin lane1<=in_lane;p_ll<=ll;p_lh<=lh;p_hl<=hl;p_hh<=hh;op1<=operation;tag1<=in_tag;end
   if(v1) begin
@@ -49,11 +53,11 @@ module nc_mul_pipeline(input wire clk,rst_n,clear,accept,
   end
  end
  always @(posedge clk or negedge rst_n) begin
-  if(!rst_n) begin v1<=0;v2<=0;forward_valid<=0;available<=0;end
-  else if(clear) begin v1<=0;v2<=0;forward_valid<=0;available<=0;end
+  if(!rst_n) begin v1<=0;v2<=0;forward_valid<=0;available<=0;consume_q<=0;end
+  else if(clear) begin v1<=0;v2<=0;forward_valid<=0;available<=0;consume_q<=0;end
   else begin
-   v1<=accept;v2<=v1;forward_valid<=low_done || high_done;
-   if(consume) available[query_tag]<=0;
+   v1<=accept;v2<=v1;forward_valid<=low_done || high_done;consume_q<=consume;
+   if(release_valid) available[release_tag]<=0;
    if(high_done) available[tag2]<=1;
    if(low_done) available[tag1]<=1;
   end

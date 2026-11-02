@@ -5,13 +5,13 @@ module nc_local_bus #(parameter CLOCK_HZ=75000000)(input wire clk,rst_n,
  input wire iv,output wire ir,input wire[31:0] ia,output wire iov,input wire ior,
  output wire[63:0] idata,output wire ierr,
  input wire dv,output wire dr,input wire[31:0] da,dw,wa,input wire[3:0] dm,input wire dwrite,
- output wire dov,input wire dor,output wire[31:0] ddata,output wire derr,
+ output wire dov,input wire dor,output wire[31:0] ddata,output wire[63:0] dline,output wire derr,
  output wire uart_tx,output wire timer_irq,output wire[1:0] gpio_out,
  output reg[31:0] tohost);
  wire ib0=ia<32'h00010000,ib1=ia>=32'h10000000 && ia<32'h10008000;
  wire db0=da<32'h00010000,db1=da>=32'h10000000 && da<32'h10008000;
- reg ipending,ibank,ierror;reg dpending,dbank,dis_ram,derror;reg[31:0] mmio_data;
- wire[63:0] iq0,iq1;wire[31:0] dq0,dq1;
+ reg ipending,ibank,ierror;reg dpending,dbank,dis_ram,derror,dhalf;reg[31:0] mmio_data;
+ wire[63:0] iq0,iq1,dq0,dq1;
 
  wire uart_ready;wire uart_addr=wa==32'h20000000;
  wire uart_send=dv && dr && dwrite && uart_addr && dm[0];
@@ -27,7 +27,7 @@ module nc_local_bus #(parameter CLOCK_HZ=75000000)(input wire clk,rst_n,
  assign ir=rst_n && (!ipending || ior) && !collision;
  wire ia_fire=iv && ir;
  assign iov=ipending;assign ierr=ierror;assign idata=ibank ? iq1 : iq0;
- assign dov=dpending;assign derr=derror;assign ddata=dis_ram ? (dbank ? dq1 : dq0) : mmio_data;
+ assign dov=dpending;assign derr=derror;assign dline=dbank ? dq1 : dq0;assign ddata=dis_ram ? (dhalf ? dline[63:32] : dline[31:0]) : mmio_data;
  reg[63:0] mtime,mtimecmp;reg[1:0] gpio;
  assign timer_irq=mtime>=mtimecmp;assign gpio_out=gpio;
  reg mmio_known;reg[31:0] read_mmio;
@@ -45,14 +45,14 @@ module nc_local_bus #(parameter CLOCK_HZ=75000000)(input wire clk,rst_n,
  integer j;
  always @(posedge clk or negedge rst_n) begin
   if(!rst_n) begin
-   ipending<=0;ibank<=0;ierror<=0;dpending<=0;dbank<=0;dis_ram<=0;derror<=0;mmio_data<=0;
+   ipending<=0;ibank<=0;ierror<=0;dpending<=0;dbank<=0;dhalf<=0;dis_ram<=0;derror<=0;mmio_data<=0;
    mtime<=0;mtimecmp<=64'hffffffffffffffff;gpio<=0;tohost<=0;
   end else begin
    mtime<=mtime+1'b1;
    if(ia_fire) begin ipending<=1;ibank<=ib1;ierror<=!(ib0 || ib1) || |ia[1:0];end
    else if(iov && ior) ipending<=0;
    if(da_fire) begin
-    dpending<=1;dbank<=db1;dis_ram<=db0 || db1;derror<=!(db0 || db1 || mmio_known);mmio_data<=read_mmio;
+    dpending<=1;dbank<=db1;dhalf<=da[2];dis_ram<=db0 || db1;derror<=!(db0 || db1 || mmio_known);mmio_data<=read_mmio;
    end else if(dov && dor) dpending<=0;
    // dwrite is published only for a valid held MEM store. Do not put the
    // early-load valid/range cone in series with these write side effects.
@@ -69,12 +69,12 @@ module nc_local_bus #(parameter CLOCK_HZ=75000000)(input wire clk,rst_n,
  end
  ram1_tdp ram_code(.a_clk(clk),.a_rst(!rst_n),.a_clk_en(ia_fire && ib0 && !ia[1] && !ia[0]),
   .a_addr(ia[15:3]),.a_wr_data(64'b0),.a_wr_en(1'b0),.a_wr_byte_en(8'b0),.a_rd_data(iq0),
-  .b_clk(clk),.b_rst(!rst_n),.b_clk_en(da_fire && db0),.b_addr(da[15:2]),
-  .b_wr_data(dw),.b_wr_en(dwrite),.b_wr_byte_en(dm),.b_rd_data(dq0));
+  .b_clk(clk),.b_rst(!rst_n),.b_clk_en(da_fire && db0),.b_addr(da[15:3]),
+  .b_wr_data({dw,dw}),.b_wr_en(dwrite),.b_wr_byte_en(!dwrite ? 8'hff : wa[2] ? {dm,4'b0} : {4'b0,dm}),.b_rd_data(dq0));
 
  ram2_tdp ram_data(.a_clk(clk),.a_rst(!rst_n),.a_clk_en(ia_fire && ib1 && !ia[1] && !ia[0]),
   .a_addr(ia[14:3]),.a_wr_data(64'b0),.a_wr_en(1'b0),.a_wr_byte_en(8'b0),.a_rd_data(iq1),
-  .b_clk(clk),.b_rst(!rst_n),.b_clk_en(da_fire && db1),.b_addr(da[14:2]),
-  .b_wr_data(dw),.b_wr_en(dwrite),.b_wr_byte_en(dm),.b_rd_data(dq1));
+  .b_clk(clk),.b_rst(!rst_n),.b_clk_en(da_fire && db1),.b_addr(da[14:3]),
+  .b_wr_data({dw,dw}),.b_wr_en(dwrite),.b_wr_byte_en(!dwrite ? 8'hff : wa[2] ? {dm,4'b0} : {4'b0,dm}),.b_rd_data(dq1));
 
 endmodule

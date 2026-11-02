@@ -1,0 +1,254 @@
+{
+  "branch": "core",
+  "source_package": "new_core_reproducible_20261102_213627.zip",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "48f07acc0b6b58d46782166e201567d5787f2438b2ca4b5e63bb61b18ff8a4ad"
+    },
+    {
+      "path": "hardware/pds/constraints/board.fdc",
+      "sha256": "c09a92ef819df51628d0f3ba665e88e93785658c51a4e73c5f701a014bf83f2f"
+    },
+    {
+      "path": "hardware/pds/ipcore/pll/pll.idf",
+      "sha256": "fa2516ebc40667765af12148dc7ae8fd6cc2552559997fa96e5e6a7a1701e4a1"
+    },
+    {
+      "path": "hardware/pds/ipcore/pll/pll.v",
+      "sha256": "5a051d393f2c103c53b685a825424f1b8eb5e7f3d6771cf0744ce95b4892c220"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram1_tdp/ram1_tdp.idf",
+      "sha256": "1f32d1bb26b7485a6dc474f30a7644725f03b50ac1fdc745c8b06e548698ad76"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram1_tdp/ram1_tdp.v",
+      "sha256": "8bd9b382b76410cd5df54ed9e310975468cc38b8cc0987c9496b11f2658dcf42"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram1_tdp/rtl/ipml_dpram_v1_8_ram1_tdp.v",
+      "sha256": "2972a2a209a3e1b293620a749914fbbba8b2cb0980bbcd2cf4d6472ed2d97439"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v",
+      "sha256": "4cd7d3c539b11a44d223a34f96b5065618e58d4d96506e7977b34ec6a0e2833a"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram2_tdp/ram2_tdp.idf",
+      "sha256": "0ec4231cd050162443590b4093030d59fb5f4dbe1d8b650299f1976f1149aaa7"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram2_tdp/ram2_tdp.v",
+      "sha256": "28d2f9c6f54724eac67a6111666276a04e69572fa96ea900a760c35532ea25e4"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram2_tdp/rtl/ipml_dpram_v1_6_ram2_tdp.v",
+      "sha256": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c"
+    },
+    {
+      "path": "hardware/pds/ipcore/ram2_tdp/rtl/ram2_tdp_init_param.v",
+      "sha256": "a5af946a5cebf5405c644f4087708b914e4dd73a4c050b021dc65d261c4510e5"
+    },
+    {
+      "path": "hardware/pds/memory/boot.hex",
+      "sha256": "d8c1c6ff94a97ae2639b6a0676a324b6aaa3d77134cd45290dc316f20dff4361"
+    },
+    {
+      "path": "hardware/pds/memory/boot64.dat",
+      "sha256": "d5054e10601a7f95514d0ff10353813d9e7da62e7d9d5771914373e7a369b046"
+    },
+    {
+      "path": "hardware/pds/memory/boot_interleaved.dat",
+      "sha256": "20e9fbf48362687f46f368a925f32018cdc90e4fc37f2e56ab9468c14d41eb4e"
+    },
+    {
+      "path": "hardware/pds/new_core.pds",
+      "sha256": "f6c61be2ce223fc43d9eeda9092d4cbc8b7f9b22318d45b3d221f9060ae7d5f1"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_btb.v",
+      "sha256": "0c67bab3f185ea48b0854f22fe10c6de1c13d09e548bc763548ca5c8c8557825"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_core.v",
+      "sha256": "d25efe3fdcd9e7fc3d0f92dea65bb15176f7260269c635d4f58a5313d50e7276"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_csr.v",
+      "sha256": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_decode.v",
+      "sha256": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_divide.v",
+      "sha256": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_execute.v",
+      "sha256": "69261b8bf816eceba0b80954653707befb95494c6c2a320ca639088a58f1c027"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_fetch.v",
+      "sha256": "a1bf412db6b880466ce16b25e8a8cda0ccdd4b27e586dea4a2f8af41480a52a3"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_fifo.v",
+      "sha256": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_memory.v",
+      "sha256": "fcb2d4438f795ac64830ab6041c154769a435483b9d373f370d071918a0a9aa5"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_mul_pipeline.v",
+      "sha256": "0f674691b20264982434c499724d11a2756d35c9486983340a62354f7270cfa4"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_operands.v",
+      "sha256": "38ba1cdd7c8479a3baaf68af96268b4b78aba442c1bd015c3b1b09d5c9da406d"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_regfile.v",
+      "sha256": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a"
+    },
+    {
+      "path": "hardware/pds/source/core/nc_stats.v",
+      "sha256": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92"
+    },
+    {
+      "path": "hardware/pds/source/perips/nc_uart.v",
+      "sha256": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa"
+    },
+    {
+      "path": "hardware/pds/source/source/top.v",
+      "sha256": "7e18351033e61cf489e3a5cc2c8d875aa2c421f3a9351582c23b832c67f10304"
+    },
+    {
+      "path": "hardware/pds/source/sys_bus/nc_local_bus.v",
+      "sha256": "651da8dd3de930bf60330ff06e0e17a31f61149e1a6d5de3ae21167f7b62a4d5"
+    },
+    {
+      "path": "hardware/pds/source/top/nc_soc.v",
+      "sha256": "f738637887f44b507d51986daf5017c8f3d85a85fd6eb6f61f9d64d4e1c0d652"
+    },
+    {
+      "path": "output/board103/release_result.json",
+      "sha256": "284a90bf1631c653d1cf40f74eb99e55373b5cfc64922e5a8d838e963d04fc5c"
+    },
+    {
+      "path": "output/board103/run1_uart.txt",
+      "sha256": "a7db132c0bb7c8e6822095c42e2e7a715d4024537572192c21867cbae91485c2"
+    },
+    {
+      "path": "output/board103/top.sbit",
+      "sha256": "eb9c2fbd2fb3d5d3a308d25edf69443e82e3447273039eb3add15a5b0dc534be"
+    },
+    {
+      "path": "prepare_paths.py",
+      "sha256": "d77842155b5ce336f4e55487260c34a02c09dcefa038ce711213914b6fef76c8"
+    },
+    {
+      "path": "README.md",
+      "sha256": "caae024fb4414b9931ca989cdc66852eb93e407b9dad97a31ceb28f8962732b3"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "8df97a5b5af1ed8b6dad9bb1b3d334d1de55e6778fc595dba06f497ca15cd6e5"
+    },
+    {
+      "path": "reproduction/coremark_original_build.json",
+      "sha256": "a61a38c4ad337ee7c50942391489860ff41e20c4f092ded6fa0ecdf3cabe78a8"
+    },
+    {
+      "path": "reproduction/coremark_profile.json",
+      "sha256": "46637e47ce73b4d0d3763c464cfb0ea3f704516229438d69085f6b859f99f09e"
+    },
+    {
+      "path": "sw/coremark/core_list_join.c",
+      "sha256": "1c8aa83861634d6a33cb11c785b738ac205404e2e9222571465dc02156f9154d"
+    },
+    {
+      "path": "sw/coremark/core_main.c",
+      "sha256": "862cdd9d61ceb2c7086dfb1ef5d3beda4b84cfb1a3fc793903dc5b67bd93008d"
+    },
+    {
+      "path": "sw/coremark/core_matrix.c",
+      "sha256": "acf3fe63db2ddd929f405b67fd273e49f558871f0bf8d51a6814cdd881b602c8"
+    },
+    {
+      "path": "sw/coremark/core_portme.c",
+      "sha256": "4b2442eda077b1a932098a1d49b9f95c715611fa45711ee005782153de9b2148"
+    },
+    {
+      "path": "sw/coremark/core_portme.h",
+      "sha256": "3b0f54ac1cd68c4d8e4e94e02b8de0da69a26814ca29569aa0c976c44d4fcfa2"
+    },
+    {
+      "path": "sw/coremark/core_state.c",
+      "sha256": "02a6e604d852a2806a8eb2a455c924b0483a8042cfe96478009821558cf35521"
+    },
+    {
+      "path": "sw/coremark/core_util.c",
+      "sha256": "f8479f7a4e100ded31e2ebecf1f37ffff8904d88314188b0a85d32687e3ca813"
+    },
+    {
+      "path": "sw/coremark/coremark.h",
+      "sha256": "3ce4936cdfc7b6bd2a9b24c13f2494ed7a4ca22038c2b37052bcc4b1f8c73143"
+    },
+    {
+      "path": "sw/coremark/LICENSE.md",
+      "sha256": "9577b9c846f61fd69a0d8ac965998c6450c7d8969f71f0bb4a931b91aebad28a"
+    },
+    {
+      "path": "sw/include/uart.h",
+      "sha256": "fed2039b1c9fcc77b942e1bfb7507d66db6d2082d6cb1d0d7990fc2d9c114850"
+    },
+    {
+      "path": "sw/include/utils.h",
+      "sha256": "77904d83531e02dad7d21321a7afcedeaf906443b6e5a0cee0d1904c0a30a171"
+    },
+    {
+      "path": "sw/include/xprintf.h",
+      "sha256": "5c8fb41a9aca8f2b0c303521460462d4ec870b26876678232522842c41cc77a8"
+    },
+    {
+      "path": "sw/lib/uart.c",
+      "sha256": "bb1e4c038c6cee23fe493e01b6a73c2e5a9a3db6ada87a7f7b51c501a5317920"
+    },
+    {
+      "path": "sw/lib/utils.c",
+      "sha256": "00d372d49411121cfd7b4b3690409b579e8470cc2a31d553737c85bb64caf2f8"
+    },
+    {
+      "path": "sw/lib/xprintf.c",
+      "sha256": "1c26f9cf7e76c902dc089c1d4e84b094f39924f97be2697442cb88ed11e2af2e"
+    },
+    {
+      "path": "sw/LICENSE.tinyriscv",
+      "sha256": "c745f7c1f215df8bde5d866ba2b7b25293e02b019c1c360524a94b1a2e1ced75"
+    },
+    {
+      "path": "sw/link.lds",
+      "sha256": "0886be23133fbde6471d47c84fa176a831ed6f9c0962611bb5397cfaba89e095"
+    },
+    {
+      "path": "sw/PROVENANCE.json",
+      "sha256": "5f768f3353c9fba8a2e1856c77ef6818f88206c5509324d646e0550b5007a6bf"
+    },
+    {
+      "path": "sw/start.S",
+      "sha256": "4cadbfd5ef51f1a0fbb9f3e5110f07aad18770ab0ca12761c5dd745b6c3d68ee"
+    },
+    {
+      "path": "tools/build_coremark.py",
+      "sha256": "9605d2db7086d20deb3e09471f9790c00ad886ac71c2c23eb5f062ce8ce14bdc"
+    },
+    {
+      "path": "tools/reproduce.py",
+      "sha256": "fdd62cd6da230773c9996eaf9e3a003f7f9c7e04d2e7843fe73dde85cd968ce7"
+    }
+  ]
+}

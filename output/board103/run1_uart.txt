@@ -1,0 +1,50 @@
+
+Run configuration
+Configured CPU Hz  : 103000000
+Software build     : Oct 22 2026 16:00:00
+Report format      : 3 (integer fixed point)
+Stats ABI signature: 0x4e430004
+2K performance run parameters for coremark.
+CRC validation   : PASS
+CoreMark Size    : 666
+Total ticks      : 1201865724
+Total time (secs): 11.668599
+Iterations/Sec   : 514.200536
+CoreMark/MHz     : 4.992238
+Score status     : duration >= 10 s; see CRC validation below
+Iterations       : 6000
+Compiler version : GCC15.2.0
+Compiler flags   : -O2 -fno-common -funroll-loops -finline-functions --param=max-inline-insns-auto=20 -falign-functions=4 -falign-jumps=4 -falign-loops=4 -march=rv32im_zicsr -mabi=ilp32 -mcmodel=medlow -ffunction-sections -fdata-sections -fno-builtin-printf -fno-builtin-malloc -msmall-data-limit=0 -mno-relax -O3 --param=max-inline-insns-auto=80 -mtune=sifive-7-series -mbranch-cost=2 -Wl,--defsym=__stack_offset=0x00000180 [core_list_join.c: -mbranch-cost=1 -O2 --param=max-unroll-times=4] [core_matrix.c: -O2] [core_state.c: -fno-unroll-loops -falign-loops=8]
+Memory location  : STATIC
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xa14c
+Correct operation validated. See readme.txt for run and reporting rules.
+
+CPU statistics v4
+Benchmark cycles64 : 1201865724
+Stats window cycles: 1201865764
+Retired instructions: 1453316497
+IPC                : 1.209
+CPI                : 0.826
+Counter bounds     : PASS (retired <= 2*cycles)
+Secondary retired  : 427409054
+Secondary slot use : 35.562%
+Retired loads      : 294376622
+Retired stores     : 64117756
+EX operand wait    : 95127880 (7.915%)
+ID blocked cycles  : 111669898 (9.291%)
+IF request wait    : 0 (0.000%)
+IF queue empty     : 42858948 (3.566%)
+MEM occupied cycles: 32074436 (2.668%)
+Mul/div stall cycles: 0 (0.000%)
+BJP redirects      : 21429474
+BJP instructions   : 298060704
+BJP redirect rate %: 7.189
+Stats overflow mask: 0x0000
+Event counters may overlap; BJP counts include JAL/JALR.
+IF bubbles include refill; redirects are events, not penalty cycles.
+BJP redirects count prediction corrections, jumps and stale predictions.
+IPC/CPI use retired instructions and cycles from the same stats window.

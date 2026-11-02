@@ -1,8 +1,0 @@
-{
-  "status": "rejected",
-  "estimated_fmax_mhz": 80.998,
-  "LUT": 6254,
-  "FF": 3505,
-  "Distributed RAM": 529,
-  "reason": "No material Fmax gain, +240 LUT; existing BTB FF-to-LUTRAM WD hold fails -0.103/-0.071 ns after physical remapping. Do not adopt."
-}

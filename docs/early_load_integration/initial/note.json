@@ -1,4 +1,0 @@
-{
-  "status": "INITIAL_RESEARCH_ONLY",
-  "note": "Verilator and PDS accepted implicit nets; Icarus rejected forward references followed by wire initializers. Final candidate will use explicit net declarations. Not adopted."
-}

@@ -5,13 +5,14 @@
         <id>02100201</id>
         <display_name>DRM Based Dual Port RAM</display_name>
         <name>Logos DRM Based Dual Port RAM</name>
-        <version>1.6</version>
+        <version>1.8</version>
         <instance>ram2_tdp</instance>
         <family>Logos</family>
         <device>PGL50H</device>
         <package>FBG484</package>
         <speedgrade>-6</speedgrade>
         <generator version="2022.2-SP1-Lite" build="132640">IP Compiler</generator>
+    <original_version>1.6</original_version>
     </header>
     <param_list>
         <param>
@@ -56,7 +57,7 @@
         </param>
         <param>
             <name>B_ADDR_WIDTH</name>
-            <value>13</value>
+            <value>12</value>
         </param>
         <param>
             <name>A_RD_OCE_EN</name>
@@ -72,7 +73,7 @@
         </param>
         <param>
             <name>B_DATA_WIDTH</name>
-            <value>32</value>
+            <value>64</value>
         </param>
         <param>
             <name>A_CLK_EN</name>
@@ -87,7 +88,7 @@
         </param>
         <param>
             <name>B_BE_WIDTH</name>
-            <value>4</value>
+            <value>8</value>
         </param>
         <param>
             <name>POWER_OPT</name>
@@ -111,7 +112,7 @@
         </param>
         <param>
             <name>SAMEWIDTH_EN</name>
-            <value>false</value>
+            <value>true</value>
         </param>
         <param>
             <name>A_DATA_WIDTH</name>
