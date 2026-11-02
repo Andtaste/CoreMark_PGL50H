@@ -1,2 +1,0 @@
-本目录为隔离研究，尚未采纳。继承源中的“dependency-free ALU sidecar”“Lane1 never waits”“Only live dependency comparisons remain in ID”等旧注释不再完整描述本轮设计。
-实际行为：C/D均有4位tag和等待/捕获；ready版只准入当拍已有广播，wait/fix/reg允许等待较老结果。fix/reg增加主槽条件分支配对，reg另有寄存身份选择。以generation.json、当前RTL表达式、测试结果和docs/dual_joint.md为准。

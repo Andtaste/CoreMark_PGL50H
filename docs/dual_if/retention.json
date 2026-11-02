@@ -1,9 +1,0 @@
-{
-  "status": "RETAINED_RESEARCH_CANDIDATE",
-  "variant": "dual_if_parts",
-  "user_instruction": "保留",
-  "recorded_date": "2026-10-20",
-  "timezone": "Asia/Shanghai",
-  "scope": "Retain the 84.710 MHz dual-issue research candidate for subsequent work. No production single-issue baseline replacement was requested.",
-  "production_adoption_requested": false
-}

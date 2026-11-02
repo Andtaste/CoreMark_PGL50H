@@ -1,0 +1,6 @@
+{
+  "source": "https://github.com/xqbase/xqwlight/blob/master/Win32/XQWL06.CPP",
+  "license": "GPL-2.0",
+  "sha256": "777b901ec143f4542893b855f13ed078f631de7fb686d30c2143acaa2946a7f5",
+  "modifications": "Remove Win32 GUI/book; UART frontend; 90x90 from-to history; DDR TT; bounded/cancellable deterministic search; compact valid-square Zobrist storage; palace-only king lookup and valid-square move generation preserving mailbox order; hot board state and partial history in existing fast BRAM window, with explicit hot-BSS initialization"
+}

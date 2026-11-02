@@ -1,1 +1,0 @@
-Not retained: same CoreMark cycles as stage4; RAM 433 -> 260 but FF +692, Fmax 86.889 -> 83.829 MHz and both hold margins only +0.009 ns. Keep compact LUT-RAM queue.

@@ -1,9 +1,0 @@
-{
-  "status": "PROMOTED83_PENDING_BOARD_TEST",
-  "main_project": "hardware/pds",
-  "candidate": "simulation\\results\\report_compare_xor83_20261023_priority_p9r1",
-  "configured_cpu_hz": 83000000,
-  "bitstream_sha256": "6fda0a4e7f3d185d28fa719e4ca0da9b516b5a43a5ead92bb6f264fa4be97f79",
-  "board_programmed": false,
-  "diagnosis": "simulation/results/report_large_20261023/diagnosis.json"
-}

@@ -1,5 +1,0 @@
-{
-  "accepted": false,
-  "reason": "Three FF-to-fetch-distributed-RAM write data hold violations; slow WNS -0.103 ns, fast -0.071 ns. Setup slow +0.941 ns.",
-  "repair": "Enable PDS native multi-corner hold repair; no RTL wait or combinational delay insertion."
-}

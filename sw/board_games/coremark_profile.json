@@ -1,0 +1,31 @@
+{
+  "name": "bare_modules_strict_alias",
+  "flags": [
+    "-O3",
+    "-fno-common",
+    "-funroll-loops",
+    "-finline-functions",
+    "--param=max-inline-insns-auto=80",
+    "-falign-functions=4",
+    "-falign-jumps=4",
+    "-falign-loops=4",
+    "-mtune=sifive-7-series",
+    "-mbranch-cost=2",
+    "-fno-lto",
+    "-fstrict-aliasing"
+  ],
+  "modules": {
+    "core_list_join.c": [
+      "-mbranch-cost=1",
+      "-O2",
+      "--param=max-unroll-times=4"
+    ],
+    "core_matrix.c": [
+      "-O2"
+    ],
+    "core_state.c": [
+      "-fno-unroll-loops",
+      "-falign-loops=8"
+    ]
+  }
+}

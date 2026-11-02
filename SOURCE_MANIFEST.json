@@ -1,0 +1,730 @@
+{
+  "branch": "main",
+  "source_package": "new_core_reproducible_20261102_213627.zip",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "48f07acc0b6b58d46782166e201567d5787f2438b2ca4b5e63bb61b18ff8a4ad"
+    },
+    {
+      "path": "hardware/board_games/board_games.pds",
+      "sha256": "0748ea3e9711b4cb2774f6c9c23b0a6b8e45d9f93b358054254f0649230ac499"
+    },
+    {
+      "path": "hardware/board_games/constraints/board.fdc",
+      "sha256": "d480ede3e392c2a2325ce965c294b8fbdb0e42386fb08736b64d4e9b12985773"
+    },
+    {
+      "path": "hardware/board_games/constraints/ddr3_test.rcf",
+      "sha256": "39389369575d9489ca29dad71536e8cb91837f15becd628b383dbe4fad2083d7"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/ddr3_test.idf",
+      "sha256": "460c153a7e12378f3a127bd3f06ff175f2183369faec71486b4755326a6eb2db"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/ddr3_test.v",
+      "sha256": "2ab89899c6705b8874d716fe9ff09bc6f5a718bd5513969340ba4b41b58d5bab"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+      "sha256": "caf4805266331de4563a671abd82cc82d2a7bc3df1aa16ea0f4408809e1a552c"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/pds2025_netlist/ddr3_test_syn.vm",
+      "sha256": "c58af4201483695d02282e3c36dc433334381ff4608d26a846235f75c08dab9a"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/pds2025_netlist/manifest.json",
+      "sha256": "76b36abab7be866b3e13f5ff0e8a3b8d0a5b6433d58487628fc809ddb5253617"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/pds2025_netlist/README.txt",
+      "sha256": "c55d7a9e94300dce67be6d80597f789f88d22b5c228ef979654349ecb4612bb0"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/pds2025_netlist/rebuild_ddr.tcl",
+      "sha256": "5b7e1a2433855bdbc27f53ec36978169d2ef84e3b71a12d38b7d83966ef05219"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_calib_mux_v1_3.vp",
+      "sha256": "00e93edb31b99182f4c9623f75e1baaf8d7f07ad734ad38353a66ec3c0008ccb"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_calib_top_v1_3.vp",
+      "sha256": "a9ce116be83114ee8426b7da1114203c6ad89db71a3e2a5ec08d43cbbfddaa64"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_control_path_adj_v1_0.vp",
+      "sha256": "927330c9d6c4dd2769b87cde5a46f56533f6fd4e98207e3300b2c69c773318f5"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_data_slice_dqs_gate_cal_v1_3.vp",
+      "sha256": "fb3b381db72f0b3566aa1e642519c88b83e65ba6e242ea997bec0efdbaae7070"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_data_slice_v1_4.vp",
+      "sha256": "81f40318794fc504ad0eb7d10f0fce10e74244b628346f7cb7d8e738d07f4913"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_data_slice_wrlvl_v1_4.vp",
+      "sha256": "630e3e5f6cf8448ceaea50bfab2acd7684ff7afe76fe9add3fb74741e7672b6f"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_dfi_v1_4.vp",
+      "sha256": "2e846252d17a8ce04aa7b74e6b423015474268da8b653d41cfe6a8fc4b3c86b7"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_dll_update_ctrl_v1_0.vp",
+      "sha256": "66c919559495e076cbb60734d8c38ce329399c9f5967b4a4011927f2b3c25017"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_dqs_gate_coarse_cal_v1_3.vp",
+      "sha256": "84174a18b92c1d78c29f84dba12d64660c7abdba675ce4c03fa184d15a903553"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_dqs_rddata_align_v1_3.vp",
+      "sha256": "ccdb6ab469c357412c0dccc50124c0b90765f13935d508830514ad1e80bf43e4"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_dqsi_rdel_cal_v1_2.vp",
+      "sha256": "f976364923b8877b21409eeaa93285c5a9c667ef2fb2b4fb86a773f917ccf063"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_drift_ctrl_v1_3.vp",
+      "sha256": "07201d02bf9940325e52b51855176117d131833cda4d458a5111de29c23ffe89"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_gate_update_ctrl_v1_3.vp",
+      "sha256": "c48c80d340d83b9a57f403e8b411862fab47df3fe548f699becc0907fc5dfb16"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_gatecal_v1_3.vp",
+      "sha256": "d4291fb382c43f03e81e1ea63610b6670a61593ff17b6ed066938c7a3d2b6e33"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_info_v1_0.vp",
+      "sha256": "c145b088b496c678d045aeb0634e08c45fc2248937a15751cce714bc265cb540"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_init_v1_0.vp",
+      "sha256": "e1142b81b13fa578a6fd9d9424d6021864019d8ad453b07041384c898efe25ab"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_main_ctrl_v1_3.vp",
+      "sha256": "174a5aaf06a43f8541dba9196d01067cde83f93869f7179aec6a9ccf80723f59"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_rdcal_v1_2.vp",
+      "sha256": "6a2c400076d78ae57522c2e8f89acc53aa0d22be54d8d605017026142d2da691"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_reset_ctrl_v1_4.vp",
+      "sha256": "50935a456788f87290925365f32151dae1b30da73be298ed12811d455886bd4f"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_rst_debounce_v1_0.vp",
+      "sha256": "ba4b83551881c1373eedf90db482daab5564d3d5eecdaff4b852ab688fd4b786"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_slice_rddata_align_v1_0.vp",
+      "sha256": "a580904a9dca35e1b9307f081cd824576951b2bb2e559d73c288baf0568a63b0"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_slice_top_v1_4.v",
+      "sha256": "b59741b9b1b74804824074de2495d0182278b277eb2301b7966b8a6a1ea66f72"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_training_ctrl_v1_0.vp",
+      "sha256": "1b3c2010c8b9e061960a59bd274c8f41a9ffced017319ed2bcd58c15c2422123"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_upcal_v1_4.vp",
+      "sha256": "b2f568db9148264cd9c3f69275ec8a4acbc3d47f2f2cfe3236e0e72e42336e1d"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_wdata_path_adj_v1_0.vp",
+      "sha256": "79cbe2cd235f6d5934ea2aaefc8103d040936ecbb90c7599d77d896997d5773f"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ddrphy/ipsxb_ddrphy_wrlvl_v1_0.vp",
+      "sha256": "b117f96a617dafee0b21c4acc8e9e28a46cf2481356b2b01bc21d05d1d06e47b"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/ipsxb_rst_sync_v1_1.v",
+      "sha256": "6a2bed550881e00a4343af4628a3047f0852cb8d28dd03ff1d3bbbd64c2c72e9"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ipsxb_distributed_fifo_v1_0.v",
+      "sha256": "5395fa9859185a47bfa6fbdcbeddf172487358acb6eb694d3b6a6b5d742d1da3"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ipsxb_distributed_fifo_ctr_v1_0.v",
+      "sha256": "b54ca51ff2df9fe00c55649011b08652784995566d8a109189d5ac38f0fdc255"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ipsxb_distributed_fifo_v1_0_distributed_fifo_v1_0.v",
+      "sha256": "20465b7bb1000badd6f5fa9aebfe6639bcbc33aeb21260c7e836b5d43da922a4"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ipsxb_distributed_sdpram_v1_0_distributed_fifo_v1_0.v",
+      "sha256": "4262dc3de05465c855c14b46707eeaeb4c36620b879f64c650e9028ff323350c"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_apb_cross_v1_2.vp",
+      "sha256": "21a805797a2c5eb34bcd5b604086a5b85e6d04a72e1df7d208c5951c42a85022"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_calib_delay_v1_2.vp",
+      "sha256": "2b106047ea982a8b995ef32dfeb2e0c47708a4834b334f1a27c79eabe731ecfd"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_cfg_apb_v1_2.vp",
+      "sha256": "6e7da85eaba00a5447354ce0cfa0af531204f95484698529337c58fb7f6a51bf"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcd_bm_v1_2.vp",
+      "sha256": "440e7698b5191a267a14f960145dfccc8f63a394b0a4f702ea3480efe44f835a"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcd_rowaddr_v1_2.vp",
+      "sha256": "bd61275d3c8c7fb82c4d0e94a523e23a8e1318c83b235cc958371c85205af44a"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcd_sm_v1_2.vp",
+      "sha256": "fd22e7236794452a1c1dd006aa23c1a30e51fadefd73ba62b0b235309e13eb3c"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcd_top_v1_2.vp",
+      "sha256": "4863c936af71bfe394805c93c79da31c939c8ae97cd6e5e8bb60433cd46dec23"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcp_back_ctrl_v1_2.vp",
+      "sha256": "b91e7cc34230a6a3b21084c7c05af4f48e2c540922c0116996b4cbe7c15377ed"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcp_buf_v1_2.vp",
+      "sha256": "975eeffc382867491b06134e740cf49163cec6250db99ba2e8495ad092dfeae4"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcp_out_v1_2.vp",
+      "sha256": "10964e9e1fd32eea3b33a93ceb9cd0042970a79243dae7bf14f96c700474d97a"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dcp_top_v1_2.vp",
+      "sha256": "36604d219a96a7ce7e03de8eedaef0c5ca6846eafe831675572541050b3502d5"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_dfi_v1_2.vp",
+      "sha256": "a9ac43e24e155910cd1f3cf0678dd802a8a181e3ad386a6408c5169a128c5ff7"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_lp_v1_2.vp",
+      "sha256": "46fd140b015bdaff1911abf3b47a961b1e649e0a9b86d1c4cdf6d4cfbd68b6e5"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_mrs_v1_2.vp",
+      "sha256": "93b1d7626b7edf9358c2f44351fc93482f5b949cbc02c07e588d98b81fa94615"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_prefetch_fifo_v1_2.vp",
+      "sha256": "3d5d689f4fe7133da349b1375fff3ce0a0305e8ed79407ad5e679030157c5556"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_rdatapath_v1_2.vp",
+      "sha256": "0b1b7b088b18170956ba9b856312c780dae4b2cf18eb171b4156197d3e699901"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_reg_fifo2_v1_2.vp",
+      "sha256": "48265363a03deba8987040908a854bef9af38530bb355164f4908fa74b6c70d0"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_ui_axi_v1_2.vp",
+      "sha256": "26ebcd730ff954bfd64d1ee0e5f32757d9d8029cc9e0c0422920f29839715a17"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_wdatapath_v1_2.vp",
+      "sha256": "e3355f343d90ff95715db1f4eff47c5618932b0f4550d7a39a96ffc3d26e0611"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_wdp_align_v1_2.vp",
+      "sha256": "0f8ee12f7f2be28d4c21f204d9fbcf7f3d9499504f4be8eee89819e6e064254f"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_wdp_dcp_v1_2.vp",
+      "sha256": "cd72a29361953b6209e0a4f633fcfa6479166484b51d09863aca601b3f18c418"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/ipsxb_mcdq_wrapper_v1_2a.vp",
+      "sha256": "2fbb60dc9ada8e7dedc828e07ad30c4519a0cd289e27be146d4d413f27051b62"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_com_timing_v1_2.vp",
+      "sha256": "cf710046373cf0583a0b3008e18076a51e0227d8ec8bb5b3348bd52bc8bcd0e8"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_tfaw_timing_v1_2.vp",
+      "sha256": "15ffad1b662b3c99d50403bb03c7f292f7a6e16e291d32447518758c36f638b3"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_tfaw_v1_2.vp",
+      "sha256": "6267edf427c4cf95d8248d23cd64009b7600b187f5ab72451fd0ec23b086f29e"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_timing_act2wr_pass_v1_2.vp",
+      "sha256": "d24afd97499f2796ed3c413fe970a595e81c80eb5326e3297c4c7ae68e27d78a"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_timing_act_pass_v1_2.vp",
+      "sha256": "4cb33ba76785b264bb3befeb45bc2f75e796ae64163927dd6aa0a5f771eb3f24"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_timing_pre_pass_v1_2.vp",
+      "sha256": "dfc0fdc3ab9a2aab4e7c8c757f59fa9a31b0c21a55460ac2132cff049a1836f7"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_timing_rd_pass_v1_2.vp",
+      "sha256": "f7511c049e5e518c11165dcb155ccaba7e8ab438fef68b1cbc5de7ace6fff541"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_timing_ref_pass_v1_2.vp",
+      "sha256": "811ad3f8202afa32804169319d929e6343fe3a9e024572480a6c9d76746b2b92"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_timing_wr_pass_v1_2.vp",
+      "sha256": "096e2b83e2db34e5ddaefb82e6516f3deb9c5ea58a38152dca104dd2726a4eac"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ipsxb_mcdq_trc_timing_v1_2.vp",
+      "sha256": "74350f37859c1e755a1ea6363e4f546c7698df6557494360d9a23450db398076"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ddr3_test/rtl/pll/ipsxb_ddrphy_pll_v1_0.v",
+      "sha256": "0a47f7f471e89f5f3c32c6de7f46debb5c3ec522cf3d2593bebf2530a63ba866"
+    },
+    {
+      "path": "hardware/board_games/ipcore/pll/pll.idf",
+      "sha256": "41e3545123daf6d1720d5f97493dd0d49aa7962e19a6133dcc0f3160710370d7"
+    },
+    {
+      "path": "hardware/board_games/ipcore/pll/pll.v",
+      "sha256": "9e20990767b57b43a51e16704c664901a14f157ef65fa49ae83eee4804fd9f2e"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram1_tdp/ram1_tdp.idf",
+      "sha256": "b5f86259d0759b55f7e7b714a537240bd64ed917f24c12882a1e40b3fa740106"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram1_tdp/ram1_tdp.v",
+      "sha256": "5427ee5a0e458b3a9bcc9a89f72abb4362fe41476c08cbde6416c98259e8fcc3"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram1_tdp/rtl/ipml_dpram_v1_6_ram1_tdp.v",
+      "sha256": "2bdb52b49905645e17cee9f500752c800a6a441003affe4ef6a23dd79c0898d9"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram1_tdp/rtl/ipml_dpram_v1_8_ram1_tdp.v",
+      "sha256": "2972a2a209a3e1b293620a749914fbbba8b2cb0980bbcd2cf4d6472ed2d97439"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram1_tdp/rtl/ram1_tdp_init_param.v",
+      "sha256": "a5a04fe5e9d202d5005d185f32b9ba41150e8cec2d575b66a7a1cfae10049f2d"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram2_tdp/ram2_tdp.idf",
+      "sha256": "7567aa46b63b5bfa7d0b9c87df1cc200d22e5ecb6c04c0b6428b4e506049306f"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram2_tdp/ram2_tdp.v",
+      "sha256": "7c7a8940f87cb213271cc85689231b09fab98d8ba9583fc2f06c3159bdfb90cb"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram2_tdp/rtl/ipml_dpram_v1_6_ram2_tdp.v",
+      "sha256": "059ae2c41d30beb8bed5a1bf873c7b8e32cc10aa3a64cac3e577a5246832875c"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram2_tdp/rtl/ipml_dpram_v1_8_ram2_tdp.v",
+      "sha256": "79c5105f6eff6aa099416d72b876290e9f3829bd2f8310172bcba508280a6faa"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram2_tdp/rtl/ram2_tdp_init_param.v",
+      "sha256": "ce60b46be304837d0cf84e0f4052a63174df5fcf2e0d5b2dd523ad0b61e213fa"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram3_tdp/ram3_tdp.idf",
+      "sha256": "482b428ec77806c87db70823cb4b47f7efa8673f506b56f72aa7f8550aa481cb"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram3_tdp/ram3_tdp.v",
+      "sha256": "777d49f7215f2097b81f1a8e6366758a0001ef67c9ec0ef916842e09987071cd"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram3_tdp/rtl/ipml_dpram_v1_8_ram3_tdp.v",
+      "sha256": "833ffe92c15836269b796562870d8e39befa5f2c2617d9d9530c4060e56fe5b5"
+    },
+    {
+      "path": "hardware/board_games/ipcore/ram3_tdp/rtl/ram3_tdp_init_param.v",
+      "sha256": "bed8e53af9b2b5628caa27a12fa6b1e92dda17775998f75389674cc647777346"
+    },
+    {
+      "path": "hardware/board_games/memory/boot.hex",
+      "sha256": "cb21aedb60d54dd6ed328ca1055ca0bae71e576d7ecd7c2580eeb1cf402db58b"
+    },
+    {
+      "path": "hardware/board_games/memory/boot64.hex",
+      "sha256": "dd1966551ecd9df5f642c305d5f3e58b884bd3615a5ac30ebc4c582af4a1acc5"
+    },
+    {
+      "path": "hardware/board_games/memory/boot_base64.hex",
+      "sha256": "8ab770eadfc7468944580967d154ce2057991aaa2b1467e43543568419e0f560"
+    },
+    {
+      "path": "hardware/board_games/memory/boot_tail64.hex",
+      "sha256": "5726b5926942b0ce35fb44b87c23ae17dd33bce803593c46ee4452b30088ce40"
+    },
+    {
+      "path": "hardware/board_games/memory/pattern.hex",
+      "sha256": "fc1b87f7fd1029626ace71ceed3aed2a461bbda0ccad254cb465d1b9dc9c2081"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_btb.v",
+      "sha256": "273c7bca65b8864c65f0fd5aa01069ff73045ff35b0b3b1e76a4968e5207d9be"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_core.v",
+      "sha256": "8d8d3e7fb03d4d0d36923e800797ec6fd38dfe6282158920520df666a80de073"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_csr.v",
+      "sha256": "f403633773c4cff4a9d983a5aa22786cc08144a6b4fdb4bf011747a1bcb59823"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_decode.v",
+      "sha256": "bf25ce611b8c724d028106e35c2dd6395c71924aa2199532b5e65388644434d4"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_divide.v",
+      "sha256": "296df5c55ffa0e98849af232b0c7d2dded4a34412e729c7e3dea4a76d0b98d1d"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_execute.v",
+      "sha256": "69261b8bf816eceba0b80954653707befb95494c6c2a320ca639088a58f1c027"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_fetch.v",
+      "sha256": "a1bf412db6b880466ce16b25e8a8cda0ccdd4b27e586dea4a2f8af41480a52a3"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_fifo.v",
+      "sha256": "5a71a45910512a00290f1cf80fe09b18ea8cf7a0e60e2ad59e8f6c8d14f854cf"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_memory.v",
+      "sha256": "e1f733f5e56f72c0ecb3fd6c0940a0dd59f3c2d40abf2364db9d52d32d711bc0"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_mul_pipeline.v",
+      "sha256": "0f674691b20264982434c499724d11a2756d35c9486983340a62354f7270cfa4"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_operands.v",
+      "sha256": "52f9d446c82e48d8c01bd1b50ec8d664ccf902bafce37fc92c31fea48f84925a"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_regfile.v",
+      "sha256": "9ebdac37bcd319c9b4f0f56991f49f0b605418c0a7521e9c6891a0fd72e3a60a"
+    },
+    {
+      "path": "hardware/board_games/source/core/nc_stats.v",
+      "sha256": "7cfc45ec00d557a313d90395f34c0c42ae716891fdbe173328a7efaa5ca18d92"
+    },
+    {
+      "path": "hardware/board_games/source/ddr/nc_ddr_bridge.v",
+      "sha256": "f430b2e3e52afb6ac876affd801c4e3db064f982ee2b71ac03b0cb01fdc93d20"
+    },
+    {
+      "path": "hardware/board_games/source/perips/gomoku_eval.v",
+      "sha256": "b8ad715e1e9584b06732f2b2427a068a880eca2864d8cbeae76bb128a5b83712"
+    },
+    {
+      "path": "hardware/board_games/source/perips/nc_attack_check.v",
+      "sha256": "0eabad68fc552932565d0e15a632aef30ef8b0fc1e147a310fa3a95ca13c5492"
+    },
+    {
+      "path": "hardware/board_games/source/perips/nc_ray_targets.v",
+      "sha256": "c767bc11c05d536c006d3d52a6e469679504a19c3560e2e10f7baf50c5cbe1e9"
+    },
+    {
+      "path": "hardware/board_games/source/perips/nc_uart.v",
+      "sha256": "98f7a27cf67edb649e6230d3c81a5dbe1270b32150f34c4fc116b614133ef2aa"
+    },
+    {
+      "path": "hardware/board_games/source/perips/nc_uart_rx.v",
+      "sha256": "29bf636830995c3e5e073475b268f493611a5360d02d96a351b4d26d421cbaa3"
+    },
+    {
+      "path": "hardware/board_games/source/sys_bus/nc_bus_router.v",
+      "sha256": "53ecf3989160e44ef482e08a9219fc58a8e00a11fc4f411e7d60e2bfa07a8327"
+    },
+    {
+      "path": "hardware/board_games/source/sys_bus/nc_code_ram.v",
+      "sha256": "a86aad586c81a47cf3a337a472f21af22abe54c02a29cad41234edcd3cc4edec"
+    },
+    {
+      "path": "hardware/board_games/source/sys_bus/nc_local_bus.v",
+      "sha256": "fee03d02f1048f807d893b83734e21b7ae2126c1c5ea6b84b4bd4be117b23daf"
+    },
+    {
+      "path": "hardware/board_games/source/top/nc_platform_reset.v",
+      "sha256": "fde690b6f197df3d571df8546c15fce294cff4ccaeaed6d4dc752ee7ee472a52"
+    },
+    {
+      "path": "hardware/board_games/source/top/nc_soc.v",
+      "sha256": "9c7578530f8b725b54aff2ec73fe107976cd2a65524c8fd312f863e3caf76bc9"
+    },
+    {
+      "path": "hardware/board_games/source/top/top.v",
+      "sha256": "736caf89a892455c0cdfc7a283bcac438d6c11acd66c0c83541bb6ddd0b93849"
+    },
+    {
+      "path": "list_board_games_ports.bat",
+      "sha256": "991c42220cdc69ed1dae2d863e47946d74ce83e7ea4b361b2ed8c061d63d35f0"
+    },
+    {
+      "path": "output/board_games/board_games_desktop.exe",
+      "sha256": "ca3b1e9f6a1ac4cf49b512c1c70e869351df19b24c068599de8cd782a809f69d"
+    },
+    {
+      "path": "output/board_games/desktop_client.cs",
+      "sha256": "744290302ec6c43c9ce5ac309ba2f311069445231ceb24060c2994962170b2a6"
+    },
+    {
+      "path": "output/board_games/top.sbit",
+      "sha256": "af909e1e02ef05e9328297689c5a91962f79e883494d1f89573e4070e56dac22"
+    },
+    {
+      "path": "output/board_games/validation.json",
+      "sha256": "b5747852737e16477cd462f09fcdc287ac6f582539769f79da4558685031e8eb"
+    },
+    {
+      "path": "prepare_paths.py",
+      "sha256": "d77842155b5ce336f4e55487260c34a02c09dcefa038ce711213914b6fef76c8"
+    },
+    {
+      "path": "README.md",
+      "sha256": "efdc41f8f2072ca96b35d8474d8ffed030be026a5fc5ec389540ff03d06c5fa8"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "8df97a5b5af1ed8b6dad9bb1b3d334d1de55e6778fc595dba06f497ca15cd6e5"
+    },
+    {
+      "path": "reproduction/board_games_board_games.bin",
+      "sha256": "56ba36e9c8a72c2070c12420352cfcb8b8328cff898a28cbb8aba8e90da3a3cf"
+    },
+    {
+      "path": "reproduction/board_games_build.json",
+      "sha256": "30238e7546af59c3a9e703263f7062cae621e4c64aa5df9e7bed7fdb4608b33d"
+    },
+    {
+      "path": "start_board_games.bat",
+      "sha256": "cfd3f9ae20d56b7f1b26070e8355b9fc1b3b5427e78a973f703f21c9066f5036"
+    },
+    {
+      "path": "sw/board_games/coremark_port.c",
+      "sha256": "0ee794afc05852ff411291f06714e35c66a240e74be2f1057b172cdafc2b8ddf"
+    },
+    {
+      "path": "sw/board_games/coremark_profile.json",
+      "sha256": "8ba4a491eceff8d84d31e333f246404065e2e31ebd16be1421dedf88574c894b"
+    },
+    {
+      "path": "sw/board_games/link.lds",
+      "sha256": "c7fc1973cdae640f91d8c7905ebc79cce3e86ddb03f2db0a2488ccc2d4615df5"
+    },
+    {
+      "path": "sw/board_games/main.cpp",
+      "sha256": "2df17e93ed8f84cb789d0fec56ecb833e7635013a360b9abcb6d1ee3b9a12a91"
+    },
+    {
+      "path": "sw/board_games/runtime.cpp",
+      "sha256": "063161768b80a2cf6494edeb64be0980d68186f9c8c4c777a61b553875fa514a"
+    },
+    {
+      "path": "sw/board_games/start.S",
+      "sha256": "91e538d0715323d1324231082958d48adf238db87c89b4ac12ecb0d6e3a0f233"
+    },
+    {
+      "path": "sw/board_games/workspace.c",
+      "sha256": "ee716721fcd350f88400d928954ab46dd9e15df73c4e879b1a8e62e03e0bca28"
+    },
+    {
+      "path": "sw/coremark/core_list_join.c",
+      "sha256": "1c8aa83861634d6a33cb11c785b738ac205404e2e9222571465dc02156f9154d"
+    },
+    {
+      "path": "sw/coremark/core_main.c",
+      "sha256": "862cdd9d61ceb2c7086dfb1ef5d3beda4b84cfb1a3fc793903dc5b67bd93008d"
+    },
+    {
+      "path": "sw/coremark/core_matrix.c",
+      "sha256": "acf3fe63db2ddd929f405b67fd273e49f558871f0bf8d51a6814cdd881b602c8"
+    },
+    {
+      "path": "sw/coremark/core_portme.c",
+      "sha256": "4b2442eda077b1a932098a1d49b9f95c715611fa45711ee005782153de9b2148"
+    },
+    {
+      "path": "sw/coremark/core_portme.h",
+      "sha256": "3b0f54ac1cd68c4d8e4e94e02b8de0da69a26814ca29569aa0c976c44d4fcfa2"
+    },
+    {
+      "path": "sw/coremark/core_state.c",
+      "sha256": "02a6e604d852a2806a8eb2a455c924b0483a8042cfe96478009821558cf35521"
+    },
+    {
+      "path": "sw/coremark/core_util.c",
+      "sha256": "f8479f7a4e100ded31e2ebecf1f37ffff8904d88314188b0a85d32687e3ca813"
+    },
+    {
+      "path": "sw/coremark/coremark.h",
+      "sha256": "3ce4936cdfc7b6bd2a9b24c13f2494ed7a4ca22038c2b37052bcc4b1f8c73143"
+    },
+    {
+      "path": "sw/coremark/LICENSE.md",
+      "sha256": "9577b9c846f61fd69a0d8ac965998c6450c7d8969f71f0bb4a931b91aebad28a"
+    },
+    {
+      "path": "sw/gomoku/engine.c",
+      "sha256": "072ab6ae177ec6ec9e312955dadcdee7c500781a80fd68e789dea9ad7ba57d6c"
+    },
+    {
+      "path": "sw/gomoku/engine.h",
+      "sha256": "539d322a1fb803eea542871879432ec5df58c3b6e323c713183f331cb063ae61"
+    },
+    {
+      "path": "sw/gomoku/link.lds",
+      "sha256": "bf2da20bd94eaa0c8dc215b6edc784d2408e8e74ba2cadc3ba84d63e5807a40e"
+    },
+    {
+      "path": "sw/gomoku/main.c",
+      "sha256": "16da96bc26c9738a578739c7cec22ccc29c0299fbbddfd182ed69b5a9b5d3b8c"
+    },
+    {
+      "path": "sw/gomoku/pattern_table.h",
+      "sha256": "5048beeaa71e421011caa8345cb99bdaa3407025b496953bcbc6fdfe787848c6"
+    },
+    {
+      "path": "sw/gomoku/start.S",
+      "sha256": "4cadbfd5ef51f1a0fbb9f3e5110f07aad18770ab0ca12761c5dd745b6c3d68ee"
+    },
+    {
+      "path": "sw/include/uart.h",
+      "sha256": "fed2039b1c9fcc77b942e1bfb7507d66db6d2082d6cb1d0d7990fc2d9c114850"
+    },
+    {
+      "path": "sw/include/utils.h",
+      "sha256": "77904d83531e02dad7d21321a7afcedeaf906443b6e5a0cee0d1904c0a30a171"
+    },
+    {
+      "path": "sw/include/xprintf.h",
+      "sha256": "5c8fb41a9aca8f2b0c303521460462d4ec870b26876678232522842c41cc77a8"
+    },
+    {
+      "path": "sw/lib/uart.c",
+      "sha256": "bb1e4c038c6cee23fe493e01b6a73c2e5a9a3db6ada87a7f7b51c501a5317920"
+    },
+    {
+      "path": "sw/lib/utils.c",
+      "sha256": "00d372d49411121cfd7b4b3690409b579e8470cc2a31d553737c85bb64caf2f8"
+    },
+    {
+      "path": "sw/lib/xprintf.c",
+      "sha256": "1c26f9cf7e76c902dc089c1d4e84b094f39924f97be2697442cb88ed11e2af2e"
+    },
+    {
+      "path": "sw/LICENSE.tinyriscv",
+      "sha256": "c745f7c1f215df8bde5d866ba2b7b25293e02b019c1c360524a94b1a2e1ced75"
+    },
+    {
+      "path": "sw/PROVENANCE.json",
+      "sha256": "5f768f3353c9fba8a2e1856c77ef6818f88206c5509324d646e0550b5007a6bf"
+    },
+    {
+      "path": "sw/xiangqi/engine.cpp",
+      "sha256": "50a0ec7ad09ef9b04c1238968d9b20c5b71b35cee47c2aae3d7bf1c1bd425e82"
+    },
+    {
+      "path": "sw/xiangqi/engine.h",
+      "sha256": "807f16f72cadd27358add121f7e56dc92ef05471889e845d472bd1045a75e1d0"
+    },
+    {
+      "path": "sw/xiangqi/engine_api.inc",
+      "sha256": "acb205ea2049a9d220ce81460823a1eab4a3fa09b2a1c86d9923a6dfb44a6531"
+    },
+    {
+      "path": "sw/xiangqi/LICENSE",
+      "sha256": "a45d0bb572ed792ed34627a72621834b3ba92aab6e2cc4e04301dee7a728d753"
+    },
+    {
+      "path": "sw/xiangqi/link.lds",
+      "sha256": "14445a8d0f45f9d41cbe38ac7f52d403e48ce68f719042dabf3a5756c81ca67a"
+    },
+    {
+      "path": "sw/xiangqi/main.cpp",
+      "sha256": "d130a1fb9715ff708f79cd092df2f1d8ca681f29d1e7520fa6b5ec65de086529"
+    },
+    {
+      "path": "sw/xiangqi/runtime.cpp",
+      "sha256": "063161768b80a2cf6494edeb64be0980d68186f9c8c4c777a61b553875fa514a"
+    },
+    {
+      "path": "sw/xiangqi/start.S",
+      "sha256": "91e538d0715323d1324231082958d48adf238db87c89b4ac12ecb0d6e3a0f233"
+    },
+    {
+      "path": "sw/xiangqi/upstream/provenance.json",
+      "sha256": "ec0da8c2e20db45fde87853a3b9750a8a56ab004d6e045339102a8241af3ee47"
+    },
+    {
+      "path": "sw/xiangqi/upstream/XQWL06.CPP",
+      "sha256": "777b901ec143f4542893b855f13ed078f631de7fb686d30c2143acaa2946a7f5"
+    },
+    {
+      "path": "tools/board_games_client.cs",
+      "sha256": "f292fb0ea02f487f852b0fda17e5ee75c34550a21f495acbc9722d423bca6792"
+    },
+    {
+      "path": "tools/build_board_games.py",
+      "sha256": "54fd9fb20b7518dc0e08198100044c82bdb1a20ff990914611046114df4edb83"
+    },
+    {
+      "path": "tools/build_board_games_desktop.ps1",
+      "sha256": "3ff568af0984461fe9b9a471bbe0d1b547dfadc772c0a6f454ad896b37ee602e"
+    },
+    {
+      "path": "tools/game_clock.py",
+      "sha256": "96b5bbc9d036413e525a684f7d05e43c78d7818135dcbf7ae13514716baa0cc0"
+    },
+    {
+      "path": "tools/play_board_games.ps1",
+      "sha256": "871ccbed323d486a2caeff7aa08769ed444e142f47633ead2cac7a88db20286f"
+    },
+    {
+      "path": "tools/play_gomoku.ps1",
+      "sha256": "706a47eaf0aae44a597b82206c72c9dc237de03273222d6c549ea665d93ab6ef"
+    },
+    {
+      "path": "tools/reproduce.py",
+      "sha256": "d43564c6aeaf36d822f5b9ad0c28ccddd09f4c875ff89a8bc03f26adff87f240"
+    },
+    {
+      "path": "tools/test_board_games.py",
+      "sha256": "f2680429f33e9434bc14bada54430d6df82b7ffa49de843b605ce4c46116b97a"
+    },
+    {
+      "path": "tools/xiangqi_client.cs",
+      "sha256": "b64b7584d99e7857577415f0cd709df5cf4ca4b58cdb23456b8161cbb3686ed4"
+    }
+  ]
+}
